@@ -2,5 +2,31 @@
     "name": "psu-libraries/psulib_base",
     "description": "The base theme for the Penn State University Libraries",
     "type": "drupal-theme",
-    "license": "GPL-2.0-or-later"
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/bootstrap5": "^3.0"
+    },
+    "authors": [
+        {
+          "name": "andrewgearhart",
+          "homepage": "https://www.drupal.org/u/andrewgearhart",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Xiaoyu Sun",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Karen Schwentner",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Dann Bohn",
+          "role": "Maintainer"
+        },
+        {
+          "name": "Corey Wetherington",
+          "role": "Maintainer"
+        }
+      ]
 }
