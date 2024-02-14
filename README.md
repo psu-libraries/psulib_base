@@ -8,7 +8,9 @@ git clone --bare git@github.com:psu-libraries/drupal-site-config.git ~/theme_wra
 
 2.) clone psulib_base theme into development site
 ```
-cd ~/theme_wrapper/web/themes/custom 
+cd ~/theme_wrapper/web/themes/contrib
+rm -rf psulib_base
+cd ~/theme_wrapper/web/themes/custom
 rm -rf psulib_base
 git clone git@github.com:psu-libraries/psulib_base.git
 ```
@@ -17,6 +19,7 @@ git clone git@github.com:psu-libraries/psulib_base.git
 ```
 cd ~/theme_wrapper
 ddev config --project-name=theme-wrapper
+ddev config --additional-hostnames theme-wrapper
 ddev start
 ddev drush si --existing-config -y 
 ```
