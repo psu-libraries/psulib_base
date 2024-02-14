@@ -1,5 +1,27 @@
 # psulib_base
 
+## Developing with this theme 
+1.) bare clone drupal-site-config into a theme development folder
+```
+git clone --bare git@github.com:psu-libraries/drupal-site-config.git ~/theme_wrapper
+```
+
+2.) clone psulib_base theme into development site
+```
+cd ~/theme_wrapper/web/themes/custom 
+rm -rf psulib_base
+git clone git@github.com:psu-libraries/psulib_base.git
+```
+
+3.) start up theme-wrapper project
+```
+cd ~/theme_wrapper
+ddev config --project-name=theme-wrapper
+ddev start
+ddev drush si --existing-config -y 
+```
+
+
 ## Using this Base Theme
 
 This base theme is intended to be a base that operates with a child theme in your site. To use this base theme, you must first add the base theme repository in your site's composer.json (either manually or with this command):
