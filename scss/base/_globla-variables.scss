@@ -1,8 +1,5 @@
 
 
-// Paths
-$theme_root: '/sites/all/themes/custom/f5_psul';
-
 // Theme Colors
 $warm-blue: #6888c2; // body anchors
 $navy-blue: #2c76c7; // darker blue for backgrounds
@@ -27,12 +24,6 @@ $topbar-dropdown-bg: $navy-blue;
 $topbar-dropdown-link-bg: $navy-blue;
 $topbar-link-bg-hover: $navy-blue;
 $anchor-font-color-hover: scale-color($primary-color, $lightness: -50%);
-
-//
-// Foundation Variables
-//
-
-// Globals
 
 // Copied from Foundation so that they can be used in variable definitions in
 // this file.  They are defaults.
