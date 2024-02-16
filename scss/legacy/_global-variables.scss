@@ -1,0 +1,89 @@
+
+
+// Theme Colors
+$warm-blue: #6888c2; // body anchors
+$navy-blue: #2c76c7; // darker blue for backgrounds
+$pale-blue: #b8d1ff; // used in the Ask page for rollover bg
+$off-white: #fafafa; // page background
+$valchar-white: #fefefe; // used on the homepage font color for Research Help and Tools
+$off-off-white: darken($off-white, 10%); // used in collection panes
+$attn-yellow: #ebc100; // attention grabbing yellow
+$midnight-blue: #0a0f15; // high alert links color
+$valchar-blue: #2b76c7; // used on the background color of buttons on the homepage for Research Help and Tools
+$subtle-gray: #b5b5b5;
+$valchar-grey: #363636; // used on the homepage background for Research Help and Tools
+$valchar-light-grey: #f2f2f2; // used on the homepage background for Expert Help
+
+$light-blue: #356ed7; // top-bar buttons
+$psu-light-blue: rgb(150, 190, 230);
+
+$primary-color: $navy-blue;
+$body-font-color: #000000;
+$topbar-bg: $navy-blue;
+$topbar-dropdown-bg: $navy-blue;
+$topbar-dropdown-link-bg: $navy-blue;
+$topbar-link-bg-hover: $navy-blue;
+$anchor-font-color-hover: scale-color($primary-color, $lightness: -50%);
+
+// Copied from Foundation so that they can be used in variable definitions in
+// this file.  They are defaults.
+$screen: 'only screen';
+$column-gutter: rem-calc(30) !default;
+
+$row-width: rem-calc(1200);
+$column-gutter-percent: percentage($column-gutter / $row-width);
+
+// Typography and colors
+$font-family-sans-serif: 'Lato', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+$slab-serif: 'Roboto Slab', serif;
+$topbar-link-font-size: rem-calc(10) !default;
+$topbar-title-font-size: rem-calc(13);
+$paragraph-line-height: 1.4 !default;
+$paragraph-margin-bottom: rem-calc(10) !default;
+
+// Headers
+$header-font-family: $montserrat;
+$header-font-weight: 700;
+$h1-font-size: rem-calc(28);
+$h2-font-size: rem-calc(24);
+$h3-font-size: rem-calc(20);
+$h4-font-size: rem-calc(16);
+$h5-font-size: rem-calc(16);
+
+$h1-font-reduction: rem-calc(0);
+$h2-font-reduction: rem-calc(0);
+$h3-font-reduction: rem-calc(0);
+$h4-font-reduction: rem-calc(0);
+
+// Buttons
+$button-border-width: 1px;
+
+// Breadcrumbs
+$crumb-radius: 0;
+$crumb-padding: rem-calc(7 12);
+$crumb-font-transform: auto;
+$crumb-font-color: #2668af; // a11y
+
+// Alerts
+$alert-color: #f2dede;
+$alert-close-top: rem-calc(19) !default;
+
+$topbar-arrows: false;
+
+// New Media Queries
+$x-small-range: 0, 20em; // 20em = 320px (iPhone width up to 5s is 320w)
+$x-small-up: $screen;
+$x-small-only: '#{$screen} and (max-width: #{upper-bound($x-small-range)})';
+$small-plus-range: 20.063em, 29.875em; //321px to 478px
+$small-plus-up: $screen and (min-width: #{lower-bound($small-plus-range)});
+$small-plus-only: '#{$screen} and (min-width:#{lower-bound($small-plus-range)}) and (max-width:#{upper-bound($small-plus-range)})';
+$small-range: 29.938em, 48em; //478px to 768px
+$small-up: '#{$screen} and (min-width: #{lower-bound($small-range)})';
+$small-only: '#{$screen} and (min-width:#{lower-bound($small-range)}) and (max-width:#{upper-bound($small-range)})';
+$up-to-medium: '#{$screen} and (max-width:#{upper-bound($small-range)})';
+$medium-range: 48.063em, 64em; //769px to 1024px
+$narrow-desktop-range: 48.063em, 56.25em; //769px to 900px
+$narrow-desktop: '#{$screen} and (min-width:#{lower-bound($narrow-desktop-range)}) and (max-width:#{upper-bound($narrow-desktop-range)})';
+$retina: '#{$screen} and (-webkit-min-device-pixel-ratio: 2),\a   #{$screen} and (min--moz-device-pixel-ratio: 2),\a   #{$screen} and (-o-min-device-pixel-ratio: 2/1),\a   #{$screen} and (min-device-pixel-ratio: 2),\a   #{$screen} and (min-resolution: 192dpi),\a   #{$screen} and (min-resolution: 2dppx)';
