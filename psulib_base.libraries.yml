@@ -3,4 +3,4 @@ global-styling:
     theme:
       css/style.css: {}
   js:
-    js/psulib_base.global.js: {}
+    js/application.js: {}
