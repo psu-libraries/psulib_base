@@ -5,6 +5,7 @@ core_version_requirement: ^10
 base theme: bootstrap5
 libraries:
   - psulib_base/global-styling
+  - psulib_base/bootstrap
 # ckeditor_stylesheets:
 #   - css/style.css
 # ckeditor5-stylesheets:
