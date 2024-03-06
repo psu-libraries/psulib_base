@@ -48,3 +48,16 @@ This does not make the theme 'default' ... it just makes the theme available to 
 For more information about creating a subtheme:
 - [Drupal.org - Subtheming](https://www.drupal.org/node/2165673)
 - [Drupalize.me - Use a Base Theme](https://drupalize.me/tutorial/use-base-theme)
+
+
+## Boostrap Icons
+
+Since there is no current CI/CD process to build out the assets on demand, the bootrap icons are copied into the target theme on npm install.
+
+There is a postinstall script to copy fonts/icons into ./assets/bootstrap/fonts
+ 
+Once this has run you can use it as documented on https://icons.getbootstrap.com:
+
+```html
+<i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+```
