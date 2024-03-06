@@ -1,6 +1,13 @@
+# base theme styling
 global-styling:
   css:
     theme:
       css/style.css: {}
   js:
-    js/psulib_base.global.js: {}
+    js/application.js: {}
+# including bootstrap icons etc
+bootstrap:
+  css:
+    theme:
+      assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
+
