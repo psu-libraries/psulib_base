@@ -6,11 +6,8 @@ base theme: bootstrap5
 libraries:
   - psulib_base/global-styling
   - psulib_base/bootstrap
-# ckeditor_stylesheets:
-#   - css/style.css
-# ckeditor5-stylesheets:
-#   - css/ck5style.css
 regions:
+  above_header: Above Header (announcements, alerts, etc.)
   header: Header
   nav_branding: Navigation branding region
   nav_main: Main navigation region
