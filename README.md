@@ -50,6 +50,24 @@ For more information about creating a subtheme:
 - [Drupalize.me - Use a Base Theme](https://drupalize.me/tutorial/use-base-theme)
 
 
+## Creating a subtheme
+
+1.) Install the ddev web commands
+
+From your project directory
+```
+git clone git@github.com:psu-libraries/drupal-site-template.git ~/drupal-site-template
+cp -rf ~/drupal-site-template/.ddev/commands/web/ .ddev/commands
+```
+
+This will create 3 new ddev commands for you to create a subtheme, build the theme, and watch the theme for changes 
+
+```
+ddev generate-subtheme
+ddev theme-build
+ddev theme-watch
+```
+
 ## Boostrap Icons
 
 Since there is no current CI/CD process to build out the assets on demand, the bootrap icons are copied into the target theme on npm install.
