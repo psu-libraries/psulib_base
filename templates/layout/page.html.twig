@@ -26,7 +26,8 @@
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
  *   comment/reply/12345).
  *
- * Regions:
+ * Regions: 
+ * - page.above_header: Announcements and alerts, etc.
  * - page.header: Items for the header region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
@@ -57,6 +58,7 @@ set footer_classes = ' ' ~
 %}
 
 <header>
+  {{ page.above_header }}
   {{ page.header }}
 
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
