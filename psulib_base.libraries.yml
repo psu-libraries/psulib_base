@@ -2,12 +2,15 @@
 global-styling:
   css:
     theme:
-      css/style.css: {}
+      dist/css/style.css: {}
   js:
-    js/application.js: {}
+    dist/js/bootstrap.min.js: {}
+    dist/js/application.js: {}
   dependencies:
     - core/drupal
     - core/once
+    - psulib_base/bootstrap
+
 # including bootstrap icons etc
 bootstrap:
   css:

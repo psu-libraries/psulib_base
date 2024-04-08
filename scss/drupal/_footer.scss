@@ -1,9 +1,8 @@
 footer {
   padding: $footer-padding;
-
-  &.footer-dark {
-    @include b5-make-link($light, none, $light, none);
-  }
+  background: linear-gradient(180deg, $nittany-navy-light 0, $nittany-navy 65%, $nittany-navy 100%);
+  
+  @include b5-make-link($light, none, $light, none);
 
   .region-footer {
     display: flex;
