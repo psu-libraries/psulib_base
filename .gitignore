@@ -1,4 +1,7 @@
 node_modules
 css/style.css
 js/application.js
+dist/css
+dist/js
 
+.vscode

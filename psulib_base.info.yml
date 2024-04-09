@@ -2,7 +2,7 @@ name: PSU Libraries Base
 type: theme
 description: PSU Libraries Base subtheme based on Bootstrap 5 theme.
 core_version_requirement: ^10
-base theme: bootstrap5
+'base theme': stable9
 libraries:
   - psulib_base/global-styling
   - psulib_base/bootstrap
@@ -17,5 +17,3 @@ regions:
   sidebar_first: Sidebar first
   sidebar_second: Sidebar second
   footer: Footer
-libraries-override:
-  bootstrap5/global-styling: false

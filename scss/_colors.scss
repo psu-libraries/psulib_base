@@ -25,8 +25,6 @@ $topbar-dropdown-link-bg: $navy-blue;
 $topbar-link-bg-hover: $navy-blue;
 $anchor-font-color-hover: scale-color($primary-color, $lightness: -50%);
 
-// Default values from Foundation
-
 // Breadcrumbs
 $crumb-font-color: #2668af; // a11y
 
@@ -39,6 +37,8 @@ $alert-color: #f2dede;
 
 // Primary
 $nittany-navy: #001e44; // Nittany Navy
+$nittany-navy-light: #002e69;
+$nittany-navy-lighter: #1b3c76;
 $beaver-blue: #1e407c; // Beaver Blue
 $white-out: #ffffff; // White Out
 
@@ -82,3 +82,24 @@ $pa-potential: #000321; // PA Potential
 // Links
 $pa-link: #005fa9; // PA Link
 $pa-link-light: #cce9ff; // PA Link Light
+
+// Bootstrap color overrides.
+$blue: $nittany-navy;
+$indigo: $perpetual-wonder;
+$purple: $stately-atherton;
+$pink: $dawn-of-discovery;
+$red: $original-87;
+$orange: $invent-orange;
+$yellow: $bright-keystone;
+$green: $penns-forest;
+$teal: $pa-creek;
+$cyan: $pa-sky-light;
+
+$primary: $blue;
+$secondary: $pugh-blue;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $pa-limestome-max-light;
+$dark: $pa-slate;
