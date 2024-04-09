@@ -33,14 +33,14 @@ function psulib_base_preprocess_menu_local_tasks(&$variables) {
   if (!empty($variables['primary'])) {
     $variables['primary']['#attached'] = [
       'library' => [
-        'bootstrap5/drupal.nav-tabs',
+        'psulib_base/drupal.nav-tabs',
       ],
     ];
   }
   elseif (!empty($variables['secondary'])) {
     $variables['secondary']['#attached'] = [
       'library' => [
-        'bootstrap5/drupal.nav-tabs',
+        'psulib_base/drupal.nav-tabs',
       ],
     ];
   }
