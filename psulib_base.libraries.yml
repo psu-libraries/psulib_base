@@ -12,7 +12,7 @@ global-styling:
     - psulib_base/bootstrap
 
 # including bootstrap icons etc
-bootstrap-icon:
+bootstrap-icons:
   css:
     theme:
       assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
