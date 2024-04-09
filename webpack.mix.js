@@ -3,9 +3,13 @@
 let mix = require('laravel-mix');
 
 // Use relative URL so fonts will work.
-mix.sass('scss/style.scss', 'dist/css').options({
-    processCssUrls: false
-});
+mix.sass('scss/style.scss', 'dist/css')
+    .sass('scss/components/alert.scss', 'dist/css')
+    .sass('scss/components/pagination.scss', 'dist/css')
+    .sass('scss/components/progress.scss', 'dist/css')
+    .options({
+        processCssUrls: false
+    });
 
 // Combine custom javascript into the application.js file.
 mix.combine('js/base', 'dist/js/application.js');

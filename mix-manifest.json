@@ -1,4 +1,7 @@
 {
+    "/dist/css/progress.css": "/dist/css/progress.css",
+    "/dist/css/pagination.css": "/dist/css/pagination.css",
+    "/dist/css/alert.css": "/dist/css/alert.css",
     "/dist/css/style.css": "/dist/css/style.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
