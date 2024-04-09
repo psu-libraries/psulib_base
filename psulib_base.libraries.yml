@@ -17,3 +17,13 @@ bootstrap:
     theme:
       assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
+drupal.nav-tabs:
+  js:
+    js/nav-tabs.js: {}
+  dependencies:
+    - core/matchmedia
+    - core/jquery
+    - core/drupal
+    - core/once
+    - core/drupal.debounce
+    - core/collapse
