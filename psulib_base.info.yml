@@ -4,8 +4,9 @@ description: PSU Libraries Base subtheme based on Bootstrap 5 theme.
 core_version_requirement: ^10
 'base theme': stable9
 libraries:
+  - core/normalize
   - psulib_base/global-styling
-  - psulib_base/bootstrap
+  
 regions:
   above_header: Above Header (announcements, alerts, etc.)
   header: Header
