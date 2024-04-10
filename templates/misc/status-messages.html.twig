@@ -21,6 +21,8 @@
  *   - class: HTML classes.
  */
 #}
+{{ attach_library('psulib_base/alert') }}
+
 {% block messages %}
 {% for type, messages in message_list %}
   {%

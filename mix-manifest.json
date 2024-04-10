@@ -1,5 +1,11 @@
 {
+    "/dist/css/progress.css": "/dist/css/progress.css",
+    "/dist/css/pagination.css": "/dist/css/pagination.css",
+    "/dist/css/file.css": "/dist/css/file.css",
+    "/dist/css/accordion.css": "/dist/css/accordion.css",
+    "/dist/css/alert.css": "/dist/css/alert.css",
     "/dist/css/style.css": "/dist/css/style.css",
+    "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",

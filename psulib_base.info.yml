@@ -7,7 +7,7 @@ libraries:
   - core/normalize
   - psulib_base/global-styling
   - psulib_base/bootstrap-icons
-  
+logo: 'logo.png'
 regions:
   above_header: Above Header (announcements, alerts, etc.)
   header: Header

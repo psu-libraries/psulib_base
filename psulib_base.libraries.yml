@@ -27,3 +27,35 @@ drupal.nav-tabs:
     - core/once
     - core/drupal.debounce
     - core/collapse
+
+# Component Styles.
+alert:
+  css:
+    component:
+      dist/css/alert.css: {}
+
+accordion:
+  css:
+    component:
+      dist/css/accordion.css: {}
+
+
+file:
+  css:
+    component:
+      dist/css/file.css: {}
+
+pagination:
+  css:
+    component:
+      dist/css/pagination.css: {}
+
+progress:
+  css:
+    component:
+      dist/css/progress.css: {}
+
+search-results:
+  css:
+    component:
+      dist/css/search-results.css: {}
