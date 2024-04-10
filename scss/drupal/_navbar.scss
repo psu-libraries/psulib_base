@@ -37,7 +37,7 @@
 
 .navbar-brand {
   white-space: unset;
-  @include b5-make-link($light, none, $light, none, '.site-title');
+  @include b5-make-link($light, none, $light, underline, '.site-title');
 
   .site-slogan {
     display: none;
@@ -47,7 +47,7 @@
     }
   }
 
-  @include b5-make-link($dark, none, $dark, none, '.site-title');
+  @include b5-make-link($dark, none, $dark, underline, '.site-title');
 
   .site-title {
     font-size: $navbar-brand-site-title-font-size;
@@ -62,6 +62,18 @@
     width: $navbar-brand-image-width;
     @include media-breakpoint-up(lg) {
       height: $navbar-brand-image-height-lg;
+    }
+  }
+}
+
+// Override header navbar styles.
+header .navbar-nav {
+
+  .nav-link {
+    color: $white-out;
+
+    &:hover {
+      font-weight: $font-weight-bold;
     }
   }
 }

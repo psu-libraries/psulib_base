@@ -1,8 +1,8 @@
 @import  'bootstrap/scss/mixins/banner';
 @include bsBanner(Utilities);
 
-@import 'variables_bootstrap';
 @import 'variables_drupal';
+@import 'variables_bootstrap';
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";

@@ -2,10 +2,24 @@
  * Link Style customization.
  */
 
-a:visited {
-    color: $perpetual-wonder;
+a {
+
+    &:active {
+        color: $nittany-navy;
+    }
 }
 
-a:active {
-    color: $nittany-navy;
+// Links are dark backgrounds.
+.text-light {
+    a {
+        color: $pa-link-light;
+
+        &:hover {
+            color: $pa-link-light;
+        }
+
+        &:active {
+            color: $lions-roar-light;
+        }
+    }
 }
