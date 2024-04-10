@@ -6,6 +6,7 @@ core_version_requirement: ^10
 libraries:
   - psulib_base/global-styling
   - psulib_base/bootstrap
+logo: 'logo.png'
 regions:
   above_header: Above Header (announcements, alerts, etc.)
   header: Header
