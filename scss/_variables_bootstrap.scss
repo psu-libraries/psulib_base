@@ -1,6 +1,13 @@
+@import 'colors';
+
 // Bootstrap variables (overrides).
 $form-text-margin-top: 0;
 $legend-font-size: 1rem;
 $table-cell-padding-x: .75rem;
 
 $border-radius: 0;
+
+// Overridding link colors and styles.
+$link-color: $pa-link;
+$link-hover-color: $pa-link;
+$link-hover-decoration: none;
