@@ -1,0 +1,28 @@
+footer {
+  padding: $footer-padding;
+  background: linear-gradient(180deg, $nittany-navy-light 0, $nittany-navy 65%, $nittany-navy 100%);
+  font-family: "Roboto Condensed", Impact, "Franklin Gothic Bold", sans-serif;
+  font-size: $font-size-sm;
+
+  @include make-link($light, none, $light, underline);
+
+  .region-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+
+    .nav-link {
+      color: $pa-link-light;
+
+      &:hover {
+          color: $pa-link-light;
+      }
+
+      &:active {
+          color: $lions-roar-light;
+      }
+    }
+  }
+}

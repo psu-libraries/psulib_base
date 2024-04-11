@@ -7,6 +7,7 @@ global-styling:
     dist/js/bootstrap.min.js: {}
     dist/js/application.js: {}
   dependencies:
+    - psulib_base/fonts
     - core/drupal
     - core/once
     - psulib_base/bootstrap
@@ -28,6 +29,11 @@ drupal.nav-tabs:
     - core/drupal.debounce
     - core/collapse
 
+fonts:
+  css:
+    base:
+      assets/fonts/fonts.css: {}
+
 # Component Styles.
 alert:
   css:
@@ -38,7 +44,6 @@ accordion:
   css:
     component:
       dist/css/accordion.css: {}
-
 
 file:
   css:
