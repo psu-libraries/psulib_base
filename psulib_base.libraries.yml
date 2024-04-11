@@ -11,8 +11,14 @@ global-styling:
     - core/drupal
     - core/once
     - psulib_base/bootstrap
+    - psulib_base/bootstrap-icons
 
-# including bootstrap icons etc
+# including bootstrap javascript and icons.
+bootstrap:
+  js:
+    dist/js/popper.min.js: {}
+    dist/js/bootstrap.min.js: {}
+
 bootstrap-icons:
   css:
     theme:

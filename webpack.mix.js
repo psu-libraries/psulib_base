@@ -19,6 +19,7 @@ mix.combine('js/base', 'dist/js/application.js');
 
 // Copy bootstrap javascript into dist/js directory.
 mix.copyDirectory('node_modules/bootstrap/dist/js/', 'dist/js');
+mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js', 'dist/js');
 
-// Copy bootstrap-icons to assets/bootstrap-icons.
+// Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 // @todo we can pull the bootstrap-icons from the node_module.
