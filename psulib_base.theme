@@ -32,8 +32,8 @@ function psulib_base_page_attachments_alter(array &$attachments) {
   $theme_path = \Drupal::service('extension.list.theme')->getPath('psulib_base');
 
   $files = [
-    $theme_path . '/assets/fonts/Roboto/roboto-regular-webfont.woff2',
-    $theme_path . '/assets/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2',
+    base_path() . $theme_path . '/assets/fonts/Roboto/roboto-regular-webfont.woff2',
+    base_path() . $theme_path . '/assets/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2',
   ];
 
   foreach ($files as $path) {
