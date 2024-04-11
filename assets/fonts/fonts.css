@@ -7,6 +7,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: '900';
+    font-display: swap;
     src:
         local('Roboto Black'),
         local('Roboto Black 900'),
@@ -19,6 +20,7 @@
     font-family: 'Roboto';
     font-style: italic;
     font-weight: '900';
+    font-display: swap;
     src:
         local('Roboto Black Italic'),
         local('Roboto Black 900 Italic'),
@@ -31,6 +33,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: '700';
+    font-display: swap;
     src:
         local('Roboto Bold'),
         local('Roboto Bold 700'),
@@ -43,6 +46,7 @@
     font-family: 'Roboto';
     font-style: italic;
     font-weight: '700';
+    font-display: swap;
     src:
         local('Roboto Bold Italic'),
         local('Roboto Bold 700 Italic'),
@@ -55,6 +59,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
+    font-display: swap;
     src:
         local('Roboto Medium'),
         local('Roboto Medium 500'),
@@ -67,6 +72,7 @@
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 500;
+    font-display: swap;
     src:
         local('Roboto Medium Italic'),
         local('Roboto Medium 500 Italic'),
@@ -79,6 +85,7 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src:
         local('Roboto Regular'),
         local('Roboto Regular 400'),
@@ -91,6 +98,7 @@
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 400;
+    font-display: swap;
     src:
         local('Roboto Regular Italic'),
         local('Roboto Regular 400 Italic'),
@@ -101,8 +109,9 @@
 
 @font-face {
     font-family: 'Roboto';
-    font-style: italic;
+    font-style: normal;
     font-weight: 300;
+    font-display: swap;
     src:
         local('Roboto Light Italic'),
         local('Roboto Light 300 Italic'),
@@ -125,8 +134,9 @@
 
 @font-face {
     font-family: 'Roboto';
-    font-style: italic;
+    font-style: normal;
     font-weight: 100;
+    font-display: swap;
     src:
         local('Roboto Thin'),
         local('Roboto Thin 100'),
@@ -139,10 +149,54 @@
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 100;
+    font-display: swap;
     src:
         local('Roboto Thin Italic'),
         local('Roboto Thin 100 Italic'),
         url('Roboto/roboto-thinitalic-webfont.woff2') format('woff2'),
         url('Roboto/roboto-thinitalic-webfont.woff') format('woff'),
         url('Roboto/Roboto-ThinItalic.ttf') format('truetype'),
+}
+
+/**
+ * Roboto Slab Fonts Definitions
+ * @see https://fonts.google.com/specimen/Roboto+Slab?query=roboto+s
+ * @see https://www.fontsquirrel.com/tools/webfont-generator
+ */
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-display: swap;
+    src:
+        local('Roboto Condensed'),
+        url('Roboto_Condensed/robotocondensed-variablefont_wght-webfont.woff2') format('woff2'),
+        url('Roboto_Condensed/robotocondensed-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: italic;
+    font-display: swap;
+    src:
+        local('Roboto Condensed Italic'),
+        url('Roboto_Condensed/robotocondensed-italic-variablefont_wght-webfont.woff2') format('woff2'),
+        url('Roboto_Condensed/robotocondensed-italic-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
+}
+
+/**
+ * Roboto Condensed Fonts Definitions
+ * @see https://fonts.google.com/specimen/Roboto+Condensed?query=roboto+cond
+ * @see https://www.fontsquirrel.com/tools/webfont-generator
+ */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-display: swap;
+    src:
+        local('Roboto Slab'),
+        url('Roboto_Slab/robotoslab-variablefont_wght-webfont.woff2') format('woff2'),
+        url('Roboto_Slab/robotoslab-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype'),
 }
