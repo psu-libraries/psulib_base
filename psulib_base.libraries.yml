@@ -3,6 +3,8 @@ global-styling:
   css:
     theme:
       dist/css/style.css: {}
+    component:
+      dist/css/general.css: {}
   js:
     dist/js/bootstrap.min.js: {}
     dist/js/application.js: {}
@@ -11,8 +13,14 @@ global-styling:
     - core/drupal
     - core/once
     - psulib_base/bootstrap
+    - psulib_base/bootstrap-icons
 
-# including bootstrap icons etc
+# including bootstrap javascript and icons.
+bootstrap:
+  js:
+    dist/js/popper.min.js: {}
+    dist/js/bootstrap.min.js: {}
+
 bootstrap-icons:
   css:
     theme:
@@ -44,6 +52,11 @@ accordion:
   css:
     component:
       dist/css/accordion.css: {}
+
+carousel:
+  css:
+    component:
+      dist/css/carousel.css: {}
 
 file:
   css:

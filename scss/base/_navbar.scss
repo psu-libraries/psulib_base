@@ -56,22 +56,11 @@
 
   img {
     height: $navbar-brand-image-height;
-    margin: $navbar-brand-image-margin;
+    margin: 0;
     width: $navbar-brand-image-width;
     @include media-breakpoint-up(lg) {
+      margin: $navbar-brand-image-margin;
       height: $navbar-brand-image-height-lg;
-    }
-  }
-}
-
-// Override header navbar styles.
-header .navbar-nav {
-
-  .nav-link {
-    color: $white-out;
-
-    &:hover {
-      font-weight: $font-weight-bold;
     }
   }
 }

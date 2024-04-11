@@ -11,9 +11,9 @@
     src:
         local('Roboto Black'),
         local('Roboto Black 900'),
-        url('Roboto/roboto-regular-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-regular-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Black.ttf') format('truetype'),
+        url('./Roboto/roboto-regular-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-regular-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Black.ttf') format('truetype'),
 }
 
 @font-face {
@@ -24,9 +24,9 @@
     src:
         local('Roboto Black Italic'),
         local('Roboto Black 900 Italic'),
-        url('Roboto/roboto-blackitalic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-blackitalic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-BlackItalic.ttf') format('truetype'),
+        url('./Roboto/roboto-blackitalic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-blackitalic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-BlackItalic.ttf') format('truetype'),
 }
 
 @font-face {
@@ -37,9 +37,9 @@
     src:
         local('Roboto Bold'),
         local('Roboto Bold 700'),
-        url('Roboto/roboto-bold-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-bold-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Bold.ttf') format('truetype'),
+        url('./Roboto/roboto-bold-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-bold-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Bold.ttf') format('truetype'),
 }
 
 @font-face {
@@ -50,9 +50,9 @@
     src:
         local('Roboto Bold Italic'),
         local('Roboto Bold 700 Italic'),
-        url('Roboto/roboto-bolditalic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-bolditalic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-BoldItalic.ttf') format('truetype'),
+        url('./Roboto/roboto-bolditalic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-bolditalic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-BoldItalic.ttf') format('truetype'),
 }
 
 @font-face {
@@ -63,9 +63,9 @@
     src:
         local('Roboto Medium'),
         local('Roboto Medium 500'),
-        url('Roboto/roboto-medium-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-medium-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Medium.ttf') format('truetype'),
+        url('./Roboto/roboto-medium-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-medium-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Medium.ttf') format('truetype'),
 }
 
 @font-face {
@@ -76,9 +76,9 @@
     src:
         local('Roboto Medium Italic'),
         local('Roboto Medium 500 Italic'),
-        url('Roboto/roboto-mediumitalic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-mediumitalic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-MediumItalic.ttf') format('truetype'),
+        url('./Roboto/roboto-mediumitalic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-mediumitalic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-MediumItalic.ttf') format('truetype'),
 }
 
 @font-face {
@@ -89,9 +89,9 @@
     src:
         local('Roboto Regular'),
         local('Roboto Regular 400'),
-        url('Roboto/roboto-regular-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-regular-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Regular.ttf') format('truetype'),
+        url('./Roboto/roboto-regular-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-regular-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Regular.ttf') format('truetype'),
 }
 
 @font-face {
@@ -102,9 +102,9 @@
     src:
         local('Roboto Regular Italic'),
         local('Roboto Regular 400 Italic'),
-        url('Roboto/roboto-italic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-italic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Italic.ttf') format('truetype'),
+        url('./Roboto/roboto-italic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-italic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Italic.ttf') format('truetype'),
 }
 
 @font-face {
@@ -115,9 +115,9 @@
     src:
         local('Roboto Light Italic'),
         local('Roboto Light 300 Italic'),
-        url('Roboto/roboto-light-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-light-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Light.ttf') format('truetype'),
+        url('./Roboto/roboto-light-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-light-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Light.ttf') format('truetype'),
 }
 
 @font-face {
@@ -127,9 +127,9 @@
     src:
         local('Roboto Light Italic'),
         local('Roboto Light 300 Italic'),
-        url('Roboto/roboto-lightitalic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-lightitalic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-LightItalic.ttf') format('truetype'),
+        url('./Roboto/roboto-lightitalic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-lightitalic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-LightItalic.ttf') format('truetype'),
 }
 
 @font-face {
@@ -140,9 +140,9 @@
     src:
         local('Roboto Thin'),
         local('Roboto Thin 100'),
-        url('Roboto/roboto-thin-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-thin-webfont.woff') format('woff'),
-        url('Roboto/Roboto-Thin.ttf') format('truetype'),
+        url('./Roboto/roboto-thin-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-thin-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-Thin.ttf') format('truetype'),
 }
 
 @font-face {
@@ -153,9 +153,9 @@
     src:
         local('Roboto Thin Italic'),
         local('Roboto Thin 100 Italic'),
-        url('Roboto/roboto-thinitalic-webfont.woff2') format('woff2'),
-        url('Roboto/roboto-thinitalic-webfont.woff') format('woff'),
-        url('Roboto/Roboto-ThinItalic.ttf') format('truetype'),
+        url('./Roboto/roboto-thinitalic-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-thinitalic-webfont.woff') format('woff'),
+        url('./Roboto/Roboto-ThinItalic.ttf') format('truetype'),
 }
 
 /**
@@ -170,8 +170,8 @@
     font-display: swap;
     src:
         local('Roboto Condensed'),
-        url('Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2') format('woff2'),
-        url('Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
+        url('./Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2') format('woff2'),
+        url('./Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
 }
 
 @font-face {
@@ -181,8 +181,8 @@
     font-display: swap;
     src:
         local('Roboto Condensed Italic'),
-        url('Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2'),
-        url('Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
+        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2'),
+        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
 }
 
 /**
@@ -197,6 +197,6 @@
     font-display: swap;
     src:
         local('Roboto Slab'),
-        url('Roboto_Slab/RobotoSlab-VariableFont_wght.woff2') format('woff2'),
-        url('Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype'),
+        url('./Roboto_Slab/RobotoSlab-VariableFont_wght.woff2') format('woff2'),
+        url('./Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype'),
 }

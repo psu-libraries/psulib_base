@@ -6,7 +6,9 @@ let mix = require('laravel-mix');
 mix.sass('scss/style.scss', 'dist/css')
     .sass('scss/components/alert.scss', 'dist/css')
     .sass('scss/components/accordion.scss', 'dist/css')
+    .sass('scss/components/carousel.scss', 'dist/css')
     .sass('scss/components/file.scss', 'dist/css')
+    .sass('scss/components/general.scss', 'dist/css')
     .sass('scss/components/pagination.scss', 'dist/css')
     .sass('scss/components/progress.scss', 'dist/css')
     .sass('scss/components/search-results.scss', 'dist/css')
@@ -19,6 +21,7 @@ mix.combine('js/base', 'dist/js/application.js');
 
 // Copy bootstrap javascript into dist/js directory.
 mix.copyDirectory('node_modules/bootstrap/dist/js/', 'dist/js');
+mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js', 'dist/js');
 
-// Copy bootstrap-icons to assets/bootstrap-icons.
+// Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 // @todo we can pull the bootstrap-icons from the node_module.
