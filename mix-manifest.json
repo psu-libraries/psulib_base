@@ -1,5 +1,5 @@
 {
-    "/dist/css/pagination.css": "/dist/css/pagination.css",
+    "/dist/css/general.css": "/dist/css/general.css",
     "/dist/css/file.css": "/dist/css/file.css",
     "/dist/css/carousel.css": "/dist/css/carousel.css",
     "/dist/css/accordion.css": "/dist/css/accordion.css",
@@ -7,6 +7,7 @@
     "/dist/css/style.css": "/dist/css/style.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
+    "/dist/css/pagination.css": "/dist/css/pagination.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",

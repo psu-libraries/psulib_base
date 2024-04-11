@@ -3,6 +3,8 @@ global-styling:
   css:
     theme:
       dist/css/style.css: {}
+    component:
+      dist/css/general.css: {}
   js:
     dist/js/bootstrap.min.js: {}
     dist/js/application.js: {}
