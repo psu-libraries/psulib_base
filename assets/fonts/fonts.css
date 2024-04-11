@@ -159,44 +159,44 @@
 }
 
 /**
- * Roboto Slab Fonts Definitions
+ * Roboto Condensed Fonts Definitions
  * @see https://fonts.google.com/specimen/Roboto+Slab?query=roboto+s
- * @see https://www.fontsquirrel.com/tools/webfont-generator
+ * @see https://webfont.yabe.land/en/misc/convert-ttf-woff2/
  */
 @font-face {
     font-family: 'Roboto Condensed';
     font-style: normal;
+    font-weight: 100 900;
     font-display: swap;
     src:
         local('Roboto Condensed'),
-        url('Roboto_Condensed/robotocondensed-variablefont_wght-webfont.woff2') format('woff2'),
-        url('Roboto_Condensed/robotocondensed-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2') format('woff2'),
         url('Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
     font-style: italic;
+    font-weight: 100 900;
     font-display: swap;
     src:
         local('Roboto Condensed Italic'),
-        url('Roboto_Condensed/robotocondensed-italic-variablefont_wght-webfont.woff2') format('woff2'),
-        url('Roboto_Condensed/robotocondensed-italic-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2'),
         url('Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
 }
 
 /**
- * Roboto Condensed Fonts Definitions
+ * Roboto Slab Fonts Definitions
  * @see https://fonts.google.com/specimen/Roboto+Condensed?query=roboto+cond
- * @see https://www.fontsquirrel.com/tools/webfont-generator
+ * @see https://webfont.yabe.land/en/misc/convert-ttf-woff2/
  */
 @font-face {
     font-family: 'Roboto Slab';
     font-style: normal;
+    font-weight: 100 900;
     font-display: swap;
     src:
         local('Roboto Slab'),
-        url('Roboto_Slab/robotoslab-variablefont_wght-webfont.woff2') format('woff2'),
-        url('Roboto_Slab/robotoslab-variablefont_wght-webfont.woff') format('woff'),
+        url('Roboto_Slab/RobotoSlab-VariableFont_wght.woff2') format('woff2'),
         url('Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype'),
 }
