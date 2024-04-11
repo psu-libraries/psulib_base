@@ -1,3 +1,5 @@
+@import 'colors';
+
 // Bootstrap variables (overrides).
 $form-text-margin-top: 0;
 $legend-font-size: 1rem;
@@ -8,3 +10,11 @@ $border-radius: 0;
 // Font overrides.
 $font-size-root: 18px;
 $font-family-sans-serif: Roboto, "Franklin Gothic Medium", Tahoma, sans-serif;
+
+// Overridding link colors and styles.
+$link-color: $pa-link;
+$link-hover-color: $pa-link;
+$link-hover-decoration: none;
+
+$link-color-dark: $pa-link-light;
+$link-hover-color-dark: $pa-link-light;

@@ -2,7 +2,7 @@
   $a-link-color: $link-color,
   $a-link-decoration: $link-decoration,
   $a-link-hover-color: $link-hover-color,
-  $a-link-hover-decoration: $link-hover-decoration,
+  $a-link-hover-decoration: $link-decoration,
   $target-class: '') {
   a#{$target-class} {
     color: $a-link-color;
