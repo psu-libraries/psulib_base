@@ -4,11 +4,25 @@ footer {
   font-family: "Roboto Condensed", Impact, "Franklin Gothic Bold", sans-serif;
   font-size: $font-size-sm;
 
-  @include b5-make-link($light, none, $light, underline);
+  @include make-link($light, none, $light, underline);
 
   .region-footer {
     display: flex;
     flex-direction: column;
   }
 
+  .navbar-nav {
+
+    .nav-link {
+      color: $pa-link-light;
+
+      &:hover {
+          color: $pa-link-light;
+      }
+
+      &:active {
+          color: $lions-roar-light;
+      }
+    }
+  }
 }

@@ -37,7 +37,7 @@
 
 .navbar-brand {
   white-space: unset;
-  @include b5-make-link($light, none, $light, underline, '.site-title');
+  @include make-link($light, none, $light, underline, '.site-title');
 
   .site-slogan {
     display: none;
@@ -46,8 +46,6 @@
       display: block;
     }
   }
-
-  @include b5-make-link($dark, none, $dark, underline, '.site-title');
 
   .site-title {
     font-size: $navbar-brand-site-title-font-size;
