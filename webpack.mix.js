@@ -6,6 +6,7 @@ let mix = require('laravel-mix');
 mix.sass('scss/style.scss', 'dist/css')
     .sass('scss/components/alert.scss', 'dist/css')
     .sass('scss/components/accordion.scss', 'dist/css')
+    .sass('scss/components/carousel.scss', 'dist/css')
     .sass('scss/components/file.scss', 'dist/css')
     .sass('scss/components/pagination.scss', 'dist/css')
     .sass('scss/components/progress.scss', 'dist/css')

@@ -51,6 +51,11 @@ accordion:
     component:
       dist/css/accordion.css: {}
 
+carousel:
+  css:
+    component:
+      dist/css/carousel.css: {}
+
 file:
   css:
     component:
