@@ -11,18 +11,57 @@ footer {
     flex-direction: column;
   }
 
-  .navbar-nav {
+  .site-logo img {
+    height: 52px;
+  }
 
-    .nav-link {
-      color: $pa-link-light;
+  .nav-link,
+  a {
+    color: $pa-slate-light;
+    padding-left: 0;
+    line-height: calc(var(--bs-body-line-height) * .75);
 
-      &:hover {
-          color: $pa-link-light;
+    &:hover {
+        color: $pa-slate-light;
+    }
+
+    &:active {
+        color: $lions-roar-light;
+    }
+  }
+
+  .list-inline {
+
+    .list-inline-item {
+      &:after {
+        padding-left: $list-inline-padding;
+        content: "|"
       }
 
-      &:active {
-          color: $lions-roar-light;
+      &:last-child:after {
+        content: none;
+        padding-left: 0;
       }
+
+    }
+  }
+
+  .block-social-media-links {
+
+    a {
+      color: $pa-sky-light;
+    }
+
+    a:hover {
+      color: $pa-sky-max-light;
+    }
+  }
+
+  .menu--footer .row {
+    // Removing extra margin from last 2 footer menu sections.
+    .col:nth-last-child(2),
+    .col:last-child {
+      margin-bottom: 0 !important;
     }
   }
 }

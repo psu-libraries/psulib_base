@@ -1,11 +1,3 @@
-
-.region-sidebar-first,
-.region-sidebar-second,
-.region-footer,
-.region-content {
-  padding: $region-padding;
-}
-
 .node-preview-container {
   background-color: $white;
   .node-preview-backlink {
@@ -18,8 +10,22 @@
   }
 }
 
-
 .region-nav-branding,
 .region-nav-additional {
   flex-shrink: 0;
+}
+
+// Add a max width the container-fluid and increasing padding on larger
+// displays.
+.container-fluid {
+  max-width: calc(map-get($container-max-widths, xxl) + 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    max-width: calc(map-get($container-max-widths, xxl) + 6rem);
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
