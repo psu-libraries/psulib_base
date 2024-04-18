@@ -84,22 +84,22 @@ $pa-link: #005fa9; // PA Link
 $pa-link-light: #cce9ff; // PA Link Light
 
 // Bootstrap color overrides.
-$blue: $nittany-navy;
-$indigo: $perpetual-wonder;
-$purple: $stately-atherton;
-$pink: $dawn-of-discovery;
-$red: $original-87;
-$orange: $invent-orange;
-$yellow: $bright-keystone;
-$green: $penns-forest;
-$teal: $pa-creek;
-$cyan: $pa-sky-light;
+$blue: $nittany-navy !default;
+$indigo: $perpetual-wonder !default;
+$purple: $stately-atherton !default;
+$pink: $dawn-of-discovery !default;
+$red: $original-87 !default;
+$orange: $invent-orange !default;
+$yellow: $bright-keystone !default;
+$green: $penns-forest !default;
+$teal: $pa-creek !default;
+$cyan: $pa-sky-light !default;
 
-$primary: $blue;
-$secondary: $pugh-blue;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
-$light: $pa-limestome-max-light;
-$dark: $pa-slate;
+$primary: $blue !default;
+$secondary: $pugh-blue !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $pa-limestome-max-light !default;
+$dark: $pa-slate !default;
