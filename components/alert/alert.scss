@@ -1,9 +1,9 @@
 // Generate styles for pagination.
-@import '../init';
+@import '../../scss/init';
 
 // Override variables here:
 
 // Import bootstrap pagination styles.
-@import 'bootstrap/scss/alert';
+@import '~bootstrap/scss/alert';
 
 // Custom styles go here.

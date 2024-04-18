@@ -1,4 +1,4 @@
-@import  'bootstrap/scss/mixins/banner';
+@import  '~bootstrap/scss/mixins/banner';
 @include bsBanner(Utilities);
 
 @import 'variables_drupal';

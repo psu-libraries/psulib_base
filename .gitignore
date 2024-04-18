@@ -3,6 +3,7 @@ css/style.css
 js/application.js
 dist/css
 dist/js
+components/*/*.css
 
 .vscode
 .DS_Store

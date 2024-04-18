@@ -1,13 +1,15 @@
 {
+    "/dist/css/pagination.css": "/dist/css/pagination.css",
     "/dist/css/general.css": "/dist/css/general.css",
     "/dist/css/file.css": "/dist/css/file.css",
     "/dist/css/carousel.css": "/dist/css/carousel.css",
     "/dist/css/accordion.css": "/dist/css/accordion.css",
-    "/dist/css/alert.css": "/dist/css/alert.css",
     "/dist/css/style.css": "/dist/css/style.css",
+    "/components/header/header.css": "/components/header/header.css",
+    "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
+    "/components/alert/alert.css": "/components/alert/alert.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
-    "/dist/css/pagination.css": "/dist/css/pagination.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",
@@ -21,5 +23,6 @@
     "/dist/js/bootstrap.js.map": "/dist/js/bootstrap.js.map",
     "/dist/js/bootstrap.min.js": "/dist/js/bootstrap.min.js",
     "/dist/js/bootstrap.min.js.map": "/dist/js/bootstrap.min.js.map",
-    "/dist/js/popper.min.js": "/dist/js/popper.min.js"
+    "/dist/js/popper.min.js": "/dist/js/popper.min.js",
+    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map"
 }

@@ -1,20 +1,24 @@
 // webpack.mix.js
 
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
+const glob = require('glob');
 
 // Use relative URL so fonts will work.
-mix.sass('scss/style.scss', 'dist/css')
-    .sass('scss/components/alert.scss', 'dist/css')
-    .sass('scss/components/accordion.scss', 'dist/css')
-    .sass('scss/components/carousel.scss', 'dist/css')
-    .sass('scss/components/file.scss', 'dist/css')
-    .sass('scss/components/general.scss', 'dist/css')
-    .sass('scss/components/pagination.scss', 'dist/css')
-    .sass('scss/components/progress.scss', 'dist/css')
-    .sass('scss/components/search-results.scss', 'dist/css')
-    .options({
-        processCssUrls: false
-    });
+const defaultSassOptions = {
+    processCssUrls: false
+};
+
+// Compile global SCSS files.
+mix.sass('scss/style.scss', 'dist/css').options(defaultSassOptions);
+for (const sourcePath of glob.sync("scss/components/**/*.scss")) {
+    mix.sass(sourcePath, 'dist/css').options(defaultSassOptions);;
+}
+
+// Compile SDC scss files.
+for (const sourcePath of glob.sync("components/**/*.scss")) {
+    const destinationPath = sourcePath.replace(/\.scss$/, ".css");
+    mix.sass(sourcePath, destinationPath).options(defaultSassOptions);;
+}
 
 // Combine custom javascript into the application.js file.
 mix.combine('js/base', 'dist/js/application.js');
@@ -22,6 +26,7 @@ mix.combine('js/base', 'dist/js/application.js');
 // Copy bootstrap javascript into dist/js directory.
 mix.copyDirectory('node_modules/bootstrap/dist/js/', 'dist/js');
 mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js', 'dist/js');
+mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js.map', 'dist/js');
 
 // Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 // @todo we can pull the bootstrap-icons from the node_module.

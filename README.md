@@ -26,6 +26,51 @@ ddev theme-build;
 ddev launch;
 ```
 
+### Global SCSS
+
+SCSS used to generate styles that will be used everywhere are defined in the `./scss` directory.  Styles cannot or should be associated with a single components will live here.  These can be organized in to separate files in the `./scss/base` directory.
+
+### Single Directory Components (SDC)
+
+The theme has a number of [Single Directory Components (SDC)](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) defined in the `./components` directory.  We should use SDC where appropriate.  This allows for easier development and code reusability.
+
+#### Creating a template
+To add a new components you will need to do the following.  This will create a SDC component for you to start with.
+
+```bash
+ddev drush generate sdc
+```
+
+#### Applying the template
+
+If your component is only using props then you can use an include:
+
+```twig
+{% include 'psulib_base:COMPONENT' with {
+  prop_name: variable,
+} %}
+```
+
+If your component is using slots then you will need to use an embed:
+
+```twig
+{% embed 'psulib_base:header' with {
+    prop_name: variable,
+  }
+%}
+  {% block slot %}
+    {{ page.region }}
+  {% endblock %}
+
+{% endembed %}
+```
+
+#### Links
+
+- [SDC Documentation](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
+- [Using/Attaching only css/js](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/faq-frequently-asked-questions#s-can-i-use-attach-only-the-assets-library-cssjs-of-a-component-inside-a-twig-template)
+- [Radix Theme](https://git.drupalcode.org/project/radix/-/tree/6.0.x/components?ref_type=heads) - This theme has large number of components that can be used as inspiration.
+
 ## Using this Theme
 
 The psulib_base theme can be used as a standalone theme but can also act as a base theme if custom styles are required.    There are 3 ways to use this base theme, which are listed below.

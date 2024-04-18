@@ -1,3 +1,44 @@
+@import '../../scss/init';
+
+// Add styles specific to the header.
+header {
+
+  .navbar-toggler {
+      color: $white-out;
+      border: var(--bs-border-width) solid rgba(255, 255, 255, 0.15);
+  }
+
+  .nav-item {
+      font-family: "Roboto Condensed", sans-serif;
+  }
+
+  .navbar-nav {
+
+      .nav-link,
+      .nav-link.active,
+      .nav-link.show {
+          color: $white-out;
+      }
+
+      .nav-link {
+
+          &:hover {
+              color: $pa-sky-light;
+              text-shadow: -0.25px -0.25px 0 $pa-sky-light, 0.25px 0.25px $pa-sky-light;
+          }
+
+          &.text-warning:hover  {
+              text-shadow: .25px -0.25px 0 $warning, 0.25px 0.25px $warning;
+          }
+      }
+
+  }
+
+  .region-nav-additional {
+      font-size: $font-size-sm;
+  }
+}
+
 .navbar {
   background: linear-gradient(90deg, $nittany-navy 0, $nittany-navy 31%, $nittany-navy-lighter 76%, $pa-potential 100%);
 
@@ -31,6 +72,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+      animation: .5s slideup;
+    }
+
+  @keyframes slideup {
+    from {
+      transform: translateY(25px);
+    }
+    to {
+      transform: translateY(0);
     }
   }
 }
