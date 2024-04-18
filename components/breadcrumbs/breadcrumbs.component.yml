@@ -1,0 +1,23 @@
+name: Breadcrumb
+description: Breadcrumb component.
+props:
+  type: object
+  properties:
+    breadcrumb:
+      type: array
+      items:
+        type: object
+        properties:
+          url:
+            type: ['string', 'object', 'null']
+            title: url
+          text:
+            type: ['string', 'object', 'null']
+            title: text
+    classes:
+      type: array
+      items:
+        type: string
+    breadcrumb_attributes:
+      type: Drupal\Core\Template\Attribute
+

@@ -1,0 +1,31 @@
+name: Header
+props:
+  type: object
+  properties:
+    show_navbar:
+      type: ['string', 'integer']
+      title: Show Navbar
+      description:
+      default: 1
+    show_navbar_emnu:
+      type: ['string', 'integer']
+      title: Show Navbar Menus
+      description:
+      default: 1
+slots:
+  above_header:
+    title: Above Header
+    description:
+  header:
+    title: Header
+    description:
+  nav_branding:
+    title: Navbar Branding
+    required: true
+    description:
+  nav_main:
+    title: Navbar Main Menu
+    description:
+  nav_additional:
+    title: Navbar Additional Menu
+    description:

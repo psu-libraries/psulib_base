@@ -1,0 +1,35 @@
+
+{%
+set nav_classes = 'navbar navbar-expand-lg text-light'
+%}
+
+<header>
+  {% block above_header %}{% endblock %}
+  {% block header %}{% endblock %}
+
+  {% if show_navbar %}
+  <nav class="{{ nav_classes }}">
+    <div class="container-fluid d-flex">
+      {% block nav_branding %}{% endblock %}
+
+      {% if show_navbar_menus %}
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+          <div class="d-lg-flex flex-column justify-content-end align-items-end">
+            {% block nav_additional %}{% endblock %}
+            {% block nav_main %}{% endblock %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+  </nav>
+  {% endif %}
+
+</header>
