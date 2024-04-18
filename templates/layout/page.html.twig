@@ -44,40 +44,32 @@
  */
 #}
 {%
-set nav_classes = 'navbar navbar-expand-lg text-light'
-%}
-
-{%
 set footer_classes = 'text-light'
 %}
 
-<header>
-  {{ page.above_header }}
-  {{ page.header }}
+{# Add the header component from psulib_base theme. #}
+{% embed 'psulib_base:header' with {
+    show_navbar: page.nav_branding or page.nav_main or page.nav_additional,
+    show_navbar_menus: page.nav_main or page.nav_additional
+  }
+%}
+  {% block above_header %}
+    {{ page.above_header }}
+  {% endblock %}
+  {% block header %}
+    {{ page.header }}
+  {% endblock %}
+  {% block nav_branding %}
+    {{ page.nav_branding }}
+  {% endblock %}
+  {% block nav_main %}
+    {{ page.nav_main }}
+  {% endblock %}
+  {% block nav_additional %}
+    {{ page.nav_additional }}
+  {% endblock %}
 
-  {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="container-fluid d-flex">
-      {{ page.nav_branding }}
-
-      {% if page.nav_main or page.nav_additional %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list"></i>
-
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-          {{ page.nav_main }}
-          {{ page.nav_additional }}
-        </div>
-      {% endif %}
-    </div>
-  </nav>
-  {% endif %}
-
-</header>
+{% endembed %}
 
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
