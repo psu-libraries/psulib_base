@@ -6,6 +6,7 @@
     "/dist/css/accordion.css": "/dist/css/accordion.css",
     "/dist/css/style.css": "/dist/css/style.css",
     "/components/header/header.css": "/components/header/header.css",
+    "/components/footer/footer.css": "/components/footer/footer.css",
     "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
     "/components/alert/alert.css": "/components/alert/alert.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",

@@ -1,0 +1,58 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Footer
+status: stable
+description: Page footer component.
+props:
+  type: object
+  properties:
+    show_footer_left:
+      type: ['string', 'integer']
+      title: Show Left footer region.
+      description:
+      default: 1
+    show_footer_right:
+      type: ['string', 'integer']
+      title: Show Right footer region.
+      description:
+      default: 1
+    show_footer_bottom:
+      type: ['string', 'integer']
+      title: Show Bottom footer region.
+      description:
+      default: 1
+    site_logo:
+      type: string
+      title: Site Logo
+      description: URL for footer logo in footer left region.
+      # @todo Add examples here.
+      examples: []
+    site_logo_url:
+      type: string
+      title: Site Logo URL
+      description: Link url for logo.
+      # @todo Add examples here.
+      examples: []
+    site_logo_alt:
+      type: string
+      title: Site Logo Alt Text
+      description: Alt text for logo.
+      # @todo Add examples here.
+      examples: []
+    footer_classes:
+      type: string
+      title: Footer Classes
+      description: Additional classes for the footer.
+      # @todo Add examples here.
+      examples: []
+    footer_top_row:
+      type:
+slots:
+  footer_left:
+    title: Footer Left
+    description: Footer Left region.  This contains the footer logo by default.
+  footer_right:
+    title: Footer Right
+    description: Footer Right region.  This contains the footer menu by default.
+  footer_bottom:
+    title: Footer Bottom
+    description: Optional full width footer region.

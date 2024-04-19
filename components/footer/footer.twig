@@ -1,0 +1,26 @@
+<footer class="mt-auto {{ footer_classes }}">
+  <div class="container-fluid">
+
+    <div class="row">
+      {% if site_logo or show_footer_left or show_footer_right %}
+      <div class="col-12 col-md-4 mb-5">
+        {% if site_logo %}
+        <a href="{{ site_logo_url }}" title="{{ site_logo_alt }}" rel="home" class="site-logo d-block">
+          <img src="{{ site_logo }}" alt="{{ site_logo_alt }}" fetchpriority="high" />
+        </a>
+        {% endif %}
+        {% block footer_left %}{% endblock %}
+      </div>
+      <div class="col-12 col-md-8 mb-5">
+        {% block footer_right %}{% endblock %}
+      </div>
+      {% endif %}
+
+      {% if show_footer_bottom %}
+      <div class="col">
+        {% block footer_bottom %}{% endblock %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>

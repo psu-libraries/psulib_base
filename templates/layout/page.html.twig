@@ -109,28 +109,23 @@ set footer_classes = 'text-light'
 
 </main>
 
-{% if page.footer %}
-<footer class="mt-auto {{ footer_classes }}">
-  <div class="container-fluid">
-
-    <div class="row">
-      <div class="col-12 col-md-4 mb-5">
-        {% if site_logo %}
-        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo d-block">
-          <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" />
-        </a>
-        {% endif %}
-        {{ page.footer_left }}
-      </div>
-      <div class="col-12 col-md-8 mb-5">
-        {{ page.footer }}
-      </div>
-      {% if page.footer_bottom %}
-      <div class="col">
-        {{ page.footer_bottom }}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-</footer>
-{% endif %}
+{# Add the footer component from psulib_base theme. #}
+{% embed 'psulib_base:footer' with {
+    show_footer_left: page.footer_left is not empty,
+    show_footer_right: page.footer is not empty,
+    show_footer_bottom: page.footer_bottom is not empty,
+    site_logo: site_logo,
+    site_logo_alt: 'Home'|t,
+    site_logo_url: path('<front>')
+  }
+%}
+  {% block footer_left %}
+    {{ page.footer_left }}
+  {% endblock %}
+  {% block footer_right %}
+    {{ page.footer }}
+  {% endblock %}
+  {% block footer_bottom %}
+    {{ page.footer_bottom }}
+  {% endblock %}
+{% endembed %}
