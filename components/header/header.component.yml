@@ -7,7 +7,7 @@ props:
       title: Show Navbar
       description:
       default: 1
-    show_navbar_emnu:
+    show_navbar_menus:
       type: ['string', 'integer']
       title: Show Navbar Menus
       description:
