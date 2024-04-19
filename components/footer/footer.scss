@@ -1,7 +1,9 @@
+@import '../../scss/init';
+
 footer {
   padding: $footer-padding;
   background: linear-gradient(180deg, $nittany-navy-light 0, $nittany-navy 65%, $nittany-navy 100%);
-  font-family: "Roboto Condensed", Impact, "Franklin Gothic Bold", sans-serif;
+  font-family: $font-family-condensed;
   font-size: $font-size-sm;
 
   @include make-link($light, none, $light, underline);
