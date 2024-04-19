@@ -65,6 +65,30 @@ If your component is using slots then you will need to use an embed:
 {% endembed %}
 ```
 
+#### Replace a SDC in a Sub Theme
+
+If you want to completely override a SDC in a subtheme you can do with the following steps:
+
+1. Copy the component from the base theme to the subtheme
+1. Add `replaces: psulib_base:COMPONENTNAME` to the `COMPONENTNAME.component.yml` file
+1. Update templates, css, twig, e&c.
+
+Note you should NOT change the props or slots because that will cause issues.
+
+#### Replace SCSS for a SDC
+
+If you only need to change the styles for a SDC you can remove the SDC css file and build the desired styles in your subtheme SCSS.  There is an open ticket to implement a better way of handling this so we should probably avoid doing this for the time being.
+
+1. Update your `subtheme.info.yml` file to override the component stylesheet.
+```
+libraries-override:
+  sdc/psulib_base--header:
+    css:
+      component:
+        ../../../themes/custom/psulib_base/components/COMPONENTNAME/COMPONENTNAME.css: {}
+```
+1. Add styles to your subtheme style sheet.
+
 #### Links
 
 - [SDC Documentation](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
