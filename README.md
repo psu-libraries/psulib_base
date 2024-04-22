@@ -12,6 +12,7 @@ This base theme is easiest to develop using a theme generated using the [drupal-
 gh repo clone psu-libraries/psul-web;
 cd psul-web;
 ddev start;
+ddev composer install;
 ddev drush si --existing-config;
 ddev develop-theme;
 ddev theme-build;
