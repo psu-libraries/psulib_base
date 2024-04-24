@@ -1,6 +1,12 @@
-@import '../init';
-@import '../../node_modules/bootstrap/scss/buttons';
+// Generate styles for pagination.
+@import '../../scss/init';
 
+// Override variables here:
+
+// Import bootstrap pagination styles.
+@import '~bootstrap/scss/buttons';
+
+// Custom styles go here.
 button {
   &.link {
     @extend .btn;
