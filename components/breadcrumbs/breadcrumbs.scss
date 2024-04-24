@@ -1,6 +1,7 @@
 @import '../../scss/init';
 
 // Breadcrumb styling
+@import "~bootstrap/scss/breadcrumb";
 
 li.breadcrumb-item a {
     font-family: $font-family-condensed;
