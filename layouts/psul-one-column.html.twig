@@ -1,0 +1,11 @@
+{% if content %}
+  <div {{ attributes.addClass('psul-one-column') }}>
+    <div class="row mb-4">
+    {% if content.main %}
+      <div {{ region_attributes.main.addClass(main_class) }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+{% endif %}

@@ -1,3 +1,14 @@
+psulib_one_col:
+  label: 'PSUL One column'
+  category: 'PSU Libraries'
+  template: layouts/psul-one-column
+  default_region: main
+  regions:
+    main:
+      label: Main content
+  icon_map:
+    - [main]
+
 psulib_two_col_33_66:
   label: 'PSUL Two column 33/66'
   category: 'PSU Libraries'
