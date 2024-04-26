@@ -64,11 +64,6 @@ file:
     component:
       dist/css/file.css: {}
 
-pagination:
-  css:
-    component:
-      dist/css/pagination.css: {}
-
 progress:
   css:
     component:
