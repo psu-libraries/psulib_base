@@ -1,0 +1,32 @@
+{%
+  set first_classes = [
+    'psul-layout-column--first',
+    'col-12',
+    content.second ? 'col-lg-6' : 'col-12',
+  ]
+%}
+
+{%
+  set second_classes = [
+    'psul-layout-column--second',
+    'col-12',
+    content.first ? 'col-lg-6' : 'col-12',
+  ]
+%}
+
+{% if content %}
+  <div {{ attributes.addClass('psul-two-column') }}>
+    <div class="row gy-3 gy-lg-0 gx-lg-5 mb-3 mb-lg-4">
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass(first_classes) }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+    {% if content.second %}
+      <div {{ region_attributes.second.addClass(second_classes) }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+    </div>
+  </div>
+{% endif %}
