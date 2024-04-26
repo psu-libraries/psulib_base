@@ -2,7 +2,7 @@
   background-color: $white;
   .node-preview-backlink {
     @extend .btn;
-    @extend .btn-outline-primary;
+    @extend .btn-outline-primary !optional;
   }
 
   .form-type-select {
