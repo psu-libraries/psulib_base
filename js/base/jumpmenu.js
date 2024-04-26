@@ -57,7 +57,7 @@
     let linkList = $links.map( function() {
       let $link = $(this).clone();
       $link.removeProp('class');
-      $link.addClass('dropdown-item');
+      $link.addClass('dropdown-item text-wrap');
       return $link;
     }).get();
 
@@ -68,7 +68,7 @@
       let $parent = $list.parent();
       let class_values = $list.data('jump-classes');
       let button_dropdown =
-        `<div class="d-${breakpoint}-none ${class_values}">` +
+        `<div class="dropdown d-${breakpoint}-none ${class_values}">` +
         `<button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</button>` +
         `<div class="dropdown-menu" aria-labelledby="${id}"></div></div>`;
       $parent.prepend(button_dropdown);
