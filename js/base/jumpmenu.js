@@ -46,7 +46,7 @@
  * data-jump-breakpoint: The breakpoint at which the jump menu hides and the
  *   full menu appears, defaults to 'lg'
  * data-jump-classes: Classes to be assigned to the Jump Menu outer div.
- *
+ * data-jump-title: Title for the dropdown button.
  *
  **/
 
@@ -67,9 +67,10 @@
       let id = $list.data('jump-id') ? $list.data('jump-id') : 'jump-menu-' + i;
       let $parent = $list.parent();
       let class_values = $list.data('jump-classes');
+      let button_text = $list.data('jump-title') ? $list.data('jump-title') : 'Select a Link';
       let button_dropdown =
         `<div class="dropdown d-${breakpoint}-none ${class_values}">` +
-        `<button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown button</button>` +
+        `<button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${button_text}</button>` +
         `<div class="dropdown-menu" aria-labelledby="${id}"></div></div>`;
       $parent.prepend(button_dropdown);
       let $link_list = $('.dropdown-menu', $parent);
