@@ -1,6 +1,17 @@
-@import '../init';
-@import '../../node_modules/bootstrap/scss/buttons';
+// Generate styles for pagination.
+@import '../../scss/init';
 
+// Override variables here.
+$btn-rounded-radius: .3rem !default;
+
+.btn {
+  --#{$prefix}btn-rounded-radius: #{$btn-rounded-radius};
+}
+
+// Import bootstrap pagination styles.
+@import '~bootstrap/scss/buttons';
+
+// Custom styles go here.
 button {
   &.link {
     @extend .btn;
@@ -69,6 +80,11 @@ a {
       }
     }
   }
+}
+
+// Add rounded color variant.
+.btn-rounded {
+  @include border-radius(var(--#{$prefix}btn-rounded-radius));
 }
 
 // Override: '@classy/css/components/button.css'
