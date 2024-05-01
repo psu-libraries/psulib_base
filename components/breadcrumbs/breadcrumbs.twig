@@ -25,6 +25,11 @@
 						{% endif %}
 					</li>
 				{% endfor %}
+				{% if current_page_title %}
+					<li class="breadcrumb-item active">
+						{{ page_title }}
+					</li>
+				{% endif %}
 			</ol>
 		</nav>
 	{% endif %}

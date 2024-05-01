@@ -7,6 +7,7 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_preprocess_page().
@@ -212,4 +213,22 @@ function psulib_base_preprocess_table(&$variables) {
   _psulib_base_attributes_class_string_to_array($variables);
   $variables['attributes']['class'][] = 'table';
   $variables['attributes']['class'][] = 'table-striped';
+}
+
+/**
+ * Implements theme_preprocess_breadcrumb().
+ */
+function psulib_base_preprocess_breadcrumb(&$variables) {
+  if ($variables['breadcrumb']) {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+    if (!empty($page_title)) {
+      $variables['breadcrumb'][] = [
+        'text' => $page_title,
+        'attributes' => new Attribute(['class' => ['active']]),
+      ];
+    }
+  }
 }
