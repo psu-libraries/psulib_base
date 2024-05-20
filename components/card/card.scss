@@ -1,0 +1,33 @@
+@import '../../scss/init';
+
+// Breadcrumb styling
+@import "~bootstrap/scss/card";
+
+.card--search-results {
+  border-top-width: 0;
+
+  &:before {
+    border: 5px solid $pa-sky !important;
+    border-bottom-width: 0;
+    content: '';
+    margin: calc(-1 * var(--bs-border-width));
+    margin-bottom: 0;
+  }
+
+  .card-header {
+    text-transform: uppercase;
+    border-bottom-width: 1px;
+    background-color: $white-out;
+
+    h2 {
+      font-size: $font-size-base;
+      margin-bottom: 0;
+    }
+  }
+
+  .card-footer {
+    background-color: $pa-limestome-max-light;
+    border-top: 0;
+    font-size: $font-size-sm;
+  }
+}
