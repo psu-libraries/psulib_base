@@ -5,6 +5,7 @@
 
 .card--search-results {
   border-top-width: 0;
+  @include make-link($link-color, none, $link-hover-color, underline);
 
   &:before {
     border: 5px solid $pa-sky !important;
