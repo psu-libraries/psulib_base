@@ -12,8 +12,28 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
+{% apply spaceless %}
+
+{%
+  set page_title_classes = [
+    'title',
+    'page-title',
+  ]|merge(page_title_utility_classes ?: [])
+%}
+
+{% set title_attributes = title_attributes ?: create_attribute() %}
+
 {{ title_prefix }}
 {% if title|render|striptags|trim %}
-<h1{{title_attributes}}>{{ title }}</h1>
+  {%
+    include 'psulib_base:heading' with {
+      heading_html_tag: 'h1',
+      content: title,
+      display: display|default(''),
+      heading_utility_classes: page_title_classes,
+    } only
+  %}
 {% endif %}
 {{ title_suffix }}
+
+{% endapply %}
