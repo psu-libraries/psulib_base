@@ -14,6 +14,7 @@ https://getbootstrap.com/docs/5.3/components/buttons/
 - `outline`: (true|false) In need of a button, but not the hefty background colors they bring?
   Replace the default modifier classes with the `.btn-outline-*` ones to remove all
   background images and colors on any button.
+- `target`: (_self | _blank) Open links in a new window.
 - `size`: (btn-sm | btn-lg) Bootstrap button size
 - `disabled`: (true|false) Disabled button
 - `button_utility_classes`: An array of utility classes.
