@@ -40,6 +40,9 @@
 		{% set button_attributes = button_attributes.setAttribute('aria-disabled', 'true' ) %}
 		{% set button_attributes = button_attributes.setAttribute('tabindex', '-1' ) %}
 	{% endif %}
+	{% if target %}
+		{% set button_attributes = button_attributes.setAttribute('target', target) %}
+	{% endif %}
 {% endif %}
 
 {% if id %}
