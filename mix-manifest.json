@@ -1,5 +1,5 @@
 {
-    "/dist/css/progress.css": "/dist/css/progress.css",
+    "/dist/css/placeholders.css": "/dist/css/placeholders.css",
     "/dist/css/general.css": "/dist/css/general.css",
     "/dist/css/file.css": "/dist/css/file.css",
     "/dist/css/carousel.css": "/dist/css/carousel.css",
@@ -12,6 +12,7 @@
     "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
     "/components/alert/alert.css": "/components/alert/alert.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
+    "/dist/css/progress.css": "/dist/css/progress.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",
