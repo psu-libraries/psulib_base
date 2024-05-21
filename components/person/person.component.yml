@@ -1,0 +1,43 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Person
+status: stable
+description: Page display for person directory records.
+props:
+  type: object
+  properties:
+    has_profile_image:
+      type: ['string', 'integer']
+      title: Profile has Image
+      description: Indicator that there is profile image.
+
+    display_name:
+      type: string
+      title: Display Name
+      description: Person&#039;s full name
+
+    display_name_attributes:
+      type: Drupal\Core\Template\Attribute
+
+    professional_title:
+      type: string
+      title: Professional Title
+      description: Person professional title.
+
+    about:
+      type: string
+      title: About
+
+    left_column:
+      type: ['array', 'object']
+      title: Left Column
+      description: Array of fields to be displayed in the left column below the person's name.
+
+    right_column:
+      type: ['array', 'object']
+      title: Right Column
+      description: Array of fields to be displayed in the right column.
+
+slots:
+  profile_image:
+    title: Profile Image
+    description: Add image for directory profile.
