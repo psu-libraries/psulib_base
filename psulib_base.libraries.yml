@@ -64,6 +64,11 @@ file:
     component:
       dist/css/file.css: {}
 
+placeholders:
+  css:
+    component:
+      dist/css/placeholders.css: {}
+
 progress:
   css:
     component:

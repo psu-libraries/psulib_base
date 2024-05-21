@@ -36,6 +36,15 @@ props:
         - dark
         - light
         - link
+    target:
+      type: string
+      title: Target
+      description: The HTML target attribute
+      default: ''
+      enum:
+        - ''
+        - '_self'
+        - '_blank'
     outline:
       type: boolean
       title: Outline
