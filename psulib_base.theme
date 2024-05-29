@@ -230,5 +230,7 @@ function psulib_base_preprocess_breadcrumb(&$variables) {
         'attributes' => new Attribute(['class' => ['active']]),
       ];
     }
+
+    $variables['#cache']['contexts'][] = 'url';
   }
 }
