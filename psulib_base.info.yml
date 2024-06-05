@@ -7,6 +7,7 @@ libraries:
   - core/normalize
   - psulib_base/global-styling
   - psulib_base/bootstrap-icons
+  - sdc/psulib_base--alert_banner
 dependencies:
   - drupal:sdc
 logo: 'logo.png'
