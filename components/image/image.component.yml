@@ -67,4 +67,3 @@ props:
       type: Drupal\Core\Template\Attribute
       title: HTML Attributes
       description: 'HTML attributes for the image tag. They are represented as a Drupal Attribute object.'
-
