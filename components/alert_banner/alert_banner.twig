@@ -19,7 +19,7 @@
 
 {% set alert_collapse_id = 'alert-banner'|clean_unique_id %}
 
-<div {{ attributes.addClass(alert_banner_classes).setAttribute('id', alert_collapse_id ) }} role="alert">
+<div {{ attributes.addClass(alert_banner_classes).removeClass('alert').setAttribute('id', alert_collapse_id ) }} role="alert">
   <div class="container-fluid">
     <div class="alert-banner--inner fs-5">
       <button

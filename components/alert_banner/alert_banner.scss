@@ -1,7 +1,7 @@
 // Generate styles for pagination.
 @import '../../scss/init';
 
-.alert.alert-banner {
+.alert-banner {
   background-color: var(--bs-primary-bg-subtle);
   color: var(--bs-body-color);
   &__urgent {
