@@ -4,32 +4,59 @@ set nav_classes = 'navbar navbar-expand-lg text-light'
 %}
 
 <header>
-  {% block above_header %}{% endblock %}
-  {% block header %}{% endblock %}
+  {% block above_header %} {{ above_header }} {% endblock %}
+  {% block header %} {{ header }} {% endblock %}
 
-  {% if show_navbar %}
   <nav class="{{ nav_classes }}">
-    <div class="container-fluid d-flex">
-      {% block nav_branding %}{% endblock %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="d-flex col-12 px-md-0">
+          {% block nav_branding %} {{ nav_branding }} {% endblock %}
 
-      {% if show_navbar_menus %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list"></i>
+            <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+              <div class="d-lg-flex flex-column justify-content-end align-items-end">
+                {% block nav_additional %}{{ nav_additional }}{% endblock %}
+              </div>
+            </div>
 
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-          <div class="d-lg-flex flex-column justify-content-end align-items-end">
-            {% block nav_additional %}{% endblock %}
-            {% block nav_main %}{% endblock %}
-          </div>
+            <div class="ms-auto d-flex align-items-center">
+              {% block nav_search %}
+                {{ nav_search }}
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasMain" aria-controls="navbarSupportedContent"
+                        aria-label="Toggle navigation">
+                  <i class="bi bi-list"></i>
+                </button>
+              {% endblock %}
+            </div>
         </div>
-      {% endif %}
+      </div>
     </div>
 
+    <div class="container-fluid nav-main-menu-container">
+      <div class="row">
+        <div class="d-flex col-12 px-md-0">
+          <div class="d-none d-md-block">
+            {% block nav_main %} {{ nav_main }} {% endblock %}
+          </div>
+          {% if nav_actions %}
+            <div class="ms-auto nav-actions">
+              {% block nav_actions %} {{ nav_actions }} {% endblock %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
   </nav>
-  {% endif %}
-
 </header>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMain" aria-labelledby="offcanvasMainLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasMainLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvasMain" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    {% block nav_offcanvas %} {{ nav_offcanvas }}{% endblock %}
+  </div>
+</div>

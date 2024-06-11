@@ -1,11 +1,33 @@
 @import '../../scss/init';
 
+// Addin
+@import '~bootstrap/scss/offcanvas';
+
 // Add styles specific to the header.
 header {
 
+  background-color: var(--bs-blue);
+  color: var(--bs-white);
+
+  @include make-link($light, none, $pa-sky-light, underline);
+
+  .navbar {
+    flex-wrap: wrap;
+
+    & > .container-fluid {
+      display: block;
+    }
+  }
+
   .navbar-toggler {
-      color: $white-out;
-      border: var(--bs-border-width) solid rgba(255, 255, 255, 0.15);
+    color: $white-out;
+    border: 0;
+
+    &:hover, &:active, &:focus {
+      border: 0;
+      color: var(--bs-blue);
+      background-color: var(--bs-cyan);
+    }
   }
 
   .nav-item {
@@ -23,24 +45,32 @@ header {
       .nav-link {
 
           &:hover {
-              color: $pa-sky-light;
-              text-shadow: -0.25px -0.25px 0 $pa-sky-light, 0.25px 0.25px $pa-sky-light;
+            color: $pa-sky-light;
           }
 
-          &.text-warning:hover  {
-              text-shadow: .25px -0.25px 0 $warning, 0.25px 0.25px $warning;
-          }
       }
 
+  }
+
+  .nav-actions {
+    padding: $nav-link-padding-y;
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      width: 100%;
+      background-color: $beaver-blue;
+      padding: var(--bs-navbar-padding-y) $grid-gutter-width;
+    }
+  }
+
+  // Forcing the main menu to display as a row.
+  .nav-main-menu-container .navbar-nav {
+    flex-direction: row;
   }
 
   .region-nav-additional {
       font-size: $font-size-sm;
   }
-}
-
-.navbar {
-  background: linear-gradient(90deg, $nittany-navy 0, $nittany-navy 31%, $nittany-navy-lighter 76%, $pa-potential 100%);
 
   .block-search {
     form {
@@ -61,9 +91,24 @@ header {
       }
     }
   }
+
+
+  @include media-breakpoint-down(md) {
+    .navbar {
+      padding-bottom: 0;
+    }
+
+    .nav-main-menu-container {
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: var(--bs-navbar-padding-y);
+    }
+  }
+
 }
 
 .navbar-nav {
+
   .nav-link {
     padding-left: $navbar-nav-link-padding-x;
     padding-right: $navbar-nav-link-padding-x;
