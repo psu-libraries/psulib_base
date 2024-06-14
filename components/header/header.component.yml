@@ -1,17 +1,7 @@
 name: Header
 props:
   type: object
-  properties:
-    show_navbar:
-      type: ['string', 'integer']
-      title: Show Navbar
-      description:
-      default: 1
-    show_navbar_menus:
-      type: ['string', 'integer']
-      title: Show Navbar Menus
-      description:
-      default: 1
+  properties: {}
 slots:
   above_header:
     title: Above Header
@@ -23,9 +13,19 @@ slots:
     title: Navbar Branding
     required: true
     description:
+  nav_search:
+    title: Navbar search
+    description:
   nav_main:
     title: Navbar Main Menu
     description:
+  nav_actions:
+    title: Navbar Main Menu actions
+    description: Shows to the right of the main menu and is visible on mobile.
   nav_additional:
     title: Navbar Additional Menu
     description:
+  nav_offcanvas:
+    title: Navbar Offcanvas Section (mobile)
+    description:
+

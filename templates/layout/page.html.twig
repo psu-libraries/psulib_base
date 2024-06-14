@@ -48,28 +48,19 @@ set footer_classes = 'text-light'
 %}
 
 {# Add the header component from psulib_base theme. #}
-{% embed 'psulib_base:header' with {
-    show_navbar: page.nav_branding or page.nav_main or page.nav_additional,
-    show_navbar_menus: page.nav_main or page.nav_additional
+{% include 'psulib_base:header' with {
+    above_header: page.above_header,
+    header: page.header,
+    nav_branding: page.nav_branding,
+    nav_main: page.nav_main,
+    nav_additional: page.nav_additional,
+    show_navbar_menus: page.nav_main or page.nav_additional,
+    nav_offcanvas: page.nav_offcanvas,
+    nav_search: page.nav_search,
+    nav_offcanvas: page.nav_offcanvas,
+    nav_actions: page.nav_actions,
   }
 %}
-  {% block above_header %}
-    {{ page.above_header }}
-  {% endblock %}
-  {% block header %}
-    {{ page.header }}
-  {% endblock %}
-  {% block nav_branding %}
-    {{ page.nav_branding }}
-  {% endblock %}
-  {% block nav_main %}
-    {{ page.nav_main }}
-  {% endblock %}
-  {% block nav_additional %}
-    {{ page.nav_additional }}
-  {% endblock %}
-
-{% endembed %}
 
 <main role="main">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}

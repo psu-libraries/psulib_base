@@ -15,8 +15,11 @@ regions:
   above_header: Above Header (announcements, alerts, etc.)
   header: Header
   nav_branding: Navigation branding region
+  nav_actions: Main navigration actions (right of main menu).
+  nav_search: Navigation search region (contains mobile menu controls)
   nav_main: Main navigation region
   nav_additional: Additional navigation region (eg search form, social icons, etc)
+  nav_offcanvas: Offcanvas Mobile Navigation
   breadcrumb: Breadcrumbs
   content: Main content
   sidebar_first: Sidebar first
