@@ -1,0 +1,51 @@
+{% apply spaceless %}
+
+{% set attributes = attributes ?: create_attribute() %}
+
+{%
+  set alert_banner_classes = [
+    'alert-banner',
+    severity ? 'alert-banner__' ~ severity,
+    'py-2',
+  ]|merge(alert_banner_utility_classes ?: [])
+%}
+
+{% set icon_map = {
+  'urgent': 'bi-exclamation-diamond-fill',
+  'nonEmergency': 'bi-exclamation-circle-fill',
+  'immediate': 'bi-exclamation-triangle-fill',
+  'allClear': 'bi-exclamation-circle-fill',
+}%}
+
+{% set alert_collapse_id = 'alert-banner'|clean_unique_id %}
+
+<div {{ attributes.addClass(alert_banner_classes).removeClass('alert').setAttribute('id', alert_collapse_id ) }} role="alert">
+  <div class="container-fluid">
+    <div class="alert-banner--inner fs-5">
+      <button
+        class="ms-0 btn btn-link alert-banner--button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#{{ alert_collapse_id }}-collapse"
+        aria-expanded="false"
+        aria-controls="{{ alert_collapse_id }}-collapse">
+          <i class="bi {{ icon_map[severity]|default('bi-exclamation-circle-fill') }}"></i> {{ title -}}
+        </button>
+      </div>
+
+      <div id="{{ alert_collapse_id }}-collapse" class="alert-banner--content collapse mt-2">
+        {% block content %}
+          {{ content }}
+        {% endblock %}
+
+        {% block footer_content %}
+          <div class="alert-banner--footer font-size-sm">
+            {{ footer_content }}
+          </div>
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+
+  {% endapply %}

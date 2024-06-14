@@ -1,0 +1,43 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Alert Banner
+status: stable
+description: For displaying an alert on the top of the page.
+props:
+  type: object
+  properties:
+    severity:
+      type: enum
+      title: Severity
+      description: Severity/Style of the Alert banner.
+      # @todo Add examples here.
+      enum:
+        - urgent
+        - nonEmergency
+        - immediate
+        - allClear
+      default: nonEmergency
+    title:
+      type: string
+      title: Title
+      description: Alert Title.
+      required: true
+    date:
+      type: string
+      title: Date
+      description: Optional.  Display the date this Alert was published on.
+    alert_banner_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Alert Utility Classes
+      default: []
+      description: An array of utility classes. Use to add extra utility classes or custom CSS classes to this component.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+  slots:
+    content:
+      title: Alert Banner Content
+      description: The content goes here.
+    footer_content:
+      title: Alter Banner Footer content
+      description: Additional content goes here

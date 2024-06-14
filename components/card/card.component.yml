@@ -161,4 +161,3 @@ slots:
   slot_card_footer:
     title: Card Footer
     description: Slot for the footer of the card.
-
