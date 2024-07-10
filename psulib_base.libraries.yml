@@ -14,7 +14,7 @@ global-styling:
     - core/once
     - psulib_base/bootstrap
     - psulib_base/bootstrap-icons
-    - sdc/psulib_base--button
+    - core/components.psulib_base--button
 
 # including bootstrap javascript and icons.
 bootstrap:
