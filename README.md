@@ -83,7 +83,7 @@ If you only need to change the styles for a SDC you can remove the SDC css file 
 1. Update your `subtheme.info.yml` file to override the component stylesheet.
 ```
 libraries-override:
-  sdc/psulib_base--header:
+  core/components.psulib_base--COMPONENTNAME:
     css:
       component:
         ../../../themes/custom/psulib_base/components/COMPONENTNAME/COMPONENTNAME.css: {}
