@@ -54,12 +54,17 @@ header {
 
   .nav-actions {
     padding: $nav-link-padding-y;
+    font-size: $font-size-sm;
 
     @include media-breakpoint-down(md) {
       display: block;
       width: 100%;
       background-color: $beaver-blue;
       padding: var(--bs-navbar-padding-y) $grid-gutter-width;
+    }
+
+    @include media-breakpoint-up('lg') {
+      font-size: $font-size-base;
     }
   }
 
@@ -140,6 +145,7 @@ header {
 .navbar-brand {
   white-space: unset;
   @include make-link($light, none, $light, underline, '.site-title');
+  flex-shrink: 1;
 
   .site-slogan {
     display: none;
@@ -161,6 +167,19 @@ header {
     margin: 0;
     width: $navbar-brand-image-width;
     @include media-breakpoint-up(lg) {
+      margin: $navbar-brand-image-margin;
+      height: $navbar-brand-image-height-lg;
+    }
+  }
+
+  img {
+    height: auto;
+    margin: 0;
+    width: 75%;
+    max-width: 228px;
+    @include media-breakpoint-up(lg) {
+      width: $navbar-brand-image-width;
+      max-width: $navbar-brand-image-width;
       margin: $navbar-brand-image-margin;
       height: $navbar-brand-image-height-lg;
     }

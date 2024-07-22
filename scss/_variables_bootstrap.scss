@@ -19,3 +19,6 @@ $link-hover-decoration: none !default;
 
 $link-color-dark: $pa-link-light !default;
 $link-hover-color-dark: $pa-link-light !default;
+
+// Increasing navbar padding-y to add more space on mobile.
+$navbar-brand-padding-y: .75rem;
