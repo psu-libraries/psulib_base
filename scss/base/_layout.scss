@@ -10,9 +10,11 @@
   }
 }
 
-.region-nav-branding,
-.region-nav-additional {
-  flex-shrink: 0;
+@include media-breakpoint-up('md') {
+  .region-nav-branding,
+  .region-nav-additional {
+    flex-shrink: 0;
+  }
 }
 
 // Add a max width the container-fluid and increasing padding on larger
