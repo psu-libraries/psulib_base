@@ -82,14 +82,14 @@ set footer_classes = 'text-light'
       {{ page.breadcrumb }}
     {% endif %}
     <div class="row g-0">
+      <div class="order-1 order-lg-2 {{ content_classes }}">
+        {{ page.content }}
+      </div>
       {% if has_sidebar_first %}
         <div class="order-2 order-lg-1 {{ sidebar_first_classes }} pe-lg-4">
           {{ page.sidebar_first }}
         </div>
       {% endif %}
-      <div class="order-1 order-lg-2 {{ content_classes }}">
-        {{ page.content }}
-      </div>
       {% if has_sidebar_second %}
         <div class="order-3 {{ sidebar_second_classes }} ps-lg-4">
           {{ page.sidebar_second }}
