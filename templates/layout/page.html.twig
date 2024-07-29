@@ -66,27 +66,27 @@ set footer_classes = 'text-light'
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
   {%
-  set sidebar_first_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-sm-6 col-lg-3' : 'col-12 col-lg-3'
+  set sidebar_first_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-sm-6 col-lg col-lg-w350' : 'col-12 col-lg col-lg-w350'
   %}
 
   {%
-  set sidebar_second_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-sm-6 col-lg-3' : 'col-12 col-lg-3'
+  set sidebar_second_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-sm-6 col-lg col-lg-w300' : 'col-12 col-lg col-lg-w300'
   %}
 
   {%
-  set content_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-lg-6' : ((has_sidebar_first or has_sidebar_second) ? 'col-12 col-lg-9' : 'col-12' )
+  set content_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-lg' : ((has_sidebar_first or has_sidebar_second) ? 'col-12 col-lg' : 'col' )
   %}
 
   <div class="container-fluid my-4">
     {% if page.breadcrumb %}
       {{ page.breadcrumb }}
     {% endif %}
-    <div class="row g-0">
+    <div class="row g-4">
       <div class="order-1 order-lg-2 {{ content_classes }}">
         {{ page.content }}
       </div>
       {% if has_sidebar_first %}
-        <div class="order-2 order-lg-1 {{ sidebar_first_classes }} pe-lg-4">
+        <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
           {{ page.sidebar_first }}
         </div>
       {% endif %}
