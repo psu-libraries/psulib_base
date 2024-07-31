@@ -1,17 +1,19 @@
 @use "sass:map";
 @import '../../../../../themes/contrib/psulib_base/scss/init';
 
+// Adding menu block heading styles.
+.block-menu:has(.sidebar-menu) .block-menu--title {
+  text-transform: uppercase;
+  font-family: $font-family-condensed;
+  font-size: $font-size-lg;
+  @include make-link(black, none, $pa-link, none);
+}
+
 .sidebar-menu {
   $mobile-link-color: black;
   $mobile-link-background-color: transparent;
   $mobile-link-is-active-color: $pa-link;
   $mobile-link-is-active-background-color: transparent;
-
-  .block-menu h5 {
-    text-transform: uppercase;
-    font-family: $font-family-condensed;
-    @include make-link(black, none, $pa-link, none);
-  }
 
   .navbar-nav {
     font-family: $font-family-condensed;
@@ -60,7 +62,7 @@
 
     li.menu-level-0 {
 
-      // first main parent links
+      // First main parent links.
       a {
 
         &.is-active,
@@ -148,7 +150,7 @@
 
   }
 
-  /* Special rule to hide the bs dropdown arrows */
+  /* Special rule to hide the bs dropdown arrows. */
   a.dropdown-toggle::after {
     display: none !important;
     content: "";

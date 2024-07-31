@@ -5,6 +5,7 @@
     "/dist/css/carousel.css": "/dist/css/carousel.css",
     "/dist/css/accordion.css": "/dist/css/accordion.css",
     "/dist/css/style.css": "/dist/css/style.css",
+    "/components/sidebar_menu/sidebar_menu.css": "/components/sidebar_menu/sidebar_menu.css",
     "/components/person/person.css": "/components/person/person.css",
     "/components/pagination/pagination.css": "/components/pagination/pagination.css",
     "/components/image/image.css": "/components/image/image.css",
