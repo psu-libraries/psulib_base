@@ -1,15 +1,21 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json"
 name: SideBar Menu
 status: stable
 description: Side bar menu, accordion style
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
 props:
   type: object
   properties:
-    section_head:
+    menu_name:
       type: string
-      title: Section Head
-    links:
+      title: Menu Name
+    items:
       type: array
-      title: Links Arrays
+      title: Menu Items
     attributes:
+      type: Drupal\Core\Template\Attribute
+    wrapper_attributes:
       type: Drupal\Core\Template\Attribute
