@@ -10,10 +10,6 @@
 }
 
 .sidebar-menu {
-  $mobile-link-color: black;
-  $mobile-link-background-color: transparent;
-  $mobile-link-is-active-color: $pa-link;
-  $mobile-link-is-active-background-color: transparent;
 
   .navbar-nav {
     font-family: $font-family-condensed;
@@ -49,9 +45,9 @@
       word-wrap: break-word;
       text-align: left;
       text-decoration: none;
-      color: $mobile-link-color;
+      color: $black;
       display: block;
-      background-color: $mobile-link-background-color;
+      background-color: transparent;
       border: 0;
 
       &:hover {
