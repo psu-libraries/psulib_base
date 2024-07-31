@@ -1,7 +1,7 @@
 @use "sass:map";
 @import '../../../../../themes/contrib/psulib_base/scss/init';
 
-.region-sidebar-first {
+.sidebar-menu {
   $mobile-link-color: black;
   $mobile-link-background-color: transparent;
   $mobile-link-is-active-color: $pa-link;
@@ -149,7 +149,7 @@
   }
 
   /* Special rule to hide the bs dropdown arrows */
-  .first-sidebar-accordion-menu a.dropdown-toggle::after {
+  a.dropdown-toggle::after {
     display: none !important;
     content: "";
     border: 0;
