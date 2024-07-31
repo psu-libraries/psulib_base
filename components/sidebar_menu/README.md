@@ -4,15 +4,6 @@ Documentation and examples for showing the sidebar menu.
 
 ## Usage
 
-```twig
-  {% include 'radix:pagination' with {
-    pagination_utility_classes: ['custom-pagination-class'],
-    size: 'lg',
-    alignment: 'center',
-    items: items,
-  } %}
-```
-
 This used the default Drupal menu structure so it can be added straight to a menu template such as `menu--sidebar-first.html.twig`:
 
 ```twig
