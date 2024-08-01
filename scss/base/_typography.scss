@@ -1,0 +1,27 @@
+.font-size-sm {
+  font-size: $small-font-size;
+}
+
+.font-size-l {
+  font-size: $font-size-lg;
+}
+
+.font-size-xl {
+  font-size: $font-size-base * 1.5;
+}
+
+ul.list-2-col,
+ol.list-2-col {
+  @include media-breakpoint-up('md') {
+    columns: 2;
+    column-gap: $spacer * 2;
+
+    li {
+      break-inside: avoid-column;
+    }
+  }
+}
+
+a.more-link {
+  float: right;
+}

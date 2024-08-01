@@ -2,6 +2,7 @@
   a {
     color: $link-color;
     text-decoration: $link-decoration;
+
     &:hover {
       color: $link-hover-color;
     }
@@ -19,7 +20,7 @@
 
   .dropbutton {
     .dropbutton-action {
-      > * {
+      >* {
         line-height: 20px;
         padding: 0.1em 0.5em;
       }
@@ -37,6 +38,7 @@
   }
 
   .view-preview-form {
+
     .form-item-view-args,
     .form-actions {
       display: block;
@@ -46,6 +48,40 @@
   }
 }
 
+// Increase margin above grouped content.
+.view-grouping-content>h3,
+.view-content>h3 {
+  margin-top: 1rem;
+}
+
+// Add some styles for inline better exposed filters.
+.bef-exposed-form .form--inline {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $spacer * 1.5;
+  align-items: end;
+  flex-wrap: wrap;
+
+  >div {
+    float: none !important;
+    min-width: 150px;
+  }
+
+  .form-item {
+    margin-top: 0;
+    margin-bottom: $spacer * .5;
+
+    @include media-breakpoint-up('md') {
+      margin-bottom: $spacer;
+    }
+  }
+
+  label {
+    font-weight: bold;
+  }
+}
+
+// Views pagination tweaks.
 .pagination {
   flex-wrap: wrap;
   padding: $spacer 0;
