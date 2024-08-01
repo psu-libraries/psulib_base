@@ -15,3 +15,29 @@ tr {
     }
   }
 }
+
+/**
+ * Left sidebar styles.
+ */
+.region-sidebar-first {
+
+  >div {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+/**
+ * Content Region Styles
+ */
+.region-content {
+  margin-bottom: $spacer * 1.5;
+
+  @include media-breakpoint-up ('lg') {
+    margin-bottom: $spacer;
+  }
+}
