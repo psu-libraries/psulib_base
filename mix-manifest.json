@@ -12,9 +12,11 @@
     "/components/header/header.css": "/components/header/header.css",
     "/components/footer/footer.css": "/components/footer/footer.css",
     "/components/card/card.css": "/components/card/card.css",
+    "/components/button/button.css": "/components/button/button.css",
     "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
     "/components/alert/alert.css": "/components/alert/alert.css",
     "/components/alert_banner/alert_banner.css": "/components/alert_banner/alert_banner.css",
+    "/components/accordion/accordion.css": "/components/accordion/accordion.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
     "/dist/css/placeholders.css": "/dist/css/placeholders.css",
@@ -32,6 +34,5 @@
     "/dist/js/bootstrap.min.js": "/dist/js/bootstrap.min.js",
     "/dist/js/bootstrap.min.js.map": "/dist/js/bootstrap.min.js.map",
     "/dist/js/popper.min.js": "/dist/js/popper.min.js",
-    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map",
-    "/components/button/button.css": "/components/button/button.css"
+    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map"
 }
