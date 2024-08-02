@@ -8,7 +8,8 @@ $btn-rounded-radius: .3rem !default;
   --#{$prefix}btn-rounded-radius: #{$btn-rounded-radius};
 }
 
-// Import bootstrap pagination styles.
+// Import bootstrap button styles and mixins.
+@import '~bootstrap/scss/mixins/_buttons.scss';
 @import '~bootstrap/scss/buttons';
 
 // Custom styles go here.

@@ -2,6 +2,9 @@ name: Header
 props:
   type: object
   properties: {}
+libraryOverrides:
+  dependencies:
+    - psulib_base/nav
 slots:
   above_header:
     title: Above Header
