@@ -14,6 +14,7 @@ global-styling:
     - core/once
     - psulib_base/bootstrap
     - psulib_base/bootstrap-icons
+    - psulib_base/nav
     - core/components.psulib_base--button
 
 # including bootstrap javascript and icons.
@@ -63,6 +64,11 @@ file:
   css:
     component:
       dist/css/file.css: {}
+
+nav:
+  css:
+    component:
+      dist/css/nav.css: {}
 
 placeholders:
   css:

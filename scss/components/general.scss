@@ -3,6 +3,11 @@
  * Component level styles that should be loaded on all pages.
  */
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
 // Action links.
 .action-links {
     margin: 1em 0;
