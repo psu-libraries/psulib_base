@@ -1,5 +1,4 @@
-@use "sass:map";
-@import '../../../../../themes/contrib/psulib_base/scss/init';
+@import '../../scss/init';
 
 // Adding menu block heading styles.
 .block-menu:has(.sidebar-menu) .block-menu--title {
