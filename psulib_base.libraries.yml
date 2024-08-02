@@ -50,11 +50,6 @@ alert:
     component:
       dist/css/alert.css: {}
 
-accordion:
-  css:
-    component:
-      dist/css/accordion.css: {}
-
 carousel:
   css:
     component:
