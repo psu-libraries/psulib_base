@@ -12,6 +12,7 @@
   * Available properties:
   * - title (string) (default: '')
   * - title_tag (string) (default: 'h2')
+  * - default_item_tag (string) (default: 'h3')
   * - title_link: (link object) (default: {})
   * - title_attributes: (drupal attrs)
   * - id (int) (default: accordion-random(1000))
@@ -34,6 +35,7 @@
 
 {% set title = title|default('') %}
 {% set title_tag = title_tag|default('h2') %}
+{% set default_item_tag = default_item_tag|default('h3') %}
 {% set title_link = title_link|default({}) %}
 {% set title_attributes = title_attributes ?: create_attribute() %}
 {% set id = id|default('accordion-' ~ random(1000)) %}
@@ -66,7 +68,7 @@
     {% if title is not empty %}
       {%
         include 'psulib_base:heading' with {
-          heading_html_tag: 'h2',
+          heading_html_tag: title_tag,
           content: title,
           heading_attributes: title_attributes,
         }
@@ -89,7 +91,7 @@
 
       {% if content %}
         <div {{ accordion_item_attributes.addClass(accordion_item_classes) }}>
-          {% set item_title_tag = item.title_tag|default('h3') %}
+          {% set item_title_tag = item.title_tag|default(default_item_tag) %}
 
           <{{item_title_tag}} class="accordion-header" id="heading-{{ id }}-{{ loop.index }}">
             {%

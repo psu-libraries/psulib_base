@@ -22,6 +22,17 @@ props:
         - h5
         - h6
       default: h2
+    default_item_tag:
+      type: string
+      title: Accordion Title Tag
+      description: HTML tag for the Accordion Title. This can be overridden in the item.
+      enum:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: h3
     title_link:
       type: string
       title: Title Link
