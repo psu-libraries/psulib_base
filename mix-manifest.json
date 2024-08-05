@@ -1,9 +1,9 @@
 {
+    "/dist/css/placeholders.css": "/dist/css/placeholders.css",
     "/dist/css/nav.css": "/dist/css/nav.css",
     "/dist/css/general.css": "/dist/css/general.css",
     "/dist/css/file.css": "/dist/css/file.css",
     "/dist/css/carousel.css": "/dist/css/carousel.css",
-    "/dist/css/accordion.css": "/dist/css/accordion.css",
     "/dist/css/style.css": "/dist/css/style.css",
     "/components/sidebar_menu/sidebar_menu.css": "/components/sidebar_menu/sidebar_menu.css",
     "/components/person/person.css": "/components/person/person.css",
@@ -12,12 +12,13 @@
     "/components/header/header.css": "/components/header/header.css",
     "/components/footer/footer.css": "/components/footer/footer.css",
     "/components/card/card.css": "/components/card/card.css",
+    "/components/button/button.css": "/components/button/button.css",
     "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
     "/components/alert/alert.css": "/components/alert/alert.css",
     "/components/alert_banner/alert_banner.css": "/components/alert_banner/alert_banner.css",
+    "/components/accordion/accordion.css": "/components/accordion/accordion.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
-    "/dist/css/placeholders.css": "/dist/css/placeholders.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",
@@ -32,6 +33,5 @@
     "/dist/js/bootstrap.min.js": "/dist/js/bootstrap.min.js",
     "/dist/js/bootstrap.min.js.map": "/dist/js/bootstrap.min.js.map",
     "/dist/js/popper.min.js": "/dist/js/popper.min.js",
-    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map",
-    "/components/button/button.css": "/components/button/button.css"
+    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map"
 }
