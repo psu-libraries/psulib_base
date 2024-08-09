@@ -23,7 +23,7 @@ Documentation and examples for showing pagination to indicate a series of relate
 ## Usage
 
 ```twig
-  {% include 'radix:pagination' with {
+  {% include 'psulib_theme:pagination' with {
     pagination_utility_classes: ['custom-pagination-class'],
     size: 'lg',
     alignment: 'center',

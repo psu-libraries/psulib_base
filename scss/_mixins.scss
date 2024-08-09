@@ -1,3 +1,4 @@
+// Generate a styled link.
 @mixin make-link(
   $a-link-color: $link-color,
   $a-link-decoration: $link-decoration,
@@ -13,4 +14,12 @@
       text-decoration: $a-link-hover-decoration;
     }
   }
+}
+
+// Add a search icon to a search button.
+@mixin search-form-icon {
+  content: '\F52A';
+  padding-right: 1rem;
+  font-family: "bootstrap-icons";
+  vertical-align: bottom;
 }

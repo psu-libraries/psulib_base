@@ -31,3 +31,16 @@
     padding-right: 3rem;
   }
 }
+
+// Adding styles give the sidebar a fixed width.
+@include media-breakpoint-up(md) {
+  .col-lg-w350 {
+    flex-grow: 0;
+    flex-basis: 350px;
+  }
+
+  .col-lg-w300 {
+    flex-grow:0;
+    flex-basis: 300px;
+  }
+}
