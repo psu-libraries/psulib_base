@@ -4,5 +4,6 @@
 @import "~bootstrap/scss/breadcrumb";
 
 li.breadcrumb-item {
-    font-family: $font-family-condensed;
+  font-family: $font-family-condensed;
+  font-size: $font-size-sm;
 }
