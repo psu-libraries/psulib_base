@@ -58,9 +58,9 @@
         navElement.querySelectorAll('.nav-item.show').forEach(closeDropdown);
       }
 
-
-      once('psul-theme-mainMenuNav', '#mainMenuNav', context).forEach(() => {
-        document.querySelectorAll('#mainMenuNav').forEach(setupDropdownBehavior);
+      // Keeping the #mainMenuNav id to support psul_theme template.
+      once('psul-theme-mainMenuNav', '#mainMenuNav, .main-menu-nav', context).forEach(() => {
+        document.querySelectorAll('#mainMenuNav, .main-menu-nav').forEach(setupDropdownBehavior);
       });
 
       once('psul-theme-offcanvasMain', '#offcanvasMain', context).forEach(() => {
