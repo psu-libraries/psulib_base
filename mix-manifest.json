@@ -1,5 +1,8 @@
 {
-    "/dist/css/placeholders.css": "/dist/css/placeholders.css",
+    "/dist/js/psul-bootstrap.js": "/dist/js/psul-bootstrap.js",
+    "/components/alert/alert.js": "/components/alert/alert.js",
+    "/components/header/header.js": "/components/header/header.js",
+    "/components/sidebar_menu/sidebar_menu.js": "/components/sidebar_menu/sidebar_menu.js",
     "/dist/css/nav.css": "/dist/css/nav.css",
     "/dist/css/general.css": "/dist/css/general.css",
     "/dist/css/file.css": "/dist/css/file.css",
@@ -19,6 +22,7 @@
     "/components/accordion/accordion.css": "/components/accordion/accordion.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
+    "/dist/css/placeholders.css": "/dist/css/placeholders.css",
     "/dist/js/application.js": "/dist/js/application.js",
     "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
     "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",
@@ -32,6 +36,9 @@
     "/dist/js/bootstrap.js.map": "/dist/js/bootstrap.js.map",
     "/dist/js/bootstrap.min.js": "/dist/js/bootstrap.min.js",
     "/dist/js/bootstrap.min.js.map": "/dist/js/bootstrap.min.js.map",
+    "/dist/js/manifest.js": "/dist/js/manifest.js",
     "/dist/js/popper.min.js": "/dist/js/popper.min.js",
-    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map"
+    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map",
+    "/dist/js/psul-bootstrap.js.LICENSE.txt": "/dist/js/psul-bootstrap.js.LICENSE.txt",
+    "/dist/js/vendor.js": "/dist/js/vendor.js"
 }
