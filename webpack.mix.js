@@ -24,26 +24,13 @@ for (const sourcePath of glob.sync("components/**/*.scss")) {
 mix.combine('js/base', 'dist/js/application.js');
 
 // Build submit of bootstrap styles.
-mix.js('js/psul-bootstrap.js', 'dist/js/psul-bootstrap.js').webpackConfig({
-  // Exclude popperjs library.  This will be loaded separately.
-  externals: {
-    ["@popperjs/core"]:{
-      root: "@popperjs/core"
-    }
-  }
-});
+mix.js('js/psul-bootstrap.js', 'dist/js/psul-bootstrap.js');
 
 // Add buiding process for component javascript.
 for (const sourcePath of glob.sync("components/**/src/*.js")) {
   const destinationPath = sourcePath.replace(/\/src\//, "\/");
   mix.js(sourcePath, destinationPath);
 }
-
-// Copy bootstrap javascript into dist/js directory.
-mix.copyDirectory('node_modules/bootstrap/dist/js/', 'dist/js');
-
-mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js', 'dist/js');
-mix.copy('node_modules/@popperjs/core/dist/umd/popper.min.js.map', 'dist/js');
 
 // Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 // @todo we can pull the bootstrap-icons from the node_module.

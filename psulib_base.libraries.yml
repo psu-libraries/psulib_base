@@ -19,7 +19,6 @@ global-styling:
 # including bootstrap javascript and icons.
 bootstrap:
   js:
-    dist/js/popper.min.js: {}
     dist/js/psul-bootstrap.js: {}
 
 bootstrap-icons:

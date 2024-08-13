@@ -23,22 +23,5 @@
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
     "/dist/css/placeholders.css": "/dist/css/placeholders.css",
-    "/dist/js/application.js": "/dist/js/application.js",
-    "/dist/js/bootstrap.bundle.js": "/dist/js/bootstrap.bundle.js",
-    "/dist/js/bootstrap.bundle.js.map": "/dist/js/bootstrap.bundle.js.map",
-    "/dist/js/bootstrap.bundle.min.js": "/dist/js/bootstrap.bundle.min.js",
-    "/dist/js/bootstrap.bundle.min.js.map": "/dist/js/bootstrap.bundle.min.js.map",
-    "/dist/js/bootstrap.esm.js": "/dist/js/bootstrap.esm.js",
-    "/dist/js/bootstrap.esm.js.map": "/dist/js/bootstrap.esm.js.map",
-    "/dist/js/bootstrap.esm.min.js": "/dist/js/bootstrap.esm.min.js",
-    "/dist/js/bootstrap.esm.min.js.map": "/dist/js/bootstrap.esm.min.js.map",
-    "/dist/js/bootstrap.js": "/dist/js/bootstrap.js",
-    "/dist/js/bootstrap.js.map": "/dist/js/bootstrap.js.map",
-    "/dist/js/bootstrap.min.js": "/dist/js/bootstrap.min.js",
-    "/dist/js/bootstrap.min.js.map": "/dist/js/bootstrap.min.js.map",
-    "/dist/js/manifest.js": "/dist/js/manifest.js",
-    "/dist/js/popper.min.js": "/dist/js/popper.min.js",
-    "/dist/js/popper.min.js.map": "/dist/js/popper.min.js.map",
-    "/dist/js/psul-bootstrap.js.LICENSE.txt": "/dist/js/psul-bootstrap.js.LICENSE.txt",
-    "/dist/js/vendor.js": "/dist/js/vendor.js"
+    "/dist/js/application.js": "/dist/js/application.js"
 }
