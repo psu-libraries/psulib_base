@@ -175,8 +175,16 @@ header {
         padding-left: 10px;
 
         svg {
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
+        }
+
+        @include media-breakpoint-up('lg') {
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+
         }
       }
 
