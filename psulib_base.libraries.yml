@@ -6,7 +6,6 @@ global-styling:
     component:
       dist/css/general.css: {}
   js:
-    dist/js/bootstrap.min.js: {}
     dist/js/application.js: {}
   dependencies:
     - psulib_base/fonts
@@ -21,7 +20,7 @@ global-styling:
 bootstrap:
   js:
     dist/js/popper.min.js: {}
-    dist/js/bootstrap.min.js: {}
+    dist/js/psul-bootstrap.js: {}
 
 bootstrap-icons:
   css:
