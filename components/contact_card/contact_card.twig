@@ -1,0 +1,76 @@
+{% set attributes = attributes ?: create_attribute() %}
+
+{%
+  set classes = [
+    'contact-card',
+    stacked ? 'contact-card__stacked',
+  ]|merge(utility_classes ?: [])
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  <div class="contact-card--header">
+    {%
+      include 'psulib_base:heading' with {
+        heading_html_tag: 'h3',
+        title_link: title_url ?? '',
+        content: title,
+        heading_utility_classes: [
+          'contact-card--header--title',
+        ],
+      }
+    %}
+    {% if subtitle %}<span class="contact-card--header--subtitle">{{ subtitle }}</span>{% endif %}
+  </div>
+
+  <div class="contact-card--body">
+    {% if address %}<div class="contact-card--address"><em>{{ address }}</em></div>{% endif %}
+
+    <div class="contact-card--contacts">
+      {% for phone in phones %}
+        {% if phone %}
+          <div class="contact-card--contacts--phone">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:+{{ phone }}" >{{ phone }}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if email %}
+        <div class="contact-card--contacts--email">
+          <i class="bi bi-envelope-fill"></i>
+          <a href="mailto:{{ email }}" >{{ email }}</a>
+        </div>
+      {% endif %}
+
+      {% if fax %}
+        <div class="contact-card--contacts--fax">
+          <i class="bi bi-printer-fill"></i>
+          <a href="fax:+{{ fax }}" >{{ fax }}</a>
+        </div>
+      {% endif %}
+
+      {% if website %}
+        <div class="contact-card--contacts--website">
+          <i class="bi bi-box-arrow-up-right"></i>
+          <a href="{{ website }}" >{{ website }}</a>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+  {% if cta_button %}
+      {% if cta_button_render|render %}
+        {{ cta_button_render }}
+      {% elseif cta_button %}
+        {%
+          include 'psulib_base:button' with {
+            button_html_tag: 'a',
+            url: cta_button.url,
+            color: 'primary',
+            content: cta_button.title,
+            button_utility_classes: [],
+          }
+        %}
+      {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,54 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Contact Card
+status: stable
+description: Display contact information for organizations and people.
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Title
+    title_url:
+      type: string
+      title: URL to make the title a link.
+    subtitle:
+      type: string
+      title: Subtitle
+    address:
+      type: string
+      title: Address
+    phones:
+      type: array
+      title: Phones
+      description: Array of phone numbers
+      items:
+        type: string
+    fax:
+      type: string
+      title: Fax Number
+    email:
+      type: string
+      title: Email
+    website:
+      type: string
+      title: Address
+    cta_button:
+      type: object
+      title: CTA Button
+      properties:
+        title:
+          type: string
+          title: Button Title
+        url:
+          type: string
+          title: Button URL
+    stacked:
+      type: boolean
+      title: Stacked Display with contact details in 2 rows.
+      default: false
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    utility_classes:
+      type: array
+      items:
+        type: string
