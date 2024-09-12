@@ -1,0 +1,67 @@
+@import '../../scss/init';
+
+.not-found {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 6.25rem;
+    margin-bottom: 7rem;
+  }
+
+  &--title {
+    font-size: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3.25rem;
+    }
+  }
+
+  &--divider {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &--divider-bar {
+    margin-top: $spacer;
+    margin-bottom: $spacer * 1.25;
+    width: $spacer * 5;
+    border-bottom: 4px solid $pugh-blue;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+  }
+
+  &--subtitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.75rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &--recommendations {
+    margin-left: 2.5rem;
+    padding: 0;
+    list-style-type: square;
+
+    li {
+      color: $body-font-color;
+
+      &::marker {
+        color: $pa-sky;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+}
