@@ -1,0 +1,65 @@
+@use "sass:map";
+@import '../../scss/init';
+
+@mixin container-breakpoint($name, $container: "contact-card", $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @container contact-card (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer * .75;
+  box-shadow: $box-shadow;
+  padding: $spacer * 1.25;
+  background-color: $white;
+  @include make-link($link-color, none, $link-hover-color, underline);
+  container: contact-card / inline-size;
+
+  i {
+    margin-right: $spacer * .5;
+  }
+
+  &--address {
+    font-style: italic;
+  }
+
+  &--header--title {
+    font-size: $font-size-base * 1.125;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  &--body {
+    display: flex;
+    gap: $spacer * .75;
+    flex-direction: column;
+  }
+
+  &--contacts--email {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
+
+  // Adding stacked card variations.
+  &.contact-card__stacked {
+    // Need to use the #{...} format to get the map-get to actually work.
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "md")}) {
+      .contact-card--body {
+        flex-direction: row;
+
+        > div {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+}

@@ -15,6 +15,7 @@
     "/components/image/image.css": "/components/image/image.css",
     "/components/header/header.css": "/components/header/header.css",
     "/components/footer/footer.css": "/components/footer/footer.css",
+    "/components/contact_card/contact_card.css": "/components/contact_card/contact_card.css",
     "/components/card/card.css": "/components/card/card.css",
     "/components/button/button.css": "/components/button/button.css",
     "/components/breadcrumbs/breadcrumbs.css": "/components/breadcrumbs/breadcrumbs.css",
