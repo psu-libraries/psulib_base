@@ -11,6 +11,7 @@ const defaultSassOptions = {
 // Compile global SCSS files.
 mix.sass('scss/style.scss', 'dist/css').options(defaultSassOptions);
 mix.sass('scss/peripheral.scss', 'dist/css').options(defaultSassOptions);
+mix.sass('scss/peripheral-bootstrap.scss', 'dist/css').options(defaultSassOptions);
 
 for (const sourcePath of glob.sync("scss/components/**/*.scss")) {
     mix.sass(sourcePath, 'dist/css').options(defaultSassOptions);;
