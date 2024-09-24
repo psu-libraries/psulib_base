@@ -5,9 +5,9 @@
  * PSU Libraries Base theme file.
  */
 
-use Drupal\block\Entity\Block;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Template\Attribute;
+use Drupal\block\Entity\Block;
 
 /**
  * Implements hook_preprocess_page().
