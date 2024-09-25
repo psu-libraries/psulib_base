@@ -10,13 +10,6 @@
           const dropdownMenu = item.querySelector('.dropdown-menu');
 
           if (link && arrow && dropdownMenu) {
-            item.addEventListener('mouseenter', () => {
-              if (window.innerWidth >= desktopBreakpoint) openDropdown(item);
-            });
-
-            item.addEventListener('mouseleave', () => {
-              if (window.innerWidth >= desktopBreakpoint) closeDropdown(item);
-            });
 
             link.addEventListener('click', e => {
               window.location.href = link.getAttribute('href');
