@@ -4,5 +4,18 @@
  */
 
 .node--unpublished {
-    background-color: #fef6f8;
+  background-color:  #fef6f8;
+}
+
+.node__meta {
+  font-size: $font-size-sm;
+  color: $valchar-grey;
+  border-top: 1px solid $border-color;
+  padding-top: calc($spacer /2 );
+  margin: $spacer 0;
+
+  @include media-breakpoint-up(md) {
+    // Preventing border from going full width.
+    margin-right: calc(100% - 500px);
+  }
 }
