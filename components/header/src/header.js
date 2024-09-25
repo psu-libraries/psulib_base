@@ -10,6 +10,13 @@
           const dropdownMenu = item.querySelector('.dropdown-menu');
 
           if (link && arrow && dropdownMenu) {
+            item.addEventListener('mouseenter', () => {
+              if (window.innerWidth >= desktopBreakpoint) openDropdown(item);
+            });
+
+            item.addEventListener('mouseleave', () => {
+              if (window.innerWidth >= desktopBreakpoint) closeDropdown(item);
+            });
 
             link.addEventListener('click', e => {
               window.location.href = link.getAttribute('href');
@@ -47,17 +54,9 @@
         }
       }
 
-      function closeAllDropdowns(navElement) {
-        navElement.querySelectorAll('.nav-item.show').forEach(closeDropdown);
-      }
-
       // Keeping the #mainMenuNav id to support psul_theme template.
       once('psul-theme-mainMenuNav', '#mainMenuNav, .main-menu-nav', context).forEach(() => {
         document.querySelectorAll('#mainMenuNav, .main-menu-nav').forEach(setupDropdownBehavior);
-      });
-
-      once('psul-theme-offcanvasMain', '#offcanvasMain', context).forEach(() => {
-        document.querySelectorAll('#offcanvasMain').forEach(setupDropdownBehavior);
       });
 
     }

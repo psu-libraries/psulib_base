@@ -321,76 +321,8 @@ header {
 
 /**
  * Header styles
- * @todo Port these to the base theme.
  */
-.offcanvas__main {
-
-  ul {
-    background-color: transparent;
-    border: 0;
-
-    li.nav-item {
-      a {
-        font-weight: bold;
-
-        &.is-active,
-        &.active {
-          color: black;
-
-          &:before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 25px;
-            width: 50%;
-            border-left: 5px solid $psu-light-blue;
-          }
-        }
-      }
-    }
-  }
-
-  .link-container {
-    position: relative;
-
-    span.dropdown-arrow {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
-  }
-
-  nav ul.navbar-nav {
-
-    a,
-    a.button {
-      word-wrap: break-word;
-      text-align: left;
-      text-decoration: none;
-      color: $black;
-      display: block;
-      background-color: transparent;
-      border: 0;
-    }
-
-    .dropdown-menu {
-      border: 0;
-      padding: 0;
-      margin: 0;
-
-      .dropdown-item {
-        white-space: normal;
-      }
-    }
-  }
-}
-
-header,
-.offcanvas__main {
+header {
 
   /* Common styles for dropdown arrow */
   .dropdown-arrow {
