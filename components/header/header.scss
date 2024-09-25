@@ -15,10 +15,6 @@ header {
     // Overriding the navbar padding. Not 100% sure why.
     --bs-navbar-padding-y: 0px;
     flex-wrap: wrap;
-
-    &>.container-fluid {
-      display: block;
-    }
   }
 
   .navbar-toggler {
@@ -61,7 +57,7 @@ header {
     font-size: $font-size-sm;
 
     @include media-breakpoint-down(md) {
-      display: block;
+      display: flex;
       width: 100%;
       background-color: $beaver-blue;
       padding: $nav-link-padding-y $grid-gutter-width;
