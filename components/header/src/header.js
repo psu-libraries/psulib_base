@@ -54,17 +54,9 @@
         }
       }
 
-      function closeAllDropdowns(navElement) {
-        navElement.querySelectorAll('.nav-item.show').forEach(closeDropdown);
-      }
-
       // Keeping the #mainMenuNav id to support psul_theme template.
       once('psul-theme-mainMenuNav', '#mainMenuNav, .main-menu-nav', context).forEach(() => {
         document.querySelectorAll('#mainMenuNav, .main-menu-nav').forEach(setupDropdownBehavior);
-      });
-
-      once('psul-theme-offcanvasMain', '#offcanvasMain', context).forEach(() => {
-        document.querySelectorAll('#offcanvasMain').forEach(setupDropdownBehavior);
       });
 
     }

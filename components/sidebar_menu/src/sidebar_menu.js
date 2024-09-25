@@ -4,29 +4,28 @@
 
       function setupDropdownBehavior(navElement) {
         navElement.querySelectorAll('.navbar-nav .dropdown').forEach(item => {
-          const arrow = item.querySelector('.dropdown-arrow svg');
-          const dropdownMenu = item.querySelector('.dropdown-menu');
+          const arrow = item.querySelector('.dropdown-arrow');
           arrow.addEventListener('click', e => {
             e.preventDefault();
-            toggleDropdown(item, dropdownMenu);
+            toggleDropdown(item);
           });
         });
       }
-      function openDropdown(item, dropdownMenu) {
+      function openDropdown(item) {
         const arrow = item.querySelector('.dropdown-arrow svg');
         arrow.setAttribute('aria-expanded', 'true');
         item.classList.add('show');
       }
-      function closeDropdown(item, dropdownMenu) {
+      function closeDropdown(item) {
         const arrow = item.querySelector('.dropdown-arrow svg');
         arrow.setAttribute('aria-expanded', 'false');
         item.classList.remove('show');
       }
-      function toggleDropdown(item, dropdownMenu) {
+      function toggleDropdown(item) {
         if (item.classList.contains('show')) {
-          closeDropdown(item, dropdownMenu);
+          closeDropdown(item);
         } else {
-          openDropdown(item, dropdownMenu);
+          openDropdown(item);
         }
       }
       once('psul-theme-first-sidebar-accordion-menu', '.sidebar-menu-parent', context).forEach((element) => {
