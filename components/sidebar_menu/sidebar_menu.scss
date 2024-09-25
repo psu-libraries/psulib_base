@@ -15,7 +15,7 @@
     position: relative;
 
     .dropdown>.link-container>a {
-      padding-right: 20px;
+      padding-right: 40px;
     }
 
     .dropdown-menu {
@@ -84,6 +84,22 @@
       }
     }
 
+    span.dropdown-arrow {
+      position: absolute;
+      right: -7px;
+      cursor: pointer;
+      width: 44px;
+      height: 30px;
+      top: 9px;
+
+      svg {
+        position: relative;
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
+        display: block;
+      }
+    }
+
     li:not(.menu-level-0) {
       position: relative;
       margin-left: 5px;
@@ -99,10 +115,13 @@
           }
         }
       }
+
+      span.dropdown-arrow {
+        top: 3px;
+      }
     }
 
     .dropdown-menu {
-      overflow: hidden;
 
       .dropdown-menu {
         display: none;
@@ -117,19 +136,7 @@
       position: relative;
     }
 
-    span.dropdown-arrow {
-      position: absolute;
-      right: 0;
-      top: 22px;
-      cursor: pointer;
-      width: 16px;
-      height: 16px;
-      transform: translateY(-50%);
 
-      svg {
-        display: block;
-      }
-    }
 
     .link-container {
       svg {
