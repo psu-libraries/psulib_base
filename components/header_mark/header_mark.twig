@@ -16,15 +16,16 @@
     <img src="{{ site_logo }}" alt="{{ logo_title|default('Home')|t }}" fetchpriority="high" height="60" width="228" />
   </a>
   {% endif %}
-  <div class="header-mark--name-slogan">
-    {% if site_name %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title {% if hide_site_name %}hidden{% endif %}">
-      {{ site_name }}
-    </a>
-    {% endif %}
+  {% if site_name %}
+    <div class="header-mark--name-slogan {% if hide_site_name %}hidden{% endif %}">
+      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title">
+        {{ site_name }}
+      </a>
 
-    {% if site_slogan %}
-    <div class="site-slogan">{{ site_slogan }}</div>
-    {% endif %}
-  </div>
+      {% if site_slogan %}
+      <div class="site-slogan">{{ site_slogan }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
 </div>
