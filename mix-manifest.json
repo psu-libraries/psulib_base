@@ -14,6 +14,7 @@
     "/components/not_found/not_found.css": "/components/not_found/not_found.css",
     "/components/image/image.css": "/components/image/image.css",
     "/components/header/header.css": "/components/header/header.css",
+    "/components/header_mark/header_mark.css": "/components/header_mark/header_mark.css",
     "/components/footer/footer.css": "/components/footer/footer.css",
     "/components/contact_card/contact_card.css": "/components/contact_card/contact_card.css",
     "/components/card/card.css": "/components/card/card.css",
