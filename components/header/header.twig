@@ -9,16 +9,16 @@ set nav_classes = 'navbar navbar-expand-lg text-light'
 
   <nav class="{{ nav_classes }}">
     <div class="container-fluid">
-      <div class="d-flex w-100">
+      <div class="header--nav-branding d-flex w-100 align-items-baseline">
         {% block nav_branding %} {{ nav_branding }} {% endblock %}
 
-        <div class="flex-fill collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+        <div class="header--nav-additional flex-fill collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
           <div class="d-lg-flex flex-column justify-content-end align-items-end">
             {% block nav_additional %}{{ nav_additional }}{% endblock %}
           </div>
         </div>
 
-        <div class="ms-auto d-flex align-items-center">
+        <div class="header--nav-search ms-auto">
           {% block nav_search %}
             {{ nav_search }}
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="offcanvas"
@@ -32,7 +32,7 @@ set nav_classes = 'navbar navbar-expand-lg text-light'
     </div>
 
     <div class="container-fluid nav-main-menu-container">
-      <div class="d-flex w-100">
+      <div class="d-flex w-100 header-bottom">
         <div class="d-none d-md-block">
           {% block nav_main %} {{ nav_main }} {% endblock %}
         </div>

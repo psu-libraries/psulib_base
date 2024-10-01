@@ -1,0 +1,30 @@
+{% set attributes = attributes ?: create_attribute() %}
+{%
+  set classes = [
+    "header-mark",
+    "navbar-brand",
+  ]
+%}
+
+{# Use the logo_path if it is set.  Otherwise link the front page. #}
+{% set logo_path = logo_path ?? path('<front>') %}
+
+<div {{ attributes.addClass(classes) }}>
+
+  {% if site_logo %}
+  <a href="{{ logo_path }}" title="{{ logo_title|default('Home')|t }}" rel="home" class="site-logo d-block">
+    <img src="{{ site_logo }}" alt="{{ logo_title|default('Home')|t }}" fetchpriority="high" height="60" width="228" />
+  </a>
+  {% endif %}
+  <div class="header-mark--name-slogan">
+    {% if site_name %}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title {% if hide_site_name %}hidden{% endif %}">
+      {{ site_name }}
+    </a>
+    {% endif %}
+
+    {% if site_slogan %}
+    <div class="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
+  </div>
+</div>

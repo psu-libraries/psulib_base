@@ -52,6 +52,20 @@ header {
 
   }
 
+  // Setting search and menu button positioning.  This is absolute on mobile
+  // so that it option site-title can be full width.
+  .header--nav-search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: $container-padding-x;
+    top: 13.5px;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+    }
+  }
+
   .nav-actions {
     padding: 0 $nav-link-padding-y;
     font-size: $font-size-sm;
@@ -265,55 +279,6 @@ header {
     }
   }
 }
-
-.navbar-brand {
-  white-space: unset;
-  @include make-link($light, none, $light, underline, '.site-title');
-  flex-shrink: 1;
-
-  .site-slogan {
-    display: none;
-    font-size: $navbar-brand-site-slogan-font-size;
-
-    @include media-breakpoint-up(lg) {
-      display: block;
-    }
-  }
-
-  .site-title {
-    font-size: $navbar-brand-site-title-font-size;
-    font-weight: $navbar-brand-site-title-font-weight;
-    letter-spacing: $navbar-brand-site-title-letter-spacing;
-    text-transform: $navbar-brand-site-title-text-transform;
-  }
-
-  img {
-    height: $navbar-brand-image-height;
-    margin: 0;
-    width: $navbar-brand-image-width;
-
-    @include media-breakpoint-up(lg) {
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
-  }
-
-  img {
-    height: auto;
-    margin: 0;
-    width: 75%;
-    max-width: 228px;
-
-    @include media-breakpoint-up(lg) {
-      width: $navbar-brand-image-width;
-      max-width: $navbar-brand-image-width;
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
-  }
-}
-
-// @todo origanize this garbage.
 
 /**
  * Header styles

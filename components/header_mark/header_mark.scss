@@ -1,0 +1,97 @@
+@import '../../scss/init';
+
+.header-mark {
+  line-height: 1.05;
+
+  // Override navbar styles.
+  &.navbar-brand {
+    white-space: unset;
+    flex-shrink: 1;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .site-logo {
+    // Setting the margin so search/menu buttons so the logo does not
+    // smush into them.
+    margin-right: 50px;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    height: $navbar-brand-image-height;
+    margin: 0 100px 0 0;
+    width: $navbar-brand-image-width;
+
+    @include media-breakpoint-up(lg) {
+      margin: $navbar-brand-image-margin;
+      height: $navbar-brand-image-height-lg;
+    }
+  }
+
+  img {
+    height: auto;
+    margin: 0;
+    width: 75%;
+    max-width: 228px;
+
+    @include media-breakpoint-up(lg) {
+      width: $navbar-brand-image-width;
+      max-width: $navbar-brand-image-width;
+      margin: $navbar-brand-image-margin;
+      height: $navbar-brand-image-height-lg;
+    }
+  }
+
+  &--name-slogan {
+    margin-top: 10px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      max-width: 350px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 2rem;
+    }
+  }
+
+  .site-title {
+    @include make-link($light, none, $light, none, '.site-title');
+
+    font-size: $font-size-sm;
+    font-weight: $navbar-brand-site-title-font-weight;
+    letter-spacing: $navbar-brand-site-title-letter-spacing;
+    text-transform: $navbar-brand-site-title-text-transform;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-base;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: $navbar-brand-site-title-font-size;
+    }
+  }
+
+  .site-slogan {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
