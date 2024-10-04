@@ -1,3 +1,6 @@
+/**
+ * Region title styles.
+ */
 .region-title__action {
   a {
     &.button {
@@ -17,15 +20,19 @@ tr {
 }
 
 /**
- * Left sidebar styles.
+ * Sidebar styles.
  */
-.region-sidebar-first {
+.region-sidebar-first, .region-sidebar-second {
 
-  >div {
-    margin-bottom: 1rem;
+  .block {
+    &:not(:last-child) {
+      margin-bottom: $spacer * 1.5;
+    }
 
-    &:last-child {
-      margin-bottom: 0;
+    & > h2 {
+      font-family: $font-family-condensed;
+      font-size: $font-size-lg;
+      text-transform: uppercase;
     }
   }
 
