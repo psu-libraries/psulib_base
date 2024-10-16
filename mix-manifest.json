@@ -23,6 +23,7 @@
     "/components/alert/alert.css": "/components/alert/alert.css",
     "/components/alert_banner/alert_banner.css": "/components/alert_banner/alert_banner.css",
     "/components/accordion/accordion.css": "/components/accordion/accordion.css",
+    "/dist/css/ck5style.css": "/dist/css/ck5style.css",
     "/dist/css/search-results.css": "/dist/css/search-results.css",
     "/dist/css/progress.css": "/dist/css/progress.css",
     "/dist/css/placeholders.css": "/dist/css/placeholders.css",

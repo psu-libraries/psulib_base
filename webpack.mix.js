@@ -14,6 +14,9 @@ for (const sourcePath of glob.sync("scss/components/**/*.scss")) {
   mix.sass(sourcePath, 'dist/css').options(defaultSassOptions);;
 }
 
+// Compile styles for ckeditor5.
+mix.sass('scss/ck5style.scss', 'dist/css').options(defaultSassOptions);
+
 // Compile SDC scss files.
 for (const sourcePath of glob.sync("components/**/*.scss")) {
   const destinationPath = sourcePath.replace(/\.scss$/, ".css");
