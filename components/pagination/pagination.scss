@@ -2,21 +2,53 @@
 @import '../../scss/init';
 
 // Override variables here:
+$pagination-padding-y: .25rem;
+$pagination-padding-x: .75rem;
+$pagination-color: $old-coaly;
+$pagination-border-color: transparent;
+$pagination-border-radius: 50%;
+$pagination-hover-color: $old-coaly;
+$pagination-hover-bg: $gray-200;
+$pagination-focus-color: $old-coaly;
+$pagination-focus-border-color: $white-out;
+$pagination-disabled-bg: none;
+$pagination-disabled-color: $old-coaly;
 
 // Import bootstrap pagination styles.
 @import 'bootstrap/scss/pagination';
 
 // Custom styles go here.
 .pager__items {
-    clear: both;
-    text-align: center;
+  clear: both;
+  text-align: center;
+}
+
+.page-link {
+  border-radius: var(--bs-pagination-border-radius)
 }
 
 .pager__item {
-    display: inline;
-    padding: 0.5em;
+  display: inline;
+  padding: 0.125em;
+}
+
+.pager__item--first,
+.pager__item--previous,
+.pager__item--next,
+.pager__item--last {
+  .page-link {
+    &:hover {
+      color: $link-hover-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+}
+
+.disabled > .page-link {
+  border: 0;
 }
 
 .pager__item.is-active {
-    font-weight: bold;
+  font-weight: bold;
 }
