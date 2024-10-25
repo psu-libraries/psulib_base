@@ -12,6 +12,7 @@
     "/components/person/person.css": "/components/person/person.css",
     "/components/pagination/pagination.css": "/components/pagination/pagination.css",
     "/components/not_found/not_found.css": "/components/not_found/not_found.css",
+    "/components/media/media.css": "/components/media/media.css",
     "/components/image/image.css": "/components/image/image.css",
     "/components/header/header.css": "/components/header/header.css",
     "/components/header_mark/header_mark.css": "/components/header_mark/header_mark.css",
