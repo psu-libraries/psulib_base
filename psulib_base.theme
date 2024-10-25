@@ -37,6 +37,7 @@ function psulib_base_page_attachments_alter(array &$attachments) {
 
   $files = [
     base_path() . $theme_path . '/assets/fonts/Roboto/roboto-regular-webfont.woff2',
+    base_path() . $theme_path . '/assets/fonts/Roboto_Slab/static/RobotoSlab-Bold.woff2',
     base_path() . $theme_path . '/assets/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2',
   ];
 
