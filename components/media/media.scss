@@ -1,0 +1,43 @@
+@import '../../scss/init';
+
+// Add custom media styles.
+@include media-breakpoint-up('lg') {
+  .align-center {
+    max-width: 90%;
+  }
+}
+
+.media {
+  margin-bottom: $spacer;
+}
+
+.align-left {
+  max-width: 50%;
+  margin-right: $spacer;
+}
+
+.align-right {
+  max-width: 50%;
+  margin-left: $spacer;
+}
+
+// Remote video adds `ratio` classes to fix the aspect ratio in a responsive
+// manner. This required widths NOT max-widths.
+// @see https://getbootstrap.com/docs/5.3/helpers/ratio/
+.media--type-remote-video {
+  &.align-left,
+  &.align-right {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-down('md') {
+    &.align-left,
+    &.align-right {
+      max-width: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
