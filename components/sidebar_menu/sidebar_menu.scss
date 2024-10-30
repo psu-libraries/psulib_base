@@ -5,6 +5,7 @@
   text-transform: uppercase;
   font-family: $font-family-condensed;
   font-size: $font-size-lg;
+  margin-bottom: $spacer * .5;
   @include make-link(black, none, $pa-link, none);
 }
 

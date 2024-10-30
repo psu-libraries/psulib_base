@@ -25,3 +25,17 @@ ol.list-2-col {
 a.more-link {
   float: right;
 }
+
+// Heading style overrides.
+h1, .h1 {
+  font-family: $font-family-slab;
+  line-height: $headings-line-height;
+
+  &.page-title {
+    margin-bottom: $spacer * 1.5;
+  }
+}
+
+h2, .h2 {
+  margin-bottom: $spacer;
+}
