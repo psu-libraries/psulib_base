@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":dependencyDashboardApproval"
+  ],
+  "labels": ["maintenance"],
+  "enabledManagers": [
+    "npm"
+  ],
+  "packageRules": [
+    {
+      "groupName": "NPM Minor & Patch",
+      "groupSlug": "npm-minor-updates",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [".*"],
+      "matchUpdateTypes": ["patch", "minor"]
+    }
   ]
 }
