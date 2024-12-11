@@ -9,10 +9,10 @@ props:
         type: object
         properties:
           url:
-            type: ['string', 'object', 'null']
+            type: [string, object, null]
             title: url
           text:
-            type: ['string', 'object', 'null']
+            type: [string, object, null]
             title: text
     classes:
       type: array

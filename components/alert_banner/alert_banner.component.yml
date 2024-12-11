@@ -4,9 +4,11 @@ status: stable
 description: For displaying an alert on the top of the page.
 props:
   type: object
+  required:
+    - title
   properties:
     severity:
-      type: enum
+      type: string
       title: Severity
       description: Severity/Style of the Alert banner.
       # @todo Add examples here.
@@ -20,7 +22,6 @@ props:
       type: string
       title: Title
       description: Alert Title.
-      required: true
     date:
       type: string
       title: Date

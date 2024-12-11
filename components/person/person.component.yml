@@ -6,7 +6,7 @@ props:
   type: object
   properties:
     has_profile_image:
-      type: ['string', 'integer']
+      type: [boolean, integer]
       title: Profile has Image
       description: Indicator that there is profile image.
 
@@ -28,12 +28,12 @@ props:
       title: About
 
     left_column:
-      type: ['array', 'object']
+      type: [array, object]
       title: Left Column
       description: Array of fields to be displayed in the left column below the person's name.
 
     right_column:
-      type: ['array', 'object']
+      type: [array, object]
       title: Right Column
       description: Array of fields to be displayed in the right column.
 
