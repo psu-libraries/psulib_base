@@ -3,22 +3,22 @@ name: Breadcrumb
 status: stable
 description: Breadcrumb component.
 props:
-  type: object
+  type: 'object'
   properties:
     breadcrumb:
-      type: array
+      type: 'array'
       items:
-        type: object
+        type: 'object'
         properties:
           url:
-            type: [string, object, null]
+            type: ['string', 'object', 'null']
             title: url
           text:
-            type: [string, object, null]
+            type: ['string', 'object', 'null']
             title: text
     classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
     breadcrumb_attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'

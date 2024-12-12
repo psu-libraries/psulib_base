@@ -7,15 +7,15 @@ libraryOverrides:
     - core/drupal
     - core/once
 props:
-  type: object
+  type: 'object'
   properties:
     menu_name:
-      type: string
+      type: 'string'
       title: Menu Name
     items:
-      type: array
+      type: 'array'
       title: Menu Items
     attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
     wrapper_attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'

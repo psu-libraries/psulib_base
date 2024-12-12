@@ -3,24 +3,24 @@ name: not_found
 status: stable
 description: Page not found
 props:
-  type: object
+  type: 'object'
   properties:
     title:
-      type: string
+      type: 'string'
       title: Title
       description: Title to display.
     subtitle:
-      type: string
+      type: 'string'
       title: Subtitle
       description: Subtitle (We recommend).
     recommendations:
-      type: array
+      type: 'array'
       title: Recommendations
       description: List of recommendation for users to find what they are looking for.
       items:
-        type: string
+        type: 'string'
     home_url:
-      type: string
+      type: 'string'
       title: URL to the site's homepage.
     attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'

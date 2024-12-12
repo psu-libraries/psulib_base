@@ -3,37 +3,37 @@ name: Person
 status: stable
 description: Page display for person directory records.
 props:
-  type: object
+  type: 'object'
   properties:
     has_profile_image:
-      type: [boolean, integer]
+      type: ['boolean', 'integer']
       title: Profile has Image
       description: Indicator that there is profile image.
 
     display_name:
-      type: string
+      type: 'string'
       title: Display Name
       description: Person&#039;s full name
 
     display_name_attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
 
     professional_title:
-      type: string
+      type: 'string'
       title: Professional Title
       description: Person professional title.
 
     about:
-      type: string
+      type: 'string'
       title: About
 
     left_column:
-      type: [array, object]
+      type: ['array', 'object']
       title: Left Column
       description: Array of fields to be displayed in the left column below the person's name.
 
     right_column:
-      type: [array, object]
+      type: ['array', 'object']
       title: Right Column
       description: Array of fields to be displayed in the right column.
 

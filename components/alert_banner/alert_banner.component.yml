@@ -8,7 +8,7 @@ props:
     - title
   properties:
     severity:
-      type: string
+      type: 'string'
       title: Severity
       description: Severity/Style of the Alert banner.
       # @todo Add examples here.
@@ -19,22 +19,22 @@ props:
         - allClear
       default: nonEmergency
     title:
-      type: string
+      type: 'string'
       title: Title
       description: Alert Title.
     date:
-      type: string
+      type: 'string'
       title: Date
       description: Optional.  Display the date this Alert was published on.
     alert_banner_utility_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
       title: Alert Utility Classes
       default: []
       description: An array of utility classes. Use to add extra utility classes or custom CSS classes to this component.
     attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
   slots:
     content:
       title: Alert Banner Content
