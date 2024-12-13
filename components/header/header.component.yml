@@ -1,10 +1,11 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 name: Header
 props:
-  type: object
+  type: 'object'
   properties: {}
 libraryOverrides:
   dependencies:
-    - psulib_base/nav
+    - 'psulib_base/nav'
 slots:
   above_header:
     title: Above Header

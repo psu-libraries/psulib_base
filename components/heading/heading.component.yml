@@ -3,51 +3,51 @@ name: Heading
 status: stable
 description: All HTML headings, `<h1>` through `<h6>`, are available
 props:
-  type: object
+  type: 'object'
   properties:
     heading_html_tag:
-      type: string
+      type: 'string'
       title: HTML tag
       description: HTML header tag (h1, h2, h3, h4, h5, h6)
       default: h1
       enum:
-        - h1
-        - h2
-        - h3
-        - h4
-        - h5
-        - h6
+        - 'h1'
+        - 'h2'
+        - 'h3'
+        - 'h4'
+        - 'h5'
+        - 'h6'
     display:
-      type: string
+      type: 'string'
       title: Display Heading
       description: When you need a heading to stand out, consider using a display heading—a larger, slightly more opinionated heading style.
       default: ''
       enum:
         - ''
-        - display-1
-        - display-2
-        - display-3
-        - display-4
-        - display-5
-        - display-6
+        - 'display-1'
+        - 'display-2'
+        - 'display-3'
+        - 'display-4'
+        - 'display-5'
+        - 'display-6'
     heading_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
       title: Classes
       default: []
       description: An array of classes to add to the heading, merges display and heading utility classes.
     heading_utility_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
       title: Utility Classes
       default: []
       description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
     heading_link_utility_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
       title: Link Utility Classes
       default: []
       description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to the heading link.
@@ -56,9 +56,9 @@ props:
       title: Title Link
       description: Link URL for the title.
     heading_attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
     content:
-      type: string
+      type: 'string'
       title: Content
       description: Content text for the heading.
 slots:

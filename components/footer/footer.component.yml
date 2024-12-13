@@ -3,43 +3,43 @@ name: Footer
 status: stable
 description: Page footer component.
 props:
-  type: object
+  type: 'object'
   properties:
     show_footer_left:
-      type: ['string', 'integer']
+      type: ['boolean', 'integer']
       title: Show Left footer region.
-      description:
+      description: 'Show the left footer region.  This contains the footer logo by default.'
       default: 1
     show_footer_right:
-      type: ['string', 'integer']
+      type: ['boolean', 'integer']
       title: Show Right footer region.
-      description:
+      description: 'Show the right footer region.  This contains the footer menu by default.'
       default: 1
     show_footer_bottom:
-      type: ['string', 'integer']
+      type: ['boolean', 'integer']
       title: Show Bottom footer region.
-      description:
+      description: 'Show the bottom footer region.  This is an optional full width footer region.'
       default: 1
     site_logo:
-      type: string
+      type: 'string'
       title: Site Logo
       description: URL for footer logo in footer left region.
       # @todo Add examples here.
       examples: []
     site_logo_url:
-      type: string
+      type: 'string'
       title: Site Logo URL
       description: Link url for logo.
       # @todo Add examples here.
       examples: []
     site_logo_alt:
-      type: string
+      type: 'string'
       title: Site Logo Alt Text
       description: Alt text for logo.
       # @todo Add examples here.
       examples: []
     footer_classes:
-      type: string
+      type: 'string'
       title: Footer Classes
       description: Additional classes for the footer.
       # @todo Add examples here.

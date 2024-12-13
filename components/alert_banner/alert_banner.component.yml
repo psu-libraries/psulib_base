@@ -4,9 +4,11 @@ status: stable
 description: For displaying an alert on the top of the page.
 props:
   type: object
+  required:
+    - title
   properties:
     severity:
-      type: enum
+      type: 'string'
       title: Severity
       description: Severity/Style of the Alert banner.
       # @todo Add examples here.
@@ -17,23 +19,22 @@ props:
         - allClear
       default: nonEmergency
     title:
-      type: string
+      type: 'string'
       title: Title
       description: Alert Title.
-      required: true
     date:
-      type: string
+      type: 'string'
       title: Date
       description: Optional.  Display the date this Alert was published on.
     alert_banner_utility_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
       title: Alert Utility Classes
       default: []
       description: An array of utility classes. Use to add extra utility classes or custom CSS classes to this component.
     attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
   slots:
     content:
       title: Alert Banner Content

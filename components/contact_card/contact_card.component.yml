@@ -3,52 +3,52 @@ name: Contact Card
 status: stable
 description: Display contact information for organizations and people.
 props:
-  type: object
+  type: 'object'
   properties:
     title:
-      type: string
+      type: 'string'
       title: Title
     title_url:
-      type: string
+      type: 'string'
       title: URL to make the title a link.
     subtitle:
-      type: string
+      type: 'string'
       title: Subtitle
     address:
-      type: string
+      type: 'string'
       title: Address
     phones:
-      type: array
+      type: 'array'
       title: Phones
       description: Array of phone numbers
       items:
-        type: string
+        type: 'string'
     fax:
-      type: string
+      type: 'string'
       title: Fax Number
     email:
-      type: string
+      type: 'string'
       title: Email
     website:
-      type: string
+      type: 'string'
       title: Address
     cta_button:
-      type: object
+      type: 'object'
       title: CTA Button
       properties:
         title:
-          type: string
+          type: 'string'
           title: Button Title
         url:
-          type: string
+          type: 'string'
           title: Button URL
     stacked:
-      type: boolean
+      type: 'boolean'
       title: Stacked Display with contact details in 2 rows.
       default: false
     attributes:
-      type: Drupal\Core\Template\Attribute
+      type: 'Drupal\Core\Template\Attribute'
     utility_classes:
-      type: array
+      type: 'array'
       items:
-        type: string
+        type: 'string'
