@@ -174,17 +174,6 @@
         url('./Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
 }
 
-@font-face {
-    font-family: 'Roboto Condensed';
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src:
-        local('Roboto Condensed Italic'),
-        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2'),
-        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
-}
-
 /**
  * Roboto Slab Fonts Definitions
  * @see https://fonts.google.com/specimen/Roboto+Condensed?query=roboto+cond
