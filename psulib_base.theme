@@ -36,9 +36,17 @@ function psulib_base_page_attachments_alter(array &$attachments) {
   $theme_path = \Drupal::service('extension.list.theme')->getPath('psulib_base');
 
   $files = [
+    // Roboto is the default font.
     base_path() . $theme_path . '/assets/fonts/Roboto/roboto-regular-webfont.woff2',
+    base_path() . $theme_path . '/assets/fonts/Roboto/roboto-bold-webfont.woff2',
+    base_path() . $theme_path . '/assets/fonts/Roboto/roboto-italic-webfont.woff2',
+
+    // Roboto Slab is used for <h1> elements.
     base_path() . $theme_path . '/assets/fonts/Roboto_Slab/static/RobotoSlab-Bold.woff2',
+
+    // Roboto Condensed used for navigation elements (menus and breadcrumbs).
     base_path() . $theme_path . '/assets/fonts/Roboto_Condensed/RobotoCondensed-VariableFont_wght.woff2',
+
   ];
 
   foreach ($files as $path) {
