@@ -3,6 +3,7 @@ global-styling:
   css:
     theme:
       dist/css/style.css: {}
+      dist/css/print.css: { media: print }
     component:
       dist/css/general.css: {}
   js:
