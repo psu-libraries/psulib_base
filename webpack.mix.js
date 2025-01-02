@@ -2,11 +2,23 @@
 
 const mix = require('laravel-mix');
 const glob = require('glob');
-const CustomResolverPlugin = require('@psu-flex/wp-wc-resolver');
+// const CustomResolverPlugin = require('@psu-flex/wp-wc-resolver');
 
 // Use relative URL so fonts will work.
 const defaultSassOptions = {
-    processCssUrls: false
+  processCssUrls: false
+};
+
+var CustomResolverPlugin = class {
+  apply(resolver) {
+    resolver.getHook("before-resolve").tapAsync("CustomResolverPlugin", (request, resolveContext, callback) => {
+      if (request.request && request.request.startsWith("@psu-flex/")) {
+        const packageName = request.request.split("/")[1];
+        request.request = `/node_modules/@psu-flex/${packageName}/dist/index.js`;
+      }
+      callback();
+    });
+  }
 };
 
 mix.webpackConfig({
@@ -37,6 +49,10 @@ mix.combine('js/base', 'dist/js/application.js');
 
 // Build submit of bootstrap styles.
 mix.js('js/psul-bootstrap.js', 'dist/js/psul-bootstrap.js');
+
+// Get PSU Flex Web Components.
+mix.js('js/psu-flex-wc.js', 'dist/js/psu-flex-wc.js');
+
 
 // Add buiding process for component javascript.
 for (const sourcePath of glob.sync("components/**/src/*.js")) {

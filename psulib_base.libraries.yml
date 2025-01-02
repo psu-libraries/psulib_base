@@ -26,6 +26,12 @@ bootstrap-icons:
     theme:
       assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
+
+# including bootstrap javascript and icons.
+psu-flex-wc:
+  js:
+    dist/js/psu-flex-wc.js: {}
+
 drupal.nav-tabs:
   js:
     js/nav-tabs.js: {}
