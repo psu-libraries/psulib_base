@@ -2,11 +2,20 @@
 
 const mix = require('laravel-mix');
 const glob = require('glob');
+const CustomResolverPlugin = require('@psu-flex/wp-wc-resolver');
 
 // Use relative URL so fonts will work.
 const defaultSassOptions = {
     processCssUrls: false
 };
+
+mix.webpackConfig({
+  resolve: {
+    plugins: [
+      new CustomResolverPlugin()
+    ],
+  },
+});
 
 // Compile global SCSS files.
 mix.sass('scss/style.scss', 'dist/css').options(defaultSassOptions);

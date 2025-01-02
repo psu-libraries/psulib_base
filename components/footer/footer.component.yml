@@ -44,8 +44,6 @@ props:
       description: Additional classes for the footer.
       # @todo Add examples here.
       examples: []
-    footer_top_row:
-      type:
 slots:
   footer_left:
     title: Footer Left

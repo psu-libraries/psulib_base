@@ -1,6 +1,7 @@
 {
     "/dist/js/psul-bootstrap.js": "/dist/js/psul-bootstrap.js",
     "/components/alert/alert.js": "/components/alert/alert.js",
+    "/components/footer/footer.js": "/components/footer/footer.js",
     "/components/header/header.js": "/components/header/header.js",
     "/components/sidebar_menu/sidebar_menu.js": "/components/sidebar_menu/sidebar_menu.js",
     "/dist/css/nav.css": "/dist/css/nav.css",
