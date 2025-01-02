@@ -2,6 +2,9 @@
 name: Footer
 status: stable
 description: Page footer component.
+libraryOverrides:
+  dependencies:
+    - 'psulib_base/psu-flex-wc'
 props:
   type: 'object'
   properties:

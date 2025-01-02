@@ -2,8 +2,13 @@
 {%
 set nav_classes = 'navbar navbar-expand-lg text-light'
 %}
-
+<div class="brand-bar-wrapper">
+  <psf-brand-bar
+    searchoptions=""
+    data="" />
+</div>
 <header>
+
   {% block above_header %} {{ above_header }} {% endblock %}
   {% block header %} {{ header }} {% endblock %}
 
