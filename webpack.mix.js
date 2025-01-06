@@ -39,3 +39,4 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
 
 // Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 // @todo we can pull the bootstrap-icons from the node_module.
+mix.copyDirectory('node_modules/bootstrap-icons', 'dist/bootstrap-icons');

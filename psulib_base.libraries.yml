@@ -25,7 +25,7 @@ bootstrap:
 bootstrap-icons:
   css:
     theme:
-      assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
+      dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
 drupal.nav-tabs:
   js:

@@ -6,6 +6,7 @@ node_modules
 # Compiled assets
 css/style.css
 js/application.js
+dist/bootstrap-icons
 dist/css
 dist/js
 components/*/*.css
