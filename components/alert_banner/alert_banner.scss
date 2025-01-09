@@ -25,11 +25,11 @@
   &--button {
     width: 100%;
     position: relative;
-    display: flex;
     padding-left: 0;
     text-decoration: none;
 
     &.btn-link {
+      display: flex;
       color: var(--bs-body-color);
       text-transform: uppercase;
 
