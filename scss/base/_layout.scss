@@ -32,6 +32,14 @@
   }
 }
 
+// min-width is defined to win against competing width and max-width, meaning
+// as soon as the element's width would shrink below its implicit auto width,
+// min-width:auto will kick in and keep the element from shrinking.
+// @see https://stackoverflow.com/a/66689926
+.region-content-wrapper {
+  min-width: 0;
+}
+
 // Adding styles give the sidebar a fixed width.
 @include media-breakpoint-up(md) {
   .col-lg-w350 {

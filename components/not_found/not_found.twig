@@ -1,0 +1,42 @@
+{% set attributes = attributes ?: create_attribute() %}
+
+{%
+  set classes = [
+    'not-found',
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+  {%
+    include 'psulib_base:heading' with {
+      heading_html_tag: 'h1',
+      content: title|default("Oops! We can't find that"),
+      heading_utility_classes: ['not-found--title']
+    }
+  %}
+
+  <div class="not-found--divider">
+    <div class="not-found--divider-bar"></div>
+  </div>
+
+  {%
+    include 'psulib_base:heading' with {
+      heading_html_tag: 'h2',
+      content: subtitle|default('We recommend:'),
+      heading_utility_classes: ['not-found--subtitle']
+    }
+  %}
+
+  <ul class="not-found--recommendations">
+  {% if recommendations %}
+    {% for item in recommendations %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  {% else %}
+    <li>Checking the url</li>
+    <li>Visiting our <a href="{{ home_url|default('https://www.psu.edu') }}">home page</a></li>
+    <li>Searching our site</li>
+    <li>Clicking on the back button and trying another link</li>
+  {% endif %}
+  </ul>
+</div>

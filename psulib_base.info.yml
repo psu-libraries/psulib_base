@@ -10,6 +10,8 @@ libraries:
   - core/components.psulib_base--button
   - core/components.psulib_base--alert_banner
 logo: 'logo.png'
+ckeditor5-stylesheets:
+  - dist/css/ck5style.css
 regions:
   above_header: Above Header (announcements, alerts, etc.)
   header: Header

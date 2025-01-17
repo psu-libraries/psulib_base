@@ -3,10 +3,10 @@ global-styling:
   css:
     theme:
       dist/css/style.css: {}
+      dist/css/print.css: { media: print }
     component:
       dist/css/general.css: {}
   js:
-    dist/js/bootstrap.min.js: {}
     dist/js/application.js: {}
   dependencies:
     - psulib_base/fonts
@@ -20,13 +20,12 @@ global-styling:
 # including bootstrap javascript and icons.
 bootstrap:
   js:
-    dist/js/popper.min.js: {}
-    dist/js/bootstrap.min.js: {}
+    dist/js/psul-bootstrap.js: {}
 
 bootstrap-icons:
   css:
     theme:
-      assets/bootstrap-icons/font/bootstrap-icons.min.css: {}
+      dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
 drupal.nav-tabs:
   js:

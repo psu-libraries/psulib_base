@@ -6,20 +6,20 @@
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: '900';
+    font-weight: 900;
     font-display: swap;
     src:
         local('Roboto Black'),
         local('Roboto Black 900'),
-        url('./Roboto/roboto-regular-webfont.woff2') format('woff2'),
-        url('./Roboto/roboto-regular-webfont.woff') format('woff'),
+        url('./Roboto/roboto-black-webfont.woff2') format('woff2'),
+        url('./Roboto/roboto-black-webfont.woff') format('woff'),
         url('./Roboto/Roboto-Black.ttf') format('truetype'),
 }
 
 @font-face {
     font-family: 'Roboto';
     font-style: italic;
-    font-weight: '900';
+    font-weight: 900;
     font-display: swap;
     src:
         local('Roboto Black Italic'),
@@ -32,7 +32,7 @@
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: '700';
+    font-weight: 700;
     font-display: swap;
     src:
         local('Roboto Bold'),
@@ -45,7 +45,7 @@
 @font-face {
     font-family: 'Roboto';
     font-style: italic;
-    font-weight: '700';
+    font-weight: 700;
     font-display: swap;
     src:
         local('Roboto Bold Italic'),
@@ -174,17 +174,6 @@
         url('./Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf') format('truetype'),
 }
 
-@font-face {
-    font-family: 'Roboto Condensed';
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src:
-        local('Roboto Condensed Italic'),
-        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2'),
-        url('./Roboto_Condensed/RobotoCondensed-Italic-VariableFont_wght.ttf') format('truetype'),
-}
-
 /**
  * Roboto Slab Fonts Definitions
  * @see https://fonts.google.com/specimen/Roboto+Condensed?query=roboto+cond
@@ -193,10 +182,10 @@
 @font-face {
     font-family: 'Roboto Slab';
     font-style: normal;
-    font-weight: 100 900;
+    font-weight: 700;
     font-display: swap;
     src:
         local('Roboto Slab'),
-        url('./Roboto_Slab/RobotoSlab-VariableFont_wght.woff2') format('woff2'),
-        url('./Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype'),
+        url('./Roboto_Slab/static/RobotoSlab-Bold.woff2') format('woff2'),
+        url('./Roboto_Slab/RobotoSlab-Bold.ttf') format('truetype'),
 }

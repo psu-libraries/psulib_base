@@ -1,9 +1,14 @@
 node_modules
+*LICENSE.txt
+.vscode
+.DS_Store
+
+# Compiled assets
 css/style.css
 js/application.js
+dist/bootstrap-icons
 dist/css
 dist/js
 components/*/*.css
-
-.vscode
-.DS_Store
+components/*/*.map
+components/*/*.js

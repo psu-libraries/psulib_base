@@ -15,10 +15,6 @@ header {
     // Overriding the navbar padding. Not 100% sure why.
     --bs-navbar-padding-y: 0px;
     flex-wrap: wrap;
-
-    &>.container-fluid {
-      display: block;
-    }
   }
 
   .navbar-toggler {
@@ -56,12 +52,26 @@ header {
 
   }
 
+  // Setting search and menu button positioning.  This is absolute on mobile
+  // so that it option site-title can be full width.
+  .header--nav-search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: $container-padding-x;
+    top: 13.5px;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+    }
+  }
+
   .nav-actions {
     padding: 0 $nav-link-padding-y;
     font-size: $font-size-sm;
 
     @include media-breakpoint-down(md) {
-      display: block;
+      display: flex;
       width: 100%;
       background-color: $beaver-blue;
       padding: $nav-link-padding-y $grid-gutter-width;
@@ -270,127 +280,10 @@ header {
   }
 }
 
-.navbar-brand {
-  white-space: unset;
-  @include make-link($light, none, $light, underline, '.site-title');
-  flex-shrink: 1;
-
-  .site-slogan {
-    display: none;
-    font-size: $navbar-brand-site-slogan-font-size;
-
-    @include media-breakpoint-up(lg) {
-      display: block;
-    }
-  }
-
-  .site-title {
-    font-size: $navbar-brand-site-title-font-size;
-    font-weight: $navbar-brand-site-title-font-weight;
-    letter-spacing: $navbar-brand-site-title-letter-spacing;
-    text-transform: $navbar-brand-site-title-text-transform;
-  }
-
-  img {
-    height: $navbar-brand-image-height;
-    margin: 0;
-    width: $navbar-brand-image-width;
-
-    @include media-breakpoint-up(lg) {
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
-  }
-
-  img {
-    height: auto;
-    margin: 0;
-    width: 75%;
-    max-width: 228px;
-
-    @include media-breakpoint-up(lg) {
-      width: $navbar-brand-image-width;
-      max-width: $navbar-brand-image-width;
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
-  }
-}
-
-// @todo origanize this garbage.
-
 /**
  * Header styles
- * @todo Port these to the base theme.
  */
-.offcanvas__main {
-
-  ul {
-    background-color: transparent;
-    border: 0;
-
-    li.nav-item {
-      a {
-        font-weight: bold;
-
-        &.is-active,
-        &.active {
-          color: black;
-
-          &:before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 25px;
-            width: 50%;
-            border-left: 5px solid $psu-light-blue;
-          }
-        }
-      }
-    }
-  }
-
-  .link-container {
-    position: relative;
-
-    span.dropdown-arrow {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
-  }
-
-  nav ul.navbar-nav {
-
-    a,
-    a.button {
-      word-wrap: break-word;
-      text-align: left;
-      text-decoration: none;
-      color: $black;
-      display: block;
-      background-color: transparent;
-      border: 0;
-    }
-
-    .dropdown-menu {
-      border: 0;
-      padding: 0;
-      margin: 0;
-
-      .dropdown-item {
-        white-space: normal;
-      }
-    }
-  }
-}
-
-header,
-.offcanvas__main {
+header {
 
   /* Common styles for dropdown arrow */
   .dropdown-arrow {

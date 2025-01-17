@@ -1,0 +1,37 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Header mark
+status: stable
+description: Header mark component for use with Drupal branding block. Contains logo, sitename and slogan.
+props:
+  type: 'object'
+  properties:
+    site_logo:
+      type: 'string'
+      title: Site logo
+      description: URL of the site logo
+    logo_path:
+      type: 'string'
+      title: Logo path
+      description: URL the site logo should link to. (Default is &#039;&lt;front&gt;&#039;).
+    logo_title:
+      type: 'string'
+      title: Logo title
+      description: Title and alt for site logo.
+    site_name:
+      type: 'string'
+      title: Site name
+      description: Name of the site
+    hide_site_name:
+      type: 'boolean'
+      title: Hide the site name.
+      description: Add the 'hidden' class to the title.
+    site_slogan:
+      type: 'string'
+      title: Site Slogan
+      description: Site slogan.  (currently unstyled)
+    classes:
+      type: 'array'
+      items:
+        type: 'string'
+    attributes:
+      type: 'Drupal\Core\Template\Attribute'

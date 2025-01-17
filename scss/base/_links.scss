@@ -4,23 +4,38 @@
 
 a {
 
-    &:active {
-        color: $nittany-navy;
-    }
+  &:active {
+    color: $nittany-navy;
+  }
 }
 
 // Links are dark backgrounds.
 .text-light {
 
-    a {
-        color: $pa-link-light;
+  a {
+    color: $pa-link-light;
 
-        &:hover {
-            color: $pa-link-light;
-        }
-
-        &:active {
-            color: $lions-roar-light;
-        }
+    &:hover {
+      color: $pa-link-light;
     }
+
+    &:active {
+      color: $lions-roar-light;
+    }
+  }
+}
+
+// Add styles for inline links.
+.links.inline {
+  margin-bottom: 0;
+  padding-left: 0;
+  font-size: $font-size-sm;
+
+  >li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $spacer * 0.75;
+    }
+  }
 }
