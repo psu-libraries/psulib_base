@@ -10,7 +10,6 @@ const defaultSassOptions = {
 
 // Compile global SCSS files.
 mix.sass('scss/style.scss', 'dist/css').options(defaultSassOptions);
-mix.sass('scss/peripheral.scss', 'dist/css').options(defaultSassOptions);
 mix.sass('scss/print.scss', 'dist/css').options(defaultSassOptions);
 
 for (const sourcePath of glob.sync("scss/components/**/*.scss")) {
@@ -40,3 +39,17 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
 
 // Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
 mix.copyDirectory('node_modules/bootstrap-icons', 'dist/bootstrap-icons');
+
+// Run build process for peripheral assets.
+mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
+mix.js('js/psul-bootstrap.js', 'dist/peripheral/psul-bootstrap.js');
+mix.minify([
+  'dist/peripheral/peripheral.css',
+  'dist/peripheral/psul-bootstrap.js'
+]);
+
+// Copy component css to peripherals.
+for (const sourcePath of glob.sync("components/*/*.+(css|js)")) {
+  const destinationPath = sourcePath.replace(/components\//, "dist/peripheral/components/");
+  mix.copy(sourcePath, destinationPath);
+}

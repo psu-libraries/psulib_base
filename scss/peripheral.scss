@@ -35,10 +35,17 @@
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
 
+// 8. Import base styles from theme.
 @import 'mixins';
-// @import 'base';
+@import 'base/theme';
+@import 'base/forms';
+@import 'base/links';
 @import 'base/typography';
 @import 'base/indent';
-@import '../components/footer/footer';
+
+// 9. Import component styles.
+@import 'components/file';
+@import 'components/general';
+@import 'components/nav';
 
 @import 'bootstrap_fix';
