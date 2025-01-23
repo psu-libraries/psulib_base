@@ -4,11 +4,10 @@ node_modules
 .DS_Store
 
 # Compiled assets
+mix-manifest.json
 css/style.css
 js/application.js
-dist/bootstrap-icons
-dist/css
-dist/js
+dist/*
 components/*/*.css
 components/*/*.map
 components/*/*.js
