@@ -218,6 +218,15 @@ Once this has run you can use it as documented on https://icons.getbootstrap.com
 ```
 
 
+## Peripheral
+
+The theme can be used to generate assets that can be used on peripheral applications. This requires that the application in question supports bootstrap.
+
+- Run `ddev theme-build`
+- Copy the `dist/peripheral` directory into the `src/psulib_base/dist` directory in the `psu-libraries/assets` project.
+- Copy the `dist/bootstrap-icons` directory into the `src/psulib_base` directory in the `psu-libraries/assets` project.
+- Copy the `assets` directory into the `src/psulib_base` directory in the `psu-libraries/assets` project.
+
 ## Resources
 For more information about creating a subtheme:
 - [Drupal.org - Subtheming](https://www.drupal.org/node/2165673)
