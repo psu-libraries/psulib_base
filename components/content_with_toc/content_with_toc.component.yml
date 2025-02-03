@@ -1,0 +1,49 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Content with Table of Contents
+status: stable
+description: Add a content section with a sticky table of contents
+props:
+  type: object
+  properties:
+    toc_position:
+      type: 'string'
+      title: Table of Contents Position
+      description: Indicator of where the TOC should be displayed.
+      enum:
+        - left
+        - right
+        - top
+      default: left
+    default_item_tag:
+      type: 'string'
+      title: Section Title Tag
+      description: HTML tag for the Section Title.
+      enum:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: h2
+    items:
+      title: Items
+      description: Sections with content array with body and optional title.
+      type: 'array'
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: ['string', 'object', 'null']
+            title: Section Title
+          content:
+            type: ['string', 'object', 'null']
+            title: Section
+    utility_classes:
+      type: 'array'
+      items:
+        type: 'string'
+      title: Utility Classes
+      default: []
+      description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
+    attributes:
+      type: 'Drupal\Core\Template\Attribute'
