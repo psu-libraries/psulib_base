@@ -38,6 +38,10 @@ props:
           content:
             type: ['string', 'object', 'null']
             title: Section
+          id:
+            type: ['string', 'null']
+            title: Section ID
+            description: 'Unique ID for the section. If not provided the title will not be used in the jump menu.'
     utility_classes:
       type: 'array'
       items:
