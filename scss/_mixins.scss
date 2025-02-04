@@ -23,3 +23,13 @@
   font-family: "bootstrap-icons";
   vertical-align: bottom;
 }
+
+@mixin light-text {
+  color: #fff;
+  --bs-body-color: #{$white-out};
+  --bs-heading-color: #{$white-out};
+  --bs-link-color: #{$pa-link-light};
+  --bs-link-color-rgb: #{$pa-link-light};
+  --bs-link-hover-color: #{$white-out};
+  --bs-link-hover-color-rgb: #{$white-out};
+}
