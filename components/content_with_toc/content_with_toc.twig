@@ -1,0 +1,43 @@
+{%
+  set classes = [
+    'content-with-toc',
+    'row',
+    'my-5',
+  ]|merge(utility_classes ?: [])
+%}
+
+{% set default_item_tag = default_item_tag|default('h2') %}
+{% set attributes = attributes ?: create_attribute() %}
+{% set position = position|default('left') %}
+{% set id = 'content-toc-spy'|clean_unique_id %}
+
+{% if items %}
+  <div {{attributes.addClass(classes) }}>
+    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id}}">
+      {% for item in items %}
+        <div class="content-with-toc--item" {% if item.id %} id="{{ item.id }}" {% endif %}>
+          {% if item.title is not empty %}
+            {%
+              include 'psulib_base:heading' with {
+                heading_html_tag: default_item_tag,
+                content: item.title,
+              }
+            %}
+          {% endif %}
+          {{ item.content|render }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="content-with-toc--toc col-12 col-md-4 col-xl-3 {% if position == 'left' %}order-first{% endif %}">
+      <div class="py-5 toc sticky-md-top">
+        <div id="{{ id }}" class="d-flex flex-column gap-2">
+        {% for item in items %}
+          {% if item.title and item.id %}
+            <a href="#{{ item.id }}" class="p-1">{{ item.title }}</a>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endif %}
