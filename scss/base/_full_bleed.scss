@@ -15,3 +15,8 @@
 .full-bleed--limestone-light {
   --full-bleed-bg-color: #{$pa-limestone-max-light};
 }
+
+.full-bleed--navy {
+  @include light-text;
+  --full-bleed-bg-color: #{$nittany-navy};
+}
