@@ -46,6 +46,10 @@ props:
       type: 'boolean'
       title: Stacked Display with contact details in 2 rows.
       default: false
+    linked_card:
+      type: 'boolean'
+      title: Make the entire card link to the title_url.
+      default: false
     attributes:
       type: 'Drupal\Core\Template\Attribute'
     utility_classes:

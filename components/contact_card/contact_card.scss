@@ -18,6 +18,7 @@
   gap: $spacer * .75;
   box-shadow: $box-shadow;
   padding: $spacer * 1.25;
+  border: 1px solid transparent;
   background-color: $white;
   @include make-link($link-color, none, $link-hover-color, underline);
   container: contact-card / inline-size;
@@ -48,6 +49,10 @@
     text-wrap: nowrap;
   }
 
+  &--chevron {
+    display: none;
+  }
+
   // Adding stacked card variations.
   &.contact-card__stacked {
     // Need to use the #{...} format to get the map-get to actually work.
@@ -62,4 +67,34 @@
     }
   }
 
+  &.contact-card__linked-card {
+    transition: $input-transition;
+
+    &:hover,
+    &:has(.stretched-link:hover) {
+      box-shadow: 0 .5rem 1rem rgba($black, .4);
+      border: 1px solid $nittany-navy;
+
+      .contact-card--chevron svg {
+        fill: $nittany-navy !important;
+      }
+    }
+
+    .contact-card--chevron {
+      display: block;
+      position: absolute;
+      right: $spacer / 2;
+      top: calc(50% - 25px);
+      width: 25px;
+      svg {
+        fill: $link-color;
+      }
+    }
+
+    .contact-card--contacts {
+      z-index: 2;
+      position: relative;
+      margin-right: $spacer / 2;
+    }
+  }
 }
