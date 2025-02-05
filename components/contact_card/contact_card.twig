@@ -1,76 +1,116 @@
-{% set attributes = attributes ?: create_attribute() %}
+{% set contact_card_attributes = contact_card_attributes ?: create_attribute() %}
 
 {%
   set classes = [
     'contact-card',
-    stacked ? 'contact-card__stacked',
+    stacked ? 'contact-card__stacked' : '',
+    linked_card ? 'contact-card__linked-card position-relative': '',
   ]|merge(utility_classes ?: [])
 %}
 
-<div {{ attributes.addClass(classes) }}>
-  <div class="contact-card--header">
-    {%
-      include 'psulib_base:heading' with {
-        heading_html_tag: 'h3',
-        title_link: title_url ?? '',
-        content: title,
-        heading_utility_classes: [
-          'contact-card--header--title',
-        ],
-      }
-    %}
-    {% if subtitle %}<span class="contact-card--header--subtitle">{{ subtitle }}</span>{% endif %}
-  </div>
+<div {{ contact_card_attributes.addClass(classes) }}>
+  <div class="contact-card--wrapper">
 
-  <div class="contact-card--body">
-    {% if address %}<div class="contact-card--address"><em>{{ address }}</em></div>{% endif %}
+    {% block image_block %}
+      {% if display_image and (image or image_src) %}
+        <div class="contact-card--image">
 
-    <div class="contact-card--contacts">
-      {% for phone in phones %}
-        {% if phone %}
-          <div class="contact-card--contacts--phone">
-            <i class="bi bi-telephone-fill"></i>
-            <a href="tel:+{{ phone }}" >{{ phone }}</a>
+          {% if image %}
+            {{ image }}
+          {% elseif image_src %}
+            {# @todo convert to use psulib_base:image #}
+            <img src="{{ image_src }}" class="img-fluid" />
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    <div class="content-card--main">
+      <div class="contact-card--header">
+        {%
+          include 'psulib_base:heading' with {
+            heading_html_tag: 'h3',
+            title_link: title_url ?? '',
+            content: title,
+            heading_utility_classes: [
+              'contact-card--header--title',
+            ],
+            heading_link_utility_classes: [
+              linked_card ? 'stretched-link',
+            ],
+          }
+        %}
+        {% if subtitle %}
+          <span class="contact-card--header--subtitle">{{ subtitle }}</span>
+        {% endif %}
+      </div>
+
+      <div class="contact-card--body">
+
+        {% if address %}
+          <div class="contact-card--address">
+            <em>{{ address }}</em>
           </div>
         {% endif %}
-      {% endfor %}
 
-      {% if email %}
-        <div class="contact-card--contacts--email">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="mailto:{{ email }}" >{{ email }}</a>
-        </div>
-      {% endif %}
+        <div class="contact-card--contacts">
+          {% for phone in phones %}
+            {% if phone %}
+              <div class="contact-card--contacts--phone">
+                <i class="bi bi-telephone-fill"></i>
+                <a href="tel:+{{ phone }}">{{ phone }}</a>
+              </div>
+            {% endif %}
+          {% endfor %}
 
-      {% if fax %}
-        <div class="contact-card--contacts--fax">
-          <i class="bi bi-printer-fill"></i>
-          <a href="fax:+{{ fax }}" >{{ fax }}</a>
-        </div>
-      {% endif %}
+          {% if email %}
+            <div class="contact-card--contacts--email">
+              <i class="bi bi-envelope-fill"></i>
+              <a href="mailto:{{ email }}">{{ email }}</a>
+            </div>
+          {% endif %}
 
-      {% if website %}
-        <div class="contact-card--contacts--website">
-          <i class="bi bi-box-arrow-up-right"></i>
-          <a href="{{ website }}" >{{ website }}</a>
+          {% if fax %}
+            <div class="contact-card--contacts--fax">
+              <i class="bi bi-printer-fill"></i>
+              <a href="fax:+{{ fax }}">{{ fax }}</a>
+            </div>
+          {% endif %}
+
+          {% if website %}
+            <div class="contact-card--contacts--website">
+              <i class="bi bi-box-arrow-up-right"></i>
+              <a href="{{ website }}">{{ website }}</a>
+            </div>
+          {% endif %}
         </div>
+      </div>
+      {% if cta_button %}
+        {% if cta_button_render|render %}
+          {{ cta_button_render }}
+        {% elseif cta_button %}
+          {%
+              include 'psulib_base:button' with {
+                button_html_tag: 'a',
+                url: cta_button.url,
+                color: 'primary',
+                content: cta_button.title,
+                button_utility_classes: [],
+              }
+            %}
+        {% endif %}
       {% endif %}
     </div>
 
+
+    {% if linked_card %}
+      <div class="contact-card--chevron">
+        <svg role="img" aria-labelledby="Icon-chevronRight-:r4b:" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="css-gd4dzf">
+          <title id="Icon-chevronRight-:r4b:">chevronRight icon</title>
+          <path d="M6.49327 21.5067C6.16442 21.1779 6 20.7593 6 20.2511C6 19.7429 6.16442 19.3244 6.49327 18.9955L13.4888 12L6.49327 5.00448C6.16442 4.67564 6 4.2571 6 3.74888C6 3.24066 6.16442 2.82212 6.49327 2.49327C6.82212 2.16442 7.24066 2 7.74888 2C8.2571 2 8.67564 2.16442 9.00448 2.49327L17.2556 10.7444C17.435 10.9238 17.562 11.1181 17.6368 11.3274C17.7115 11.5366 17.7489 11.7608 17.7489 12C17.7489 12.2392 17.7115 12.4634 17.6368 12.6726C17.562 12.8819 17.435 13.0762 17.2556 13.2556L9.00448 21.5067C8.67564 21.8356 8.2571 22 7.74888 22C7.24066 22 6.82212 21.8356 6.49327 21.5067Z"></path>
+        </svg>
+      </div>
+    {% endif %}
   </div>
-  {% if cta_button %}
-      {% if cta_button_render|render %}
-        {{ cta_button_render }}
-      {% elseif cta_button %}
-        {%
-          include 'psulib_base:button' with {
-            button_html_tag: 'a',
-            url: cta_button.url,
-            color: 'primary',
-            content: cta_button.title,
-            button_utility_classes: [],
-          }
-        %}
-      {% endif %}
-  {% endif %}
+
 </div>
