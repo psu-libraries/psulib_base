@@ -92,8 +92,7 @@
         flex-direction: row;
 
         > div {
-          max-width: 50%;
-          flex-grow: 1;
+          width: 50%;
         }
       }
     }
@@ -102,8 +101,7 @@
   &.contact-card__linked-card {
     transition: $input-transition;
 
-    &:hover,
-    &:has(.stretched-link:hover) {
+    &:hover {
       box-shadow: 0 .5rem 1rem rgba($black, .4);
       border: 1px solid $nittany-navy;
 

@@ -1,14 +1,14 @@
-{% set attributes = attributes ?: create_attribute() %}
+{% set contact_card_attributes = contact_card_attributes ?: create_attribute() %}
 
 {%
   set classes = [
     'contact-card',
-    stacked ? 'contact-card__stacked',
-    linked_card ? 'contact-card__linked-card',
+    stacked ? 'contact-card__stacked' : '',
+    linked_card ? 'contact-card__linked-card position-relative': '',
   ]|merge(utility_classes ?: [])
 %}
 
-<div {{ attributes.addClass(classes) }}>
+<div {{ contact_card_attributes.addClass(classes) }}>
   <div class="contact-card--wrapper">
 
     {% block image_block %}
@@ -19,7 +19,7 @@
             {{ image }}
           {% elseif image_src %}
             {# @todo convert to use psulib_base:image #}
-            <img src="{{ image_src }}" class="img-fluid"/>
+            <img src="{{ image_src }}" class="img-fluid" />
           {% endif %}
         </div>
       {% endif %}
