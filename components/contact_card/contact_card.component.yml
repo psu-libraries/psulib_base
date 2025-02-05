@@ -56,3 +56,17 @@ props:
       type: 'array'
       items:
         type: 'string'
+    image:
+      type: 'string'
+      title: Image Media
+    image_src:
+      type: 'string'
+      title: Image Source URL
+    display_image:
+      type: 'boolean'
+      title: Display the Image
+      default: false
+slots:
+  image_block:
+    title: Card Image
+    description: Slot for the image on the left of the card.
