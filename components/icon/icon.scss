@@ -1,0 +1,34 @@
+@import '../../scss/init';
+
+.psul-icon {
+  --psul-icon-color: #{$black};
+
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+
+  svg {
+    height: 100%;
+    width: auto;
+
+    path {
+      fill: var(--psul-icon-color);
+    }
+  }
+
+  &--white {
+    --psul-icon-color: #{$white};
+  }
+
+  &--nittanyNavy {
+    --psul-icon-color: #{$nittany-navy};
+  }
+
+  &--link {
+    --psul-icon-color: #{$pa-link};
+  }
+
+  &--linkLight {
+    --psul-icon-color: #{$pa-link-light};
+  }
+}

@@ -1,0 +1,18 @@
+{%
+  set svg_url = [
+    '/' ~    componentMetadata.path ~ '/',
+    'assets/',
+    icon,
+    '.svg',
+  ]|join('')
+%}
+
+{% set classes = [
+  'psul-icon',
+  'psul-icon--' ~ icon,
+  'psul-icon--' ~ color|default('black'),
+]|join(' ') %}
+
+<span class="{{ classes }}">
+  {% include('@psulib_base/components/icon/assets/' ~ icon ~ '.svg') %}
+</span>
