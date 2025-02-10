@@ -3,12 +3,12 @@ name: Icon
 status: stable
 description: Icon from the PSU Flex Library.
 props:
-  type: object
+  type: 'object'
   required:
     - icon
   properties:
     icon:
-      type: string
+      type: 'string'
       title: Icon
       description: Name of the icon (see https://psu-flex-storybook.vercel.app/?path=/story/tokens-icons--page)
       enum:
@@ -18,10 +18,10 @@ props:
         - person
         - phone
     color:
-      type: string
+      type: 'string'
       title: Color
       description: Color of the icon
-      default: "black"
+      default: black
       enum:
         - black
         - link
