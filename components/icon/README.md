@@ -7,7 +7,7 @@ Add a PSU Flex Icon.  *Note: only some icons are currently supported.*
 Default color (black).
 
 ```twig
-  {% include 'psulib_theme:icon' with {
+  {% include 'psulib_base:icon' with {
     icon: 'person',
   } %}
 ```
@@ -15,7 +15,7 @@ Default color (black).
 Specify the color.
 
 ```twig
-  {% include 'psulib_theme:icon' with {
+  {% include 'psulib_base:icon' with {
     icon: 'linkOut',
     color: 'link',
   } %}
