@@ -378,15 +378,15 @@ summary {
     font-weight: bold;
   }
 
-  ul {
+  ul:not(.list-unstyled) {
     margin: 0 0 0.75em 0;
     padding: 0;
-  }
 
-  li {
-    margin: 0 0 0.25em 1.5em;
-    /* LTR */
-    padding: 0;
+    li {
+      margin: 0 0 0.25em 1.5em;
+      /* LTR */
+      padding: 0;
+    }
   }
 }
 
