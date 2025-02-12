@@ -13,9 +13,9 @@
 
 {% if items %}
   <div {{attributes.addClass(classes) }}>
-    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id}}">
+    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id }}" data-bs-root-margin="0px 0px -48px" >
       {% for item in items %}
-        <div class="content-with-toc--item" {% if item.id %} id="{{ item.id }}" {% endif %}>
+        <div class="content-with-toc--item" {% if item.id %} id="{{ item.id|clean_class }}" {% endif %}>
           {% if item.title is not empty %}
             {%
               include 'psulib_base:heading' with {
@@ -34,7 +34,7 @@
         <div id="{{ id }}" class="d-flex flex-column gap-2">
         {% for item in items %}
           {% if item.title and item.id %}
-            <a href="#{{ item.id }}" class="p-1">{{ item.title }}</a>
+            <a href="#{{ item.id|clean_class }}" class="p-1">{{ item.title }}</a>
           {% endif %}
         {% endfor %}
         </div>
