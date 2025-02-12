@@ -30,8 +30,8 @@
     </div>
 
     <div class="content-with-toc--toc col-12 col-md-4 col-xl-3 {% if position == 'left' %}order-first{% endif %}">
-      <div class="py-5 toc sticky-md-top">
-        <div id="{{ id }}" class="d-flex flex-column gap-2">
+      <div class="pt-0 pb-5 pt-md-5 toc sticky-md-top">
+        <div id="{{ id }}" class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap row-gap-2 column-gap-5">
         {% for item in items %}
           {% if item.title and item.id %}
             <a href="#{{ item.id|clean_class }}" class="p-1">{{ item.title }}</a>
