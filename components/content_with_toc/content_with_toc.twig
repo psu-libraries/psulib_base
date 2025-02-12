@@ -13,7 +13,7 @@
 
 {% if items %}
   <div {{attributes.addClass(classes) }}>
-    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id }}" data-bs-root-margin="0px 0px -48px" >
+    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id }}" data-bs-root-margin="0px 0px 48px" >
       {% for item in items %}
         <div class="content-with-toc--item" {% if item.id %} id="{{ item.id|clean_class }}" {% endif %}>
           {% if item.title is not empty %}
