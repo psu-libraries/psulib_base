@@ -67,6 +67,21 @@ props:
       title: Display the Image
       default: false
 slots:
+  address:
+    title: Address
+    description: Slot for the address.
+  email:
+    title: Email
+    description: Slot for the email address.
+  fax:
+    title: Fax
+    description: Slot for the fax number.
   image_block:
     title: Card Image
     description: Slot for the image on the left of the card.
+  phones:
+    title: Phones
+    description: Slot for the phone numbers.
+  website:
+    title: Website
+    description: Slot for the website.

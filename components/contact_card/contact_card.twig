@@ -46,43 +46,59 @@
       </div>
 
       <div class="contact-card--body">
-
-        {% if address %}
-          <div class="contact-card--address">
-            <em>{{ address }}</em>
-          </div>
-        {% endif %}
+        <div class="contact-card--address contact-card--hide-if-empty">
+          {% apply spaceless %}
+            {% block address %}
+              {% if address %}
+                {{ address }}
+              {% endif %}
+            {% endblock %}
+          {% endapply %}
+        </div>
 
         <div class="contact-card--contacts">
-          {% for phone in phones %}
-            {% if phone %}
-              <div class="contact-card--contacts--phone">
-                <i class="bi bi-telephone-fill"></i>
-                <a href="tel:+{{ phone }}">{{ phone }}</a>
+          <div class="contact-card--contacts--phone contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block phones %}
+                {% for phone in phones %}
+                  {% if phone %}
+                    {% include 'psulib_base:icon' with {icon: 'phone'} %}
+                    <a href="tel:+{{ phone }}">{{ phone }}</a>
+                  {% endif %}
+                {% endfor %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+
+          <div class="contact-card--contacts--email contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block email %}
+                {% if email %}
+                  {% include 'psulib_base:icon' with {icon: 'email'} %}
+                  <a href="mailto:{{ email }}">{{ email }}</a>
+                {% endif %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+          <div class="contact-card--contacts--fax contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block fax %}
+                {% if fax %}
+                  {% include 'psulib_base:icon' with {icon: 'fax'} %}
+                  <a href="fax:+{{ fax }}">{{ fax }}</a>
+                {% endif %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+
+          {% block website %}
+            {% if website %}
+              <div class="contact-card--contacts--website">
+                {% include 'psulib_base:icon' with {icon: 'linkOut'} %}
+                <a href="{{ website }}">{{ website }}</a>
               </div>
             {% endif %}
-          {% endfor %}
-
-          {% if email %}
-            <div class="contact-card--contacts--email">
-              <i class="bi bi-envelope-fill"></i>
-              <a href="mailto:{{ email }}">{{ email }}</a>
-            </div>
-          {% endif %}
-
-          {% if fax %}
-            <div class="contact-card--contacts--fax">
-              <i class="bi bi-printer-fill"></i>
-              <a href="fax:+{{ fax }}">{{ fax }}</a>
-            </div>
-          {% endif %}
-
-          {% if website %}
-            <div class="contact-card--contacts--website">
-              <i class="bi bi-box-arrow-up-right"></i>
-              <a href="{{ website }}">{{ website }}</a>
-            </div>
-          {% endif %}
+          {% endblock %}
         </div>
       </div>
       {% if cta_button %}
