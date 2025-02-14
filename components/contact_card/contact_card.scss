@@ -12,6 +12,10 @@
   }
 }
 
+.contact-card--hide-if-empty:empty {
+  display: none;
+}
+
 .contact-card {
   display: flex;
   flex-direction: column;
@@ -23,7 +27,7 @@
   @include make-link($link-color, none, $link-hover-color, underline);
   container: contact-card / inline-size;
 
-  i {
+  .psul-icon {
     margin-right: $spacer * .5;
   }
 
@@ -48,13 +52,16 @@
 
     .content-card--main {
       flex-grow: 1;
+      width: 100%;
     }
 
-    .contact-card--chevron {
-      flex-grow: 0;
-      flex-shrink: 0;
-      width: 25px;
-      align-content: center;
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      .contact-card--chevron {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 25px;
+        align-content: center;
+      }
     }
   }
 
@@ -64,7 +71,7 @@
 
   &--header--title {
     font-size: $font-size-base * 1.125;
-    margin-bottom: 0;
+    margin-bottom: $spacer;
     font-weight: bold;
   }
 
@@ -74,8 +81,8 @@
     flex-direction: column;
   }
 
-  &--contacts--email {
-    overflow-x: hidden;
+  &--contacts > div {
+    overflow-x: clip;
     text-overflow: ellipsis;
     text-wrap: nowrap;
   }

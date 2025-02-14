@@ -197,7 +197,7 @@ function psulib_base_preprocess_media_library_item__widget(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter().
+ * Implements hook_theme_suggestions_HOOK_alter() for menu.
  */
 function psulib_base_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
   if (isset($variables['attributes']['data-block']['region'])) {
@@ -205,6 +205,16 @@ function psulib_base_theme_suggestions_menu_alter(array &$suggestions, array $va
     $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
     $suggestions[] = 'menu__' . $region;
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for field.
+ *
+ * Adding additional field suggestions.
+ */
+function psulib_base_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__view_mode_' . $variables['element']['#view_mode'];
+  $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__view_mode_' . $variables['element']['#view_mode'];
 }
 
 /**
