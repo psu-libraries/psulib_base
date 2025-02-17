@@ -20,9 +20,9 @@ In some cases the icon and link might be added to fields using a template. In th
   stacked: true,
   linked_card: true,
 } %}
-  {% block email %}{{ content.field_email }}{% endblock %}
-  {% block phones %}{{ content.field_general_phone }}{% endblock %}
-  {% block fax %}{{ content.field_fax_number }}{% endblock %}
+  {% block email_block %}{{ content.field_email }}{% endblock %}
+  {% block phones_block %}{{ content.field_general_phone }}{% endblock %}
+  {% block fax_block %}{{ content.field_fax_number }}{% endblock %}
 {% endembed %}
 ```
 

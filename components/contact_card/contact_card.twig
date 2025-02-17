@@ -48,7 +48,7 @@
       <div class="contact-card--body">
         <div class="contact-card--address contact-card--hide-if-empty">
           {% apply spaceless %}
-            {% block address %}
+            {% block address_block %}
               {% if address %}
                 {{ address }}
               {% endif %}
@@ -59,7 +59,7 @@
         <div class="contact-card--contacts">
           <div class="contact-card--contacts--phone contact-card--hide-if-empty">
             {% apply spaceless %}
-              {% block phones %}
+              {% block phones_block %}
                 {% for phone in phones %}
                   {% if phone %}
                     {% include 'psulib_base:icon' with {icon: 'phone'} %}
@@ -72,7 +72,7 @@
 
           <div class="contact-card--contacts--email contact-card--hide-if-empty">
             {% apply spaceless %}
-              {% block email %}
+              {% block email_block %}
                 {% if email %}
                   {% include 'psulib_base:icon' with {icon: 'email'} %}
                   <a href="mailto:{{ email }}">{{ email }}</a>
@@ -82,7 +82,7 @@
           </div>
           <div class="contact-card--contacts--fax contact-card--hide-if-empty">
             {% apply spaceless %}
-              {% block fax %}
+              {% block fax_block %}
                 {% if fax %}
                   {% include 'psulib_base:icon' with {icon: 'fax'} %}
                   <a href="fax:+{{ fax }}">{{ fax }}</a>
@@ -91,7 +91,7 @@
             {% endapply %}
           </div>
 
-          {% block website %}
+          {% block website_block %}
             {% if website %}
               <div class="contact-card--contacts--website">
                 {% include 'psulib_base:icon' with {icon: 'linkOut'} %}
