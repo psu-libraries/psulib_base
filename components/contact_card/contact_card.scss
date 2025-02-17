@@ -69,10 +69,24 @@
     font-style: italic;
   }
 
-  &--header--title {
-    font-size: $font-size-base * 1.125;
+  &--address--job-title {
+    font-style: normal;
+    font-weight: $font-weight-medium;
+  }
+
+  &--header {
     margin-bottom: $spacer;
+  }
+
+  &--header--title {
+    margin-bottom: 0;
+    font-size: $font-size-base * 1.375;
     font-weight: bold;
+  }
+
+  &--header--subtitle {
+    font-size: $font-size-base;
+    font-size: $font-size-base * 1.125;
   }
 
   &--body {

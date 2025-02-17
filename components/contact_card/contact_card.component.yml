@@ -14,6 +14,9 @@ props:
     subtitle:
       type: 'string'
       title: Subtitle
+    job_title:
+      type: 'string'
+      title: Job Title
     address:
       type: 'string'
       title: Address

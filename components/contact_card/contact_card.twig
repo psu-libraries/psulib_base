@@ -49,6 +49,9 @@
         <div class="contact-card--address contact-card--hide-if-empty">
           {% apply spaceless %}
             {% block address_block %}
+              {% if job_title %}
+                <div class="contact-card--address--job-title">{{ job_title }}</div>
+              {% endif %}
               {% if address %}
                 {{ address }}
               {% endif %}
