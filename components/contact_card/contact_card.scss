@@ -138,7 +138,9 @@
       }
     }
 
-    .contact-card--contacts {
+    // Setting the z-index on body links so that these are clickable
+    // when in a bootstrap stretched-link container.
+    .contact-card--body a {
       z-index: 2;
       position: relative;
       margin-right: $spacer / 2;
