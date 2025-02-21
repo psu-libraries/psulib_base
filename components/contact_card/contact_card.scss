@@ -36,12 +36,16 @@
     display: none;
   }
 
+  &--image .media {
+    margin-bottom: 0;
+  }
+
   &--wrapper {
     display: flex;
     flex-direction: row;
     gap: $spacer;
 
-    @container contact-card (min-width: #{map-get($grid-breakpoints, "md")}) {
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
       .contact-card--image {
         flex-grow: 0;
         flex-shrink: 0;
@@ -65,10 +69,6 @@
     }
   }
 
-  &--address {
-    font-style: italic;
-  }
-
   &--address--job-title {
     font-style: normal;
     font-weight: $font-weight-medium;
@@ -80,13 +80,20 @@
 
   &--header--title {
     margin-bottom: 0;
-    font-size: $font-size-base * 1.375;
+    font-size: $font-size-base * 1.125;
     font-weight: bold;
+
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      font-size: $font-size-base * 1.375;
+    }
   }
 
   &--header--subtitle {
     font-size: $font-size-base;
-    font-size: $font-size-base * 1.125;
+    font-size: $font-size-base * 1.1;
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      font-size: $font-size-base * 1.125;
+    }
   }
 
   &--body {
@@ -103,6 +110,12 @@
 
   &--chevron {
     display: none;
+  }
+
+  &--footer:not(:empty) {
+    border-top: 1px solid $pa-limestone-light;
+    padding-top: $spacer;
+    margin-top: $spacer;
   }
 
   // Adding stacked card variations.
@@ -140,10 +153,13 @@
 
     // Setting the z-index on body links so that these are clickable
     // when in a bootstrap stretched-link container.
-    .contact-card--body a {
-      z-index: 2;
-      position: relative;
-      margin-right: $spacer / 2;
+    .contact-card--body,
+    .contact-card--footer {
+      a {
+        z-index: 2;
+        position: relative;
+        margin-right: $spacer / 2;
+      }
     }
   }
 }

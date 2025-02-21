@@ -53,7 +53,7 @@
                 <div class="contact-card--address--job-title">{{ job_title }}</div>
               {% endif %}
               {% if address %}
-                {{ address }}
+                <em>{{ address }}</em>
               {% endif %}
             {% endblock %}
           {% endapply %}
@@ -119,6 +119,15 @@
             %}
         {% endif %}
       {% endif %}
+
+      {% block footer_block %}
+
+        {% if footer %}
+          <div class="contact-card--footer">
+            {{ footer }}
+          </div>
+        {% endif %}
+      {% endblock %}
     </div>
 
 
