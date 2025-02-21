@@ -35,6 +35,9 @@ props:
     website:
       type: 'string'
       title: Address
+    footer:
+      type: ['string', 'array', 'object']
+      title: Footer
     cta_button:
       type: 'object'
       title: CTA Button
@@ -79,6 +82,9 @@ slots:
   fax_block:
     title: Fax
     description: Slot for the fax number.
+  footer_block:
+    title: Footer
+    description: Slot for the footer.
   image_block:
     title: Card Image
     description: Slot for the image on the left of the card.
