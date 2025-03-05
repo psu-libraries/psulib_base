@@ -32,6 +32,23 @@ footer {
     }
   }
 
+  // Color contrast between copy and link texts are too low so I added a
+  // underline to these links. Changing color and style to make it less
+  // intrusive.
+  p {
+    @include make-link($pa-link-light, underline, $pa-link-light, underline);
+
+    a {
+      text-decoration-style: dotted;
+      text-decoration-color: rgba($pa-link-light, 75%);
+    }
+
+    a:not(:link) {
+      text-decoration-style: solid;
+      text-decoration-color: $pa-link-light;
+    }
+  }
+
   .list-inline {
 
     .list-inline-item {
