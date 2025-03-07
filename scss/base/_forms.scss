@@ -226,3 +226,12 @@ abbr.ajax-changed {
   background: url(../../assets/icons/error.svg) no-repeat;
   background-size: contain;
 }
+
+// Form Validation Styles
+form {
+  .form-control {
+    &:user-invalid {
+      border-color: var(--bs-form-invalid-border-color);
+    }
+  }
+}

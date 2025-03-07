@@ -83,3 +83,9 @@ webform-styling:
   css:
     theme:
       dist/css/webform.css: {}
+  js:
+    js/validate-form.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings

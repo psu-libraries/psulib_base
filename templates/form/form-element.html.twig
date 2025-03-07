@@ -63,6 +63,7 @@
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
+{{ dump(element['#required_error']) }}
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -81,6 +82,9 @@
   {% endif %}
   {% if label_display == 'after' %}
     {{ label }}
+  {% endif %}
+  {% if element['#required'] %}
+    <div class="invalid-feedback">{{ element['#required_error']|default('This field is required.') }}</div>
   {% endif %}
   {% if errors %}
     <div class="form-item--error-message">
