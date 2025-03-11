@@ -88,4 +88,3 @@ webform-styling:
   dependencies:
     - core/drupal
     - core/once
-    - core/drupalSettings
