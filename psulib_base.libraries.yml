@@ -79,10 +79,7 @@ search-results:
     component:
       dist/css/search-results.css: {}
 
-webform-styling:
-  css:
-    theme:
-      dist/css/webform.css: {}
+webform-validation:
   js:
     js/validate-form.js: {}
   dependencies:

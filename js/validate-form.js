@@ -58,7 +58,8 @@
             });
 
             // Set focus on the first invalid element.
-            const firstInvalidElement = form.querySelector(':invalid');
+            const firstInvalidElement = form.querySelector(':invalid:not(fieldset)');
+            console.log(firstInvalidElement);
             if (firstInvalidElement) {
               firstInvalidElement.focus();
             }

@@ -1,6 +1,0 @@
-// Smooth scrolling is negativly impacting HTML Client Site Validation in
-// Chrome and Safari.  Unsetting the scroll behavior on webforms so the
-// popup works correctly.
-:root {
-  scroll-behavior: unset;
-}
