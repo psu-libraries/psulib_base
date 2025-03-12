@@ -1,7 +1,7 @@
 # base theme styling
 global-styling:
   css:
-    theme:
+    base:
       dist/css/style.css: {}
       dist/css/print.css: { media: print }
     component:
@@ -24,7 +24,7 @@ bootstrap:
 
 bootstrap-icons:
   css:
-    theme:
+    base:
       dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
 drupal.nav-tabs:
@@ -78,3 +78,10 @@ search-results:
   css:
     component:
       dist/css/search-results.css: {}
+
+webform-validation:
+  js:
+    js/validate-form.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

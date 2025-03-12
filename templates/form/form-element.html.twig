@@ -63,6 +63,7 @@
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -82,6 +83,20 @@
   {% if label_display == 'after' %}
     {{ label }}
   {% endif %}
+
+  {#
+    Not adding the invalid-feedback to radios and checkboxes because we only
+    want to add this to the last input in the group.  This will be added in
+    with javascript.
+  #}
+  {% if element['#type'] not in ['radio', 'checkbox'] %}
+    <div class="invalid-feedback">
+      {% if element['#required'] %}
+        {{ element['#required_error']|default('This field is required.') }}
+      {% endif %}
+    </div>
+  {% endif %}
+
   {% if errors %}
     <div class="form-item--error-message">
       <strong>{{ errors }}</strong>
