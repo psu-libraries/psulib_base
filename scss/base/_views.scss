@@ -54,30 +54,43 @@
   margin-top: 1rem;
 }
 
-// Add some styles for inline better exposed filters.
-.bef-exposed-form .form--inline {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: $spacer * 1.5;
-  align-items: end;
-  flex-wrap: wrap;
+// Add some styles for inline exposed filters.
+.bef-exposed-form,
+.views-exposed-form {
+  .form--inline {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $spacer * 1.5;
+    align-items: end;
+    flex-wrap: wrap;
 
-  >div {
-    float: none !important;
-    min-width: 150px;
-  }
-
-  .form-item {
-    margin-top: 0;
-    margin-bottom: $spacer * .5;
-
-    @include media-breakpoint-up('md') {
-      margin-bottom: $spacer;
+    >div {
+      float: none !important;
+      min-width: 150px;
     }
-  }
 
-  label {
-    font-weight: bold;
+    .form-actions {
+      margin-top: 0;
+      min-width: unset;
+
+      input,
+      button {
+        margin-top: 0;
+      }
+    }
+
+    .form-item {
+      margin-top: 0;
+      margin-bottom: $spacer * .5;
+
+      @include media-breakpoint-up('md') {
+        margin-bottom: $spacer;
+      }
+    }
+
+    label {
+      font-weight: $font-weight-medium;
+    }
   }
 }
 
