@@ -8,6 +8,12 @@
   ]|merge(utility_classes ?: [])
 %}
 
+{% set ext_replacements = {
+  ' ext. ': ';',
+  ' ext ': ';',
+  ' x': ';',
+}%}
+
 <div {{ contact_card_attributes.addClass(classes) }}>
   <div class="contact-card--wrapper">
 
@@ -66,7 +72,7 @@
                 {% for phone in phones %}
                   {% if phone %}
                     {% include 'psulib_base:icon' with {icon: 'phone'} %}
-                    <a href="tel:+{{ phone }}">{{ phone }}</a>
+                    <a href="tel:+{{ phone|lower|replace(ext_replacements) }}">{{ phone }}</a>
                   {% endif %}
                 {% endfor %}
               {% endblock %}
