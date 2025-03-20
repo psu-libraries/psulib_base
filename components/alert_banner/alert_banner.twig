@@ -30,22 +30,22 @@
         aria-expanded="false"
         aria-controls="{{ alert_collapse_id }}-collapse">
           <i class="bi {{ icon_map[severity]|default('bi-exclamation-circle-fill') }}"></i> {{ title -}}
-        </button>
-      </div>
+      </button>
+    </div>
 
-      <div id="{{ alert_collapse_id }}-collapse" class="alert-banner--content clearfix collapse mt-2">
-        {% block content %}
-          {{ content }}
-        {% endblock %}
+    <div id="{{ alert_collapse_id }}-collapse" class="alert-banner--content clearfix collapse mt-2">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
 
-        {% block footer_content %}
-          <div class="alert-banner--footer font-size-sm">
-            {{ footer_content }}
-          </div>
-        {% endblock %}
-      </div>
+      {% block footer_content %}
+        <div class="alert-banner--footer font-size-sm">
+          {{ footer_content }}
+        </div>
+      {% endblock %}
     </div>
   </div>
+</div>
 
 
-  {% endapply %}
+{% endapply %}
