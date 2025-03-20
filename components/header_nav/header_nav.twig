@@ -92,12 +92,13 @@
   <li{{item.attributes.addClass(list_item_classes)}}>
     {% if menu_level == 0 and item.below %}
       <div class="link-container">
-        {{ link(item.title, item.url, { 'class': link_class, 'role': 'button', 'aria-expanded': item.in_active_trail ? 'true' : 'false', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }}
-        <span class="dropdown-arrow">
+        {{ link(item.title, item.url, { 'class': link_class, 'aria-expanded': item.in_active_trail ? 'true' : 'false' }) }}
+        <div class="dropdown-arrow">
           <svg role="button" tabindex="0" aria-expanded="{% if item.in_active_trail %}true{% else %}false{% endif %}" width="16" height="16" viewbox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>{% trans %}Expand menu{% endtrans %} {{ item.title }}</title>
             <path d="M7.00777 8.33901C6.84851 8.33901 6.69921 8.31413 6.55986 8.26436C6.42051 8.21459 6.29112 8.12999 6.17168 8.01055L0.647497 2.48637C0.42852 2.26739 0.324009 1.99367 0.333962 1.66521C0.343916 1.33674 0.458381 1.06302 0.677357 0.844044C0.896334 0.625068 1.17503 0.515579 1.51345 0.515579C1.85187 0.515579 2.13057 0.625068 2.34954 0.844044L7.00777 5.50227L11.6959 0.814184C11.9148 0.595207 12.1886 0.490696 12.517 0.500649C12.8455 0.510603 13.1192 0.625068 13.3382 0.844044C13.5572 1.06302 13.6666 1.34172 13.6666 1.68014C13.6666 2.01855 13.5572 2.29725 13.3382 2.51623L7.84386 8.01055C7.72442 8.12999 7.59503 8.21459 7.45568 8.26436C7.31633 8.31413 7.16703 8.33901 7.00777 8.33901Z" fill="currentColor"/>
           </svg>
-        </span>
+        </div>
       </div>
       {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
     {% else %}
