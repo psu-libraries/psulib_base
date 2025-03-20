@@ -50,41 +50,58 @@
  *
  **/
 
-(function ($, Drupal, once) {
-  function init(i, list) {
-    let $list = $(list);
-    let $links = $list.find('li a');
-    let linkList = $links.map( function() {
-      let $link = $(this).clone();
-      $link.removeProp('class');
-      $link.addClass('dropdown-item text-wrap');
-      return $link;
-    }).get();
+(function (Drupal, once) {
+  /**
+   * Initialize the jump menu.
+   *
+   * @param {number} index
+   * @param {Array} list
+   */
+  function init(index, list) {
+    let listElement = list;
+    const links = Array.from(listElement.querySelectorAll('li a'));
 
-    if (linkList.length) {
-      let breakpoint = $list.data('jump-breakpoint') ? $list.data('jump-breakpoint') : 'lg';
-      $list.addClass(`d-none d-${breakpoint}-block`);
-      let id = $list.data('jump-id') ? $list.data('jump-id') : 'jump-menu-' + i;
-      let $parent = $list.parent();
-      let class_values = $list.data('jump-classes');
-      let button_text = $list.data('jump-title') ? $list.data('jump-title') : 'Select a Link';
-      let button_dropdown =
-        `<div class="dropdown d-${breakpoint}-none ${class_values}">` +
-        `<button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${button_text}</button>` +
-        `<div class="dropdown-menu" aria-labelledby="${id}"></div></div>`;
-      $parent.prepend(button_dropdown);
-      let $link_list = $('.dropdown-menu', $parent);
-      linkList.forEach(function (value) {
-        $link_list.append(value);
-      });
+    // Skip if there are no links.
+    if (links.length < 1) {
+      return;
     }
+
+    // Cone the links so we can use them in the dropdown.
+    const linkList = links.map(link => {
+      const clonedLink = link.cloneNode(true);
+      clonedLink.classList.remove(...clonedLink.classList);
+      clonedLink.classList.add('dropdown-item', 'text-wrap');
+      return clonedLink;
+    });
+
+    // Skip if there are no links.
+    if (linkList.length < 1) {
+      return;
+    }
+
+    // Build the Dropdown.
+    const breakpoint = listElement.dataset.jumpBreakpoint || 'lg';
+    listElement.classList.add(`d-none`, `d-${breakpoint}-block`);
+    const id = listElement.dataset.jumpId || `jump-menu-${index}`;
+    let parentElement = listElement.parentElement;
+    const classValues = listElement.dataset.jumpClasses || '';
+    const buttonText = listElement.dataset.jumpTitle || 'Select a Link';
+    let buttonDropdown = document.createElement('div');
+    buttonDropdown.className = `dropdown d-${breakpoint}-none ${classValues}`;
+    buttonDropdown.innerHTML = `
+      <button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${buttonText}</button>
+      <div class="dropdown-menu" aria-labelledby="${id}"></div>
+    `;
+    parentElement.prepend(buttonDropdown);
+    let dropdownMenu = buttonDropdown.querySelector('.dropdown-menu');
+    linkList.forEach(link => dropdownMenu.appendChild(link));
   }
 
   Drupal.behaviors.jumpMenu = {
     attach: function attach(context) {
-      once('jump-menu', 'ul.jump-menu', context).forEach(function (value, i) {
-        $(value).each(init);
+      once('jump-menu', 'ul.jump-menu', context).forEach((value, index) =>  {
+        init(index, value); // Pass the correct index to the init function
       });
     }
   };
-})(jQuery, Drupal, once);
+})(Drupal, once);
