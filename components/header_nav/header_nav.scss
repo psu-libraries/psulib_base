@@ -85,14 +85,18 @@
       padding-left: 10px;
 
       svg {
-        width: 14px;
-        height: 14px;
+        padding: 4px 8px 4px 0px;
+        width: 22px;
+        height: 22px;
+        // Adding a negative right marging to ensure consistent spacing
+        // for links with and without dropdown arrows.
+        margin-right: -8px;
       }
 
       @include media-breakpoint-up('lg') {
         svg {
-          width: 16px;
-          height: 16px;
+          width: 24px;
+          height: 24px;
         }
 
       }

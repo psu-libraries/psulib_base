@@ -93,8 +93,8 @@
       }
 
       // Keeping the #mainMenuNav id to support psul_theme template.
-      once('psul-theme-mainMenuNav', '#mainMenuNav, .main-menu-nav', context).forEach(() => {
-        document.querySelectorAll('#mainMenuNav, .main-menu-nav').forEach(setupDropdownBehavior);
+      once('psul-theme-mainMenuNav', '.main-menu-nav', context).forEach((menu) => {
+        setupDropdownBehavior(menu);
       });
 
     }
