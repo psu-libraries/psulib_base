@@ -134,20 +134,22 @@
 
   &.contact-card__linked-card {
     transition: $input-transition;
+    --psul-icon-color: #330000;
 
     &:hover {
       box-shadow: 0 .5rem 1rem rgba($black, .4);
       border: 1px solid $nittany-navy;
 
-      .contact-card--chevron svg {
-        fill: $nittany-navy !important;
+      .contact-card--chevron .psul-icon--link {
+        --psul-icon-color: #{$nittany-navy};
       }
     }
 
     .contact-card--chevron {
       display: block;
-      svg {
-        fill: $link-color;
+
+      .psul-icon--link {
+        --psul-icon-color: #{$link-color};
       }
     }
 

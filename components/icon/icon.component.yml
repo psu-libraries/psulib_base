@@ -12,6 +12,7 @@ props:
       title: Icon
       description: Name of the icon (see https://psu-flex-storybook.vercel.app/?path=/story/tokens-icons--page)
       enum:
+        - chevronRight
         - email
         - fax
         - linkOut
