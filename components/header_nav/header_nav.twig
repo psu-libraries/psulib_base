@@ -51,12 +51,12 @@
   {% if items %}
     {%
       set ul_classes = [
-        menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap main-menu' : '',
+        menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap main-menu main-menu-nav' : '',
         menu_level > 0 ? 'dropdown-menu' : '',
         'nav-level-' ~ menu_level,
       ]
     %}
-    <ul{{attributes.addClass(ul_classes).setAttribute('id',menu_level==0?'mainMenuNav':null)}}>
+    <ul{{ attributes.addClass(ul_classes) }}>
       {% for item in items %}
         {{ menus.add_link(item, attributes.removeClass(ul_classes), menu_level) }}
       {% endfor %}
