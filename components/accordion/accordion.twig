@@ -102,15 +102,12 @@
                 .setAttribute('data-bs-target', '#collapse-' ~ id ~ '-' ~ loop.index)
                 .setAttribute('aria-controls', 'collapse-' ~ id ~ '-' ~ loop.index)
                 .setAttribute('aria-expanded', open_item ? 'true' : 'false')
+                .setAttribute('id', 'button-' ~ '-' ~ id ~'-' ~ loop.index )
             %}
 
-            {%
-              include 'psulib_base:button' with {
-                content: item.title,
-                button_attributes,
-                id: 'button-' ~ '-' ~ id ~'-' ~ loop.index
-              }
-            %}
+            <button {{ button_attributes }} >
+              {{ item.title }}
+            </button>
           </{{item_title_tag}}>
 
           <div id="collapse-{{ id }}-{{ loop.index }}" class="accordion-collapse collapse{{ open_item ? ' show' }}" aria-labelledby="heading-{{ id }}-{{ loop.index }}" role="region" {% if not item.stay_open %} data-bs-parent="#{{ id }}" {% endif %}>
