@@ -124,6 +124,17 @@ $theme-colors: (
   padding-right: 1rem;
 }
 
+.btn-report {
+  --#{$prefix}btn-padding-x: 1.75rem;
+  --#{$prefix}btn-padding-y: 0.25rem;
+  --#{$prefix}btn-font-size: 1rem;
+  @include border-radius(0px);
+
+  line-height: 1;
+  font-family: $font-family-condensed;
+  text-transform: uppercase;
+}
+
 // Add variant for a full width button. This will take up the entire
 // space of the parent container.
 .btn-wide {
