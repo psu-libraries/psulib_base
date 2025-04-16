@@ -1,58 +1,32 @@
-// Generate styles for pagination.
+// Generate styles for buttons.
 @import '../../scss/init';
 
 // Override variables here.
-$btn-rounded-radius: .3rem !default;
+$btn-rounded-radius: .3rem;
+$btn-border-radius: 4px;
 
+// Button Variables.
 .btn {
+  --#{$prefix}border-radius: 4px;
   --#{$prefix}btn-rounded-radius: #{$btn-rounded-radius};
 }
+
+// Overriding the theme-colors here so we only create btn variants for
+// some of the theme colors.
+$theme-colors: (
+  "success":    $success,
+  "danger":     $danger,
+  "dark":       $dark
+);
 
 // Import bootstrap button styles and mixins.
 @import '~bootstrap/scss/mixins/_buttons.scss';
 @import '~bootstrap/scss/buttons';
 
-// Custom styles go here.
-button {
-  &.link {
-    @extend .btn;
-    @extend .btn-link;
-    color: $link-color;
-  }
-}
 
-.button {
-    @extend .btn;
-}
-
-.button--small {
-  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-}
-
-a {
-  &.button {
-    @extend .btn;
-    text-decoration: none;
-
-    &.button--primary {
-      @include button-variant($primary, $primary);
-    }
-
-    &.button--danger {
-      @include button-variant($danger, $danger);
-    }
-
-    &.button-action {
-      @include button-variant($info, $info);
-    }
-
-    &.button--small {
-      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-    }
-  }
-}
-
-// @todo - all div a should be updated in b5 theme for drupal
+// Loop through a subset of the theme colors and create button classes.
+// We only need a handful for backwards compatibility.  The rest are
+// based on the PSU Flex CTA buttons.
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     a {
@@ -83,12 +57,110 @@ a {
   }
 }
 
+// PSU Flex CTA Primary Outlined Button.
+.btn-primary {
+  @include button-variant(
+    $pa-link,
+    $pa-link,
+    $white,
+    $nittany-navy,
+    $nittany-navy,
+  );
+}
+
+// PSU Flex CTA Primary Filled Button
+.btn-outline-primary {
+  @include button-outline-variant(
+    $pa-link,
+  );
+}
+
+// PSU Flex CTA Light Outlined Button.
+.btn-secondary {
+  @include button-variant(
+    $pa-link-light,
+    $pa-link-light,
+    $nittany-navy,
+    $white,
+    $white,
+  );
+}
+
+.btn-outline-secondary {
+  @include button-outline-variant(
+    $pa-link-light,
+  );
+}
+
+.btn-light {
+  @include button-variant(
+    $white,
+    $white,
+    $nittany-navy,
+    $pa-link-light,
+    $pa-link-light,
+  );
+}
+
+.btn-outline-light {
+  @include button-outline-variant(
+    $white,
+  );
+}
+
+// Custom styles go here.
+button {
+  &.link {
+    @extend .btn;
+    @extend .btn-link;
+    color: $link-color;
+  }
+}
+
 // Add rounded color variant.
 .btn-rounded {
   @include border-radius(var(--#{$prefix}btn-rounded-radius));
 }
 
+.btn-square {
+  @include border-radius(0px);
+}
+
+.btn-round {
+  @include border-radius(100px);
+}
+
 // Override: '@classy/css/components/button.css'
+.button {
+    @extend .btn;
+}
+
+.button--small {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+a {
+  &.button {
+    @extend .btn;
+    text-decoration: none;
+
+    &.button--primary {
+      @include button-variant($primary, $primary);
+    }
+
+    &.button--danger {
+      @include button-variant($danger, $danger);
+    }
+
+    &.button-action {
+      @include button-variant($info, $info);
+    }
+
+    &.button--small {
+      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+    }
+  }
+}
 
 .btn,
 .button {
