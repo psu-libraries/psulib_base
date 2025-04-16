@@ -111,16 +111,22 @@ header {
   ul[data-block="nav_additional"] {
     text-transform: uppercase;
 
-    // Most styles are .btn-navlink.  The remaining styles are to override
-    // the bootstrap navbar styles.
-    a.btn.button.btn-primary.btn-nav-additional {
-      font-size: 1rem;
+    // @todo make this an actual button variant.
+    a.btn.button.btn-primary.btn-nav-additional.nav-link {
+      font-size: 15.75px;
+      border-radius: 30px;
+      border-color: $psu-light-blue;
       margin: 7px 10px;
+      padding: 0 20px;
       text-transform: none;
       font-family: $font-family-sans-serif;
+      font-weight: 400;
 
       &:hover {
         text-decoration: none;
+        border-color: $navy-blue;
+        background-color: $navy-blue;
+        color: white;
       }
     }
   }
