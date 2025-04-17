@@ -11,13 +11,14 @@
     include 'psulib_base:heading' with {
       heading_html_tag: 'h1',
       content: title|default("Oops! We can't find that"),
-      heading_utility_classes: ['not-found--title']
+      heading_utility_classes: ['not-found--title'],
+      divider: {
+        color: 'pugh',
+        thickness: 'lg',
+        width: 'xl',
+      },
     }
   %}
-
-  <div class="not-found--divider">
-    <div class="not-found--divider-bar"></div>
-  </div>
 
   {%
     include 'psulib_base:heading' with {

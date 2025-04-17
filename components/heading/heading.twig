@@ -43,4 +43,11 @@
     {% endblock %}
   </{{heading_html_tag}}>
 {% endif %}
+{% if divider %}
+  {% include 'psulib_base:divider' with {
+    width: divider.width|default('xl'),
+    thickness: divider.thickness|default('md'),
+    color: divider.color|default('pugh'),
+  } only %}
+{% endif %}
 {% endapply %}

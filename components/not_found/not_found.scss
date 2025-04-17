@@ -21,19 +21,8 @@
     }
   }
 
-  &--divider {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  &--divider-bar {
-    margin-top: $spacer;
-    margin-bottom: $spacer * 1.25;
-    width: $spacer * 5;
-    border-bottom: 4px solid $pugh-blue;
-    border-top-width: 4px;
-    border-right-width: 4px;
-    border-left-width: 4px;
+  .divider {
+    margin-top: $spacer * 1.75;
   }
 
   &--subtitle {

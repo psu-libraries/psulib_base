@@ -61,6 +61,20 @@ props:
       type: 'string'
       title: Content
       description: Content text for the heading.
+    divider:
+      type: ['object', 'boolean']
+      title: Divider
+      description: Add a divider below the heading.
+      properties:
+        color:
+          type: ['string']
+          title: Divider Color
+        thickness:
+          type: ['string']
+          title: Divider Thickness
+        width:
+          type: ['string']
+          title: Divider Width
 slots:
   heading_content:
     title: Content
