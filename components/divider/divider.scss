@@ -24,7 +24,8 @@
 $colors: (
   "navy": #{$nittany-navy},
   "pugh": #{$pugh-blue},
-  "white": #{$white}
+  "white": #{$white},
+  "sky": #{$pa-sky},
 );
 @each $name, $color in $colors {
   .divider--color-#{$name} {
