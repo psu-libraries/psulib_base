@@ -5,7 +5,7 @@
   $a-link-hover-color: $link-hover-color,
   $a-link-hover-decoration: $link-decoration,
   $target-class: '') {
-  a#{$target-class} {
+  a#{$target-class}:not(.btn) {
     color: $a-link-color;
     text-decoration: $a-link-decoration;
 
