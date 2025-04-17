@@ -1,0 +1,49 @@
+{%
+  set classes = [
+    'image-text-overlap',
+    'image-text-overlap--text-' ~ text_position,
+  ]
+%}
+
+{% set attributes = attributes ?: create_attribute() %}
+
+<div {{ attributes.addClass(classes) }}>
+  <div class="image-text-overlap__image-wrapper">
+    {% if image_src %}
+      <img alt="{{ img_alt }}" loading="lazy" width="900" height="600" decoding="async" class="image-text-overlap__image" src="{{ image_src }}" />
+    {% else %}
+      {{ image_media }}
+    {% endif %}
+  </div>
+  <div class="image-text-overlap__text">
+    <div class="image-text-overlap__text-inner">
+      {% if subtitle %}
+        <div class="h3 text-uppercase image-text-overlap__subtitle">{{subtitle}}</div>
+      {% endif %}
+
+      {% if title %}
+        {%
+          include 'psulib_base:heading' with {
+            heading_html_tag: 'h2',
+            content: title,
+            divider: {
+              color: 'sky',
+              width: 'xl',
+            },
+            heading_utility_classes: ['image-text-overlap__title'],
+          }
+        %}
+      {% endif %}
+
+      {% if body %}
+        <div class="image-text-overlap__text-body">
+          {{ body }}
+        </div>
+      {% endif %}
+
+      {% if cta %}
+        <a class="btn btn-outline-light" href="{{ cta.url }}">{{ cta.title }} <i class="bi bi-chevron-right"></i></a>
+      {% endif %}
+    </div>
+  </div>
+</div>
