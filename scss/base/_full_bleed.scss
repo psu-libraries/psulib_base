@@ -5,7 +5,7 @@
   box-shadow: 0 0 0 100vmax var(--full-bleed-bg-color);
   clip-path: inset(0 -100vmax);
   background-color: var(--full-bleed-bg-color);
-  padding: $spacer;
+  padding: $spacer 0;
 }
 
 .full-bleed--slate-light {
