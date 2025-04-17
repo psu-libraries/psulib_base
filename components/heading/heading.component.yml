@@ -62,18 +62,19 @@ props:
       title: Content
       description: Content text for the heading.
     divider:
-      type: 'boolean'
+      type: ['object', 'boolean']
       title: Divider
       description: Add a divider below the heading.
-    divider_color:
-      type: 'string'
-      title: Divider Color
-      description: Color of the divider.
-      default: pugh
-      enum:
-        - white
-        - navy
-        - pugh
+      properties:
+        color:
+          type: ['string']
+          title: Divider Color
+        thickness:
+          type: ['string']
+          title: Divider Thickness
+        width:
+          type: ['string']
+          title: Divider Width
 slots:
   heading_content:
     title: Content

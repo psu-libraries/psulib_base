@@ -45,9 +45,9 @@
 {% endif %}
 {% if divider %}
   {% include 'psulib_base:divider' with {
-    width: 'xl',
-    thickness: 'md',
-    color: divider_color|default('navy'),
+    width: divider.width|default('xl'),
+    thickness: divider.thickness|default('md'),
+    color: divider.color|default('pugh'),
   } only %}
 {% endif %}
 {% endapply %}
