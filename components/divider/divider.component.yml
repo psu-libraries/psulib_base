@@ -14,6 +14,7 @@ props:
         - white
         - navy
         - pugh
+        - sky
     width:
       type: 'string'
       title: Width
