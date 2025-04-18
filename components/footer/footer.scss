@@ -6,7 +6,8 @@ footer {
   font-family: $font-family-condensed;
   font-size: $font-size-sm;
 
-  @include make-link($light, none, $light, underline);
+  @include make-link($pa-link-light, none, $pa-link-light, underline);
+  @include make-link($pa-link-light, none, $pa-link-light, underline, '.nav-link');
 
   .region-footer {
     display: flex;
@@ -27,7 +28,8 @@ footer {
       color: $pa-link-light;
     }
 
-    &:active {
+    &:active,
+    &:focus {
       color: $lions-roar-light;
     }
   }
@@ -36,9 +38,9 @@ footer {
   // underline to these links. Changing color and style to make it less
   // intrusive.
   p {
-    @include make-link($pa-link-light, underline, $pa-link-light, underline);
 
     a {
+      text-decoration: underline;
       text-decoration-style: dotted;
       text-decoration-color: rgba($pa-link-light, 75%);
     }
