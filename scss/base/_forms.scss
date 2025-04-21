@@ -21,6 +21,24 @@ input {
   }
 }
 
+.input-group {
+  align-items: end;
+  --#{$prefix}border-radius: 4px;
+  .form-item:not(:first-child) {
+    input,
+    select {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: calc(var(--bs-border-width) * -1);
+    }
+  }
+
+  .form-actions button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
 .dropbutton-multiple {
   .dropbutton {
     .dropbutton-action {
