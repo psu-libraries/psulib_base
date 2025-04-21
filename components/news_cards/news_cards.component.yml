@@ -1,0 +1,55 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: News Cards
+status: stable
+description: Dispaly a list of news cards.
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title above cards
+    body:
+      type: 'string'
+      title: Body
+      description: Body text above cards
+    hide_dates:
+      type: 'boolean'
+      title: Hide Dates
+      description: Hide dates on cards
+      default: false
+    items:
+      title: News Articles
+      description: Sections with content array with body and optional title.
+      type: 'array'
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: ['string', 'object']
+            title: Title
+          date:
+            type: ['string', 'object', 'null']
+            title: Date
+          image:
+            type: ['string', 'null']
+            title: Image
+            description: Image to display in the card.
+          image_media:
+            type: ['object', 'null']
+            title: Image Media
+            description: Image media to display in the card.
+          url:
+            type: ['string', 'null']
+            title: Section ID
+            description: 'Unique ID for the section. If not provided the title will not be used in the jump menu.'
+    cta_button:
+      type: 'object'
+      title: CTA Button
+      properties:
+        title:
+          type: 'string'
+          title: Button Title
+        url:
+          type: 'string'
+          title: Button URL
