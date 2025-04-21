@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Peripheral Demo: Sidebar</title>
+
+  <!-- Style Sheets-->
+  <link rel="stylesheet" href="../dist/peripheral/peripheral.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+
+</head>
+
+<body class="path-frontpage d-flex flex-column h-100">
+  <div class="visually-hidden-focusable skip-link p-3 container">
+    <a href="#main-content" class="p-2">
+      Skip to main content
+    </a>
+  </div>
+
+  <div class="dialog-off-canvas-main-canvas d-flex flex-column h-100" data-off-canvas-main-canvas>
+    <header>
+
+      <nav class="navbar navbar-expand-lg text-light">
+        <div class="container-fluid">
+          <div class="header--nav-branding d-flex w-100">
+            <div class="region region-nav-branding">
+
+              <div data-component-id="psulib_base:header_mark" class="header-mark navbar-brand">
+
+                <a href="#" title="Penn State Libraries" rel="home" class="site-logo d-block">
+                  <img src="../logo.png" alt="Penn State Libraries" fetchpriority="high" height="60" width="228" />
+                </a>
+                <div class="header-mark--name-slogan ">
+                  <a href="/" title="Home" rel="home" class="site-title">
+                    PSU Libraries Theme Demos
+                  </a>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="header--nav-additional flex-fill collapse navbar-collapse justify-content-md-end"
+              id="navbarSupportedContent">
+              <div class="d-lg-flex flex-column justify-content-end align-items-end">
+              </div>
+            </div>
+
+            <div class="header--nav-search ms-auto">
+
+              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasMain" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid nav-main-menu-container">
+          <div class="d-flex w-100 header-bottom">
+            <div class="d-none d-md-block">
+              <div class="region region-nav-main">
+                <nav role="navigation" aria-labelledby="block-alumni-main-navigation-menu"
+                  id="block-alumni-main-navigation" class="block block-menu navigation menu--main">
+
+                  <div class="visually-hidden">Main navigation</div>
+
+                  <div class="header-nav">
+                    <ul class="main-menu navbar-nav justify-content-end flex-wrap main-menu main-menu-nav nav-level-0">
+                      <li class="nav-item menu-level-0">
+                        <a href="peripheral.html" class="nav-link is-active">Peripherals Demo</a>
+                      </li>
+
+                      <li class="nav-item menu-level-0">
+                        <a href="peripheral-sidebar.html" class="nav-link">Peripherals Demo: Sidebar</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="peripheral-bootstrap3.html" class="nav-link">Peripherals Demo: Boostrap 3</a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </nav>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="offcanvas offcanvas-end offcanvas__main" tabindex="-1" id="offcanvasMain">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+
+        <div class="region region-nav-offcanvas">
+          <nav role="navigation" aria-labelledby="block-alumni-mainnavigation-2-menu" id="block-alumni-mainnavigation-2"
+            class="block block-menu navigation menu--main">
+
+            <div class="visually-hidden block-menu--title block-menu--title--main">Main navigation</div>
+
+            <div class="sidebar-menu sidebar-menu--main">
+              <ul data-block="nav_offcanvas" data-component-id="psulib_base:sidebar_menu"
+                class="navbar-nav justify-content-end flex-wrap main-menu sidebar-menu-parent nav-level-0">
+
+
+                <li class="nav-item menu-level-0">
+                  <a href="peripheral.html" class="nav-link is-active">Peripherals Demo</a>
+                </li>
+
+                <li class="nav-item menu-level-0">
+                  <a href="peripheral-sidebar.html" class="nav-link">Peripherals Demo: Sidebar</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="peripheral-bootstrap3.html" class="nav-link">Peripherals Demo: Boostrap 3</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </nav>
+
+        </div>
+      </div>
+    </div>
+
+    <main role="main">
+      <a id="main-content" tabindex="-1"></a>
+
+      <div class="container-fluid my-4">
+
+        <div class="region region-breadcrumb">
+
+          <nav aria-label="breadcrumb">
+            <ol data-component-id="psulib_base:breadcrumbs" class="breadcrumb">
+              <li class="breadcrumb-item ">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item ">
+                <a href="#">Parent Page</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Page Title
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="order-1 order-lg-2 col-12 col-lg">
+            <div class="region region-content">
+              <h1 class="page-title">Peripheral Demo: Sidebar</h1>
+
+              <p>This demo uses the peripheral css and js generated by the PSU
+                Libraries Base theme. This is built upon bootstrap 5.3.</p>
+
+              <p>Semper metus ultrices imperdiet sem porttitor iaculis amet quisque felis letius. Lacinia porta est amet
+                orci justo blandit tempus feugiat. Pulvinar nascetur maecenas si ullamcorper dictumst neque conubia
+                inceptos porta. Convallis felis dui ut leo nisi primis tortor vulputate phasellus. Class sociosqu
+                inceptos aliquet ullamcorper quis vivamus scelerisque dictum. Pretium phasellus nascetur nullam viverra
+                lacinia. Si magnis adipiscing eu inceptos senectus dictumst curae. Ad lacus amet molestie scelerisque
+                egestas ex congue turpis.</p>
+
+              <p>Maximus consequat lectus senectus rhoncus fermentum elementum justo. At praesent lorem fusce dolor
+                litora elit ut ullamcorper. Metus hac lorem nulla vel ipsum et praesent hendrerit litora. Condimentum
+                netus elementum turpis justo lobortis. Venenatis diam class imperdiet elementum potenti velit etiam.</p>
+
+              <p></p>Inceptos donec augue egestas lectus primis cursus nam neque feugiat lobortis mollis. Faucibus
+              elementum sodales turpis suscipit molestie orci rhoncus et. Aliquet ex eleifend felis dignissim ornare leo
+              conubia proin. Quam vitae risus posuere est rutrum tempor vestibulum orci.</p>
+
+              <p></p>Accumsan congue tempor ante dui scelerisque fusce aliquam senectus. Auctor suscipit vitae
+              sollicitudin suspendisse eleifend posuere faucibus. Leo conubia nulla quam donec ultricies. Viverra
+              dignissim ullamcorper feugiat consectetuer ipsum lacinia dictum.</p>
+
+              <p>Faucibus nisl montes ut pharetra velit ullamcorper metus. Ullamcorper conubia viverra placerat
+                parturient accumsan gravida. Maecenas mattis tincidunt nisi iaculis tempor himenaeos. Euismod class
+                mauris vel eros elit adipiscing commodo.</p>
+
+              <p>A nam curabitur commodo ridiculus habitant penatibus pulvinar dui ut. Ridiculus etiam facilisis quisque
+                letius fermentum platea lacinia imperdiet nulla et aenean. Sed quisque eleifend mollis nisi sit porta.
+                Sapien integer primis vehicula lacus aliquet.</p>
+
+              <p>Quis lorem lectus ante dolor non sit pellentesque taciti ultrices etiam. Dapibus elementum felis cursus
+                pede mattis taciti. Vel sagittis ridiculus eu iaculis aenean molestie si vitae est pede mauris. Lorem
+                mollis imperdiet sagittis scelerisque mauris fames risus felis. Posuere natoque lectus tempor curabitur
+                letius tempus.</p>
+
+            </div>
+          </div>
+          <div class="order-2 order-lg-1 col-12 col-lg col-lg-w350">
+            <div class="region region-sidebar-first text-bg-light p-3">
+              <div class="block block-menu">
+                <div class="sidebar-menu">
+                  <h2 class="block-menu--title">Sidebar</h2>
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a href="peripheral.html" class="nav-link">Peripherals Demo</a>
+                    </li>
+
+                    <li class="nav-item menu-level-0">
+                      <a href="peripheral-sidebar.html" class="nav-link is-active">Peripherals Demo: Sidebar</a>
+                    </li>
+                    <li class="nav-item"> <a href="peripheral-bootstrap3.html" class="nav-link">Peripherals Demo:
+                        Boostrap 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="mt-auto text-light">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-12 col-lg-4 col-xl-3 mb-5 footer--logo">
+            <a href="/" title="Home" rel="home" class="site-logo d-block">
+              <img src="../logo.png" alt="Home" fetchpriority="high" height="52" width="198" />
+            </a>
+            <div class="region region-footer-left">
+              <!-- Social Media Links -->
+              <div class="block-social-media-links">
+                <ul class="social-media-links--platforms platforms mt-4 mb-0 inline horizontal list-unstyled">
+                  <li class="list-inline-item">
+                    <a class="social-media-link-icon--linkedin pe-3" href="https://www.linkedin.com/company/psulibs"
+                      aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn">
+                      <i class='bi bi-linkedin font-size-xl'></i>
+                    </a>
+
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="social-media-link-icon--facebook pe-3" href="https://www.facebook.com/psulibs"
+                      aria-label="Follow us on Facebook" title="Follow us on Facebook">
+                      <i class='bi bi-facebook font-size-xl'></i>
+                    </a>
+
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="social-media-link-icon--twitter pe-3" href="https://x.com/psulibs"
+                      aria-label="Follow us on X" title="Follow us on X">
+                      <i class='bi bi-twitter-x font-size-xl'></i>
+                    </a>
+
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="social-media-link-icon--instagram pe-3" href="https://www.instagram.com/psulibs"
+                      aria-label="Follow us on Instagram" title="Follow us on Instagram">
+                      <i class='bi bi-instagram font-size-xl'></i>
+                    </a>
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-12 col-lg-8 col-xl-9 footer--main">
+            <div class="region region-footer">
+              <div id="block-alumni-contactfooterblock"
+                class="block block-block-content block-block-content6ba81ef2-1594-49f7-b1fe-c3d4b25bec64">
+
+
+
+                <div
+                  class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                  <div class="text-center">
+                    <ul class="list-inline list">
+                      <li class="list-inline-item">
+                        <a href="https://www.libraries.psu.edu/">Penn State University Libraries</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#">Penn State Alumni Association</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://libraries.psu.edu/about/accessibility/request-accommodation-accessibility-help
+"> Accessibility Help </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="https://libraries.psu.edu/website-feedback">Website Feedback</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="tel:800-548-5466">(800) 548-LION (5466)</a>
+                      </li>
+                    </ul>
+                    <hr class="border-1 w-50 mx-auto">
+                  </div>
+                </div>
+
+              </div>
+              <!-- Standard Copyright block. -->
+              <div class="copyright-block">
+                <div class="psul-copyright text-center font-size-sm">
+                  <ul class="list-inline list">
+                    <li class="list-inline-item"><a href="https://universityethics.psu.edu/hotline">Hotline</a></li>
+                    <li class="list-inline-item"><a href="https://www.psu.edu/web-privacy-statement">Privacy
+                        Statements</a></li>
+                    <li class="list-inline-item"><a href="https://policy.psu.edu/policies/ad85">Non Discrimination</a>
+                    </li>
+                    <li class="list-inline-item"><a href="https://www.psu.edu/accessibilitystatement">Accessibility</a>
+                    </li>
+                    <li class="list-inline-item"><a href="https://policy.psu.edu/policies/hr11">Equal Opportunity</a>
+                    </li>
+                    <li class="list-inline-item"><a href="https://www.psu.edu/legal-statements">Legal Statements</a>
+                    </li>
+                  </ul>
+                  <p class="mb-0">Copyright &copy;2025 The Pennsylvania State University.<br>
+                    All rights reserved. Except where otherwise noted, this work is subject to a <a
+                      href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license.</a>
+                    <a href="https://libraries.psu.edu/psu-libraries-copyright-statement">Details and exceptions.</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Javascript -->
+  <script src="../dist/js/psul-bootstrap.js"></script>
+
+</body>
+
+</html>

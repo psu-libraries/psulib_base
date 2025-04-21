@@ -18,6 +18,8 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/root";
 
+@import "base/google_fonts";
+
 // 6. Optionally include any other parts as needed
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/reboot";
@@ -38,14 +40,27 @@
 // 8. Import base styles from theme.
 @import 'mixins';
 @import 'base/theme';
+@import 'base/layout';
 @import 'base/forms';
 @import 'base/links';
 @import 'base/typography';
 @import 'base/indent';
+@import 'base/full_bleed';
+@import 'base/misc';
 
 // 9. Import component styles.
 @import 'components/file';
-@import 'components/general';
 @import 'components/nav';
+@import '../components/header/header';
+@import '../components/header_mark/header_mark';
+@import '../components/header_nav/header_nav';
+@import '../components/sidebar_menu/sidebar_menu';
+@import '../components/footer/footer';
+@import '../components/breadcrumbs/breadcrumbs';
+@import '../components/button/button';
+@import '../components/divider/divider';
+@import 'components/general';
 
+
+// 10.  Bootstrap fixes for Drupal.
 @import 'bootstrap_fix';
