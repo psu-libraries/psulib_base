@@ -39,9 +39,11 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
 
 // Run build process for peripheral assets.
 mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
+mix.sass('scss/peripheral-bootstrap3.scss', 'dist/peripheral').options(defaultSassOptions);
 mix.js('js/psul-bootstrap.js', 'dist/peripheral/psul-bootstrap.js');
 mix.minify([
   'dist/peripheral/peripheral.css',
+  'dist/peripheral/peripheral-bootstrap3.css',
   'dist/peripheral/psul-bootstrap.js'
 ]);
 
