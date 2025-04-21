@@ -3,7 +3,7 @@
   'news-cards',
   'news-cards--' ~ card_type|clean_class,
 ] %}
-{{ dump() }}
+
 <div {{ attributes.addClass(classes) }}>
   {% if title or body %}
     <div class="news-cards__header row">
