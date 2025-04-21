@@ -26,15 +26,19 @@ props:
         type: 'object'
         properties:
           title:
-            type: ['string', 'object', 'null']
+            type: ['string', 'object']
             title: Title
           date:
             type: ['string', 'object', 'null']
             title: Date
           image:
-            type: ['string', 'object', 'null']
+            type: ['string', 'null']
             title: Image
             description: Image to display in the card.
+          image_media:
+            type: ['object', 'null']
+            title: Image Media
+            description: Image media to display in the card.
           url:
             type: ['string', 'null']
             title: Section ID

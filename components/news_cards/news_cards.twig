@@ -3,7 +3,7 @@
   'news-cards',
   'news-cards--' ~ card_type|clean_class,
 ] %}
-
+{{ dump() }}
 <div {{ attributes.addClass(classes) }}>
   {% if title or body %}
     <div class="news-cards__header row">
@@ -31,11 +31,11 @@
       <div class="news-cards__card">
 
         {# Image #}
-        {% if item.image|render %}
-          {{ item.image }}
+        {% if item.image_media %}
+          {{ item.image_media }}
         {% else %}
           {% include 'psulib_base:image' with {
-            src: item.img,
+            src: item.image,
             image_utility_classes: ['news-cards__card-image','img-fluid'],
             alt: item.title,
           } only %}
