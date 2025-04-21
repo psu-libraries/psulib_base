@@ -37,9 +37,6 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
   mix.js(sourcePath, destinationPath);
 }
 
-// Copy bootstrap-icons to assets/bootstrap-icons.web/themes/custom/psulib_base/esm
-mix.copyDirectory('node_modules/bootstrap-icons', 'dist/bootstrap-icons');
-
 // Run build process for peripheral assets.
 mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
 mix.js('js/psul-bootstrap.js', 'dist/peripheral/psul-bootstrap.js');
