@@ -18,6 +18,9 @@
     background-position: right center;
 }
 
+// Not all bootstrap icons are available in the SVG version, if additional
+// icons are needed, then the webpack.mix.js file will need to be updated
+// to include the additional icon files in the build process.
 .file--general,
 .file--application-octet-stream {
     background-image: url(../../dist/bootstrap-icons/icons/file.svg);
