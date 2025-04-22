@@ -37,6 +37,23 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
   mix.js(sourcePath, destinationPath);
 }
 
+// Copy bootstrap-icons to dist directory for use with assets.
+mix.copyDirectory('node_modules/bootstrap-icons/font', 'dist/bootstrap-icons/font');
+mix.copy([
+    'node_modules/bootstrap-icons/icons/camera-video-fill.svg',
+    'node_modules/bootstrap-icons/icons/file-pdf-fill.svg',
+    'node_modules/bootstrap-icons/icons/file-spreadsheet-fill.svg',
+    'node_modules/bootstrap-icons/icons/file-text-fill.svg',
+    'node_modules/bootstrap-icons/icons/file-word-fill.svg',
+    'node_modules/bootstrap-icons/icons/file.svg',
+    'node_modules/bootstrap-icons/icons/filetype-exe.svg',
+    'node_modules/bootstrap-icons/icons/filetype-html.svg',
+    'node_modules/bootstrap-icons/icons/filetype-mp3.svg',
+    'node_modules/bootstrap-icons/icons/image-fill.svg',
+  ],
+  'dist/bootstrap-icons/icons/'
+);
+
 // Run build process for peripheral assets.
 mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
 mix.sass('scss/peripheral-bootstrap3.scss', 'dist/peripheral').options(defaultSassOptions);
