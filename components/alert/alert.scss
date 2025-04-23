@@ -8,6 +8,6 @@
 
 // Custom styles go here.
 
-.alert {
-    margin-bottom: 0;
+[data-sitewide-alert] .alert {
+    --bs-alert-margin-bottom: 0px;
   }
