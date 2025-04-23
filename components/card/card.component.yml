@@ -52,6 +52,15 @@ props:
         - p
         - span
         - div
+    card_link:
+      type: 'string'
+      title: Card Link
+      description: The URL to link to when the card is clicked.
+    card_link_stretched:
+      type: 'boolean'
+      title: Stretched Link
+      description: Whether the link should stretch to fill the entire card.
+      default: false
     card_link_text:
       type: 'string'
       title: Card Link Text

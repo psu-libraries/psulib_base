@@ -58,8 +58,15 @@
 %}
 {%
   set card_link_classes = [
-    'card-link'
+    'card-link',
+    card_link_stretched ? 'position-relative' : '',
   ]|merge(card_link_utility_classes ?: [])
+%}
+
+{%
+  set card_header_link_classes = [
+    card_link_stretched ? 'stretched-link' : '',
+  ]
 %}
 
 {% set card_border = card_border ? [] : [] %}
@@ -70,6 +77,8 @@
 {%
   set card_classes = [
     'card',
+    'card-card',
+    card_link_stretched ? 'position-relative' : '',
   ]|merge(card_utility_classes ?: [])|merge(card_border)
 %}
 
@@ -140,7 +149,9 @@
             heading_html_tag: card_title_tag,
             content: card_title,
             heading_attributes: card_title_attributes,
-            heading_utility_classes: card_title_classes
+            heading_utility_classes: card_title_classes,
+            title_link: card_link ?? false,
+            heading_link_utility_classes: card_header_link_classes,
           }
         %}
       {% endif %}
