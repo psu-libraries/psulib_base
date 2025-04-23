@@ -11,7 +11,6 @@
   --#{$prefix}card-box-shadow: #{$box-shadow-sm};
   --#{$prefix}card-border-width: 0px;
   --#{$prefix}card-border-radius: #{$border-radius-lg};
-  --#{$prefix}card-: $white;
   --#{$prefix}card-spacer-y: #{$card-body-spacing};
   --#{$prefix}card-spacer-x: #{$card-body-spacing};
   --#{$prefix}card-text-align: center;
@@ -64,88 +63,107 @@
   &--image-overlays img {
     border-radius: var(--#{$prefix}card-border-radius);
   }
+
+  &-link {
+    margin-left: 0;
+  }
 }
 
 ////////////
 // Variants.
 
-// Card text should be left aligned.
-.card.card--text-left {
-  --#{$prefix}card-text-align: start;
-}
-
-// News Card
-.card.card--news {
-  // @todo
-}
-
-// Call to Action
-.card.card--cta {
-  $card-body-spacing: $spacer * 1.25;
-
-  --#{$prefix}card-bg: #{$nittany-navy};
-  --#{$prefix}card-color: #{$white};
-  --#{$prefix}card-spacer-y: #{$spacer};
-  --#{$prefix}card-spacer-x: #{$spacer};
-  --#{$prefix}card-box-shadow: none;
-
-  transition-property: background-color, transform;
-  min-height: 160px;
-
-  @include make-link($white, none, $white, underline);
-  .card-title {
-    @include make-link($white, none, $white, underline);
+.card {
+  // Card text should be left aligned.
+  &.card--text-left {
+    --#{$prefix}card-text-align: start;
   }
 
-  &:hover,
-  &:focus {
-    --#{$prefix}card-bg: #{$beaver-blue};
-    --#{$prefix}card-box-shadow: none;
-    transform: scale(1.019);
+  // News Card
+  &.card--news {
+    // @todo
   }
 
-  .card-body {
-    color: $white;
-    text-align: unset;
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
-  }
-}
+  &.card--text {
+    --#{$prefix}card-bg: transparent;
+    --#{$prefix}card-spacer-y: 0;
+    --#{$prefix}card-spacer-x: 0;
+    --#{$prefix}card-box-shadow: 0;
+    --#{$prefix}card-text-align: start;
 
-// Style variant for search results cards.
-.card.card--search-results {
-  --#{$prefix}card-border-width: 1px;
-  --#{$prefix}card-spacer-y: #{$spacer};
-  --#{$prefix}card-spacer-x: #{$spacer};
-  --#{$prefix}card-text-align: start;
-  --#{$prefix}card-border-radius: 0;
-
-  border-top-width: 0;
-  @include make-link($link-color, none, $link-hover-color, underline);
-
-  &:before {
-    border: 5px solid $pa-sky !important;
-    border-bottom-width: 0;
-    content: '';
-    margin: calc(-1 * var(--#{$prefix}card-border-width));
-    margin-bottom: 0;
-  }
-
-  .card-header {
-    text-transform: uppercase;
-    border-bottom-width: 1px;
-    background-color: $white-out;
-
-    h2 {
-      font-size: $font-size-base;
-      margin-bottom: 0;
+    &:hover,
+    &:focus {
+      --#{$prefix}card-box-shadow: none;
     }
   }
 
-  .card-footer {
-    background-color: $pa-limestone-max-light;
-    border-top: 0;
-    font-size: $font-size-base;
+  // Call to Action
+  &.card--cta {
+    $card-body-spacing: $spacer * 1.25;
+
+    --#{$prefix}card-bg: #{$nittany-navy};
+    --#{$prefix}card-color: #{$white};
+    --#{$prefix}card-spacer-y: #{$spacer};
+    --#{$prefix}card-spacer-x: #{$spacer};
+    --#{$prefix}card-box-shadow: none;
+
+    transition-property: background-color, transform;
+    min-height: 160px;
+
+    @include make-link($white, none, $white, underline);
+    .card-title {
+      @include make-link($white, none, $white, underline);
+    }
+
+    &:hover,
+    &:focus {
+      --#{$prefix}card-bg: #{$beaver-blue};
+      --#{$prefix}card-box-shadow: none;
+      transform: scale(1.019);
+    }
+
+    .card-body {
+      color: $white;
+      text-align: unset;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+    }
+  }
+
+  // Style variant for search results cards.
+  &.card--search-results {
+    --#{$prefix}card-border-width: 1px;
+    --#{$prefix}card-spacer-y: #{$spacer};
+    --#{$prefix}card-spacer-x: #{$spacer};
+    --#{$prefix}card-text-align: start;
+    --#{$prefix}card-border-radius: 0;
+
+    border-top-width: 0;
+    @include make-link($link-color, none, $link-hover-color, underline);
+
+    &:before {
+      border: 5px solid $pa-sky !important;
+      border-bottom-width: 0;
+      content: '';
+      margin: calc(-1 * var(--#{$prefix}card-border-width));
+      margin-bottom: 0;
+    }
+
+    .card-header {
+      text-transform: uppercase;
+      border-bottom-width: 1px;
+      background-color: $white-out;
+
+      h2 {
+        font-size: $font-size-base;
+        margin-bottom: 0;
+      }
+    }
+
+    .card-footer {
+      background-color: $pa-limestone-max-light;
+      border-top: 0;
+      font-size: $font-size-base;
+    }
   }
 }
