@@ -73,12 +73,15 @@
 {% set card_title_tag = card_title_tag|default('h3') %}
 {% set card_text_tag = card_text_tag|default('div') %}
 {% set card_subtitle_tag = card_subtitle_tag|default('div') %}
+{% set card_image_cap = card_image_cap|default('top') %}
 
 {%
   set card_classes = [
     'card',
     'card-card',
-    card_link_stretched ? 'position-relative' : '',
+    'card--image-' ~ card_image_cap|clean_class,
+    card_image_overlays ? 'card--image-overlays',
+    card_link_stretched ? 'card--linked position-relative' : '',
   ]|merge(card_utility_classes ?: [])|merge(card_border)
 %}
 
@@ -91,7 +94,6 @@
 {% set card_subtitle_attributes = create_attribute() %}
 {% set card_image_attributes = create_attribute() %}
 {% set card_link_attributes = create_attribute() %}
-{% set card_image_cap = card_image_cap|default('top') %}
 
 {% if card_image_alt %}
   {% set card_image_attributes = card_image_attributes.setAttribute('alt', card_image_alt ) %}
@@ -128,7 +130,7 @@
 
   {% block slot_card_image_top %}
     {% if card_image_cap == 'top' and not card_image_overlays %}
-      {% if card_media|render %}
+      {% if card_media %}
         {{ card_media }}
       {% elseif card_image_src %}
         {%
