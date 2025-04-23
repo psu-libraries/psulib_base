@@ -3,7 +3,124 @@
 // Breadcrumb styling
 @import "~bootstrap/scss/card";
 
-.card--search-results {
+// SDC Styles Improperly load after the style.css main file so we need to add
+// another class to increase selector specificity.
+.card.card-card {
+  $card-body-spacing: $spacer * 1.5;
+  // Add shadows.
+  --#{$prefix}card-box-shadow: #{$box-shadow-sm};
+  --#{$prefix}card-border-width: 0px;
+  --#{$prefix}card-border-radius: #{$border-radius-lg};
+  --#{$prefix}card-: $white;
+  --#{$prefix}card-spacer-y: #{$card-body-spacing};
+  --#{$prefix}card-spacer-x: #{$card-body-spacing};
+  --#{$prefix}card-text-align: center;
+}
+
+// Set card image border radius to match card border radius.
+.card {
+  transition: box-shadow 0.2s ease-out;
+  text-align: var(--#{$prefix}card-text-align);
+  box-shadow: var(--#{$prefix}card-box-shadow);
+
+  &-title {
+    font-size: $font-size-lg;
+    color: $body-color;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer * 1.5;
+
+    @include make-link($body-color, none, $black, underline);
+
+    a {
+      transition: color, text-decoration 0.2s ease-out;
+    }
+  }
+
+  &-body {
+    text-align: var(--#{$prefix}card-text-align);
+  }
+
+  &--linked {
+    &:hover,
+    &:focus {
+      --#{$prefix}card-box-shadow: #{$box-shadow2};
+    }
+  }
+
+  &--image-top > img {
+    border-top-right-radius: var(--#{$prefix}card-border-radius);
+    border-top-left-radius: var(--#{$prefix}card-border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--image-bottom img {
+    border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: var(--#{$prefix}card-border-radius);
+    border-bottom-left-radius: var(--#{$prefix}card-border-radius);
+  }
+
+  &--image-overlays img {
+    border-radius: var(--#{$prefix}card-border-radius);
+  }
+}
+
+////////////
+// Variants.
+
+// Card text should be left aligned.
+.card.card--text-left {
+  --#{$prefix}card-text-align: start;
+}
+
+// News Card
+.card.card--news {
+  // @todo
+}
+
+// Call to Action
+.card.card--cta {
+  $card-body-spacing: $spacer * 1.25;
+
+  --#{$prefix}card-bg: #{$nittany-navy};
+  --#{$prefix}card-color: #{$white};
+  --#{$prefix}card-spacer-y: #{$spacer};
+  --#{$prefix}card-spacer-x: #{$spacer};
+  --#{$prefix}card-box-shadow: none;
+
+  transition-property: background-color, transform;
+  min-height: 160px;
+
+  @include make-link($white, none, $white, underline);
+  .card-title {
+    @include make-link($white, none, $white, underline);
+  }
+
+  &:hover,
+  &:focus {
+    --#{$prefix}card-bg: #{$beaver-blue};
+    --#{$prefix}card-box-shadow: none;
+    transform: scale(1.019);
+  }
+
+  .card-body {
+    color: $white;
+    text-align: unset;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+}
+
+// Style variant for search results cards.
+.card.card--search-results {
+  --#{$prefix}card-border-width: 1px;
+  --#{$prefix}card-spacer-y: #{$spacer};
+  --#{$prefix}card-spacer-x: #{$spacer};
+  --#{$prefix}card-text-align: start;
+  --#{$prefix}card-border-radius: 0;
+
   border-top-width: 0;
   @include make-link($link-color, none, $link-hover-color, underline);
 
@@ -11,7 +128,7 @@
     border: 5px solid $pa-sky !important;
     border-bottom-width: 0;
     content: '';
-    margin: calc(-1 * var(--bs-border-width));
+    margin: calc(-1 * var(--#{$prefix}card-border-width));
     margin-bottom: 0;
   }
 
