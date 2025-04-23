@@ -1,0 +1,56 @@
+@import '../../scss/init';
+
+.card-grid {
+  --card-grid-columns: 1;
+  --card-grid-columns-sm: 1;
+  --card-grid-columns-md: 2;
+  --card-grid-columns-lg: 4;
+  --card-grid-columns-xl: 4;
+
+  padding: ($spacer * 2) 0;
+
+  @include media-breakpoint-up(md) {
+    padding: ($spacer * 3) 0;
+  }
+
+  &__header {
+    margin-bottom: $spacer * 2;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(var(--card-grid-columns), 1fr);
+    gap: $spacer * 1.5;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(var(--card-grid-columns-md), 1fr);
+    }
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(var(--card-grid-columns-md), 1fr);
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(var(--card-grid-columns-lg), 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(var(--card-grid-columns-lg), 1fr);
+    }
+  }
+
+  &--columns-2 {
+    --card-grid-columns-lg: 2;
+    --card-grid-columns-xl: 2;
+  }
+
+  &--columns-3 {
+    --card-grid-columns-lg: 3;
+    --card-grid-columns-xl: 3;
+  }
+
+  &__cta {
+    margin-top: $spacer * 2;
+    text-align: center;
+  }
+}
