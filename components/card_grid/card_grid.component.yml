@@ -44,6 +44,14 @@ props:
         - 2
         - 3
         - 4
+    gap:
+      type: 'string'
+      title: Gap
+      description: Gap between cards.
+      enum:
+        - sm
+        - md
+        - lg
     cta_button:
       type: 'object'
       title: CTA Button

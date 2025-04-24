@@ -6,6 +6,7 @@
   --card-grid-columns-md: 2;
   --card-grid-columns-lg: 4;
   --card-grid-columns-xl: 4;
+  --card-grid-gap: $spacer * 1.5;
 
   padding: ($spacer * 2) 0;
 
@@ -52,5 +53,13 @@
   &__cta {
     margin-top: $spacer * 2;
     text-align: center;
+  }
+
+  &--gap-lg {
+    --card-grid-gap: $spacer * 2;
+  }
+
+  &--gap-sm {
+    --card-grid-gap: $spacer * 0.5;
   }
 }
