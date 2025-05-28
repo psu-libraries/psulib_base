@@ -89,7 +89,7 @@
     let buttonDropdown = document.createElement('div');
     buttonDropdown.className = `dropdown d-${breakpoint}-none ${classValues}`;
     buttonDropdown.innerHTML = `
-      <button id="${id}" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">${buttonText}</button>
+      <button id="${id}" class="btn btn-outline-primary dropdown-toggle" type="submit" data-bs-toggle="dropdown" aria-expanded="false">${buttonText}</button>
       <div class="dropdown-menu" aria-labelledby="${id}"></div>
     `;
     parentElement.prepend(buttonDropdown);
