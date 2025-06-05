@@ -42,7 +42,7 @@ html {
   font-size: 16px;
 }
 
-.container-fluid > .row {
+main .container-fluid > .row {
   margin-right: 0;
   margin-left: 0;
 }
@@ -67,6 +67,10 @@ header {
 
   ul.navbar-nav li a {
     line-height: 1.5rem;
+
+    &:focus {
+      background-color: transparent;
+    }
   }
 }
 

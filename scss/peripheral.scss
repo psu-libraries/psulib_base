@@ -65,6 +65,16 @@
 // 10.  Bootstrap fixes for Drupal.
 @import 'bootstrap_fix';
 
+header {
+  .btn-outline-light {
+    color: #fff;
+
+    &:hover {
+      color: $nittany-navy;
+    }
+  }
+}
+
 // Adding Ask A Librarian button styles.
 .ask {
   display: none;
