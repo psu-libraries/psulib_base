@@ -63,6 +63,8 @@ mix.minify([
   'dist/peripheral/peripheral-bootstrap3.css',
   'dist/peripheral/psul-bootstrap.js'
 ]);
+mix.copy('logo.png', 'dist/peripheral/logo.png');
+mix.copy('favicon.ico', 'dist/peripheral/favicon.ico');
 
 // Copy component css to peripherals.
 for (const sourcePath of glob.sync("components/*/*.+(css|js)")) {

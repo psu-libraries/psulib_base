@@ -64,3 +64,49 @@
 
 // 10.  Bootstrap fixes for Drupal.
 @import 'bootstrap_fix';
+
+header {
+  .btn-outline-light {
+    color: #fff;
+
+    &:hover {
+      color: $nittany-navy;
+    }
+  }
+}
+
+// Adding Ask A Librarian button styles.
+.ask {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .ask {
+    display: block;
+    position: fixed;
+    padding: 0;
+    right: -2px;
+    top: 65%;
+    z-index: 10;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.57);
+    cursor: pointer;
+  }
+  .ask button {
+    color: #fafafa;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .ask__part1 {
+    font-size: 2rem;
+  }
+}
+
+// Header hours style changes.
+header .psul-hours {
+  font-family: $font-family-condensed;
+  a {
+    color: #fff;
+  }
+}
