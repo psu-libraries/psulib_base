@@ -10,21 +10,21 @@
  * - alert_utility_classes: An array of utility classes.
  */
 #}
-{% set alert_attributes = alert_attributes ?: create_attribute() %}
-{% set dismissible = dismissible ?? true %}
+{% set attributes = attributes ?: create_attribute() %}
+{# {% set dismissible = dismissible ?? 'alert-dismissible' %} #}
 {% set type = type ?? 'primary' %}
 
 {%
 set alert_classes = [
   'alert',
-  type ? 'alert-' ~ type,
-  dismissible ? 'alert-dismissible',
+  'alert-' ~ type,
+  dismissible ?? 'alert-dismissible',
   'fade',
-  'show'
-]|merge(alert_utility_classes ?: [])
+  'show',
+]
 %}
 
-<div {{ alert_attributes.addClass(alert_classes) }} role="alert">
+<div {{ attributes.addClass(alert_classes) }} role="alert">
 	{% block alert_heading %}
 		{% if heading %}
 			<h4 class="alert-heading">{{ heading }}</h4>

@@ -1,6 +1,7 @@
 import alert from './alert.twig';
 import data from './alert.yml';
 import './alert.css';
+import './alert.js';
 
 const settings = {
   title: 'Components/Alert',
@@ -9,7 +10,9 @@ const settings = {
 export const InfoAlert = {
   name: 'InfoAlert',
   render: (args) => alert(args),
-  args: { ...data },
+  args: {
+    ...data,
+  },
 };
 
 export const WarningAlert = {
@@ -17,7 +20,8 @@ export const WarningAlert = {
   name: 'Warning alert',
   args: {
     ...data,
-    type: 'warning'
+    type: 'warning',
+    dismissible: true,
   },
 };
 
