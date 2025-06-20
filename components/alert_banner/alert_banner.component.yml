@@ -34,11 +34,19 @@ props:
       default: []
       description: An array of utility classes. Use to add extra utility classes or custom CSS classes to this component.
     attributes:
+      title:
       type: 'Drupal\Core\Template\Attribute'
-  slots:
-    content:
-      title: Alert Banner Content
-      description: The content goes here.
-    footer_content:
-      title: Alter Banner Footer content
-      description: Additional content goes here
+
+slots:
+  content:
+    title: Alert Banner Content
+    description: The content goes here.
+    type: ['string', 'object']
+    examples:
+      - '<p>This is an example of the alert banner content.</p>'
+  footer_content:
+    title: Alter Banner Footer content
+    description: Additional content goes here
+    type: ['string', 'object']
+    examples:
+      - '<p>This is an example of the alert banner footer content.</p>'

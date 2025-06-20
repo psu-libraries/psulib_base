@@ -1,8 +1,6 @@
 /** @type { import('@storybook/html-vite').Preview } */
-import Twig from 'twig';
 import { useEffect } from 'storybook/preview-api';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import twigDrupal from 'twig-drupal-filters';
 
 // Imports custom device viewports.
 import customViewports from './viewports';
@@ -12,7 +10,7 @@ import './drupal/drupal';
 import './drupal/once';
 
 // Imports FontAwesome icons from a specific kit.
-// import 'https://kit.fontawesome.com/a0eb0bad75.js';
+import '../dist/bootstrap-icons/font/bootstrap-icons.min.css';
 
 // Imports the CSS for all components combined into a single stylesheet.
 import '../assets/fonts/fonts.css';
@@ -21,13 +19,9 @@ import '../dist/css/style.css';
 // Imports all Storybook CSS for display.
 import './storybook.css';
 
-function setupTwig(twig) {
-  twig.cache();
-  twigDrupal(twig);
-  return twig;
-}
+// Import all js.
+import '../js/psul-bootstrap.js';
 
-setupTwig(Twig);
 
 export const decorators = [
   withThemeByDataAttribute({
@@ -49,6 +43,11 @@ export const preview = {
     options: {
       storySort: {
         order: [
+          'Getting started',
+          ['Intro'],
+          'Base',
+          'Elements',
+          'Components',
           '*',
         ],
         includeName: true,

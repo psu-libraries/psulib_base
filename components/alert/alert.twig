@@ -11,17 +11,18 @@
  */
 #}
 {% set attributes = attributes ?: create_attribute() %}
-{# {% set dismissible = dismissible ?? 'alert-dismissible' %} #}
-{% set type = type ?? 'primary' %}
+{% set type = type is empty ? 'primary' : type %}
+{% set dismissible = dismissible is empty ? '' : 'alert-dismissible' %}
+{% set alert_classes = alert_utility_classes is iterable ? alert_utility_classes : [alert_utility_classes] %}
 
 {%
-set alert_classes = [
+set alert_classes = alert_classes|merge([
   'alert',
   'alert-' ~ type,
-  dismissible ?? 'alert-dismissible',
+  dismissible,
   'fade',
   'show',
-]
+])
 %}
 
 <div {{ attributes.addClass(alert_classes) }} role="alert">

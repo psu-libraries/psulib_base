@@ -35,10 +35,12 @@
           {{ item.image_media }}
         {% else %}
           {% include 'psulib_base:image' with {
-            src: item.image,
-            image_utility_classes: ['news-cards__card-image','img-fluid'],
-            alt: item.title,
-          } only %}
+            'src': item.image,
+            'image_utility_classes': ['news-cards__card-image'],
+            'alt': item.title,
+            'responsive': true,
+            'loading': 'lazy'
+          } %}
         {% endif %}
 
         {# Title #}
@@ -50,7 +52,7 @@
             heading_utility_classes: [
               'news-cards__card-title',
             ],
-            heading_link_utility_classes: [ 'stretched-link',],
+            heading_link_utility_classes: [ 'stretched-link' ],
           }
         %}
 
