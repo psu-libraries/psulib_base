@@ -1,18 +1,20 @@
+{% set toc_classes = utility_classes is iterable ? utility_classes : [utility_classes] %}
+
 {%
-  set classes = [
+  set toc_classes = toc_classes|merge([
     'content-with-toc',
     'row',
-    'my-5',
-  ]|merge(utility_classes ?: [])
+    'my-5'
+  ])
 %}
 
 {% set default_item_tag = default_item_tag|default('h2') %}
 {% set attributes = attributes ?: create_attribute() %}
 {% set position = position|default('left') %}
-{% set id = 'content-toc-spy'|clean_unique_id %}
+{% set id = ('content-toc-spy'|clean_id) ~ '-' ~ random(1, 99999)  %}
 
 {% if items %}
-  <div {{attributes.addClass(classes) }}>
+  <div {{attributes.addClass(toc_classes) }}>
     <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id }}" data-bs-root-margin="0px 0px 48px" >
       {% for item in items %}
         <div class="content-with-toc--item" {% if item.id %} id="{{ item.id|clean_class }}" {% endif %}>

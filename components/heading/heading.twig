@@ -31,15 +31,13 @@
   display|default('')
 ])
 %}
-{% if title_link %}
-  {% set heading_link_attributes = create_attribute().setAttribute('href', title_link) %}
-  {% set heading_link_classes = heading_link_utility_classes ?: [] %}
-{% endif %}
+
 {% if content %}
   <{{heading_html_tag}} {{ heading_attributes.addClass(heading_classes) }}>
     {% block heading_content %}
       {% if title_link %}
-        <a {{ heading_link_attributes.addClass(heading_link_classes) }}>
+        {% set heading_link_attributes = create_attribute() %}
+        <a {{ heading_link_attributes.addClass(heading_link_utility_classes|default('')) }}>
           {{ content }}
         </a>
       {% else %}

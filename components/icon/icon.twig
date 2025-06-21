@@ -1,18 +1,22 @@
-{%
-  set svg_url = [
-    '/' ~    componentMetadata.path ~ '/',
-    'assets/',
-    icon,
-    '.svg',
-  ]|join('')
-%}
-
 {% set classes = [
   'psul-icon',
   'psul-icon--' ~ icon,
   'psul-icon--' ~ color|default('black'),
 ]|join(' ') %}
 
+{# Use an if case because twig.js does not work with variables in template names. #}
 <span class="{{ classes }}">
-  {% include('@psulib_base/components/icon/assets/' ~ icon ~ '.svg') %}
+  {% if icon == 'chevronRight' %}
+    {% include "@psulib_base/icon/assets/chevronRight.svg" %}
+  {% elseif icon == 'email' %}
+    {% include "@psulib_base/icon/assets/email.svg" %}
+  {% elseif icon == 'fax' %}
+    {% include "@psulib_base/icon/assets/fax.svg" %}
+  {% elseif icon == 'linkOut' %}
+    {% include "@psulib_base/icon/assets/linkOut.svg" %}
+  {% elseif icon == 'person' %}
+    {% include "@psulib_base/icon/assets/person.svg" %}
+  {% elseif icon == 'phone' %}
+    {% include "@psulib_base/icon/assets/phone.svg" %}
+  {% endif %}
 </span>

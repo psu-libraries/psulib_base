@@ -59,6 +59,7 @@ props:
         - ''
     heading_attributes:
       type: 'Drupal\Core\Template\Attribute'
+      title: Attributes
     content:
       type: 'string'
       title: Content

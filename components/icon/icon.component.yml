@@ -18,6 +18,8 @@ props:
         - linkOut
         - person
         - phone
+      examples:
+        - chevronRight
     color:
       type: 'string'
       title: Color
