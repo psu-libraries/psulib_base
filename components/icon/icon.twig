@@ -4,19 +4,7 @@
   'psul-icon--' ~ color|default('black'),
 ]|join(' ') %}
 
-{# Use an if case because twig.js does not work with variables in template names. #}
+{# Using componentMetadata.path to ensure that icons work in storybook and drupal. #}
 <span class="{{ classes }}">
-  {% if icon == 'chevronRight' %}
-    {% include "@psulib_base/icon/assets/chevronRight.svg" %}
-  {% elseif icon == 'email' %}
-    {% include "@psulib_base/icon/assets/email.svg" %}
-  {% elseif icon == 'fax' %}
-    {% include "@psulib_base/icon/assets/fax.svg" %}
-  {% elseif icon == 'linkOut' %}
-    {% include "@psulib_base/icon/assets/linkOut.svg" %}
-  {% elseif icon == 'person' %}
-    {% include "@psulib_base/icon/assets/person.svg" %}
-  {% elseif icon == 'phone' %}
-    {% include "@psulib_base/icon/assets/phone.svg" %}
-  {% endif %}
+  {{ source(componentMetadata.path ~ '/assets/' ~ icon ~ '.svg') }}
 </span>

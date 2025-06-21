@@ -33,8 +33,8 @@ props:
       title: Alert Utility Classes
       default: []
       description: An array of utility classes. Use to add extra utility classes or custom CSS classes to this component.
-    attributes:
-      title:
+    alert_banner_attributes:
+      title: Attributes
       type: 'Drupal\Core\Template\Attribute'
 
 slots:
