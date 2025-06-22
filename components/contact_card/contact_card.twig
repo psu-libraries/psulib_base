@@ -1,12 +1,12 @@
 {% set contact_card_attributes = contact_card_attributes ?: create_attribute() %}
-{% set contact_card_classes = contact_card_classes is iterable ? contact_card_classes : [contact_card_classes] %}
+{% set utility_classes = utility_classes is iterable ? utility_classes : [utility_classes] %}
 
 {%
-  set contact_card_classes = contact_card_classes|merge([
+  set contact_card_classes = [
     'contact-card',
     stacked ? 'contact-card__stacked' : '',
     linked_card ? 'contact-card__linked-card position-relative': '',
-  ])
+  ]
 %}
 
 {% set ext_replacements = {
@@ -15,7 +15,7 @@
   ' x': ';',
 }%}
 
-<div {{ contact_card_attributes.addClass(contact_card_classes) }}>
+<div {{ contact_card_attributes.addClass(contact_card_classes).addClass(utility_classes|default([])) }}>
   <div class="contact-card--wrapper">
 
     {% block image_block %}
@@ -43,7 +43,7 @@
               'contact-card--header--title',
             ],
             heading_link_utility_classes: [
-              linked_card ? 'stretched-link',
+              linked_card ? 'stretched-link' : '',
             ],
           }
         %}

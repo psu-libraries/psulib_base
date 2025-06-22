@@ -23,21 +23,19 @@
 #}
 {% apply spaceless %}
 {% set heading_html_tag = heading_html_tag|default('h2') %}
-{# {% set display = display|default('') %} #}
 {% set heading_attributes = heading_attributes ?: create_attribute() %}
-{% set heading_classes = heading_utility_classes is iterable ? heading_utility_classes : [heading_utility_classes] %}
 
-{% set heading_classes = heading_classes|merge([
+{% set heading_classes = [
   display|default('')
-])
+]
 %}
 
 {% if content %}
-  <{{heading_html_tag}} {{ heading_attributes.addClass(heading_classes) }}>
+  <{{heading_html_tag}} {{ heading_attributes.addClass(heading_classes).addClass(heading_utility_classes|default([])) }}>
     {% block heading_content %}
       {% if title_link %}
         {% set heading_link_attributes = create_attribute() %}
-        <a {{ heading_link_attributes.addClass(heading_link_utility_classes|default('')) }}>
+        <a {{ heading_link_attributes.addClass(heading_link_utility_classes|default([])) }}>
           {{ content }}
         </a>
       {% else %}

@@ -38,7 +38,7 @@ props:
       type: 'string'
       title: Title Link
       description: URL for the title link.
-      default: ''
+      default: false
     title_attributes:
       type: 'Drupal\Core\Template\Attribute'
       title: Attributes

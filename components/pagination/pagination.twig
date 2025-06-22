@@ -10,13 +10,7 @@
  */
  */
 #}
-{%
-set pagination_classes = [
-  'pagination-wrapper',
-]|merge(pagination_utility_classes ?: [])
-%}
-
-{% set pagination_attributes = attributes ?: create_attribute() %}
+{% set pagination_attributes = pagination_attributes ?: create_attribute() %}
 
 {% set alignment_classes = {
   'end': 'justify-content-end',
@@ -31,7 +25,7 @@ set pagination_classes = [
 {% set show_ellipsis = show_ellipsis ?? true %}
 
 {% if items %}
-	<nav {{ pagination_attributes.addClass(pagination_classes)}} role="navigation" aria-label="{{ 'Pagination'|t }}">
+	<nav {{ pagination_attributes.addClass(pagination_classes|default('')).addClass('pagination-wrapper')}} role="navigation" aria-label="{{ 'Pagination'|t }}">
 		<ul
 			class="pagination pager__items js-pager__items d-flex flex-wrap {{ size ? 'pagination-' ~ size }} {{ alignment }}">
 			{# Print first item if we are not on the first page. #}
