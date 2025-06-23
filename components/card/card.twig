@@ -72,13 +72,7 @@
 {% set card_header_attributes = create_attribute() %}
 {% set card_footer_attributes = create_attribute() %}
 {% set card_subtitle_attributes = create_attribute() %}
-{% set card_image_attributes = create_attribute() %}
-{% set card_link_attributes = create_attribute() %}
 {% set card_image_cap = card_image_cap|default('top') %}
-
-{% if card_image_alt %}
-  {% set card_image_attributes = card_image_attributes.setAttribute('alt', card_image_alt ) %}
-{% endif %}
 
 {%
   set card_image_classes = [
@@ -118,6 +112,7 @@
           include 'psulib_base:image' with {
             src: card_image_src,
             image_utility_classes: card_image_classes
+            alt: card_image_alt|default(''),
           }
         %}
       {% endif %}
