@@ -15,6 +15,7 @@ import '../dist/bootstrap-icons/font/bootstrap-icons.min.css';
 // Imports the CSS for all components combined into a single stylesheet.
 import '../assets/fonts/fonts.css';
 import '../dist/css/style.css';
+import '../dist/css/nav.css';
 
 // Imports all Storybook CSS for display.
 import './storybook.css';

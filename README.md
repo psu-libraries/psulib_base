@@ -47,6 +47,7 @@ The implementation of twig.js does not 100% match PHP Twig. There are few issues
 - `|merge` will only work if you merge a array literal into a array variable.  You also need to ensure that utility class array exists before merging.
 - `trans` is not defined.
 - macros need to be defined before they are used.
+- `attribute.removeClass()` remove the attribute entirely and cannot be used.
 
 #### Links
 - https://storybook.js.org/
