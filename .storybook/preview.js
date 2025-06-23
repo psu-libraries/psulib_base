@@ -22,7 +22,6 @@ import './storybook.css';
 // Import all js.
 import '../js/psul-bootstrap.js';
 
-
 export const decorators = [
   withThemeByDataAttribute({
     themes: {

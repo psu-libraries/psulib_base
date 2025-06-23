@@ -1,2 +1,2 @@
 // Include alert javascript.
-import 'bootstrap/js/dist/alert';
+import 'bootstrap/js/dist/alert.js';

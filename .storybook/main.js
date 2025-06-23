@@ -33,7 +33,6 @@ const config = {
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
     '@storybook/addon-themes',
-    '@storybook/addon-styling-webpack'
   ],
   "framework": {
     "name": "@storybook/html-vite",

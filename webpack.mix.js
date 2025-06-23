@@ -1,7 +1,6 @@
 // webpack.mix.js
-
-const mix = require('laravel-mix');
-const glob = require('glob');
+import mix from 'laravel-mix';
+import {glob} from 'glob';
 
 // Use relative URL so fonts will work.
 const defaultSassOptions = {
