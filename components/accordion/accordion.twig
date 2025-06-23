@@ -43,6 +43,8 @@
 {% set flush = flush ?? false %}
 {% set items = items|default([]) %}
 {% set open_item_id = open_item_id|default(0) %}
+{% set accordion_utility_classes = accordion_utility_classes is iterable ? accordion_utility_classes : [accordion_utility_classes] %}
+{% set accordion_item_utility_classes = accordion_item_utility_classes is iterable ? accordion_item_utility_classes : [accordion_item_utility_classes] %}
 
 {%
   set accordion_classes = accordion_utility_classes|merge([

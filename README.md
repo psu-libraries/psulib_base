@@ -44,7 +44,7 @@ This theme also includes the ability to stand up an instance of Storybook.  This
 
 The implementation of twig.js does not 100% match PHP Twig. There are few issues with the twig.js that need to be worked around.
 
-- `|merge` will only work if you merge a array literal into a array variable.
+- `|merge` will only work if you merge a array literal into a array variable.  You also need to ensure that utility class array exists before merging.
 - `trans` is not defined.
 - macros need to be defined before they are used.
 
