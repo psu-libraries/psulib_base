@@ -1,5 +1,5 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
-name: not_found
+name: Not Found
 status: stable
 description: Page not found
 props:
@@ -9,16 +9,26 @@ props:
       type: 'string'
       title: Title
       description: Title to display.
+      examples:
+        - 'Oops! We can''t find that'
     subtitle:
       type: 'string'
       title: Subtitle
       description: Subtitle (We recommend).
+      examples:
+        - 'We recommend:'
     recommendations:
       type: 'array'
       title: Recommendations
       description: List of recommendation for users to find what they are looking for.
       items:
         type: 'string'
+      examples:
+        -
+          - 'Check the URL for typos'
+          - 'Return to the homepage'
+          - 'Search our site using the search bar'
+          - 'Contact us for help'
     home_url:
       type: 'string'
       title: URL to the site's homepage.
