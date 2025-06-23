@@ -11,7 +11,7 @@
 {% set default_item_tag = default_item_tag|default('h2') %}
 {% set attributes = attributes ?: create_attribute() %}
 {% set position = position|default('left') %}
-{% set id = ('content-toc-spy'|clean_id) ~ '-' ~ random(1, 99999)  %}
+{% set id = 'content-toc-spy'|clean_unique_id %}
 
 {% if items %}
   <div {{attributes.addClass(toc_classes) }}>

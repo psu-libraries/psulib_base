@@ -2,7 +2,7 @@
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 
-import { join } from 'node:path' // 1. Add dependencies.
+import { join } from 'node:path'
 import { cwd } from 'node:process'
 
 const config = {
@@ -12,20 +12,37 @@ const config = {
   ],
   "addons": [
     {
-      name: 'storybook-addon-sdc', // 3. Configure addon.
+      name: 'storybook-addon-sdc',
       options: {
         sdcStorybookOptions: {
-          namespace: 'psulib_base', // Your namespace.
+          namespace: 'psulib_base',
         },
         vitePluginTwigDrupalOptions: {
-          // vite-plugin-twig-drupal options.
           namespaces: {
-            psulib_base: join(cwd(), './components'), // Your namespace and path to components.
+            psulib_base: join(cwd(), './components'),
           },
           functions: {
             clean_unique_id: (twigInstance) =>
-              // twigInstance.extendFilter("clean_unique_id", (text) => text.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-]/g, '').toLowerCase()),
-              twigInstance.extendFilter("clean_unique_id",  () =>  (text, text2) => "IT WORKS!" + text + text2),
+              twigInstance.extendFilter("clean_unique_id",  (text) =>  {
+                console.log('clean_unique_id called with:', text, typeof text);
+                if (!text || typeof text !== 'string') {
+                  return 'random-id-' + Math.floor(Math.random() * 1000);
+                }
+                let returnString = new String(text);
+                return returnString.replace(/\s+/g, '-').toLowerCase() + Math.floor(Math.random() * 1000);
+              }),
+            link: (twigInstance) =>
+              twigInstance.extendFunction("link", (text, url, attributes) => {
+                let attrs = '';
+                if (attributes && typeof attributes === 'object') {
+                  for (const [key, value] of Object.entries(attributes)) {
+                    attrs += ` ${key}="${value}"`;
+                  }
+                }
+                // Add theme attribute.
+                attrs += ' theme="psulib_base"';
+                return `<a href="${url}"${attrs}>${text}</a>`;
+              }),
           }
         }
       },

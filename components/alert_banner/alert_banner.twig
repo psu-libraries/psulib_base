@@ -20,7 +20,7 @@
   'allClear': 'bi-exclamation-circle-fill',
 }%}
 
-{% set alert_collapse_id = ('alert-banner'|clean_id) ~ '-' ~ random(1, 99999) %}
+{% set alert_collapse_id = 'alert-banner'|clean_unique_id %}
 
 <div {{ alert_banner_attributes.addClass(alert_banner_classes).removeClass('alert').setAttribute('id', alert_collapse_id ) }} role="alert">
   <div class="container-fluid">
