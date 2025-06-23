@@ -24,7 +24,6 @@ const config = {
           functions: {
             clean_unique_id: (twigInstance) =>
               twigInstance.extendFilter("clean_unique_id",  (text) =>  {
-                console.log('clean_unique_id called with:', text, typeof text);
                 if (!text || typeof text !== 'string') {
                   return 'random-id-' + Math.floor(Math.random() * 1000);
                 }
