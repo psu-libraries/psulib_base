@@ -31,6 +31,28 @@ ddev launch;
 
 SCSS used to generate styles that will be used everywhere are defined in the `./scss` directory.  Styles cannot or should be associated with a single components will live here.  These can be organized in to separate files in the `./scss/base` directory.
 
+To compile the theme you will need install the node dependencies `npm install`.
+
+- `npx mix watch` to compile the scss/js and watch for addition changes (standalone)
+- `ddev theme-watch psulib_base` to compile the scss/js and watch for additional changes. This can only be used within a PSU Libraries Drupal site.
+
+### Storybook
+
+This theme also includes the ability to stand up an instance of Storybook.  This is using the [Storybook SDC Addon](https://storybook.js.org/addons/storybook-addon-sdc) to pull the stories directly from the single directory components. Run `npm run storybook` to stand up a development version of storybook. This will also `npm mix watch` concurrently to update any scss or js changes live.
+
+#### Known issues with twig.js
+
+The implementation of twig.js does not 100% match PHP Twig. There are few issues with the twig.js that need to be worked around.
+
+- `|merge` will only work if you merge a array literal into a array variable.
+- `trans` is not defined.
+- macros need to be defined before they are used.
+
+#### Links
+- https://storybook.js.org/
+- https://storybook.js.org/addons/storybook-addon-sdc
+- https://github.com/iberdinsky-skilld/sdc-addon
+
 ### Single Directory Components (SDC)
 
 The theme has a number of [Single Directory Components (SDC)](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) defined in the `./components` directory.  We should use SDC where appropriate.  This allows for easier development and code reusability.
