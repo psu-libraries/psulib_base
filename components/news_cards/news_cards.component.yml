@@ -2,6 +2,7 @@
 name: News Cards
 status: stable
 description: Dispaly a list of news cards.
+group: 'Cards'
 props:
   type: 'object'
   properties:

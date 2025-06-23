@@ -35,7 +35,7 @@
     {% block heading_content %}
       {% if title_link %}
         {% set heading_link_attributes = create_attribute() %}
-        <a {{ heading_link_attributes.addClass(heading_link_utility_classes|default([])) }}>
+        <a {{ heading_link_attributes.setAttribute('href', title_link).addClass(heading_link_utility_classes|default([])) }}>
           {{ content }}
         </a>
       {% else %}

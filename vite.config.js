@@ -15,12 +15,11 @@ export default defineConfig({
   //     },
   //   },
   // },
-  publicDir: 'assets',
+  publicDir: 'dist',
   css: {
-    devSourcemap: true,
     preprocessorOptions: {
       scss: {
-        api: 'legacy',
+        api: 'modern-compiler',
       },
     },
   },
