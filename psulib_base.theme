@@ -67,6 +67,15 @@ function psulib_base_page_attachments_alter(array &$attachments) {
 }
 
 /**
+ * Implements hook_element_info_alter().
+ */
+function psulib_base_element_info_alter(array &$types) {
+  if (isset($types['layout_builder'])) {
+    $types['layout_builder']['#attached']['library'][] = 'psulib_base/layout_builder';
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for menu-local-tasks templates.
  *
  * Use preprocess hook to set #attached to child elements
