@@ -1,4 +1,4 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 name: Pagination
 status: stable
 description: 'Documentation and examples for displaying pagination to indicate a series of related content exists across multiple pages.'
@@ -13,16 +13,6 @@ props:
         - ''
         - sm
         - lg
-    alignment:
-      type: 'string'
-      title: Alignment
-      description: 'Determines the alignment of the pagination component. Can be one of `"start"` (default alignment), `"end"` (right aligned), `"center"` (center aligned), or `"vertical"` (vertically stacked).'
-      enum:
-        - ''
-        - start
-        - end
-        - center
-        - vertical
     show_first:
       type: 'boolean'
       title: Show first
@@ -45,26 +35,74 @@ props:
       type: 'array'
       items:
         type: 'string'
+    pagination_attributes:
+      type: 'Drupal\Core\Template\Attribute'
     items:
+      title: Items with pages, first, previous, current, next, last
       type: 'array'
-      items:
-        type: 'object'
-        properties:
-          href:
-            type: 'string'
-          text:
-            type: 'string'
-          pagination_attributes:
-            # Actually 'Drupal\Core\Template\Attribute'
-            type: ['object']
-
+      default: []
+      properties:
+        first:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              # type: 'Drupal\Core\Template\Attribute'
+              type: ['object', 'string']
+        previous:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              # type: 'Drupal\Core\Template\Attribute'
+              type: ['object', 'string']
+        current:
+          type: 'string'
+        pages:
+          type: ['array', 'object']
+          default: []
+        next:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              # type: 'Drupal\Core\Template\Attribute'
+              type: ['object', 'string']
+        last:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              # type: 'Drupal\Core\Template\Attribute'
+              type: ['object', 'string']
       examples:
-        - href: '/page/1'
-          text: '1'
-        - href: '/page/2'
-          text: '2'
-        - href: '/page/3'
-          text: '3'
+        -
+          first:
+            href: '/page/1'
+          previous:
+            href: '/page/2'
+            attributes: {}
+          current: '2'
+          pages:
+            - href: '/page/1'
+              text: '1'
+              attributes: {}
+            - href: '/page/2'
+              text: '2'
+              attributes: {}
+            - href: '/page/4'
+              text: '4'
+              attributes: {}
+          next:
+            href: '/page/4'
+            attributes: {}
+          last:
+            href: '/page/10'
+            attributes: {}
 
 slots:
   pagination_next:
