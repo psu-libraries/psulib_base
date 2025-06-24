@@ -27,10 +27,14 @@ props:
       type: 'boolean'
       title: Show first
       description: 'Determines whether the first page link should be displayed.'
+      examples:
+        - true
     show_last:
       type: 'boolean'
       title: Show last
       description: 'Determines whether the last page link should be displayed.'
+      examples:
+        - true
     show_ellipsis:
       type: 'boolean'
       title: Show ellipsis
