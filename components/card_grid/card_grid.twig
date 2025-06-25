@@ -1,0 +1,69 @@
+{% set attributes = create_attribute() %}
+{% set card_columns = card_columns|default('3') %}
+
+{% set classes = [
+  'card-grid',
+  'card-grid--columns-' ~ card_columns,
+] %}
+
+{% set card_utility_classes = [
+  'card-grid__card',
+  card_type ? 'card--' ~ card_type,
+] %}
+
+<div {{ attributes.addClass(classes) }}>
+  {% if title or body %}
+    <div class="card-grid__header row">
+      <div class="col-12 col-md-8 offset-md-2">
+        {% if title %}
+          {% include 'psulib_base:heading' with {
+            content: title,
+            heading_html_tag: 'h2',
+            heading_utility_classes: ['card-grid__heading'],
+          } only %}
+        {% endif %}
+
+        {% if body %}
+          <div class="card-grid__description">
+            {{ body }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {# Cards #}
+  <div class="card-grid__cards">
+    {% for item in items %}
+      {% set item = item|merge({
+        card_utility_classes: card_utility_classes,
+        card_link_stretched: card_link_stretched|default(false),
+        card_title_tag: card_title_tag ?? 'h3',
+      }) %}
+
+      {# Merge default values with the item #}
+      {% include 'psulib_base:card' with item %}
+    {% endfor %}
+  </div>
+
+  {% if cta_button %}
+    <div class="card-grid__cta">
+      {% if cta_button_render|render %}
+        {{ cta_button_render }}
+      {% elseif cta_button %}
+        {%
+          include 'psulib_base:button' with {
+            button_html_tag: 'a',
+            url: cta_button.url,
+            color: 'primary',
+            content: cta_button.title,
+            button_utility_classes: [],
+          }
+        %}
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+</div>
+

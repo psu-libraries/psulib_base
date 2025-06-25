@@ -30,6 +30,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h2
     card_subtitle:
       type: 'string'
       title: Card Subtitle
@@ -44,6 +46,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h3
     card_text_tag:
       type: 'string'
       title: Card Text HTML Tag
@@ -52,6 +56,16 @@ props:
         - p
         - span
         - div
+    card_link:
+      type: 'string'
+      title: Card Link
+      description: The URL to link to when the card is clicked.
+      default: '#'
+    card_link_stretched:
+      type: 'boolean'
+      title: Stretched Link
+      description: Whether the link should stretch to fill the entire card.
+      default: false
     card_link_text:
       type: 'string'
       title: Card Link Text
@@ -61,6 +75,7 @@ props:
     card_media:
       type: 'string'
       title: Card Media
+      default: ''
       examples:
         - ''
     card_image_src:

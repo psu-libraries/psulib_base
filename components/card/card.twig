@@ -26,42 +26,49 @@
 #}
 {% apply spaceless %}
 
-{% set card_title_utility_classes = card_title_utility_classes is iterable ? card_title_utility_classes : [card_title_utility_classes] %}
+{% set card_title_utility_classes = card_title_utility_classes|default([]) %}
 {%
   set card_title_classes = card_title_utility_classes|merge([
     'card-title'
   ])
 %}
 
-{% set card_body_utility_classes = card_body_utility_classes is iterable ? card_body_utility_classes : [card_body_utility_classes] %}
+{% set card_body_utility_classes = card_link_utility_classes|default([]) %}
 {%
   set card_body_classes = card_body_utility_classes|merge([
     'card-body'
   ])
 %}
-{%
-  set card_text_classes = [
-    'card-text'
-  ]|merge(card_text_utility_classes ?: [])
-%}
 
-{% set card_link_utility_classes = card_link_utility_classes is iterable ? card_link_utility_classes : [card_link_utility_classes] %}
+{% set card_link_utility_classes = card_link_utility_classes|default([]) %}
 {%
   set card_link_classes = card_link_utility_classes|merge([
-    'card-link'
+    'card-link',
+    card_link_stretched ? 'position-relative' : '',
   ])
 %}
 
-{# {% set card_border = card_border ? 'border' : 'border-0' %} #}
+{%
+  set card_header_link_classes = [
+    card_link_stretched ? 'stretched-link' : '',
+  ]
+%}
+
+{% set card_border = card_border ? card_border : false %}
 {% set card_title_tag = card_title_tag|default('h3') %}
 {% set card_text_tag = card_text_tag|default('div') %}
 {% set card_subtitle_tag = card_subtitle_tag|default('div') %}
+{% set card_image_cap = card_image_cap|default('top') %}
 
 {% set card_utility_classes = card_utility_classes is iterable ? card_utility_classes : [card_utility_classes] %}
+
 {%
   set card_classes = card_utility_classes|merge([
-    'card',
-    card_border ? 'border' : 'border-0',
+    'card card-card',
+    'card--image-' ~ card_image_cap,
+    card_image_overlays ? 'card--image-overlays' : '',
+    card_link_stretched ? 'card--linked position-relative' : '',
+    card_border ? 'border' : '',
   ])
 %}
 
@@ -105,7 +112,7 @@
 
   {% block slot_card_image_top %}
     {% if card_image_cap == 'top' and not card_image_overlays %}
-      {% if card_media|render %}
+      {% if card_media %}
         {{ card_media }}
       {% elseif card_image_src %}
         {%
@@ -121,13 +128,19 @@
 
   <div {{ card_body_attributes.addClass(card_body_classes) }}>
     {% block slot_card_body %}
+      {% if card_subtitle %}
+        <{{card_subtitle_tag}} {{ card_subtitle_attributes.addClass(card_subtitle_classes) }}>{{ card_subtitle }}</{{card_subtitle_tag}}>
+      {% endif %}
+
       {% if card_title %}
         {%
           include 'psulib_base:heading' with {
             heading_html_tag: card_title_tag,
             content: card_title,
             heading_attributes: card_title_attributes,
-            heading_utility_classes: card_title_classes
+            heading_utility_classes: card_title_classes,
+            title_link: card_link ?? false,
+            heading_link_utility_classes: card_header_link_classes,
           }
         %}
       {% endif %}
@@ -172,7 +185,7 @@
 
   {% block slot_card_footer %}
     {% if card_footer %}
-      <div {{ card_footer_attributes.addClass(card_footer_utility_classes|default([]).addClass('card-footer')) }}>
+      <div {{ card_footer_attributes.addClass(card_footer_utility_classes|default([])).addClass('card-footer') }}>
         {{ card_footer }}
       </div>
     {% endif %}

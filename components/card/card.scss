@@ -3,33 +3,189 @@
 // Breadcrumb styling
 @import "bootstrap/scss/card";
 
-.card--search-results {
-  border-top-width: 0;
-  @include make-link($link-color, none, $link-hover-color, underline);
+// SDC Styles Improperly load after the style.css main file so we need to add
+// another class to increase selector specificity.
+.card.card-card {
+  $card-body-spacing: $spacer * 1.5;
+  // Add shadows.
+  --#{$prefix}card-box-shadow: #{$box-shadow-sm};
+  --#{$prefix}card-border-width: 0px;
+  --#{$prefix}card-border-radius: #{$border-radius-lg};
+  --#{$prefix}card-spacer-y: #{$card-body-spacing};
+  --#{$prefix}card-spacer-x: #{$card-body-spacing};
+  --#{$prefix}card-text-align: center;
+  --#{$prefix}card-color: #{$body-color};
+}
 
-  &:before {
-    border: 5px solid $pa-sky !important;
-    border-bottom-width: 0;
-    content: '';
-    margin: calc(-1 * var(--bs-border-width));
-    margin-bottom: 0;
+// Set card image border radius to match card border radius.
+.card {
+  transition: box-shadow 0.2s ease-out;
+  text-align: var(--#{$prefix}card-text-align);
+  box-shadow: var(--#{$prefix}card-box-shadow);
+
+  &-title {
+    font-size: $font-size-lg;
+    color: $body-color;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer;
+
+    @include make-link($body-color, none, $black, underline);
+
+    a {
+      transition: color, text-decoration 0.2s ease-out;
+    }
   }
 
-  .card-header {
-    text-transform: uppercase;
-    border-bottom-width: 1px;
-    background-color: $white-out;
+  &-subtitle {
+    font-size: $font-size-sm;
+  }
 
-    h2 {
-      font-size: $font-size-base;
+  &-body {
+    text-align: var(--#{$prefix}card-text-align);
+    display: flex;
+    gap: $spacer * 0.5;
+    flex-flow: column;
+
+    // .card-title,
+    p:last-child {
       margin-bottom: 0;
     }
   }
 
-  .card-footer {
-    background-color: $pa-limestone-max-light;
-    border-top: 0;
-    font-size: $font-size-base;
+  &--linked {
+    &:hover,
+    &:focus {
+      --#{$prefix}card-box-shadow: #{$box-shadow2};
+    }
+  }
+
+  &--image-top > img {
+    border-top-right-radius: var(--#{$prefix}card-border-radius);
+    border-top-left-radius: var(--#{$prefix}card-border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--image-bottom img {
+    border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: var(--#{$prefix}card-border-radius);
+    border-bottom-left-radius: var(--#{$prefix}card-border-radius);
+  }
+
+  &--image-overlays img {
+    border-radius: var(--#{$prefix}card-border-radius);
+  }
+
+  &-link.btn {
+    margin-left: 0;
+    margin-top: $spacer * 0.5;
+    align-self: flex-start;
+  }
+}
+
+////////////
+// Variants.
+
+.card {
+  // Card text should be left aligned.
+  &.card--text-left {
+    --#{$prefix}card-text-align: start;
+  }
+
+  // News Card
+  &.card--news {
+    // @todo
+  }
+
+  &.card--text {
+    --#{$prefix}card-bg: transparent;
+    --#{$prefix}card-spacer-y: 0;
+    --#{$prefix}card-spacer-x: 0;
+    --#{$prefix}card-box-shadow: 0;
+    --#{$prefix}card-text-align: start;
+
+    margin-bottom: $spacer * 1.5;
+
+    &:hover,
+    &:focus {
+      --#{$prefix}card-box-shadow: none;
+    }
+
+    .card-link.btn {
+      margin-top: $spacer * .5;
+    }
+  }
+
+  // Call to Action
+  &.card--cta {
+    $card-body-spacing: $spacer * 1.25;
+
+    --#{$prefix}card-bg: #{$nittany-navy};
+    --#{$prefix}card-color: #{$white};
+    --#{$prefix}card-spacer-y: #{$spacer};
+    --#{$prefix}card-spacer-x: #{$spacer};
+    --#{$prefix}card-box-shadow: none;
+
+    transition-property: background-color, transform;
+    min-height: 160px;
+
+    @include make-link($white, none, $white, underline);
+    .card-title {
+      @include make-link($white, none, $white, underline);
+    }
+
+    &:hover,
+    &:focus {
+      --#{$prefix}card-bg: #{$beaver-blue};
+      --#{$prefix}card-box-shadow: none;
+      transform: scale(1.019);
+    }
+
+    .card-body {
+      color: $white;
+      text-align: unset;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-end;
+    }
+  }
+
+  // Style variant for search results cards.
+  &.card--search-results {
+    --#{$prefix}card-border-width: 1px;
+    --#{$prefix}card-spacer-y: #{$spacer};
+    --#{$prefix}card-spacer-x: #{$spacer};
+    --#{$prefix}card-text-align: start;
+    --#{$prefix}card-border-radius: 0;
+
+    border-top-width: 0;
+    @include make-link($link-color, none, $link-hover-color, underline);
+
+    &:before {
+      border: 5px solid $pa-sky !important;
+      border-bottom-width: 0;
+      content: '';
+      margin: calc(-1 * var(--#{$prefix}card-border-width));
+      margin-bottom: 0;
+    }
+
+    .card-header {
+      text-transform: uppercase;
+      border-bottom-width: 1px;
+      background-color: $white-out;
+
+      h2 {
+        font-size: $font-size-base;
+        margin-bottom: 0;
+      }
+    }
+
+    .card-footer {
+      background-color: $pa-limestone-max-light;
+      border-top: 0;
+      font-size: $font-size-base;
+    }
   }
 }
 
