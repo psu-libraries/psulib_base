@@ -13,6 +13,10 @@
 .layout-builder__add-section > .layout-builder__link--add {
   border-color: $valchar-grey !important;
   color: $valchar-grey !important;
+
+  &:focus {
+    color: $white-out !important;
+  }
 }
 
 .gin--horizontal-toolbar .glb-sidebar {
@@ -30,6 +34,42 @@
 @include media-breakpoint-up(md) {
   [data-meta-sidebar="open"] .dialog-off-canvas-main-canvas {
     max-width: calc(100vw - var(--gin-sidebar-width) - 1rem);
+  }
+}
+
+// Layout builder modal rebuild button styles.
+a.button[data-drupal-selector="edit-rebuild-layout"] {
+  --#{$prefix}btn-font-weight: #{$font-weight-normal};
+  --#{$prefix}btn-color: var(--gin-color-primary);
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: var(--gin-color-primary);
+  --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-hover-color: var(--gin-color-button-text);
+  --#{$prefix}btn-hover-border-color: transparent;
+  --#{$prefix}btn-active-color: var(--gin-color-button-text);
+  --#{$prefix}btn-active-border-color: transparent;
+  --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
+  --#{$prefix}btn-disabled-border-color: transparent;
+  --#{$prefix}btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+  --#{$prefix}btn-focus-shadow-rgb: #{$btn-link-focus-shadow-rgb};
+  --#{$prefix}btn-font-size: .889em;
+
+  text-decoration: $link-decoration;
+  @if $enable-gradients {
+    background-image: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus-visible {
+    color: var(--#{$prefix}btn-color);
+  }
+
+  &:hover {
+    color: var(--#{$prefix}btn-hover-color);
   }
 }
 
