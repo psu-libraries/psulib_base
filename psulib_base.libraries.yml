@@ -59,6 +59,11 @@ file:
     component:
       dist/css/file.css: {}
 
+layout_builder:
+  css:
+    component:
+      dist/css/layout-builder.css: {}
+
 nav:
   css:
     component:
