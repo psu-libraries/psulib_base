@@ -14,6 +14,7 @@
   --#{$prefix}card-spacer-y: #{$card-body-spacing};
   --#{$prefix}card-spacer-x: #{$card-body-spacing};
   --#{$prefix}card-text-align: center;
+  --#{$prefix}card-color: #{$body-color};
 }
 
 // Set card image border radius to match card border radius.
@@ -26,7 +27,7 @@
     font-size: $font-size-lg;
     color: $body-color;
     font-weight: $font-weight-bold;
-    margin-bottom: $spacer * 1.5;
+    margin-bottom: $spacer;
 
     @include make-link($body-color, none, $black, underline);
 

@@ -30,6 +30,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h2
     card_subtitle:
       type: 'string'
       title: Card Subtitle
@@ -44,6 +46,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h3
     card_text_tag:
       type: 'string'
       title: Card Text HTML Tag
