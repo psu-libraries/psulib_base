@@ -55,8 +55,11 @@ props:
       type: ['string', 'boolean']
       title: Title Link
       description: Link URL for the title.
+      examples:
+        - ''
     heading_attributes:
       type: 'Drupal\Core\Template\Attribute'
+      title: Attributes
     content:
       type: 'string'
       title: Content
@@ -75,6 +78,10 @@ props:
         width:
           type: ['string']
           title: Divider Width
+      examples:
+        - color: 'navy'
+          thickness: 'md'
+          width: 'md'
 slots:
   heading_content:
     title: Content

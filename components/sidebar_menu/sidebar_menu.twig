@@ -21,32 +21,7 @@
 {% import _self as menus %}
 
 {% set wrapper_attributes = wrapper_attributes ?: create_attribute() %}
-
 {% set attributes = attributes ?: create_attribute() %}
-
-<div {{ wrapper_attributes.addClass('sidebar-menu','sidebar-menu--' ~ menu_name) }}>
-  {{ menus.build_menu(items, attributes, 0) }}
-</div>
-
-{# Macro to build the menu. #}
-{% macro build_menu(items, attributes, menu_level) %}
-  {% import _self as menus %}
-  {% if items %}
-    {%
-      set ul_classes = [
-      menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap main-menu' : '',
-      menu_level == 0 ? 'sidebar-menu-parent' : '',
-      menu_level > 0 ? 'dropdown-menu' : '',
-      'nav-level-' ~ menu_level,
-    ]
-    %}
-    <ul{{attributes.addClass(ul_classes)}}>
-      {% for item in items %}
-        {{ menus.add_link(item, attributes.removeClass(ul_classes), menu_level) }}
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endmacro %}
 
 {# Macro to build the menu link items. #}
 {% macro add_link(item, attributes, menu_level) %}
@@ -71,6 +46,7 @@
   {% set item_attributes = item.attributes ?: create_attribute() %}
 
   <li{{item_attributes.addClass(list_item_classes)}}>
+
     {% if item.below %}
       <div class="link-container">
         {{ link(item.title, item.url, { 'class': link_class, 'role': 'button', 'aria-expanded': item.in_active_trail ? 'true' : 'false', 'title': ('Expand menu' | t) ~ ' ' ~ item.title }) }}
@@ -80,9 +56,46 @@
           </svg>
         </span>
       </div>
+
       {{ menus.build_menu(item.below, attributes, menu_level + 1) }}
     {% else %}
       {{ link(item.title, item.url, { 'class': link_class }) }}
     {% endif %}
   </li>
 {% endmacro %}
+
+{# Macro to build the menu. #}
+{% macro build_menu(items, attributes, menu_level) %}
+  {% set list_attributes = create_attribute() %}
+
+  {% import _self as menus %}
+  {% if items %}
+
+    {# Set the classes for the unordered list based on the menu level. #}
+    {% if menu_level == 0 %}
+      {% set ul_classes = [
+        'navbar-nav',
+        'justify-content-end',
+        'flex-wrap',
+        'main-menu',
+        'sidebar-menu-parent',
+      ] %}
+    {% else %}
+      {% set ul_classes = [
+        'dropdown-menu',
+      ] %}
+    {% endif %}
+
+    {# Render the menu as an unordered list. #}
+    <ul {{ list_attributes.addClass(ul_classes).addClass('nav-level-' ~ menu_level) }}>
+      {% for item in items %}
+        {{ menus.add_link(item, attributes, menu_level) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{# Call the macros to build the menu. #}
+<div {{ wrapper_attributes.addClass('sidebar-menu','sidebar-menu--' ~ menu_name) }}>
+  {{ menus.build_menu(items, attributes, 0) }}
+</div>

@@ -1,5 +1,4 @@
 // webpack.mix.js
-
 const mix = require('laravel-mix');
 const glob = require('glob');
 
@@ -34,7 +33,7 @@ mix.js('js/psul-bootstrap.js', 'dist/js/psul-bootstrap.js');
 // Add buiding process for component javascript.
 for (const sourcePath of glob.sync("components/**/src/*.js")) {
   const destinationPath = sourcePath.replace(/\/src\//, "\/");
-  mix.js(sourcePath, destinationPath);
+  mix.js(sourcePath, destinationPath).sourceMaps(true, 'source-map');
 }
 
 // Copy bootstrap-icons to dist directory for use with assets.

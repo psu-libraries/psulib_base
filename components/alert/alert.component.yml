@@ -22,8 +22,14 @@ props:
       default: primary
     dismissible:
       type: 'boolean'
+      title: Dismissible
+      description: Whether the alert is dismissible or not.
+      examples:
+        - false
     heading:
       type: 'string'
+      title: Alert Heading
+      description: The heading of the alert.
     alert_utility_classes:
       type: 'array'
       items:
@@ -32,6 +38,7 @@ props:
       default: []
       description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
     attributes:
+      title: Attributes
       type: 'Drupal\Core\Template\Attribute'
 slots:
   alert_heading:

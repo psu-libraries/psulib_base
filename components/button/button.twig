@@ -23,14 +23,23 @@
 {% set button_attributes = button_attributes ?: create_attribute() %}
 {% set button_html_tag = button_html_tag ?? 'button' %}
 {% set id = id ?? '' %}
-{% set size = size ? [size] : [] %}
-{% set disabled_classes = disabled ? ['disabled'] : [] %}
-{% set button_color  = (color != '') ? [((outline == true) ? 'btn-outline-' : 'btn-') ~ color] : [] %}
+{% set size = size ? size : '' %}
+{% set disabled_classes = disabled ? 'disabled' : '' %}
+{% set button_classes = button_utility_classes is iterable ? button_utility_classes : [button_utility_classes] %}
+
+{% if outline == true %}
+  {% set button_color = 'btn-outline-' ~ color|default('primary') %}
+{% else %}
+  {% set button_color = 'btn-' ~ color|default('primary') %}
+{% endif %}
 
 {% set
-  button_classes = [
+  button_classes = button_classes|merge([
     'btn',
-  ]|merge(button_color)|merge(size)|merge(disabled_classes)|merge(button_utility_classes ?: [])
+    button_color,
+    size,
+    disabled_classes
+  ])
 %}
 
 {% if button_html_tag == 'a' %}

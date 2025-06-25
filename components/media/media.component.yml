@@ -30,6 +30,8 @@ slots:
   content:
     type: 'array'
     description: 'The rendered media item content.'
+    examples:
+      - '<img src="../../.storybook/public/sample.jpg" alt="Sample Image" class="img-fluid" />'
   media_content:
     type: 'array'
     description: 'The media content block wrapper.'

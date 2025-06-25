@@ -9,7 +9,8 @@ props:
       type: 'string'
       title: Title
       description: Title text for the accordion.
-      default: ''
+      examples:
+        - 'Accordion Title'
     title_tag:
       type: 'string'
       title: Title Tag
@@ -37,7 +38,7 @@ props:
       type: 'string'
       title: Title Link
       description: URL for the title link.
-      default: ''
+      default: false
     title_attributes:
       type: 'Drupal\Core\Template\Attribute'
       title: Attributes
@@ -56,7 +57,35 @@ props:
       type: 'array'
       title: Items
       description: An array of items inside the accordion. Each item is an object that has title, content, and stay_open properties.
-      default: [{}]
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: ['string', 'object']
+            title: Title
+          title_tag:
+            type: 'string'
+            title: Title Tag
+            description: HTML tag for the item title.
+            enum:
+              - h2
+              - h3
+              - h4
+              - h5
+              - h6
+            default: h3
+        slots:
+          content:
+            type: ['string', 'object']
+            title: Content
+      examples:
+        -
+          - title: 'Item 1'
+            content: 'Content for item 1. Content for item 1. Content for item 1. Content for item 1. Content for item 1.'
+          - title: 'Item 2'
+            content: 'Content for item 2. Content for item 2. Content for item 2. Content for item 2. Content for item 2.'
+          - title: 'Item 3'
+            content: 'Content for item 3.'
     open_item_id:
       type: 'integer'
       title: Open Item ID
@@ -88,3 +117,5 @@ slots:
   content:
     title: Content
     description: Default content text for the accordion.
+    examples:
+      - ''

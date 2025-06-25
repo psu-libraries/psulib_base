@@ -26,51 +26,43 @@
 #}
 {% apply spaceless %}
 
+{% set card_title_utility_classes = card_title_utility_classes is iterable ? card_title_utility_classes : [card_title_utility_classes] %}
 {%
-  set card_title_classes = [
+  set card_title_classes = card_title_utility_classes|merge([
     'card-title'
-  ]|merge(card_title_utility_classes ?: [])
+  ])
 %}
+
+{% set card_body_utility_classes = card_body_utility_classes is iterable ? card_body_utility_classes : [card_body_utility_classes] %}
 {%
-  set card_subtitle_classes = [
-    'card-subtitle'
-  ]|merge(card_subtitle_utility_classes ?: [])
-%}
-{%
-  set card_header_classes = [
-    'card-header'
-  ]|merge(card_header_utility_classes ?: [])
-%}
-{%
-  set card_footer_classes = [
-    'card-footer'
-  ]|merge(card_footer_utility_classes ?: [])
-%}
-{%
-  set card_body_classes = [
+  set card_body_classes = card_body_utility_classes|merge([
     'card-body'
-  ]|merge(card_body_utility_classes ?: [])
+  ])
 %}
 {%
   set card_text_classes = [
     'card-text'
   ]|merge(card_text_utility_classes ?: [])
 %}
+
+{% set card_link_utility_classes = card_link_utility_classes is iterable ? card_link_utility_classes : [card_link_utility_classes] %}
 {%
-  set card_link_classes = [
+  set card_link_classes = card_link_utility_classes|merge([
     'card-link'
-  ]|merge(card_link_utility_classes ?: [])
+  ])
 %}
 
-{% set card_border = card_border ? [] : [] %}
+{# {% set card_border = card_border ? 'border' : 'border-0' %} #}
 {% set card_title_tag = card_title_tag|default('h3') %}
 {% set card_text_tag = card_text_tag|default('div') %}
 {% set card_subtitle_tag = card_subtitle_tag|default('div') %}
 
+{% set card_utility_classes = card_utility_classes is iterable ? card_utility_classes : [card_utility_classes] %}
 {%
-  set card_classes = [
+  set card_classes = card_utility_classes|merge([
     'card',
-  ]|merge(card_utility_classes ?: [])|merge(card_border)
+    card_border ? 'border' : 'border-0',
+  ])
 %}
 
 {% set card_attributes = create_attribute() %}
@@ -80,13 +72,7 @@
 {% set card_header_attributes = create_attribute() %}
 {% set card_footer_attributes = create_attribute() %}
 {% set card_subtitle_attributes = create_attribute() %}
-{% set card_image_attributes = create_attribute() %}
-{% set card_link_attributes = create_attribute() %}
 {% set card_image_cap = card_image_cap|default('top') %}
-
-{% if card_image_alt %}
-  {% set card_image_attributes = card_image_attributes.setAttribute('alt', card_image_alt ) %}
-{% endif %}
 
 {%
   set card_image_classes = [
@@ -97,7 +83,7 @@
 <div {{ card_attributes.addClass(card_classes) }}>
   {% block slot_card_header %}
     {% if card_header %}
-      <div {{ card_header_attributes.addClass(card_header_classes) }}>
+      <div {{ card_header_attributes.addClass(card_header_utility_classes|default([])).addClass('card-header') }}>
         {{ card_header }}
       </div>
     {% endif %}
@@ -125,7 +111,8 @@
         {%
           include 'psulib_base:image' with {
             src: card_image_src,
-            image_utility_classes: card_image_classes
+            image_utility_classes: card_image_classes,
+            alt: card_image_alt|default(''),
           }
         %}
       {% endif %}
@@ -146,11 +133,11 @@
       {% endif %}
 
       {% if card_subtitle %}
-        <{{card_subtitle_tag}} {{ card_subtitle_attributes.addClass(card_subtitle_classes) }}>{{ card_subtitle }}</{{card_subtitle_tag}}>
+        <{{card_subtitle_tag}} {{ card_subtitle_attributes.addClass(card_subtitle_utility_classes|default([])).addClass('card-subtitle') }}>{{ card_subtitle }}</{{card_subtitle_tag}}>
       {% endif %}
 
       {% if card_body %}
-        <{{card_text_tag}} {{ card_text_attributes.addClass(card_text_classes) }}>
+        <{{card_text_tag}} {{ card_text_attributes.addClass(card_text_utility_classes|default([]).addClass('card-text')) }}>
           {{ card_body }}
         </{{card_text_tag}}>
       {% endif %}
@@ -185,7 +172,7 @@
 
   {% block slot_card_footer %}
     {% if card_footer %}
-      <div {{ card_footer_attributes.addClass(card_footer_classes) }}>
+      <div {{ card_footer_attributes.addClass(card_footer_utility_classes|default([]).addClass('card-footer')) }}>
         {{ card_footer }}
       </div>
     {% endif %}

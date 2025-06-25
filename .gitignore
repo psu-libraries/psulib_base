@@ -11,3 +11,6 @@ dist/*
 components/*/*.css
 components/*/*.map
 components/*/*.js
+
+*storybook.log
+storybook-static

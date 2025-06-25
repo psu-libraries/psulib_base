@@ -21,8 +21,8 @@ $theme-colors: (
 );
 
 // Import bootstrap button styles and mixins.
-@import '~bootstrap/scss/mixins/_buttons.scss';
-@import '~bootstrap/scss/buttons';
+@import 'bootstrap/scss/mixins/_buttons.scss';
+@import 'bootstrap/scss/buttons';
 
 
 // Loop through a subset of the theme colors and create button classes.

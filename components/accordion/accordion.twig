@@ -34,6 +34,7 @@
 {% apply spaceless %}
 
 {% set title = title|default('') %}
+
 {% set title_tag = title_tag|default('h2') %}
 {% set default_item_tag = default_item_tag|default('h3') %}
 {% set title_link = title_link|default({}) %}
@@ -42,17 +43,19 @@
 {% set flush = flush ?? false %}
 {% set items = items|default([]) %}
 {% set open_item_id = open_item_id|default(0) %}
+{% set accordion_utility_classes = accordion_utility_classes is iterable ? accordion_utility_classes : [accordion_utility_classes] %}
+{% set accordion_item_utility_classes = accordion_item_utility_classes is iterable ? accordion_item_utility_classes : [accordion_item_utility_classes] %}
 
 {%
-  set accordion_classes = [
+  set accordion_classes = accordion_utility_classes|merge([
     'accordion'
-  ]|merge(accordion_utility_classes ?: [])
+  ])
 %}
 
 {%
-  set accordion_item_classes = [
+  set accordion_item_classes = accordion_item_utility_classes|merge([
     'accordion-item'
-  ]|merge(accordion_item_utility_classes ?: [])
+  ])
 %}
 
 {% if flush %}
