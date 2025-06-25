@@ -1,6 +1,8 @@
 @import '../../scss/init';
 
 // Breadcrumb styling
-@import "~bootstrap/scss/images";
+@import "bootstrap/scss/images";
 
-
+.img-rounded {
+  border-radius: 4px;
+}

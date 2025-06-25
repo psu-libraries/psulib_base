@@ -15,6 +15,8 @@ props:
       title: Show Right footer region.
       description: 'Show the right footer region.  This contains the footer menu by default.'
       default: 1
+      examples:
+        - true
     show_footer_bottom:
       type: ['boolean', 'integer']
       title: Show Bottom footer region.
@@ -24,35 +26,65 @@ props:
       type: 'string'
       title: Site Logo
       description: URL for footer logo in footer left region.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - '../../logo.png'
     site_logo_url:
       type: 'string'
       title: Site Logo URL
       description: Link url for logo.
-      # @todo Add examples here.
-      examples: []
+      examples:
+       - '#'
     site_logo_alt:
       type: 'string'
       title: Site Logo Alt Text
       description: Alt text for logo.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - 'Penn State University Libraries'
     footer_classes:
       type: 'string'
       title: Footer Classes
       description: Additional classes for the footer.
-      # @todo Add examples here.
-      examples: []
-    footer_top_row:
-      type:
+      examples:
+        - 'text-light'
 slots:
   footer_left:
     title: Footer Left
     description: Footer Left region.  This contains the footer logo by default.
+    examples:
+      - '<div class="footer-logo pt-4 ps-2">
+          <a class="social-media-link-icon--linkedin pe-3" href="https://www.linkedin.com/company/psulibs" aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn">
+            <i class="bi bi-linkedin font-size-xl"></i>
+          </a>
+          <a class="social-media-link-icon--facebook pe-3" href="https://www.facebook.com/psulibs" aria-label="Follow us on Facebook" title="Follow us on Facebook">
+            <i class="bi bi-facebook font-size-xl"></i>
+          </a>
+          <a class="social-media-link-icon--twitter pe-3" href="https://x.com/psulibs" aria-label="Follow us on X" title="Follow us on X">
+            <i class="bi bi-twitter-x font-size-xl"></i>
+          </a>
+          <a class="social-media-link-icon--instagram pe-3" href="https://www.instagram.com/psulibs" aria-label="Follow us on Instagram" title="Follow us on Instagram">
+            <i class="bi bi-instagram font-size-xl"></i>
+          </a>
+        </div>'
+
   footer_right:
     title: Footer Right
     description: Footer Right region.  This contains the footer menu by default.
+    type: ['string', 'object']
+    examples:
+      - '<p>Habitant sodales faucibus mi euismod per rhoncus bibendum ultricies platea cursus fermentum. Vivamus himenaeos tempus elementum justo nostra mollis sagittis libero vitae tempor. Etiam ipsum accumsan proin himenaeos tellus diam taciti fames ornare facilisis. Convallis dignissim euismod tempor himenaeos integer venenatis mollis massa dis hac mattis. Praesent sit faucibus elementum elit proin dui malesuada.</p>'
   footer_bottom:
     title: Footer Bottom
     description: Optional full width footer region.
+    type: ['string', 'object']
+    examples:
+      - '<div class="psul-copyright text-center font-size-sm text-light ">
+          <ul class="list-inline list">
+            <li class="list-inline-item"><a href="https://universityethics.psu.edu/hotline">Hotline</a></li>
+            <li class="list-inline-item"><a href="https://www.psu.edu/web-privacy-statement">Privacy Statements</a></li>
+            <li class="list-inline-item"><a href="https://policy.psu.edu/policies/ad85">Non Discrimination</a></li>
+            <li class="list-inline-item"><a href="https://www.psu.edu/accessibilitystatement">Accessibility</a></li>
+            <li class="list-inline-item"><a href="https://www.psu.edu/legal-statements">Legal Statements</a></li>
+          </ul>
+          <p class="mb-0">Copyright ©2025 The Pennsylvania State University.<br>
+          All rights reserved. Except where otherwise noted, this work is subject to a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license.</a> <a href="https://libraries.psu.edu/psu-libraries-copyright-statement">Details and exceptions.</a></p>
+        </div>'

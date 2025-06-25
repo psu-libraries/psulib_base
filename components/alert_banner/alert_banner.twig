@@ -1,13 +1,16 @@
 {% apply spaceless %}
 
-{% set attributes = attributes ?: create_attribute() %}
+{% set alert_banner_attributes = alert_banner_attributes ?: create_attribute() %}
+
+{% set alert_banner_classes = alert_banner_utility_classes is iterable ? alert_banner_utility_classes : [alert_banner_utility_classes] %}
+{% set severity = severity|default('nonEmergency') %}
 
 {%
-  set alert_banner_classes = [
+  set alert_banner_classes = alert_banner_classes|merge([
     'alert-banner',
-    severity ? 'alert-banner__' ~ severity,
+    'alert-banner--' ~ severity,
     'py-2',
-  ]|merge(alert_banner_utility_classes ?: [])
+  ])
 %}
 
 {% set icon_map = {
@@ -19,7 +22,7 @@
 
 {% set alert_collapse_id = 'alert-banner'|clean_unique_id %}
 
-<div {{ attributes.addClass(alert_banner_classes).removeClass('alert').setAttribute('id', alert_collapse_id ) }} role="alert">
+<div {{ alert_banner_attributes.addClass(alert_banner_classes).removeClass('alert').setAttribute('id', alert_collapse_id ) }} role="alert">
   <div class="container-fluid">
     <div class="alert-banner--inner fs-5">
       <button
@@ -46,6 +49,5 @@
     </div>
   </div>
 </div>
-
 
 {% endapply %}

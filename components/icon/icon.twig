@@ -1,18 +1,10 @@
-{%
-  set svg_url = [
-    '/' ~    componentMetadata.path ~ '/',
-    'assets/',
-    icon,
-    '.svg',
-  ]|join('')
-%}
-
 {% set classes = [
   'psul-icon',
   'psul-icon--' ~ icon,
   'psul-icon--' ~ color|default('black'),
 ]|join(' ') %}
 
+{# Using componentMetadata.path to ensure that icons work in storybook and drupal. #}
 <span class="{{ classes }}">
-  {% include('@psulib_base/components/icon/assets/' ~ icon ~ '.svg') %}
+  {{ source(componentMetadata.path ~ '/../_assets/' ~ icon ~ '.svg') }}
 </span>
