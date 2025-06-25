@@ -1,6 +1,6 @@
 import cardGrid from '../components/card_grid/card_grid.component.yml'
 import heading from '../components/heading/heading.component.yml'
-import footer from '../components/footer/footer.component.yml'
+import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.component.yml'
 import newsCards from '../components/news_cards/news_cards.component.yml'
 import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
 
@@ -87,7 +87,7 @@ export default {
       })}
 
     </div>
-    ${footer.component()}`;
+    ${footer.component({...LibrariesFooter.args})}`;
   },
   play: async ({ canvasElement }) => {
     Drupal.attachBehaviors(canvasElement, window.drupalSettings)
