@@ -1,3 +1,4 @@
+import cardGrid from '../components/card_grid/card_grid.component.yml'
 import heading from '../components/heading/heading.component.yml'
 import footer from '../components/footer/footer.component.yml'
 import newsCards from '../components/news_cards/news_cards.component.yml'
@@ -36,6 +37,14 @@ export default {
           <p class="mb-4">Not sure what to do? Contact one of our subject experts, ask for help to get on the right research path.</p>
           <a href="#" class="btn btn-outline-light">Get Help ></a> <a href="#" class="btn btn-outline-light">Research Resources ></a>
 
+          ${cardGrid.component({
+            title: 'Experts',
+            items: [
+              { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+              { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+              { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+            ],
+          })}
         </div>
       </div>
 
@@ -52,7 +61,15 @@ export default {
       </div>
 
       <div class="py-5 full-bleed full-bleed--limestone-light">
-        Featured Collection goes here.
+        ${cardGrid.component({
+          title: 'Featured Collections',
+          body: '<p>Explore our featured collections, showcasing unique and rare items from our archives.</p>',
+          items: [
+            { card_title: 'Historical Recipe Books', card_body: 'These unique handwritten recipe books (1697-1846) from the Eberly Family Special Collections Library include British and Scottish food recipes as well as medicinal and textile dying recipes.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+            { card_title: 'The English Emblem Book Project', card_body: 'The English emblem books scanned for this project are cultural artifacts frequently used in the analysis of reading practices, printing history, Elizabethan popular culture, the use of allegory, and the relationship of word to image.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+            { card_title: 'The People’s Contest', card_body: 'The People\'s Contest: A Civil War Era Digital Archive is a collaborative project of the Penn State University Libraries and the Richards Civil War Center.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+          ],
+        })}
       </div>
 
       ${newsCards.component({
@@ -78,3 +95,10 @@ export default {
 }
 
 export const Basic = {}
+
+          // - card_title: 'Card Title'
+          //   card_body: 'Card body text goes here.'
+          //   card_image_src: '../../.storybook/public/sample.jpg'
+          //   card_image_alt: 'Image description'
+          //   card_link_url: '#'
+          //   card_link_text: 'Learn More'

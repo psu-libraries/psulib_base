@@ -56,6 +56,7 @@ props:
       type: 'string'
       title: Card Link
       description: The URL to link to when the card is clicked.
+      default: '#'
     card_link_stretched:
       type: 'boolean'
       title: Stretched Link
@@ -70,6 +71,7 @@ props:
     card_media:
       type: 'string'
       title: Card Media
+      default: ''
       examples:
         - ''
     card_image_src:

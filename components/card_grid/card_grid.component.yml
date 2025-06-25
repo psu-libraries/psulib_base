@@ -1,5 +1,5 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
-name: Card Group
+name: Card Grid
 status: stable
 description: Display a group of cards.
 props:
@@ -14,9 +14,31 @@ props:
       title: Body
       description: Body text above cards
     items:
-      title: Cards Articles
+      title: Cards
       description: See card component for required fields.
       type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '../../.storybook/public/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '../../.storybook/public/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '../../.storybook/public/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
     card_type:
       title: Card Variant
       type: 'string'
@@ -63,3 +85,7 @@ props:
         url:
           type: 'string'
           title: Button URL
+      examples:
+        title: 'Learn More'
+        url: '#'
+
