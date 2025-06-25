@@ -18,6 +18,8 @@ props:
         - linkOut
         - person
         - phone
+      examples:
+        - chevronRight
     color:
       type: 'string'
       title: Color
@@ -29,4 +31,4 @@ props:
         - linkLight
         - nittanyNavy
         - white
-      examples: []
+      examples: ''

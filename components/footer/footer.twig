@@ -9,16 +9,16 @@
           <img src="{{ site_logo }}" alt="{{ site_logo_alt }}" fetchpriority="high" height="52" width="198"/>
         </a>
         {% endif %}
-        {% block footer_left %}{% endblock %}
+        {% block footer_left %}{{ footer_left }}{% endblock %}
       </div>
       <div class="col-12 col-lg-8 col-xl-9 mb-5 footer--main">
-        {% block footer_right %}{% endblock %}
+        {% block footer_right %}{{ footer_right }}{% endblock %}
       </div>
       {% endif %}
 
       {% if show_footer_bottom %}
       <div class="col footer--bottom">
-        {% block footer_bottom %}{% endblock %}
+        {% block footer_bottom %}{{ footer_bottom }}{% endblock %}
       </div>
       {% endif %}
     </div>

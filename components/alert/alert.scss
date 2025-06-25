@@ -4,6 +4,10 @@
 // Override variables here:
 
 // Import bootstrap pagination styles.
-@import '~bootstrap/scss/alert';
+@import 'bootstrap/scss/alert';
 
 // Custom styles go here.
+
+[data-sitewide-alert] .alert {
+    --bs-alert-margin-bottom: 0px;
+}

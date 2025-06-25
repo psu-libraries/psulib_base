@@ -38,5 +38,7 @@ props:
     image_src:
       type: 'string'
       title: Image Source URL
+      examples:
+        - '../../.storybook/public/sample.jpg'
     attributes:
       type: 'Drupal\Core\Template\Attribute'

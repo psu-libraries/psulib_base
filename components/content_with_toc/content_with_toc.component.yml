@@ -42,6 +42,17 @@ props:
             type: ['string', 'null']
             title: Section ID
             description: 'Unique ID for the section. If not provided the title will not be used in the jump menu.'
+      examples:
+        -
+          - title: 'Section 1'
+            content: '<p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p><p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p>'
+            id: 'section-1'
+          - title: 'Section 2'
+            content: '<p>Ac aliquam euismod dictumst eget proin aenean iaculis accumsan. Urna condimentum amet magna leo lorem eros finibus primis quis facilisi mattis. Praesent mollis vel inceptos urna ex pede donec penatibus aliquam parturient suspendisse. Montes nibh aliquet aenean mus lectus sed sollicitudin lacinia cursus at. Penatibus senectus si netus vitae vel. Dignissim sed felis integer sapien non laoreet suscipit magnis himenaeos leo mi. Amet penatibus id vulputate turpis praesent aptent class mattis.</p>'
+            id: 'section-2'
+          - title: 'Section 3'
+            content: '<p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p>'
+            id: 'section-3'
     utility_classes:
       type: 'array'
       items:

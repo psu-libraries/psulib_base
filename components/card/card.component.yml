@@ -70,12 +70,18 @@ props:
     card_media:
       type: 'string'
       title: Card Media
+      examples:
+        - ''
     card_image_src:
       type: 'string'
       title: Card Image Source URL
+      examples:
+        - '../../.storybook/public/sample.jpg'
     card_image_alt:
       type: 'string'
       title: Card Image Alternative Text
+      examples:
+        - 'Sample Image'
     card_image_cap:
       type: 'string'
       title: Image Caption Position
@@ -91,6 +97,8 @@ props:
     card_header:
       type: 'string'
       title: Card Header
+      examples:
+        - ''
     card_footer:
       type: 'string'
       title: Card Footer

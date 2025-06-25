@@ -1,7 +1,7 @@
 @import '../../scss/init';
 
 // Breadcrumb styling
-@import "~bootstrap/scss/card";
+@import "bootstrap/scss/card";
 
 // SDC Styles Improperly load after the style.css main file so we need to add
 // another class to increase selector specificity.
@@ -186,4 +186,8 @@
       font-size: $font-size-base;
     }
   }
+}
+
+.card-link.btn {
+  margin-left: 0;
 }

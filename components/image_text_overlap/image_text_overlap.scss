@@ -95,8 +95,7 @@
     @include make-link($white, 'underline', $white, 'none');
   }
 
-  &__title,
-  &__subtitle {
+  &__title {
     color: $white;
     font-size: $spacer * 1.375;
 
@@ -105,7 +104,20 @@
     }
 
     @include media-breakpoint-up(lg) {
-      font-size: $spacer * 1.75;
+      font-size: $spacer * 1.65;
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    font-size: $spacer * 1;
+
+    @include media-breakpoint-up(md) {
+      font-size: $spacer * 1.125;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: $spacer * 1.25;
     }
   }
 }
