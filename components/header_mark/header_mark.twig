@@ -16,7 +16,7 @@
   </a>
   {% endif %}
   {% if site_name %}
-    <div class="header-mark--name-slogan {% if hide_site_name %}hidden{% endif %}">
+    <div class="header-mark--name-slogan {% if hide_site_name %}visually-hidden{% endif %}">
       <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title">
         {{ site_name }}
       </a>
