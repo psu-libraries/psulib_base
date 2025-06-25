@@ -1,0 +1,82 @@
+@import '../init';
+
+.block-local-tasks-block {
+  display: none;
+}
+
+.layout-builder__link--add {
+  font-size: 14px !important;
+  padding: calc(.75em - 2px) calc(1.25em - 2px) !important;
+  background-color: $white-out !important;
+}
+
+.layout-builder__add-section > .layout-builder__link--add {
+  border-color: $valchar-grey !important;
+  color: $valchar-grey !important;
+
+  &:focus {
+    color: $white-out !important;
+  }
+}
+
+.gin--horizontal-toolbar .glb-sidebar {
+  top: var(--drupal-displace-offset-top) !important;
+  height: calc(100% - var(--drupal-displace-offset-top)) !important;
+}
+
+.layout-builder__section:not(.gin-lb--disable-section-focus):hover::after {
+  margin-left: -1rem;
+  width: calc(100% + 2rem);
+  box-shadow: $box-shadow;
+  border-style: dashed !important;
+}
+
+@include media-breakpoint-up(md) {
+  [data-meta-sidebar="open"] .dialog-off-canvas-main-canvas {
+    max-width: calc(100vw - var(--gin-sidebar-width) - 1rem);
+  }
+}
+
+// Layout builder modal rebuild button styles.
+a.button[data-drupal-selector="edit-rebuild-layout"] {
+  --#{$prefix}btn-font-weight: #{$font-weight-normal};
+  --#{$prefix}btn-color: var(--gin-color-primary);
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: var(--gin-color-primary);
+  --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-hover-color: var(--gin-color-button-text);
+  --#{$prefix}btn-hover-border-color: transparent;
+  --#{$prefix}btn-active-color: var(--gin-color-button-text);
+  --#{$prefix}btn-active-border-color: transparent;
+  --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
+  --#{$prefix}btn-disabled-border-color: transparent;
+  --#{$prefix}btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+  --#{$prefix}btn-focus-shadow-rgb: #{$btn-link-focus-shadow-rgb};
+  --#{$prefix}btn-font-size: .889em;
+
+  text-decoration: $link-decoration;
+  @if $enable-gradients {
+    background-image: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus-visible {
+    color: var(--#{$prefix}btn-color);
+  }
+
+  &:hover {
+    color: var(--#{$prefix}btn-hover-color);
+  }
+}
+
+.glb-list {
+  margin: 1rem 0;
+  a {
+    margin: 0 !important;
+    padding-right: 2rem;
+  }
+}
