@@ -7,7 +7,7 @@
 %}
 
 {# Use the logo_path if it is set.  Otherwise link the front page. #}
-{% set logo_path = logo_path ?? path('<front>') %}
+{% set logo_path = logo_path ? logo_path : path('<front>') %}
 
 <div {{ attributes.addClass(classes) }}>
   {% if site_logo %}
