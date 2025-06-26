@@ -44,6 +44,7 @@ export default {
 
           ${cardGrid.component({
             title: 'Experts',
+            card_link_stretched: true,
             items: [
               { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
               { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: imageFile, card_link: '#', card_link_stretched: true },

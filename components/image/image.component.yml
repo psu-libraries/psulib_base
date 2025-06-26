@@ -10,7 +10,7 @@ props:
       title: Image Source
       description: The URL or path to the image file.
       examples:
-        - '../../.storybook/public/sample.jpg'
+        - '/sample.jpg'
     alt:
       type: ['string', 'null']
       title: Alternative Text

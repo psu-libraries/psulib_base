@@ -36,6 +36,7 @@ props:
       items:
         type: 'string'
     pagination_attributes:
+      title: Pagination Attributes
       type: 'Drupal\Core\Template\Attribute'
     items:
       title: Items with pages, first, previous, current, next, last
@@ -48,16 +49,15 @@ props:
             href:
               type: 'string'
             attributes:
-              # type: 'Drupal\Core\Template\Attribute'
-              type: ['object', 'string']
+              title: 'First Page Link Attributes'
+          default: {}
         previous:
           type: 'object'
           properties:
             href:
               type: 'string'
             attributes:
-              # type: 'Drupal\Core\Template\Attribute'
-              type: ['object', 'string']
+              title: 'Previous Page Link Attributes'
         current:
           type: 'string'
         pages:
@@ -69,16 +69,15 @@ props:
             href:
               type: 'string'
             attributes:
-              # type: 'Drupal\Core\Template\Attribute'
-              type: ['object', 'string']
+              title: 'Next Page Link Attributes'
         last:
           type: 'object'
           properties:
             href:
               type: 'string'
             attributes:
-              # type: 'Drupal\Core\Template\Attribute'
-              type: ['object', 'string']
+              title: 'Last Page Link Attributes'
+          default: {}
       examples:
         -
           first:
