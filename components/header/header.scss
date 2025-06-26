@@ -115,8 +115,8 @@ header {
     // bootstrap navbar styles are overriding it.
     a.btn.button.btn-primary.btn-nav-additional.nav-link {
       font-size: 1rem;
+      border: 2px solid $pa-link-light;
       border-radius: 30px;
-      border-color: $pa-link-light;
       margin: 7px 10px;
       padding: 0 20px;
       text-transform: none;
