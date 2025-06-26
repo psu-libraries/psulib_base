@@ -54,6 +54,11 @@ export const preview = {
       },
     },
     viewport: { viewports: customViewports },
+    docs: {
+      story: {
+        inline: false,
+      },
+    },
   },
   controls: {
     matchers: {
