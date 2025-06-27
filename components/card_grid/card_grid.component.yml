@@ -88,4 +88,10 @@ props:
       examples:
         title: 'Learn More'
         url: '#'
-
+slots:
+  cards:
+    title: Cards
+    description: The cards go here.
+    type: ['string', 'object']
+    examples:
+      - '<div class="card">Card content goes here.</div><div class="card">Card content goes here.</div><div class="card">Card content goes here.</div>'
