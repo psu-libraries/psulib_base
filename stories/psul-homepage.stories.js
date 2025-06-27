@@ -1,13 +1,18 @@
 import cardGrid from '../components/card_grid/card_grid.component.yml'
+import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.component.yml'
+import header, {Libraries as LibrariesHeader} from '../components/header/header.component.yml'
 import heading from '../components/heading/heading.component.yml'
-import footer from '../components/footer/footer.component.yml'
-import newsCards from '../components/news_cards/news_cards.component.yml'
 import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
+import newsCards from '../components/news_cards/news_cards.component.yml'
+import imageFile from '../.storybook/public/sample.jpg';
+import './page-preview.css'
 
 export default {
   title: 'PSU Libraries Homepage',
-  render: () => {
-    return `<div class="container-fluid">
+  render: () => {return `<div class="remove-sb-margin">
+    ${header.component({...LibrariesHeader.args})}
+
+    <div class="container-fluid">
       <div class="py-5 full-bleed full-bleed--slate-light">
         ${heading.component({ content: 'What can we help you find?', heading_html_tag: 'h1', heading_utility_classes: ['h3']})}
         <form class="row g-3">
@@ -39,10 +44,11 @@ export default {
 
           ${cardGrid.component({
             title: 'Experts',
+            card_link_stretched: true,
             items: [
-              { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
-              { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
-              { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+              { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
+              { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
+              { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
             ],
           })}
         </div>
@@ -50,7 +56,7 @@ export default {
 
       <div class="py-3 ">
         ${imageTextOverlap.component({
-          image_src: '../.storybook/public/sample.jpg',
+          image_src: imageFile,
           title: 'J.Jeff Ungar',
           body: '<p>J.Jeff Ungar is the Special Collections Librarian for Cataloging and Metadata Services at Penn State University Libraries. He has been with the Libraries since 2010, and has a background in both library science and information technology.</p>',
           cta_button: {
@@ -60,25 +66,27 @@ export default {
         })}
       </div>
 
-      <div class="py-5 full-bleed full-bleed--limestone-light">
+      <div class="py-3 full-bleed full-bleed--limestone-light">
         ${cardGrid.component({
           title: 'Featured Collections',
           body: '<p>Explore our featured collections, showcasing unique and rare items from our archives.</p>',
+          card_link_stretched: true,
           items: [
-            { card_title: 'Historical Recipe Books', card_body: 'These unique handwritten recipe books (1697-1846) from the Eberly Family Special Collections Library include British and Scottish food recipes as well as medicinal and textile dying recipes.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
-            { card_title: 'The English Emblem Book Project', card_body: 'The English emblem books scanned for this project are cultural artifacts frequently used in the analysis of reading practices, printing history, Elizabethan popular culture, the use of allegory, and the relationship of word to image.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
-            { card_title: 'The People’s Contest', card_body: 'The People\'s Contest: A Civil War Era Digital Archive is a collaborative project of the Penn State University Libraries and the Richards Civil War Center.', card_image_src: '../.storybook/public/sample.jpg', card_link: '#', card_link_stretched: true },
+            { card_title: 'Historical Recipe Books', card_body: 'These unique handwritten recipe books (1697-1846) from the Eberly Family Special Collections Library include British and Scottish food recipes as well as medicinal and textile dying recipes.', card_image_src: imageFile, card_link: '#' },
+            { card_title: 'The English Emblem Book Project', card_body: 'The English emblem books scanned for this project are cultural artifacts frequently used in the analysis of reading practices, printing history, Elizabethan popular culture, the use of allegory, and the relationship of word to image.', card_image_src: imageFile, card_link: '#' },
+            { card_title: 'The People’s Contest', card_body: 'The People\'s Contest: A Civil War Era Digital Archive is a collaborative project of the Penn State University Libraries and the Richards Civil War Center.', card_image_src: imageFile, card_link: '#'},
           ],
         })}
       </div>
 
       ${newsCards.component({
         title: 'Library News',
+        card_link_stretched: true,
         items: [
-          { title: 'Read banned books', date: 'January 16, 2025', image: '../.storybook/public/sample.jpg', url: '#' },
-          { title: 'Libraries writing retreat provides graduate students support, community', date: 'June 12, 2025', image: '../.storybook/public/sample.jpg', url: '#' },
-          { title: 'Read banned books', date: 'January 16, 2025', image: '../.storybook/public/sample.jpg', url: '#' },
-          { title: 'Read banned books', date: 'January 16, 2025', image: '../.storybook/public/sample.jpg', url: '#' },
+          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
+          { title: 'Libraries writing retreat provides graduate students support, community', date: 'June 12, 2025', image: imageFile, url: '#' },
+          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
+          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
         ],
         cta_button: {
           title: 'See More +',
@@ -87,7 +95,7 @@ export default {
       })}
 
     </div>
-    ${footer.component()}`;
+    ${footer.component({...LibrariesFooter.args})}</div>`;
   },
   play: async ({ canvasElement }) => {
     Drupal.attachBehaviors(canvasElement, window.drupalSettings)

@@ -55,6 +55,11 @@ const config = {
     "options": {}
   },
   staticDirs: ['./public'],
+  ...(process.env.NODE_ENV === 'production'
+    ? {
+        staticDirs: [{ from: '../components', to: '/components' }],
+      }
+    : {}),
 
 };
 export default config;

@@ -7,7 +7,7 @@
 %}
 
 {# Use the logo_path if it is set.  Otherwise link the front page. #}
-{% set logo_path = logo_path ?? path('<front>') %}
+{% set logo_path = logo_path ? logo_path : path('<front>') %}
 
 <div {{ attributes.addClass(classes) }}>
   {% if site_logo %}
@@ -16,7 +16,7 @@
   </a>
   {% endif %}
   {% if site_name %}
-    <div class="header-mark--name-slogan {% if hide_site_name %}hidden{% endif %}">
+    <div class="header-mark--name-slogan {% if hide_site_name %}visually-hidden{% endif %}">
       <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title">
         {{ site_name }}
       </a>

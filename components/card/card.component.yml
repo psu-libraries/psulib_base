@@ -82,7 +82,7 @@ props:
       type: 'string'
       title: Card Image Source URL
       examples:
-        - '../../.storybook/public/sample.jpg'
+        - '/sample.jpg'
     card_image_alt:
       type: 'string'
       title: Card Image Alternative Text

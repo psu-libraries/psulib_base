@@ -9,7 +9,82 @@ props:
       type: 'string'
       title: Menu Name
       description: Name of the menu.
+    attributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Attributes
+      description: Additional attributes for the menu.
     items:
       type: 'array'
       title: Menu Items
       description: Nested array of menu items.
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: 'string'
+            title: Title
+            description: The title of the menu item.
+          url:
+            type: ['string']
+            title: URL
+            description: The URL of the menu item.
+          in_active_trail:
+            type: 'boolean'
+            title: In Active Trail
+            description: Indicates if the item is in the active trail.
+            default: false
+          is_expanded:
+            type: 'boolean'
+            title: Expanded
+            default: false
+          is_collapsed:
+            type: 'boolean'
+            title: Collapsed
+            default: true
+          attributes:
+            title: Item Attributes
+            description: Additional attributes for the menu item.
+          below:
+            type: 'array'
+            title: Below Items
+            description: Nested items under the current menu item.
+            items:
+              type: 'object'
+              properties:
+                title:
+                  type: 'string'
+                  title: Title
+                url:
+                  type: ['string']
+                  title: URL
+                in_active_trail:
+                  type: 'boolean'
+                  title: In Active Trail
+                  description: Indicates if the item is in the active trail.
+                  default: false
+                is_expanded:
+                  type: 'boolean'
+                  title: Expanded
+                  default: false
+                is_collapsed:
+                  type: 'boolean'
+                  title: Collapsed
+                  default: true
+                attributes:
+                  title: Item Attributes
+                  description: Additional attributes for the menu item.
+
+      examples:
+        -
+          - title: 'Home'
+            url: '/'
+            in_active_trail: false
+          - title: 'About Us'
+            url: '/about'
+            in_active_trail: true
+          - title: 'Services'
+            url: '/services'
+            in_active_trail: false
+          - title: 'Contact'
+            url: '/contact'
+            in_active_trail: false
