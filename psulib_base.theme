@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\node\NodeInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Template\Attribute;
 
@@ -192,6 +193,23 @@ function psulib_base_preprocess_block(&$variables) {
         $variables['content']['#attributes']['data-block']['region'] = $region;
       }
     }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page.
+ *
+ * Add layout builder suggestions for pages that use Layout Builder.
+ */
+function psulib_base_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (isset($node) && $node instanceof NodeInterface) {
+    if ($node->hasField('layout_builder__layout') && $node->layout_builder__layout->getValue()) {
+      $suggestions[] = 'page__node__lb_display';
+      $suggestions[] = 'page__node__' . $node->bundle() . '__lb_display';
+    }
+    $suggestions[] = 'page__node__' . $node->bundle();
   }
 }
 

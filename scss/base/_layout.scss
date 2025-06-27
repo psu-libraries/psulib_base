@@ -60,3 +60,15 @@
     flex-basis: 300px;
   }
 }
+
+.lb-display {
+  .region-content {
+    margin-bottom: 0;
+  }
+
+  // Sections in layout builder have a top and bottom padding of 3rem.
+  .node__content > div {
+    padding-top: $spacer * 1.5;
+    padding-bottom: $spacer * 1.5;
+  }
+}
