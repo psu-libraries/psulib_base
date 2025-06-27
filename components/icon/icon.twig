@@ -6,5 +6,11 @@
 
 {# Using componentMetadata.path to ensure that icons work in storybook and drupal. #}
 <span class="{{ classes }}">
-  {{ source(componentMetadata.path ~ '/../_assets/' ~ icon ~ '.svg') }}
+  {% if componentMetadata.path %}
+    {{ source(componentMetadata.path ~ '/../_assets/' ~ icon ~ '.svg') }}
+  {% else %}
+    {# Fallback to the default path if componentMetadata.path is not set
+    This should only happen in storybook. #}
+    {{ source('/' ~ icon ~ '.svg') }}
+  {% endif %}
 </span>
