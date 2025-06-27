@@ -54,7 +54,7 @@ const config = {
     "name": "@storybook/html-vite",
     "options": {}
   },
-  staticDirs: ['./public'],
+  staticDirs: ['./public', '../components/_assets'],
   ...(process.env.NODE_ENV === 'production'
     ? {
         staticDirs: [{ from: '../components', to: '/components' }],

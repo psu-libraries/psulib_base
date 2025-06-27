@@ -33,8 +33,19 @@ export default {
           </div>
         </form>
       </div>
-      <div class="py-5">
-        Quick links go here.
+      <div class="py-3">
+        ${cardGrid.component({
+          card_link_stretched: true,
+          card_type: 'icon',
+          items: [
+            { card_title: 'Rooms & Spaces', card_body: 'Find a place to study.', card_link: '#', card_icon: 'institution' },
+            { card_title: 'Hours & Locations', card_body: 'Visit us when we\'re open.', card_link: '#', card_icon: 'alarm' },
+            { card_title: 'Subject & Course Guides', card_body: 'Access library guides by our subject experts and instructors.', card_link: '#', card_icon: 'openBook' },
+            { card_title: 'Citation Help', card_body: 'Get help citing your research.', card_link: '#', card_icon: 'help' },
+            { card_title: 'Databases', card_body: 'Access thousands of our licensed databases.', card_link: '#', card_icon: 'barChart3' },
+            { card_title: 'InterLibrary Loan', card_body: 'Borrow materials from other libraries.', card_link: '#', card_icon: 'email' },
+          ],
+        })}
       </div>
       <div class="py-5 full-bleed full-bleed--navy">
         <div class="text-center">
@@ -46,9 +57,9 @@ export default {
             title: 'Experts',
             card_link_stretched: true,
             items: [
-              { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
-              { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
-              { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: imageFile, card_link: '#', card_link_stretched: true },
+              { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: imageFile, card_link: '#' },
+              { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: imageFile, card_link: '#' },
+              { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: imageFile, card_link: '#' },
             ],
           })}
         </div>

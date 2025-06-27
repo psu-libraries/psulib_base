@@ -6,7 +6,7 @@
   --card-grid-columns-md: 2;
   --card-grid-columns-lg: 4;
   --card-grid-columns-xl: 4;
-  --card-grid-gap: $spacer * 1.5;
+  --card-grid-gap: calc(#{$spacer} * 1.5);
 
   padding: ($spacer * 2) 0;
 
@@ -21,7 +21,7 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(var(--card-grid-columns), 1fr);
-    gap: $spacer * 1.5;
+    gap: var(--card-grid-gap);
 
     @include media-breakpoint-up(sm) {
       grid-template-columns: repeat(var(--card-grid-columns-md), 1fr);
@@ -61,11 +61,11 @@
     text-align: center;
   }
 
-  &--gap-lg {
-    --card-grid-gap: $spacer * 2;
+  &--gap-lg .card-grid__cards {
+    --card-grid-gap: calc(#{$spacer} * 2);
   }
 
-  &--gap-sm {
-    --card-grid-gap: $spacer * 0.5;
+  &--gap-sm .card-grid__cards {
+    --card-grid-gap: calc(#{$spacer} * 0.75);
   }
 }

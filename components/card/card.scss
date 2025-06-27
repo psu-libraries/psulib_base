@@ -151,6 +151,28 @@
     }
   }
 
+  &.card-type-icon {
+    .card-body {
+      padding: ($spacer * 2) ($spacer * 1.5);
+      gap: $spacer;
+
+      @include media-breakpoint-up(lg) {
+        padding: ($spacer * 2.25) ($spacer * 1.75);
+      }
+    }
+
+    .psul-icon {
+      width: 60px;
+      height: 60px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+    }
+  }
+
   // Style variant for search results cards.
   &.card--search-results {
     --#{$prefix}card-border-width: 1px;

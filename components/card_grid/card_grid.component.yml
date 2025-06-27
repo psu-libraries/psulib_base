@@ -49,6 +49,7 @@ props:
         - news
         - search-results
         - text
+        - icon
     card_title_tag:
       title: Card Title HTML Tag
       type: 'string'
@@ -71,6 +72,7 @@ props:
       type: 'string'
       title: Gap
       description: Gap between cards.
+      default: 'md'
       enum:
         - sm
         - md
@@ -89,3 +91,26 @@ props:
         title: 'Learn More'
         url: '#'
 
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      icon_cards:
+        props:
+          title: 'Card Grid Example'
+          body: 'This is an example of a card grid component.'
+          card_link_stretched: true
+          card_type: 'icon'
+          card_columns: 3
+          items:
+            - card_title: 'Card Title 1'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'fax'
+            - card_title: 'Card Title 2'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'person'
+            - card_title: 'Card Title 3'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'email'

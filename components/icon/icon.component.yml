@@ -12,12 +12,18 @@ props:
       title: Icon
       description: Name of the icon (see https://psu-flex-storybook.vercel.app/?path=/story/tokens-icons--page)
       enum:
+        - alarm
+        - barChart3
         - chevronRight
         - email
         - fax
+        - help
+        - institution
         - linkOut
+        - openBook
         - person
         - phone
+        - search
       examples:
         - chevronRight
     color:

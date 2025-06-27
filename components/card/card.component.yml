@@ -6,6 +6,18 @@ group: Cards
 props:
   type: 'object'
   properties:
+    card_type:
+      type: 'string'
+      title: Card Variant
+      description: The type of card to display.
+      default: default
+      enum:
+        - icon
+        - cta
+        - left
+        - news
+        - search-results
+        - text
     card_body:
       type: 'string'
       title: Card Body
@@ -72,6 +84,10 @@ props:
     card_link_url:
       type: 'string'
       title: Card Link URL
+    card_icon:
+      type: 'string'
+      title: Card Icon
+      default: ''
     card_media:
       type: 'string'
       title: Card Media

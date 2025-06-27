@@ -65,6 +65,7 @@
 {%
   set card_classes = card_utility_classes|merge([
     'card card-card',
+    'card-type-' ~ card_type|default('default'),
     'card--image-' ~ card_image_cap,
     card_image_overlays ? 'card--image-overlays' : '',
     card_link_stretched ? 'card--linked position-relative' : '',
@@ -128,6 +129,13 @@
 
   <div {{ card_body_attributes.addClass(card_body_classes) }}>
     {% block slot_card_body %}
+      {% if card_icon %}
+        {% include 'psulib_base:icon' with {
+          icon: card_icon,
+          color: 'link',
+        } only %}
+      {% endif %}
+
       {% if card_subtitle %}
         <{{card_subtitle_tag}} {{ card_subtitle_attributes.addClass(card_subtitle_classes) }}>{{ card_subtitle }}</{{card_subtitle_tag}}>
       {% endif %}
