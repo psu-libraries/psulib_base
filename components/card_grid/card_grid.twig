@@ -34,16 +34,18 @@
 
   {# Cards #}
   <div class="card-grid__cards">
-    {% for item in items %}
-      {% set item = item|merge({
-        card_utility_classes: card_utility_classes,
-        card_link_stretched: card_link_stretched|default(false),
-        card_title_tag: card_title_tag ?? 'h3',
-      }) %}
+    {% block cards %}
+      {% for item in items %}
+        {% set item = item|merge({
+          card_utility_classes: card_utility_classes,
+          card_link_stretched: card_link_stretched|default(false),
+          card_title_tag: card_title_tag ?? 'h3',
+        }) %}
 
-      {# Merge default values with the item #}
-      {% include 'psulib_base:card' with item %}
-    {% endfor %}
+        {# Merge default values with the item #}
+        {% include 'psulib_base:card' with item %}
+      {% endfor %}
+    {% endblock %}
   </div>
 
   {% if cta_button %}
