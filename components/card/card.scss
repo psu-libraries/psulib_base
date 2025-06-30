@@ -45,6 +45,7 @@
     display: flex;
     gap: $spacer * 0.5;
     flex-flow: column;
+    flex-direction: column;
 
     // .card-title,
     p:last-child {
