@@ -4,6 +4,7 @@
 {% set classes = [
   'card-grid',
   'card-grid--columns-' ~ card_columns,
+  'card-grid--gap-' ~ gap|default('md'),
 ] %}
 
 {% set card_utility_classes = [
