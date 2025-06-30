@@ -96,18 +96,19 @@ slots:
     description: The cards go here.
     type: ['string', 'object']
     examples:
-      - '<div class="card">Card content goes here.</div><div class="card">Card content goes here.</div><div class="card">Card content goes here.</div>'
+      - ''
 
 thirdPartySettings:
   sdcStorybook:
     stories:
       icon_cards:
         props:
-          title: 'Card Grid Example'
-          body: 'This is an example of a card grid component.'
+          title: 'Icon Card Grid Example'
+          body: 'This is an example of an icon card grid.'
           card_link_stretched: true
           card_type: 'icon'
           card_columns: 3
+          cards: ''
           items:
             - card_title: 'Card Title 1'
               card_link: '#'
@@ -121,3 +122,40 @@ thirdPartySettings:
               card_link: '#'
               card_body: 'This is the body text for card 1.'
               card_icon: 'email'
+      eventCards:
+        props:
+          title: 'Event Card Grid Example'
+          body: 'This is an example of an event grid component.'
+          card_link_stretched: true
+          card_type: 'icon'
+          card_columns: 3
+        slots:
+          cards:
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'Penn State Brandywine - Virtual Spend a Summer Evening'
+                date: 'November 29, 2024'
+                time: '5:00 PM ET'
+                location: 'Virtual Event'
+                cta_button: {}
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'Spend a Summer Evening Tour - University Park'
+                date: 'June 29, 2025'
+                time: '5:30 PM ET'
+                location: 'Pattee Library, Foster Auditorium'
+                cta_button:
+                  title: 'Register Now'
+                  url: '#'
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'University Libraries Discovery Day'
+                date: 'July 2, 2025'
+                time: '8:00 AM ET'
+                location: 'Pattee Library, Foster Auditorium'
+                cta_button:
+                  title: 'Register Now'
+                  url: '#'
