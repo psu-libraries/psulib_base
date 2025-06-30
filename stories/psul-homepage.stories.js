@@ -1,4 +1,5 @@
 import cardGrid from '../components/card_grid/card_grid.component.yml'
+import event from '../components/event/event.component.yml'
 import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.component.yml'
 import header, {Libraries as LibrariesHeader} from '../components/header/header.component.yml'
 import heading from '../components/heading/heading.component.yml'
@@ -105,6 +106,20 @@ export default {
         }
       })}
 
+      ${cardGrid.component({
+        title: 'Library Events',
+        card_link_stretched: true,
+        cards: () => `
+          ${event.component({ title: 'Penn State Brandywine - Virtual Spend a Summer Evening', date: 'Jun 16, 2025', time: '10:00 AM ET', location: 'Pattee Library, Room 101', cta_button: { title: 'Register', url: '#' } })}
+          ${event.component({ title: 'Spend a Summer Evening Tour', date: 'July 1, 2025', time: '2:00 PM ET', location: 'Online', cta_button: { title: 'Register', url: '#' } })}
+          ${event.component({ title: 'PSU Libraries Discovery Days', date: 'January 16, 2025', time: '9:00 AM ET', location: 'Pattee Library, Room 101', cta_button: { } })}
+        `,
+        cta_button: {
+          title: 'See More +',
+          url: 'https://www.psu.edu/news/university-libraries'
+        }
+      })}
+
     </div>
     ${footer.component({...LibrariesFooter.args})}</div>`;
   },
@@ -114,10 +129,3 @@ export default {
 }
 
 export const Basic = {}
-
-          // - card_title: 'Card Title'
-          //   card_body: 'Card body text goes here.'
-          //   card_image_src: '../../.storybook/public/sample.jpg'
-          //   card_image_alt: 'Image description'
-          //   card_link_url: '#'
-          //   card_link_text: 'Learn More'
