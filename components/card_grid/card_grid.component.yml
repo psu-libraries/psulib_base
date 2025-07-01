@@ -101,7 +101,7 @@ slots:
 thirdPartySettings:
   sdcStorybook:
     stories:
-      icon_cards:
+      icons:
         props:
           title: 'Icon Card Grid Example'
           body: 'This is an example of an icon card grid.'
@@ -122,7 +122,7 @@ thirdPartySettings:
               card_link: '#'
               card_body: 'This is the body text for card 1.'
               card_icon: 'email'
-      eventCards:
+      events:
         props:
           title: 'Event Card Grid Example'
           body: 'This is an example of an event grid component.'
@@ -159,3 +159,30 @@ thirdPartySettings:
                 cta_button:
                   title: 'Register Now'
                   url: '#'
+      news:
+        props:
+          title: 'News Card Grid Example'
+          body: 'This is an example of a news card grid.'
+          card_link_stretched: true
+          card_type: 'news'
+          card_columns: 4
+          cta_button:
+            title: 'View All News +'
+            url: '#'
+          items:
+            - card_title: 'Library News Item 1'
+              card_body: 'November 29, 2024'
+              card_image_src: '/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 2'
+              card_body: 'April 19, 2024'
+              card_image_src: '/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 3'
+              card_body: 'June April 5, 2020'
+              card_image_src: '/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 4'
+              card_body: '<div class="cards__card-date">October 9, 2019</div>'
+              card_image_src: '/sample.jpg'
+              card_link: '#'

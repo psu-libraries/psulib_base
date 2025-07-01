@@ -90,13 +90,44 @@
 
 .card {
   // Card text should be left aligned.
-  &.card--text-left {
+  &.card-type-left {
     --#{$prefix}card-text-align: start;
   }
 
   // News Card
-  &.card--news {
-    // @todo
+  &.card-type-news {
+    --#{$prefix}card-text-align: start;
+    --#{$prefix}card-box-shadow: none;
+    --#{$prefix}card-border-width: 0;
+    --#{$prefix}card-border-radius: 0;
+    --#{$prefix}card-spacer-y: $spacer;
+    --#{$prefix}card-spacer-x: 0;
+
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    gap: $spacer;
+    text-align: start;
+
+    .card-title {
+      font-size: $font-size-base;
+      @include make-link($link-color, none, $link-hover-color, underline);
+      margin-bottom: 0;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-lg;
+      }
+    }
+
+    .card-body {
+      font-weight: 700;
+      gap: $spacer;
+    }
+
+    .card-cta {
+      margin-top: $spacer * 2;
+      text-align: center;
+    }
   }
 
   &.card--text {
