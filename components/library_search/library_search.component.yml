@@ -1,0 +1,52 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Library Search
+status: stable
+description: Search Control for the Library search and home pages.
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title to display.
+      examples:
+        - 'What can we help you find?'
+    placeholder:
+      type: 'string'
+      title: Placeholder Text
+      description: Text to display in the search input when empty.
+      examples:
+        - 'Search the catalog, articles, and more...'
+    action:
+      type: 'string'
+      title: Form Action
+      description: Action to perform on form submission.
+      examples:
+        - 'https://libraries.psu.edu/search/all'
+    links:
+      type: 'array'
+      title: Links
+      description: List of links to display below the search form.
+      items:
+        type: 'object'
+        properties:
+          text:
+            type: 'string'
+            title: Link Text
+            description: Text to display for the link.
+          url:
+            type: 'string'
+            title: Link URL
+            description: URL to link to.
+          attributes:
+            title: Druapl Attributes
+      examples:
+        -
+          - text: 'Search Catalog'
+            url: '#'
+          - text: 'Search Databases'
+            url: '#'
+          - text: 'Search eJournals'
+            url: '#'
+          - text: 'Course Reserves'
+            url: '#'

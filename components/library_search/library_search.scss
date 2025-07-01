@@ -1,0 +1,58 @@
+@import '../../scss/init';
+
+.library-search {
+  --bs-border-width: 1px;
+  --bs-border-radius: 4px;
+  --bs-border-color: #{$body-color};
+  margin: ($spacer * 3) 0;
+
+  .input,
+  .btn {
+    --bs-btn-font-size: #{$font-size-base};
+    font-size: var(--bs-btn-font-size);
+    margin: 0;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    .form-control,
+    .btn {
+      --bs-btn-font-size: #{$font-size-lg};
+      font-size: var(--bs-btn-font-size);
+    }
+  }
+}
+
+.library-search__form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer * 1.5;
+
+  .library-search__input-wrapper {
+    flex-grow: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+  }
+
+}
+
+.library-search__links {
+  margin-top: $spacer;
+  font-size: $font-size-sm;
+  @include media-breakpoint-up(xl) {
+    margin-right: 145px;
+  }
+}
+
+.library-search__link {
+  @include make-link($link-color, none, $link-hover-color, underline);
+  &:not(:last-child) {
+    margin-right: 0;
+  }
+
+  &:not(:first-child) {
+    margin-left: $spacer;
+  }
+}
