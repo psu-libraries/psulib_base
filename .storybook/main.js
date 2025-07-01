@@ -43,7 +43,8 @@ const config = {
                 return `<a href="${url}"${attrs}>${text}</a>`;
               }),
           }
-        }
+        },
+        jsonSchemaFakerOptions: {}
       },
     },
     '@storybook/addon-a11y',
