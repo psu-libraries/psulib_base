@@ -1,13 +1,13 @@
-import cardGrid from '../components/card_grid/card_grid.component.yml'
+import cardGrid, {News as NewsCards} from '../components/card_grid/card_grid.component.yml'
 import event from '../components/event/event.component.yml'
 import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.component.yml'
 import header, {Libraries as LibrariesHeader} from '../components/header/header.component.yml'
 import heading from '../components/heading/heading.component.yml'
 import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
-import newsCards from '../components/news_cards/news_cards.component.yml'
+// import newsCards from '../components/news_cards/news_cards.component.yml'
 import imageFile from '../.storybook/public/sample.jpg';
 import './page-preview.css'
-
+console.log(NewsCards);
 export default {
   title: 'PSU Libraries Homepage',
   render: () => {return `<div class="remove-sb-margin">
@@ -91,19 +91,9 @@ export default {
         })}
       </div>
 
-      ${newsCards.component({
+      ${cardGrid.component({
         title: 'Library News',
-        card_link_stretched: true,
-        items: [
-          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
-          { title: 'Libraries writing retreat provides graduate students support, community', date: 'June 12, 2025', image: imageFile, url: '#' },
-          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
-          { title: 'Read banned books', date: 'January 16, 2025', image: imageFile, url: '#' },
-        ],
-        cta_button: {
-          title: 'See More +',
-          url: 'https://www.psu.edu/news/university-libraries'
-        }
+        ...NewsCards.args
       })}
 
       ${cardGrid.component({
