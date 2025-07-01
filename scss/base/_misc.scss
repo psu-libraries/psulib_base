@@ -15,3 +15,8 @@ em {
     max-width: 100% !important;
   }
 }
+
+// Display contents for elements that are not supposed to have a box model.
+.d-contents {
+  display: contents
+}
