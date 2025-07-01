@@ -7,7 +7,12 @@ import imageTextOverlap from '../components/image_text_overlap/image_text_overla
 // import newsCards from '../components/news_cards/news_cards.component.yml'
 import imageFile from '../.storybook/public/sample.jpg';
 import './page-preview.css'
-console.log(NewsCards);
+
+// Explicitly importing grandchild components css since this is not properly
+// imported by storybook.
+import '../components/card/card.css';
+import '../components/icon/icon.css';
+
 export default {
   title: 'PSU Libraries Homepage',
   render: () => {return `<div class="remove-sb-margin">

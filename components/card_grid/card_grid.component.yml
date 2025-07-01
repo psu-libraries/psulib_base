@@ -2,6 +2,9 @@
 name: Card Grid
 status: stable
 description: Display a group of cards.
+libraryOverrides:
+  dependencies:
+    - 'psulib_base/card'
 props:
   type: 'object'
   properties:
@@ -109,6 +112,7 @@ thirdPartySettings:
           card_type: 'icon'
           card_columns: 3
           cards: ''
+          cta_button: ''
           items:
             - card_title: 'Card Title 1'
               card_link: '#'
@@ -129,6 +133,9 @@ thirdPartySettings:
           card_link_stretched: true
           card_type: 'icon'
           card_columns: 3
+          cta_button:
+            title: 'View All Events +'
+            url: '#'
         slots:
           cards:
             - type: component
