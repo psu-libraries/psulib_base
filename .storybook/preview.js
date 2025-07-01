@@ -19,7 +19,6 @@ import '../dist/css/nav.css';
 
 // Imports the CSS for common components.
 import '../components/button/button.css';
-import '../components/heading/heading.css';
 import '../components/icon/icon.css';
 
 // Imports all Storybook CSS for display.
