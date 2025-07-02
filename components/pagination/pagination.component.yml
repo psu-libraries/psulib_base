@@ -40,7 +40,7 @@ props:
       type: 'Drupal\Core\Template\Attribute'
     items:
       title: Items with pages, first, previous, current, next, last
-      type: 'array'
+      type: ['array', 'null']
       default: []
       properties:
         first:
