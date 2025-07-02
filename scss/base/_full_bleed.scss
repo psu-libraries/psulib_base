@@ -1,11 +1,19 @@
 .full-bleed {
   // Setting this to transparent so it does nohthing unless a color is set.
   --full-bleed-bg-color: transparent;
-
-  box-shadow: 0 0 0 100vmax var(--full-bleed-bg-color);
-  clip-path: inset(0 -100vmax);
-  background-color: var(--full-bleed-bg-color);
+  position: relative;
   padding: $spacer 0;
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    top: 0;
+    box-shadow: 0 0 0 100vmax var(--full-bleed-bg-color);
+    clip-path: inset(0 -100vmax);
+    background-color: var(--full-bleed-bg-color);
+    content: ' ';
+  }
 }
 
 .full-bleed--slate-light {

@@ -4,8 +4,8 @@ import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.
 import header, {Libraries as LibrariesHeader} from '../components/header/header.component.yml'
 import heading from '../components/heading/heading.component.yml'
 import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
-// import newsCards from '../components/news_cards/news_cards.component.yml'
 import imageFile from '../.storybook/public/sample.jpg';
+import librarySearch from '../components/library_search/library_search.component.yml';
 import './page-preview.css'
 
 // Explicitly importing grandchild components css since this is not properly
@@ -19,25 +19,19 @@ export default {
     ${header.component({...LibrariesHeader.args})}
 
     <div class="container-fluid">
-      <div class="py-5 full-bleed full-bleed--slate-light">
-        ${heading.component({ content: 'What can we help you find?', heading_html_tag: 'h1', heading_utility_classes: ['h3']})}
-        <form class="row g-3">
-          <div class="col-auto">
-            <label for="search1" class="visually-hidden">Password</label>
-            <input type="text" class="form-control" size="100" id="search1" placeholder="Search for books, articles, and more...">
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Search</button>
-          </div>
-          <div class="text-end">
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#" class="btn btn-sm btn-link">Search Catalog > </a></li>
-              <li class="list-inline-item"><a href="#" class="btn btn-sm btn-link">Search Databases > </a></li>
-              <li class="list-inline-item"><a href="#" class="btn btn-sm btn-link">Search eJournals > </a></li>
-              <li class="list-inline-item"><a href="#" class="btn btn-sm btn-link">Course Reserves > </a></li>
-            </ul>
-          </div>
-        </form>
+      <div class="pt-4 pb-1 full-bleed full-bleed--slate-light">
+        ${librarySearch.component({
+          title: 'What can we help you find?',
+          placeholder: 'Search the catalog, articles, and more...',
+          action: 'https://libraries.psu.edu/search/all',
+          links: [
+            { text: 'Search Catalog', url: '#' },
+            { text: 'Search Databases', url: '#' },
+            { text: 'Search eJournals', url: '#' },
+            { text: 'Course Reserves', url: '#' },
+          ],
+        })}
+
       </div>
       <div class="py-3">
         ${cardGrid.component({
