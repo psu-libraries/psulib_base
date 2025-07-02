@@ -26,6 +26,7 @@ import './storybook.css';
 
 // Import all js.
 import '../js/psul-bootstrap.js';
+import '../js/base/jumpmenu.js';
 
 export const decorators = [
   withThemeByDataAttribute({

@@ -16,13 +16,16 @@
 
     </form>
     {% if links %}
-      <ul class="library-search__links list-inline text-end">
-        {% for link in links %}
-          <li class="library-search__link list-inline-item">
-            <a href="{{ link.url }}">{{ link.text }} ></a>
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="d-flex justify-content-start justify-content-md-end">
+        <ul class="library-search__links list-inline jump-menu" data-jump-id="library-search--links" data-jump-title="More Search Options" data-jump-breakpoint="sm" data-jump-classes="library-search__jump-menu">
+
+          {% for link in links %}
+            <li class="library-search__link list-inline-item">
+              <a href="{{ link.url }}">{{ link.text }} {% include 'psulib_base:icon' with {icon: 'chevronRight', color: 'link'} %}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endif %}
   </div>
 

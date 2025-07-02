@@ -19,7 +19,7 @@ export default {
     ${header.component({...LibrariesHeader.args})}
 
     <div class="container-fluid">
-      <div class="py-3 full-bleed full-bleed--slate-light">
+      <div class="pt-4 pb-1 full-bleed full-bleed--slate-light">
         ${librarySearch.component({
           title: 'What can we help you find?',
           placeholder: 'Search the catalog, articles, and more...',
