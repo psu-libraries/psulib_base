@@ -44,6 +44,17 @@ props:
       title: Utility Classes
       default: []
       description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
+    heading_link_target:
+      type: ['string', 'null']
+      title: Heading Link Attributes
+      enum:
+        - ''
+        - '_blank'
+        - '_self'
+        - '_parent'
+        - '_top'
+      examples:
+        - '_blank'
     heading_link_utility_classes:
       type: 'array'
       items:
