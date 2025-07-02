@@ -167,12 +167,17 @@ Update the styles.scss with the following.
 // Sub theme styling.
 ```
 
-Update `webpack.mix.js` file to exclude base theme specific components. This should look like the following.
+Update `webpack.mix.js` file to add alias for bootstrap and exclude base theme specific components. This should look like the following.
 
 ```js
 // webpack.mix.js
 
 let mix = require('laravel-mix');
+const path = require('path');
+
+mix.alias({
+  'bootstrap': path.join(__dirname, 'node_modules/bootstrap')
+});
 
 // Use relative URL so fonts will work.
 mix.sass('scss/style.scss', 'dist/css')
