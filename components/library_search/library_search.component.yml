@@ -50,3 +50,8 @@ props:
             url: '#'
           - text: 'Course Reserves'
             url: '#'
+slots:
+  form:
+    title: Form Slot
+    description: Replace the entire form with a custom form component.
+    type: ['object', 'string']

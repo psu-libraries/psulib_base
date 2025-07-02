@@ -5,16 +5,17 @@
       <h2 class="library-search__title">{{ title }}</h2>
     {% endif %}
 
-    <form class="library-search__form" action="{{ action }}" method="get">
-      <div class="library-search__input-wrapper">
-        <label for="library-search-input" class="visually-hidden">Search</label>
-        <input type="text" id="library-search-input" name="query" placeholder="{{ placeholder|default('Search for books, articles, and more...') }}" class="library-search__input form-control">
-      </div>
-      <button type="submit" class="library-search__button btn btn-primary">
-        Search
-      </button>
-
-    </form>
+    {% block form %}
+      <form class="library-search__form" action="{{ action }}" method="get">
+        <div class="library-search__input-wrapper">
+          <label for="library-search-input" class="visually-hidden">Search</label>
+          <input type="text" id="library-search-input" name="query" placeholder="{{ placeholder|default('Search for books, articles, and more...') }}" class="library-search__input form-control">
+        </div>
+        <button type="submit" class="library-search__button btn btn-primary">
+          Search
+        </button>
+      </form>
+    {% endblock %}
     {% if links %}
       <div class="d-flex justify-content-start justify-content-md-end">
         <ul class="library-search__links list-inline jump-menu" data-jump-id="library-search--links" data-jump-title="More Search Options" data-jump-breakpoint="sm" data-jump-classes="library-search__jump-menu">
