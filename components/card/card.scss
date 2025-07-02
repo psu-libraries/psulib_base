@@ -60,7 +60,7 @@
     }
   }
 
-  &--image-top > img {
+  &--image-top img {
     border-top-right-radius: var(--#{$prefix}card-border-radius);
     border-top-left-radius: var(--#{$prefix}card-border-radius);
     border-bottom-right-radius: 0;
@@ -76,6 +76,10 @@
 
   &--image-overlays img {
     border-radius: var(--#{$prefix}card-border-radius);
+  }
+
+  .media {
+    margin-bottom: 0;
   }
 
   &-link.btn {
