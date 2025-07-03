@@ -12,7 +12,6 @@
     attach: function (context, settings) {
       // Select the target list and ensure the behavior is applied only once.
       once('randomize-cards', '[data-randomize-cards=true]', context).forEach(function (cardGrid) {
-        console.log('Randomizing card grid:', cardGrid);
         let cards = cardGrid.querySelector('.card-grid__cards');
         const rows = Array.from(cards.children);
         // Shuffle the list rows.

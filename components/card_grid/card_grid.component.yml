@@ -100,7 +100,7 @@ props:
       description: Randomize the order of cards on each page load.
       default: false
     randomize_max_rows:
-      type: 'number'
+      type: ['number', 'null']
       title: Randomize Max Rows
       description: Maximum number of rows to randomize. Set to 0 for no limit.
       default: 1

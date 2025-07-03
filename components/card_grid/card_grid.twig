@@ -3,7 +3,7 @@
 {% if randomize_cards|default(false) %}
   {% set attrs = {
     'data-randomize-cards': true,
-    'data-randomize-max-rows': randomize_max_rows|default('all'),
+    'data-randomize-max-rows': randomize_max_rows|default('0'),
   } %}
 {% endif %}
 
@@ -22,7 +22,7 @@
 ] %}
 
 {# Add styles to limit the number of cards rows that are visible. #}
-{% if randomize_cards and randomize_max_rows|default('all') != 'all' %}
+{% if randomize_cards and randomize_max_rows|default('0') > '0' %}
   <style>
     .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
       display: none !important;
