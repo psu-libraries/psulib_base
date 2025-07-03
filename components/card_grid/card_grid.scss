@@ -69,7 +69,7 @@
     --card-grid-gap: calc(#{$spacer} * 0.75);
   }
 
-  &[data-randomize-cards="true"] {
+  &.card-grid--randomize-card {
     visibility: hidden;
 
     &.cards-randomized {

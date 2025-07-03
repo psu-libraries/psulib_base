@@ -15,6 +15,7 @@
   'card-grid',
   'card-grid--columns-' ~ card_columns,
   'card-grid--gap-' ~ gap|default('md'),
+  randomize_cards|default(false) ? 'card-grid--randomize-card' : '',
 ] %}
 
 {% set card_utility_classes = [

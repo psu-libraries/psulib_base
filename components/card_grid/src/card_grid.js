@@ -11,7 +11,7 @@
   Drupal.behaviors.randomizeCards = {
     attach: function (context, settings) {
       // Select the target list and ensure the behavior is applied only once.
-      once('randomize-cards', '[data-randomize-cards=true]', context).forEach(function (cardGrid) {
+      once('randomize-cards', '.card-grid--randomize-card', context).forEach(function (cardGrid) {
         let cards = cardGrid.querySelector('.card-grid__cards');
         const rows = Array.from(cards.children);
         // Shuffle the list rows.
