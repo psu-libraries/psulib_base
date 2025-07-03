@@ -68,4 +68,13 @@
   &--gap-sm .card-grid__cards {
     --card-grid-gap: calc(#{$spacer} * 0.75);
   }
+
+  &.card-grid--randomize-card {
+    visibility: hidden;
+
+    &.cards-randomized {
+      visibility: unset;
+    }
+  }
+
 }
