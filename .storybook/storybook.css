@@ -1,0 +1,5 @@
+/* Drupal once is not retriggered after controls are updated this forces the
+   randomized cards to always be visible in storybook. */
+[data-randomize-cards="true"] {
+  visibility: unset !important;
+}

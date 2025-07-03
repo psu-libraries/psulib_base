@@ -1,4 +1,13 @@
-{% set attributes = create_attribute() %}
+{% set attrs = {} %}
+
+{% if randomize_cards|default(false) %}
+  {% set attrs = {
+    'data-randomize-cards': true,
+    'data-randomize-max-rows': randomize_max_rows|default('all'),
+  } %}
+{% endif %}
+
+{% set attributes = create_attribute(attrs) %}
 {% set card_columns = card_columns|default('3') %}
 
 {% set classes = [
@@ -11,6 +20,15 @@
   'card-grid__card',
   card_type ? 'card--' ~ card_type,
 ] %}
+
+{# Add styles to limit the number of cards rows that are visible. #}
+{% if randomize_cards and randomize_max_rows|default('all') != 'all' %}
+  <style>
+    .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
+      display: none !important;
+    }
+  </style>
+{% endif %}
 
 <div {{ attributes.addClass(classes) }}>
   {% if title or body %}
