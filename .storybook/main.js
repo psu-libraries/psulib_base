@@ -1,9 +1,9 @@
 
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
-
 import { join } from 'node:path'
-import { cwd } from 'node:process'
+import { cwd, env } from 'node:process'
+
 
 const config = {
   stories: [
@@ -16,10 +16,12 @@ const config = {
       options: {
         sdcStorybookOptions: {
           namespace: 'psulib_base',
+
         },
         vitePluginTwigDrupalOptions: {
           namespaces: {
             psulib_base: join(cwd(), './components'),
+            psulib_base_icons: join(cwd(), './components/icon/icons'),
           },
           functions: {
             clean_unique_id: (twigInstance) =>
@@ -55,12 +57,6 @@ const config = {
     "name": "@storybook/html-vite",
     "options": {}
   },
-  staticDirs: ['./public', '../components/_assets'],
-  ...(process.env.NODE_ENV === 'production'
-    ? {
-        staticDirs: [{ from: '../components', to: '/components' }],
-      }
-    : {}),
-
+  staticDirs: ['../assets'],
 };
 export default config;
