@@ -98,7 +98,7 @@ props:
       type: 'string'
       title: Card Image Source URL
       examples:
-        - '/sample.jpg'
+        - '/images/sample.jpg'
     card_image_alt:
       type: 'string'
       title: Card Image Alternative Text

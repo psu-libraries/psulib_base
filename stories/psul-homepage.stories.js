@@ -4,7 +4,7 @@ import footer, {Libraries as LibrariesFooter} from '../components/footer/footer.
 import header, {Libraries as LibrariesHeader} from '../components/header/header.component.yml'
 import heading from '../components/heading/heading.component.yml'
 import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
-import imageFile from '../.storybook/public/sample.jpg';
+import imageFile from '../assets/images/sample.jpg';
 import librarySearch from '../components/library_search/library_search.component.yml';
 import './page-preview.css'
 
@@ -59,10 +59,10 @@ export default {
           randomize_cards: true,
           randomize_max_rows: 1,
           items: [
-            { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: '/profile1.jpg', card_link: '#' },
-            { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '/profile2.jpg', card_link: '#' },
-            { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: '/profile3.jpg', card_link: '#' },
-            { card_title: 'John Locke', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '/profile4.jpg', card_link: '#' },
+            { card_title: 'Russel Hall', card_body: 'Business and Economics<br>Communcations<br>History', card_image_src: '/images/profile1.jpg', card_link: '#' },
+            { card_title: 'Sarah Hartman Caverly', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '/images/profile2.jpg', card_link: '#' },
+            { card_title: 'Andrea Pritt', card_body: 'Biochemistry<br>Biology<br>Engineering', card_image_src: '/images/profile3.jpg', card_link: '#' },
+            { card_title: 'John Locke', card_body: 'Accounting<br>Business and Economics<br>Electrical Engineering', card_image_src: '/images/profile4.jpg', card_link: '#' },
           ],
           cta_button: {
             title: 'See More Experts +',

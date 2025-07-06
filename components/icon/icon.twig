@@ -7,8 +7,7 @@
 <span class="{{ classes }}">
   {% if componentMetadata.path starts with 'themes/' %}
     {# Using componentMetadata.path to ensure that icons work in drupal. #}
-
-    {{ source(componentMetadata.path ~ '/../../.storybook/public/icons/' ~ icon ~ '.svg') }}
+    {{ source(componentMetadata.path ~ '/../../assets/icons/' ~ icon ~ '.svg') }}
   {% else %}
     {# For storybook we want to pull the icons from the publicDir (assets)
     since the componentMetadata.path is not always set and may point to the
