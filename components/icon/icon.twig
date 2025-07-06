@@ -4,13 +4,15 @@
   'psul-icon--' ~ color|default('black'),
 ]|join(' ') %}
 
-{# Using componentMetadata.path to ensure that icons work in storybook and drupal. #}
 <span class="{{ classes }}">
-  {% if componentMetadata.path %}
-    {{ source(componentMetadata.path ~ '/../_assets/' ~ icon ~ '.svg') }}
+  {% if componentMetadata.path starts with 'themes/' %}
+    {# Using componentMetadata.path to ensure that icons work in drupal. #}
+
+    {{ source(componentMetadata.path ~ '/../../.storybook/public/icons/' ~ icon ~ '.svg') }}
   {% else %}
-    {# Fallback to the default path if componentMetadata.path is not set
-    This should only happen in storybook. #}
-    {{ source('/' ~ icon ~ '.svg') }}
+    {# For storybook we want to pull the icons from the publicDir (assets)
+    since the componentMetadata.path is not always set and may point to the
+    wrong location when build-storybook is run. #}
+    {{ source('/icons/' ~ icon ~ '.svg') }}
   {% endif %}
 </span>
