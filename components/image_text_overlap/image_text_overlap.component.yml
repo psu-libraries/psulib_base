@@ -39,6 +39,6 @@ props:
       type: 'string'
       title: Image Source URL
       examples:
-        - '/sample.jpg'
+        - '/images/sample.jpg'
     attributes:
       type: 'Drupal\Core\Template\Attribute'
