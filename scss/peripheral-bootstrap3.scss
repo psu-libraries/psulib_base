@@ -79,6 +79,16 @@ header {
   margin-right: 0.5rem;
 }
 
+/* Apply primary styles to default buttons */
+.btn.btn-default {
+  --bs-btn-bg: #005fa9;
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #005fa9;
+  --bs-btn-hover-bg: #001e44;
+  --bs-btn-hover-border-color: #001e44;
+  --bs-btn-hover-color: #fff;
+}
+
 footer {
   .nav > li > a {
     padding: var(--bs-nav-link-padding-y) 0.5rem var(--bs-nav-link-padding-y) 0;
