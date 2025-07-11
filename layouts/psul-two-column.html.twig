@@ -1,0 +1,35 @@
+{%
+  set main_class = [
+    'psul-layout-column--main',
+    'col-12',
+    content.sidebar ? 'col-lg' : 'col-12',
+  ]
+%}
+
+{%
+  set sidebar_classes = [
+    'psul-layout-column--sidebar',
+    'col-12',
+    content.main ? 'col-sm-6 col-lg col-lg-w350' : 'col-12',
+    'order-lg-first',
+  ]
+%}
+
+{% if content %}
+  <div {{ attributes.addClass('psul-two-column ') }}>
+    <div class="row gy-3 gy-lg-0 gx-lg-4 mb-3 mb-lg-4">
+    {% if content.main %}
+      <div {{ region_attributes.main.addClass(main_class) }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+    {% if content.sidebar %}
+      <div {{ region_attributes.sidebar.addClass(sidebar_classes) }}>
+        <div class="text-bg-light p-3">
+          {{ content.sidebar }}
+        </div>
+      </div>
+    {% endif %}
+    </div>
+  </div>
+{% endif %}

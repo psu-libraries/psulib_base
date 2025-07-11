@@ -245,6 +245,18 @@ function psulib_base_theme_suggestions_field_alter(array &$suggestions, array $v
 }
 
 /**
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter() for layout_builder.
+ *
+ * Remove default layouts from Layout Builder.
+ */
+function psulib_base_plugin_filter_layout__layout_builder_alter(array &$variables, array $extra) {
+  unset($variables['layout_onecol']);
+  unset($variables['layout_twocol_section']);
+  unset($variables['layout_threecol_section']);
+  unset($variables['layout_fourcol_section']);
+}
+
+/**
  * Implements theme_preprocess_image().
  */
 function psulib_base_preprocess_image(&$variables) {
