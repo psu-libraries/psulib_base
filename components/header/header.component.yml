@@ -9,26 +9,26 @@ libraryOverrides:
 slots:
   above_header:
     title: Above Header
-    description:
+    description: Section above above.
   header:
     title: Header
-    description:
+    description: Section above.
   nav_branding:
     title: Navbar Branding
     required: true
-    description:
+    description: Section for logo and site name.
   nav_search:
     title: Navbar search
-    description:
+    description: Section for search functionality in the header. This is typically displayed in the header and allows users to search the site content.
   nav_main:
     title: Navbar Main Menu
-    description:
+    description: Main navigation menu, typically displayed in the header. This is the primary navigation for the site and includes links to important sections such as Services, Research, About, and Ask.
   nav_actions:
     title: Navbar Main Menu actions
     description: Shows to the right of the main menu and is visible on mobile.
   nav_additional:
     title: Navbar Additional Menu
-    description:
+    description: Section for additional navigation items, such as utility links or alerts. This is typically displayed in the header and can include links to important pages like account management or alerts.
   nav_offcanvas:
     title: Navbar Offcanvas Section (mobile)
-    description:
+    description: Section for offcanvas menu on mobile devices. This is used to display the main menu and other navigation items when the screen size is small.
