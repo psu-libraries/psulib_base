@@ -21,8 +21,9 @@
         <ul class="library-search__links list-inline jump-menu" data-jump-id="library-search--links" data-jump-title="More Search Options" data-jump-breakpoint="sm" data-jump-classes="library-search__jump-menu">
 
           {% for link in links %}
+            {% set link_attributes = link.attributes|default(create_attribute()) %}
             <li class="library-search__link list-inline-item">
-              <a href="{{ link.url }}">{{ link.text }} {% include 'psulib_base:icon' with {icon: 'chevronRight', color: 'link'} %}</a>
+              <a href="{{ link.url }}" {{ link_attributes.setAttribute('href', link.url)}}>{{ link.text }} {% include 'psulib_base:icon' with {icon: 'chevronRight', color: 'link'} %}</a>
             </li>
           {% endfor %}
         </ul>
