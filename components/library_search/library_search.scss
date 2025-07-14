@@ -28,7 +28,8 @@
   flex-direction: column;
   gap: $spacer * 1;
 
-  .library-search__input-wrapper {
+  .library-search__input-wrapper,
+  .form-item-query {
     flex-grow: 1;
   }
 
@@ -37,6 +38,12 @@
     gap: $spacer * 1.5;
   }
 
+  // Override Drupal form styles.
+  .form-item,
+  .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .library-search__links {
