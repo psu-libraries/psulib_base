@@ -14,12 +14,14 @@ props:
       enum:
         - alarm
         - barChart3
+        - calendar
         - chevronRight
         - email
         - fax
         - help
         - institution
         - linkOut
+        - locationPin
         - openBook
         - person
         - phone
