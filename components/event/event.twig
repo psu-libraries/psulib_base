@@ -36,10 +36,9 @@
           <span class="event-card__time-text">{{ time }}</span>
         </div>
       {% endif %}
-
       {% if location %}
         <div class="event-card__location event-card__item">
-          {% include 'psulib_base:icon' with { icon: 'calendar' } %}
+          {% include 'psulib_base:icon' with { icon: 'locationPin' } %}
           <span class="visually-hidden">Location:</span>
           <span class="event-card__location-text">{{ location }}</span>
         </div>
