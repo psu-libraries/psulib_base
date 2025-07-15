@@ -4,7 +4,7 @@
   --bs-border-width: 1px;
   --bs-border-radius: 4px;
   --bs-border-color: #{$body-color};
-  margin: ($spacer * 3) 0;
+  margin: ($spacer * 1) 0;
 
   .input,
   .btn {
@@ -13,8 +13,9 @@
     margin: 0;
   }
 
-
   @include media-breakpoint-up(md) {
+    margin: ($spacer * 3) 0;
+
     .form-control,
     .btn {
       --bs-btn-font-size: #{$font-size-lg};
@@ -43,6 +44,10 @@
   .form-actions {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .form-actions button {
+    width: 100%;
   }
 }
 
