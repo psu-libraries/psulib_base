@@ -19,7 +19,7 @@ props:
         - search-results
         - text
     card_body:
-      type: 'string'
+      type: ['string', 'object']
       title: Card Body
     card_body_tag:
       type: 'string'
@@ -29,7 +29,7 @@ props:
         - div
         - section
     card_title:
-      type: 'string'
+      type: ['string', 'object']
       title: Card Title
     card_title_tag:
       type: 'string'
