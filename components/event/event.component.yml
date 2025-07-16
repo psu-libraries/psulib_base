@@ -35,7 +35,7 @@ props:
       title: CTA Button
       properties:
         title:
-          type: 'string'
+          type: ['string', 'object']
           title: Button Title
         url:
           type: 'string'
