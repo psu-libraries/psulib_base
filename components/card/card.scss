@@ -65,6 +65,7 @@
     border-top-left-radius: var(--#{$prefix}card-border-radius);
     border-bottom-right-radius: 0;
     border-bottom-right-radius: 0;
+    width: 100%;
   }
 
   &--image-bottom img {
@@ -72,6 +73,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: var(--#{$prefix}card-border-radius);
     border-bottom-left-radius: var(--#{$prefix}card-border-radius);
+    width: 100%;
   }
 
   &--image-overlays img {
