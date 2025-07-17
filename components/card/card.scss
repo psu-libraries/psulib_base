@@ -84,10 +84,18 @@
     margin-bottom: 0;
   }
 
-  &-link.btn {
+  &-link:not(.btn) {
+    --#{$prefix}link-color-rgb: #{$link-color};
+    --#{$prefix}link-hover-color-rgb: #{$link-color};
     margin-left: 0;
     margin-top: $spacer * 0.5;
-    align-self: flex-start;
+    color: var(--bs-link-color-rgb);
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
