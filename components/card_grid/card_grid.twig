@@ -33,7 +33,7 @@
 {% endif %}
 
 <div {{ attributes.addClass(classes) }}>
-  {% if title %}
+  {% if title or body|render is not empty %}
     <div class="card-grid__header row">
       <div class="col-12 col-md-8 offset-md-2">
         {% if title %}
@@ -43,15 +43,12 @@
             heading_utility_classes: ['card-grid__heading'],
           } only %}
         {% endif %}
-  {% endif %}
 
-  {% if body|render is not empty %}
-    <div class="card-grid__description">
-      {{ body }}
-    </div>
-  {% endif %}
-
-  {% if title %}
+        {% if body|render is not empty %}
+          <div class="card-grid__description">
+            {{ body }}
+          </div>
+        {% endif %}
       </div>
     </div>
   {% endif %}
