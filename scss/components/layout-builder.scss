@@ -80,3 +80,53 @@ a.button[data-drupal-selector="edit-rebuild-layout"] {
     padding-right: 2rem;
   }
 }
+
+// Adding margin after the inline block list in the off-canvas
+// sidebar.
+#drupal-off-canvas-wrapper .inline-block-list {
+  margin-bottom: 1rem;
+}
+
+// Making the Modal and Sidebar titlebar shorter.
+.ui-dialog-titlebar {
+  height: 3.5rem !important;
+}
+
+// Adjusting placement of the close button in the modal titlebar.
+.ui-dialog .ui-dialog-titlebar-close {
+  inset-block-start: 40% !important;
+}
+
+// Styles for layout_builder_reorder.
+.layout-builder__link--rearrange {
+  position: absolute;
+  z-index: 1;
+  top: -19px;
+  padding: 0 0.25em 0 0.25em;
+  color: var(--gin-border-color-form-element);
+  background: white;
+  font-size: 0.75em;
+  line-height: 19px;
+  &:before {
+    content: '↑';
+  }
+
+  &:hover {
+    color: var(--gin-color-button-text) !important;
+    background: var(--gin-color-primary) !important;
+  }
+}
+
+.layout-builder__link--rearrange--up {
+  right: 0px;
+  &:before {
+    content: '↑';
+  }
+}
+
+.layout-builder__link--rearrange--down {
+  right: 65px;
+  &:before {
+    content: '↓';
+  }
+}
