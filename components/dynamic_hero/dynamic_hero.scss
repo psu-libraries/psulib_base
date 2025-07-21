@@ -1,0 +1,59 @@
+@use "sass:map";
+@import '../../scss/init';
+
+.dynamic-hero {
+  padding-top: $spacer * 2;
+  padding-bottom: $spacer * 5;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $spacer * 2.5;
+    padding-bottom: $spacer * 2.5;
+  }
+
+  &--light:after  {
+    height: 20px;
+    background-image: linear-gradient(360deg, rgb(230, 247, 255) 0%, rgb(230, 247, 255) 60%, rgb(204, 240, 255) 100%);
+  }
+
+  &--dark:after  {
+    height: 100%;
+    width: 100vw;
+
+    // background: linear-gradient(360deg, rgba(0, 30, 68, 0.9) 0%, rgba(30, 64, 124, 0.9) 60%, rgba(0, 95, 169, 0.9) 100%);
+  }
+
+  &__eyebrow {
+    div {
+      font-size: 1.25rem;
+      font-weight: $font-weight-medium;
+      padding-bottom: $spacer * 0.25;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.375rem;
+      }
+    }
+
+    .divider {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__body {
+    // Styles for the body text
+  }
+
+  &__cta {
+    // Styles for the call-to-action buttons
+  }
+}

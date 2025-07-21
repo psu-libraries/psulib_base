@@ -1,0 +1,37 @@
+{% set background_gradient = background_gradient|default('light') %}
+
+{% set classes = [
+  'dynamic-hero',
+  'd-flex',
+  'flex-column',
+  'full-bleed',
+  background_gradient ? 'dynamic-hero--' ~ background_gradient|clean_class : 'light',
+  background_gradient == 'light' ? 'full-bleed--slate-light' : 'full-bleed--navy',
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+<div {{ attributes }}>
+
+  {% if eyebrow %}
+    <div class="dynamic-hero__eyebrow">
+      <div>{{ eyebrow }}</div>
+      {% include 'psulib_base:divider' with {
+        color: 'sky',
+        width: 'md',
+        thickness: 'lg',
+      } %}
+    </div>
+  {% endif %}
+  <h1 class="dynamic-hero__title">{{ title }}</h1>
+  <p class="dynamic-hero__body">{{ body }}</p>
+  <div class="dynamic-hero__cta">
+    {% if cta_button_first %}
+      <a href="{{ cta_button_first.url }}" class="btn btn-primary">{{ cta_button_first.text }}</a>
+    {% endif %}
+    {% if cta_button_second %}
+      <a href="{{ cta_button_second.url }}" class="btn btn-secondary">{{ cta_button_second.text }}</a>
+    {% endif %}
+  </div>
+
+</div>
