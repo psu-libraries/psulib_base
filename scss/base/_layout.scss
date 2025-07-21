@@ -68,12 +68,18 @@
 
   // Sections in layout builder have a top and bottom padding of 3rem.
   .node__content {
-    & > div:not(:first-child) {
-      padding-top: $spacer * 1.5;
+    & > div:not(.full-bleed):not(:first-child) {
+      margin-top: $spacer * 1.5;
     }
-    & > div:not(:last-child) {
-      padding-bottom: $spacer * 1.5;
+    & > div:not(.full-bleed):not(:last-child) {
+      margin-bottom: $spacer * 1.5;
     }
   }
+}
 
+// Adjusting the margin
+.block {
+  .block-layout-builder:not(:last-child) {
+    margin-bottom: $spacer * 2;
+  }
 }
