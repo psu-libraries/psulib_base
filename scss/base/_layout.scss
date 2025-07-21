@@ -67,8 +67,13 @@
   }
 
   // Sections in layout builder have a top and bottom padding of 3rem.
-  .node__content > div {
-    padding-top: $spacer * 1.5;
-    padding-bottom: $spacer * 1.5;
+  .node__content {
+    & > div:not(:first-child) {
+      padding-top: $spacer * 1.5;
+    }
+    & > div:not(:last-child) {
+      padding-bottom: $spacer * 1.5;
+    }
   }
+
 }
