@@ -9,17 +9,29 @@
 {%
   set sidebar_classes = [
     'psul-layout-column--sidebar',
+    'psul-layout-column--sidebar-gray',
     'col-12',
     'col-sm-6 col-lg col-lg-w350',
     'order-lg-first',
   ]
 %}
-
-{% set sidebar_attributes = region_attributes.sidebar ?? create_attribute() %}
+{# {{ dump(region_attributes.sidebar) }} #}
+{# {% set sidebar_attributes = region_attributes.sidebar|default(create_attribute()) %} #}
 
 {% if content %}
   <div {{ attributes.addClass('psul-two-column ') }}>
     <div class="row gy-3 gy-lg-0 gx-lg-4 mb-3 mb-lg-4">
+    {# {% if content.main %}
+      <div {{ region_attributes.main.addClass(main_class) }}>
+        {{ content.main }}
+      </div>
+    {% endif %} #}
+    {# {% if content.sidebar %}
+      <div {{ region_attributes.sidebar.addClass(sidebar_classes) }}>
+        {{ content.sidebar }}
+      </div>
+    {% endif %} #}
+
     {% if content.main %}
       <div {{ region_attributes.main.addClass(main_class) }}>
         {{ content.main }}
@@ -40,13 +52,15 @@
         {% endif %}
       </div>
     {% endif %}
-      <div {{ sidebar_attributes.addClass(sidebar_classes) }}>
-        {% if content.sidebar %}
-          <div class="text-bg-light p-3">
-            {{ content.sidebar }}
-          </div>
-        {% endif %}
+    {% if content.sidebar %}
+      <div {{ region_attributes.sidebar.addClass(sidebar_classes) }}>
+        {# <div class="text-bg-light p-3"> #}
+          {{ content.sidebar }}
+        {# </div> #}
       </div>
+    {% else %}
+      <div class="{{sidebar_classes|join(' ') }}"></div>
+    {% endif %}
     </div>
   </div>
 {% endif %}

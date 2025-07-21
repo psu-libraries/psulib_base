@@ -77,9 +77,39 @@
   }
 }
 
-// Adjusting the margin
+// Adjusting the margin after blocks.
 .block {
   .block-layout-builder:not(:last-child) {
     margin-bottom: $spacer * 2;
   }
+}
+
+// Adding background colors to sidebar blocks to prevent issue with the
+// layout builder drag and drop functionality.
+.psul-layout-column--sidebar-gray > * {
+  background-color: $light;
+  padding: 0 $spacer;
+
+  &:first-child{
+    padding-top: $spacer;
+  }
+
+  &:last-child {
+    padding-bottom: $spacer;
+  }
+
+  &.js-layout-builder-block {
+    padding: $spacer;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  // Using padding instead to prevent whitespace between blocks.
+  &.block-layout-builder:not(:last-child) {
+    padding-bottom: $spacer * 2;
+    margin-bottom: 0;
+  }
+
 }
