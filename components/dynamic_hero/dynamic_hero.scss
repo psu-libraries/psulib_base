@@ -4,27 +4,31 @@
 .dynamic-hero {
   padding-top: $spacer * 2;
   padding-bottom: $spacer * 5;
+  font-size: 1.125rem;
 
   @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
     padding-top: $spacer * 2.5;
     padding-bottom: $spacer * 2.5;
   }
 
-  &--light:after  {
-    height: 20px;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.375rem;
+    padding-top: $spacer * 3.75;
+    padding-bottom: $spacer * 3.75;
+  }
+
+  &--light {
     background-image: linear-gradient(360deg, rgb(230, 247, 255) 0%, rgb(230, 247, 255) 60%, rgb(204, 240, 255) 100%);
   }
 
-  &--dark:after  {
-    height: 100%;
-    width: 100vw;
-
-    // background: linear-gradient(360deg, rgba(0, 30, 68, 0.9) 0%, rgba(30, 64, 124, 0.9) 60%, rgba(0, 95, 169, 0.9) 100%);
+  &--dark {
+    @include light-text;
+    background: linear-gradient(360deg, rgba(0, 30, 68, 0.9) 0%, rgba(30, 64, 124, 0.9) 60%, rgba(0, 95, 169, 0.9) 100%);
   }
 
   &__eyebrow {
     div {
-      font-size: 1.25rem;
       font-weight: $font-weight-medium;
       padding-bottom: $spacer * 0.25;
       text-transform: uppercase;
@@ -47,13 +51,14 @@
     @include media-breakpoint-up(md) {
       font-size: 2.25rem;
     }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.5rem;
+    }
   }
 
-  &__body {
-    // Styles for the body text
-  }
-
-  &__cta {
-    // Styles for the call-to-action buttons
+  &__cta a {
+    margin: 0 .25rem 0 0;
+    --#{$prefix}btn-font-size: 1rem;
   }
 }

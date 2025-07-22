@@ -44,18 +44,17 @@ props:
           type: 'string'
           title: Button Text
           description: Text to display on the button
-          examples:
-            - 'View Guides'
         url:
           type: 'string'
           title: Button URL
           description: URL to link to when the button is clicked
-          examples:
-            - '#'
         attributes:
           type: 'object'
           title: Button Attributes
           description: Additional attributes for the button
+      examples:
+        - text: 'View Guides'
+          url: '#'
     cta_button_second:
       type: 'object'
       title: Call to Action Button (Second)
@@ -65,15 +64,14 @@ props:
           type: 'string'
           title: Button Text
           description: Text to display on the button
-          examples:
-            - 'Find an Expert'
         url:
           type: 'string'
           title: Button URL
           description: URL to link to when the button is clicked
-          examples:
-            - '#'
         attributes:
           type: 'object'
           title: Button Attributes
           description: Additional attributes for the button
+      examples:
+        - text: 'Find an Expert'
+          url: '#'
