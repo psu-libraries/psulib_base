@@ -1,0 +1,47 @@
+{% set background_gradient = background_gradient|default('light') %}
+
+{% set classes = [
+  'dynamic-hero',
+  'd-flex',
+  'flex-column',
+  background_gradient ? 'dynamic-hero--' ~ background_gradient|clean_class : 'dynamic-hero--light',
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+{% set cta1_attributes = cta_button_first.attributes|default(create_attribute()) %}
+{% set cta2_attributes = cta_button_second.attributes|default(create_attribute()) %}
+
+{% set cta1_classes = [
+  'btn',
+  background_gradient|default('light') == 'light' ? 'btn-primary' : 'btn-light',
+] %}
+
+{% set cta2_classes = [
+  'btn',
+  background_gradient|default('light') == 'light' ? 'btn-outline-primary' : 'btn-outline-light',
+] %}
+
+<div {{ attributes }}>
+  <div class="container-fluid">
+    {% if eyebrow %}
+      <div class="dynamic-hero__eyebrow">
+        <div>{{ eyebrow }}</div>
+        {% include 'psulib_base:divider' with {
+          color: 'sky',
+          width: 'md',
+          thickness: 'lg',
+        } %}
+      </div>
+    {% endif %}
+    <h1 class="dynamic-hero__title">{{ title }}</h1>
+    <p class="dynamic-hero__body">{{ body }}</p>
+    <div class="dynamic-hero__cta">
+      {% if cta_button_first %}
+        <a {{ cta1_attributes.setAttribute('href', cta_button_first.url).addClass(cta1_classes) }}>{{ cta_button_first.text }}</a>
+      {% endif %}
+      {% if cta_button_second %}
+        <a {{ cta2_attributes.setAttribute('href', cta_button_second.url).addClass(cta2_classes) }}>{{ cta_button_second.text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
