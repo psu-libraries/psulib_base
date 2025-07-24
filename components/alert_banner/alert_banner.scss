@@ -2,14 +2,14 @@
 @import '../../scss/init';
 
 .alert-banner {
-  background-color: var(--bs-primary-bg-subtle);
+  background-color: $pa-sky-max-light;
   color: var(--bs-body-color);
   &__urgent {
     background-color: var(--bs-danger-bg-subtle);
   }
 
   &__nonEmergency {
-    background-color: var(--bs-primary-bg-subtle);
+    background-color: $pa-sky-max-light;
   }
 
   &__immediate {
