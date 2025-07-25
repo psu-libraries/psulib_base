@@ -129,12 +129,14 @@
 
   <div {{ card_body_attributes.addClass(card_body_classes) }}>
     {% block slot_card_body %}
-      {% if card_icon %}
-        {% include 'psulib_base:icon' with {
-          icon: card_icon,
-          color: 'link',
-        } only %}
-      {% endif %}
+      {% block icon_block %}
+        {% if card_icon %}
+          {% include 'psulib_base:icon' with {
+            icon: card_icon,
+            color: 'link',
+          } only %}
+        {% endif %}
+      {% endblock %}
 
       {% if card_subtitle %}
         <{{card_subtitle_tag}} {{ card_subtitle_attributes.addClass(card_subtitle_classes) }}>{{ card_subtitle }}</{{card_subtitle_tag}}>
