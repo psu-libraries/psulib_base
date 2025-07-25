@@ -245,6 +245,18 @@ Once this has run you can use it as documented on https://icons.getbootstrap.com
 <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
 ```
 
+## Material Icons
+Material Icons can be used. These are saved as SVGs in the theme.
+
+### Usage
+- TBD.
+
+### Adding Icons
+- Go to https://fonts.google.com/icons?icon.style=Rounded&selected=Material+Symbols+Rounded:group:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23005FA9&icon.query=group&icon.set=Material+Symbols
+- Find and download the desired icon svg
+- Rename the svg to something simple (the file name is used to find the icon)
+- Add the file to assets/icons
+- Update `components/icon/icon.component.yml` to update
 
 ## Peripheral
 
