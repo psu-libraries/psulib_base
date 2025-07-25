@@ -14,17 +14,26 @@ props:
       enum:
         - alarm
         - barChart3
+        - bullhorn
         - calendar
         - chevronRight
         - email
         - fax
+        - globe
+        - globeBook
+        - group
         - help
+        - info
         - institution
+        - inventory
         - linkOut
         - locationPin
+        - map
         - openBook
         - person
         - phone
+        - schedule
+        - school
         - search
       examples:
         - chevronRight

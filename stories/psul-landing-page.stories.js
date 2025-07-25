@@ -1,10 +1,5 @@
-import cardGrid, { News as NewsCards } from '../components/card_grid/card_grid.component.yml'
-import event from '../components/event/event.component.yml'
 import footer, { Libraries as LibrariesFooter } from '../components/footer/footer.component.yml'
 import header, { Libraries as LibrariesHeader } from '../components/header/header.component.yml'
-import heading from '../components/heading/heading.component.yml'
-import imageTextOverlap from '../components/image_text_overlap/image_text_overlap.component.yml'
-import imageFile from '../assets/images/sample.jpg';
 import dyanmicHero from '../components/dynamic_hero/dynamic_hero.component.yml';
 import breadcrumbs from '../components/breadcrumbs/breadcrumbs.component.yml';
 import './page-preview.css'
@@ -12,7 +7,6 @@ import './page-preview.css'
 // Explicitly importing grandchild components css since this is not properly
 // imported by storybook.
 import '../components/card/card.css';
-import '../components/icon/icon.css';
 
 export default {
   title: 'PSU Landing Page',

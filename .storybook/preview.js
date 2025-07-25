@@ -20,7 +20,6 @@ import '../dist/css/nav.css';
 // Imports the CSS for common components.
 import '../components/button/button.css';
 import '../components/divider/divider.css';
-import '../components/icon/icon.css';
 
 // Imports all Storybook CSS for display.
 import './storybook.css';
