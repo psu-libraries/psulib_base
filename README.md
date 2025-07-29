@@ -257,6 +257,7 @@ Material Icons can be used. These are saved as SVGs in the theme.
 - Rename the svg to something simple (the file name is used to find the icon)
 - Add the file to assets/icons
 - Update `components/icon/icon.component.yml` to update
+- Update `stories/icon-usage.stories.js` with details about how the icon shoudl be used withing the libraries site
 
 ## Peripheral
 

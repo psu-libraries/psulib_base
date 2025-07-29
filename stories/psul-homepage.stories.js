@@ -13,7 +13,7 @@ import './page-preview.css'
 import '../components/card/card.css';
 
 export default {
-  title: 'PSU Libraries Homepage',
+  title: 'PSU Libraries: Homepage',
   render: () => {return `<div class="remove-sb-margin">
     ${header.component({...LibrariesHeader.args})}
 

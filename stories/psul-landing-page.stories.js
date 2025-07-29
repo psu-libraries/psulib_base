@@ -9,7 +9,7 @@ import './page-preview.css'
 import '../components/card/card.css';
 
 export default {
-  title: 'PSU Landing Page',
+  title: 'PSU Libraries: Landing Page',
   render: () => {
     return `<div class="remove-sb-margin">
     ${header.component({ ...LibrariesHeader.args })}
