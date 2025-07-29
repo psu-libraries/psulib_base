@@ -11,7 +11,6 @@ import './page-preview.css'
 // Explicitly importing grandchild components css since this is not properly
 // imported by storybook.
 import '../components/card/card.css';
-import '../components/icon/icon.css';
 
 export default {
   title: 'PSU Libraries Homepage',

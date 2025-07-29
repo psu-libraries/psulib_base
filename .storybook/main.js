@@ -4,7 +4,6 @@
 import { join } from 'node:path'
 import { cwd, env } from 'node:process'
 
-
 const config = {
   stories: [
     '../components/**/*.component.yml',
@@ -44,6 +43,15 @@ const config = {
                 attrs += ' theme="psulib_base"';
                 return `<a href="${url}"${attrs}>${text}</a>`;
               }),
+            icon: (twigInstance) =>
+              // Adding icon function from Drupal Icon API.  This is currently
+              // only going to work with the Material Symbols Rounded icons.
+              twigInstance.extendFunction("icon", (iconId, fill, weight) => {
+                const [packId, iconName] = iconId.split(':');
+                // Load SVG from ../assets/icons/{iconName}.svg
+                const svgPath = `/icons/${iconName}.svg`;
+                return `<span class="psulib-base-icon"><svg viewBox="0 0 24 24"><use xlink:href="${svgPath}" class="psulib-base-icon" alt="${iconName}" /></svg></span>`;
+              }),
           }
         },
         jsonSchemaFakerOptions: {}
@@ -51,7 +59,7 @@ const config = {
     },
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
-    '@storybook/addon-themes',
+    '@storybook/addon-themes'
   ],
   "framework": {
     "name": "@storybook/html-vite",

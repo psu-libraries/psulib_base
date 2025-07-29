@@ -200,3 +200,6 @@ slots:
   slot_card_footer:
     title: Card Footer
     description: Slot for the footer of the card.
+  icon_block:
+    title: Icon Block
+    description: Pass an icon block to render a custom icon.
