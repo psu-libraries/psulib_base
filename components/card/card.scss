@@ -219,6 +219,74 @@
     }
   }
 
+  &.card-type-nav {
+    --#{$prefix}card-color: #{$white};
+    --#{$prefix}card-bg: #{$nittany-navy};
+    --#{$prefix}card-box-shadow: none;
+    --#{$prefix}card-text-align: start;
+    transition: transform 0.2s ease-out;
+    display: flex;
+    padding: ($spacer * 1.25);
+    min-height: 200px;
+
+
+    flex-flow: row;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+
+    &:hover,
+    &:focus {
+      --#{$prefix}card-bg: #{$beaver-blue};
+      transform: scale(1.019);
+    }
+
+    .card-title {
+      @include make-link($white, none, $white, none);
+    }
+
+    .card-body {
+      gap: $spacer;
+      padding: 0;
+      margin-top: auto;
+    }
+
+    .psul-icon {
+      width: 24px;
+      height: 24px;
+      margin-top: auto;
+      @include media-breakpoint-up(md) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .card-title {
+      margin-bottom: 0;
+    }
+
+    /* Nav Card Light Variant Styles */
+    &.card-type-nav--light {
+      --#{$prefix}card-bg: #{$pa-limestone-light};
+      --#{$prefix}card-color: #{$nittany-navy};
+
+      &:hover,
+      &:focus {
+        --#{$prefix}card-bg: #{$pa-sky-max-light};
+        transform: scale(1.019);
+      }
+
+      .card-title {
+        @include make-link($nittany-navy, none, $nittany-navy, none);
+      }
+
+      .psul-icon svg {
+        --psul-icon-color: $nittany-navy;
+      }
+    }
+  }
+
+
   // Style variant for search results cards.
   &.card--search-results {
     --#{$prefix}card-border-width: 1px;

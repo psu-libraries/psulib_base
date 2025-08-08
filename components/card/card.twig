@@ -200,6 +200,13 @@
       </div>
     {% endif %}
   {% endblock %}
+
+  {% if card_type|default('default') == 'nav' %}
+    {% include 'psulib_base:icon' with {
+      icon: 'psu_flex_double_arrow',
+      color: 'white',
+    } only %}
+  {% endif %}
 </div>
 
 {% endapply %}

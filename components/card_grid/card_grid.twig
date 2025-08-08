@@ -21,6 +21,7 @@
 {% set card_utility_classes = [
   'card-grid__card',
   card_type ? 'card--' ~ card_type,
+  variant_class ? variant_class : '',
 ] %}
 
 {# Add styles to limit the number of cards rows that are visible. #}
