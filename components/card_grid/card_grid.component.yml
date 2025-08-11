@@ -47,14 +47,19 @@ props:
       title: Card Variant
       type: 'string'
       enum:
-        - default
         - cta
+        - default
+        - icon
         - left
+        - nav
         - news
         - search-results
         - text
-        - icon
       default: default
+    variant_class:
+      title: Card Variant Class
+      type: 'string'
+      default: ''
     card_title_tag:
       title: Card Title HTML Tag
       type: 'string'
@@ -178,6 +183,34 @@ thirdPartySettings:
                 cta_button:
                   title: 'Register Now'
                   url: '#'
+      nav:
+        props:
+          title: 'Nav Card Grid Example'
+          body: 'This is an example of a nav card grid.'
+          card_link_stretched: true
+          card_type: 'nav'
+          card_columns: 3
+          gap: 'sm'
+          variant_class: 'card-type-nav--dark'
+          cta_button: ''
+          items:
+            - card_title: 'Card Title 1'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+            - card_title: 'Card Title 2'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
+            - card_title: 'Card Title 3'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+            - card_title: 'Card Title 4'
+              card_link: '#'
+            - card_title: 'Card Title 5'
+              card_link: '#'
+            - card_title: 'Card Title 6'
+              card_link: '#'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
       news:
         props:
           title: 'News Card Grid Example'

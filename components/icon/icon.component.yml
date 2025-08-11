@@ -25,6 +25,7 @@ props:
         - crowdsource
         - diversity_3
         - docs
+        - double_arrow
         - edit_square
         - email
         - fax

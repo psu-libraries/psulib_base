@@ -165,6 +165,12 @@
         </{{card_text_tag}}>
       {% endif %}
 
+      {% if card_body_footer %}
+        <div class="card-body-footer">
+          {{ card_body_footer }}
+        </div>
+      {% endif %}
+
       {% if card_link_url %}
         {%
           include 'psulib_base:button' with {
@@ -200,6 +206,13 @@
       </div>
     {% endif %}
   {% endblock %}
+
+  {% if card_type|default('default') == 'nav' %}
+    {% include 'psulib_base:icon' with {
+      icon: 'psu_flex_double_arrow',
+      color: 'white',
+    } only %}
+  {% endif %}
 </div>
 
 {% endapply %}
