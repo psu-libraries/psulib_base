@@ -200,6 +200,7 @@ thirdPartySettings:
             - card_title: 'Card Title 2'
               card_link: '#'
               card_body: 'This is the body text for card 1.'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
             - card_title: 'Card Title 3'
               card_link: '#'
               card_body: 'This is the body text for card 1.'
@@ -209,6 +210,7 @@ thirdPartySettings:
               card_link: '#'
             - card_title: 'Card Title 6'
               card_link: '#'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
       news:
         props:
           title: 'News Card Grid Example'

@@ -261,6 +261,10 @@
       }
     }
 
+    .badge {
+      --#{$prefix}badge-font-size: .875em;
+    }
+
     .card-title {
       margin-bottom: 0;
     }

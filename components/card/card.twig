@@ -165,6 +165,12 @@
         </{{card_text_tag}}>
       {% endif %}
 
+      {% if card_body_footer %}
+        <div class="card-body-footer">
+          {{ card_body_footer }}
+        </div>
+      {% endif %}
+
       {% if card_link_url %}
         {%
           include 'psulib_base:button' with {
