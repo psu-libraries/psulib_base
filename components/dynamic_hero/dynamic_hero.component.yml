@@ -35,9 +35,10 @@ props:
       type: 'string'
       title: Background Image
       description: Background image for the hero section
-      default:
-        - ''
+      default: ''
+      examples:
         - '/images/heroBgSample.png'
+        - ''
     cta_button_first:
       type: 'object'
       title: Call to Action Button (First)
