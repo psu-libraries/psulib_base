@@ -15,6 +15,7 @@ props:
         - icon
         - cta
         - left
+        - nav
         - news
         - search-results
         - text
