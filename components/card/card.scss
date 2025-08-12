@@ -3,6 +3,25 @@
 // Breadcrumb styling
 @import "bootstrap/scss/card";
 
+// Nav card light variant mixin.
+@mixin card-type-nav-light {
+  --#{$prefix}card-bg: #{$pa-limestone-light};
+  --#{$prefix}card-color: #{$nittany-navy};
+
+  &:hover,
+  &:focus {
+    --#{$prefix}card-bg: #{$pa-sky-max-light};
+  }
+
+  .card-title {
+    @include make-link($nittany-navy, none, $nittany-navy, none);
+  }
+
+  .psul-icon svg {
+    --psul-icon-color: $nittany-navy;
+  }
+}
+
 // SDC Styles Improperly load after the style.css main file so we need to add
 // another class to increase selector specificity.
 .card.card-card {
@@ -271,22 +290,7 @@
 
     /* Nav Card Light Variant Styles */
     &.card-type-nav--light {
-      --#{$prefix}card-bg: #{$pa-limestone-light};
-      --#{$prefix}card-color: #{$nittany-navy};
-
-      &:hover,
-      &:focus {
-        --#{$prefix}card-bg: #{$pa-sky-max-light};
-        transform: scale(1.019);
-      }
-
-      .card-title {
-        @include make-link($nittany-navy, none, $nittany-navy, none);
-      }
-
-      .psul-icon svg {
-        --psul-icon-color: $nittany-navy;
-      }
+      @include card-type-nav-light;
     }
   }
 
@@ -331,4 +335,13 @@
 
 .card-link.btn {
   margin-left: 0;
+}
+
+/* Force Navcard light for cards with dark backgrounds. */
+.text-bg-primary,
+.bg-primary,
+.full-bleed--navy {
+  .card-type-nav {
+    @include card-type-nav-light;
+  }
 }
