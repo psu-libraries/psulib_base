@@ -46,6 +46,7 @@ props:
         - openBook
         - person
         - phone
+        - psu_flex_double_arrow
         - schedule
         - school
         - search

@@ -165,11 +165,13 @@
         </{{card_text_tag}}>
       {% endif %}
 
-      {% if card_body_footer %}
-        <div class="card-body-footer">
-          {{ card_body_footer }}
-        </div>
-      {% endif %}
+      {% block slot_card_body_footer %}
+        {% if card_body_footer %}
+          <div class="card-body-footer">
+            {{ card_body_footer }}
+          </div>
+        {% endif %}
+      {% endblock %}
 
       {% if card_link_url %}
         {%

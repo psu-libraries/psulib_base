@@ -15,6 +15,7 @@ props:
         - icon
         - cta
         - left
+        - nav
         - news
         - search-results
         - text
@@ -28,6 +29,9 @@ props:
       enum:
         - div
         - section
+    card_body_footer:
+      type: ['string', 'object']
+      title: Card Body Footer
     card_title:
       type: ['string', 'object']
       title: Card Title
@@ -203,3 +207,6 @@ slots:
   icon_block:
     title: Icon Block
     description: Pass an icon block to render a custom icon.
+  slot_card_body_footer:
+    title: Card Body Footer
+    description: Slot for the footer of the card body.
