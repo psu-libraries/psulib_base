@@ -20,6 +20,11 @@
   .psul-icon svg {
     --psul-icon-color: $nittany-navy;
   }
+
+  .badge.text-bg-light {
+    --#{$prefix}light-rgb: var(--bs-primary-rgb);
+    color: $white !important;
+  }
 }
 
 // SDC Styles Improperly load after the style.css main file so we need to add
