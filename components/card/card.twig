@@ -160,7 +160,7 @@
       {% endif %}
 
       {% if card_body %}
-        <{{card_text_tag}} {{ card_text_attributes.addClass(card_text_utility_classes|default([]).addClass('card-text')) }}>
+        <{{card_text_tag}} {{ card_text_attributes.addClass(card_text_utility_classes|default([])).addClass('card-text') }}>
           {{ card_body }}
         </{{card_text_tag}}>
       {% endif %}
