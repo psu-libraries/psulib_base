@@ -34,10 +34,10 @@
   <{{heading_html_tag}} {{ heading_attributes.addClass(heading_classes).addClass(heading_utility_classes|default([])) }}>
     {% block heading_content %}
       {% if title_link %}
-          {% set attrs = heading_link_target ? {
-            'target': heading_link_target,
-          } : {} %}
-        {% set heading_link_attributes = create_attribute(attrs)  %}
+        {% set attrs = heading_link_target ? {
+          'target': heading_link_target,
+        } : {} %}
+        {% set heading_link_attributes = heading_link_attributes ?: create_attribute() %}
 
         <a {{ heading_link_attributes.setAttribute('href', title_link).addClass(heading_link_utility_classes|default([])) }}>
           {{ content }}

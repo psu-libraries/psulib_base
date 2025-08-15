@@ -77,6 +77,9 @@ props:
       title: Card Link
       description: The URL to link to when the card is clicked.
       default: '#'
+    card_link_attributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Card Link Attributes
     card_link_stretched:
       type: 'boolean'
       title: Stretched Link

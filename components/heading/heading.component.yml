@@ -55,6 +55,9 @@ props:
         - '_top'
       examples:
         - '_blank'
+    heading_link_attributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Heading Link Attributes
     heading_link_utility_classes:
       type: 'array'
       items:
