@@ -21,6 +21,7 @@ regions:
   nav_main: Main navigation region
   nav_additional: Additional navigation region (eg search form, social icons, etc)
   nav_offcanvas: Offcanvas Mobile Navigation
+  hero: Hero
   breadcrumb: Breadcrumbs
   content: Main content
   sidebar_first: Sidebar first

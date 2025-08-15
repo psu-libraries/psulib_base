@@ -62,8 +62,14 @@ set footer_classes = 'text-light'
   }
 %}
 
-<main role="main" class="lb-display">
-  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+<a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+{% if page.hero %}
+  <div class="hero-region">
+    {{ page.hero }}
+  </div>
+{% endif %}
+
+<main role="main">
 
   <div class="container-fluid mt-4">
     {% if page.breadcrumb %}

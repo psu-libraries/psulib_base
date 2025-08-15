@@ -62,9 +62,14 @@ set footer_classes = 'text-light'
   }
 %}
 
-<main role="main">
-  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+<a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+{% if page.hero %}
+  <div class="hero-region">
+    {{ page.hero }}
+  </div>
+{% endif %}
 
+<main role="main">
   {%
   set sidebar_first_classes = (has_sidebar_first and has_sidebar_second) ? 'col-12 col-sm-6 col-lg col-lg-w350' : 'col-12 col-lg col-lg-w350'
   %}
