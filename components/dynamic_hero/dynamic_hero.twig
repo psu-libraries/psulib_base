@@ -49,7 +49,9 @@
       </div>
     {% endif %}
     <h1 class="dynamic-hero__title">{{ title }}</h1>
-    <p class="dynamic-hero__body">{{ body }}</p>
+    {% if body %}
+      <div class="dynamic-hero__body">{{ body }}</div>
+    {% endif %}
     <div class="dynamic-hero__cta">
       {% if cta_button_first %}
         <a {{ cta1_attributes.setAttribute('href', cta_button_first.url).addClass(cta1_classes) }}>{{ cta_button_first.text }}</a>
