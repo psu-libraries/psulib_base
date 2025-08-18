@@ -53,7 +53,6 @@ props:
           title: Button URL
           description: URL to link to when the button is clicked
         attributes:
-          type: 'object'
           title: Button Attributes
           description: Additional attributes for the button
       examples:
@@ -73,7 +72,6 @@ props:
           title: Button URL
           description: URL to link to when the button is clicked
         attributes:
-          type: 'object'
           title: Button Attributes
           description: Additional attributes for the button
       examples:

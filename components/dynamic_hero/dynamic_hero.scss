@@ -84,6 +84,10 @@
     }
   }
 
+  &__body {
+    margin-bottom: $spacer;
+  }
+
   &__cta a {
     margin: 0 .25rem 0 0;
     --#{$prefix}btn-font-size: 1rem;
