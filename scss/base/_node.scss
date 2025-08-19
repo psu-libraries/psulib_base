@@ -19,3 +19,8 @@
     margin-right: calc(100% - 500px);
   }
 }
+
+// Adding margin to Bootstrap grid elements in WYSIWYG.
+.bs_grid:not(:last-child) {
+  margin-bottom: $spacer;
+}
