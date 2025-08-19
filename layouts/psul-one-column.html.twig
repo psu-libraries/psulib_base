@@ -1,5 +1,14 @@
+{%
+  set main_class = [
+    'psul-layout-column--main',
+    'layout__region',
+    'col-12',
+    content.sidebar ? 'col-lg-8' : 'col-12',
+  ]
+%}
+
 {% if content %}
-  <div {{ attributes.addClass('psul-one-column') }}>
+  <div {{ attributes.addClass('layout psul-one-column') }}>
     {% if content.main %}
       <div {{ region_attributes.main.addClass(main_class) }}>
         {{ content.main }}

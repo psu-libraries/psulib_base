@@ -78,3 +78,8 @@
   }
 
 }
+
+// Remove margin-top if the card-grid is the first child on first region.
+.layout:not(.full-bleed):first-child .layout__region .block:first-child .card-grid {
+  margin-top: 0;
+}

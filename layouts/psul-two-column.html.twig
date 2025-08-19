@@ -1,6 +1,7 @@
 {%
   set main_class = [
     'psul-layout-column--main',
+    'layout__region',
     'col-12',
     'col-lg',
   ]
@@ -10,27 +11,16 @@
   set sidebar_classes = [
     'psul-layout-column--sidebar',
     'psul-layout-column--sidebar-gray',
+    'layout__region',
     'col-12',
     'col-sm-6 col-lg col-lg-w350',
     'order-lg-first',
   ]
 %}
-{# {{ dump(region_attributes.sidebar) }} #}
-{# {% set sidebar_attributes = region_attributes.sidebar|default(create_attribute()) %} #}
 
 {% if content %}
-  <div {{ attributes.addClass('psul-two-column ') }}>
+  <div {{ attributes.addClass('layout psul-two-column') }}>
     <div class="row gy-3 gy-lg-0 gx-lg-4 mb-3 mb-lg-4">
-    {# {% if content.main %}
-      <div {{ region_attributes.main.addClass(main_class) }}>
-        {{ content.main }}
-      </div>
-    {% endif %} #}
-    {# {% if content.sidebar %}
-      <div {{ region_attributes.sidebar.addClass(sidebar_classes) }}>
-        {{ content.sidebar }}
-      </div>
-    {% endif %} #}
 
     {% if content.main %}
       <div {{ region_attributes.main.addClass(main_class) }}>
@@ -39,12 +29,12 @@
         {% if content.bottom_left or content.bottom_right %}
           <div class="row gy-3 gy-lg-0 gx-lg-4 mt-3">
             {% if content.bottom_left %}
-              <div {{ region_attributes.bottom_left.addClass('col-12 col-lg') }}>
+              <div {{ region_attributes.bottom_left.addClass('col-12 col-lg layout__region psul-layout-column--bottom-left') }}>
                 {{ content.bottom_left }}
               </div>
             {% endif %}
             {% if content.bottom_right %}
-              <div {{ region_attributes.bottom_right.addClass('col-12 col-lg') }}>
+              <div {{ region_attributes.bottom_right.addClass('col-12 col-lg layout__region psul-layout-column--bottom-right') }}>
                 {{ content.bottom_right }}
               </div>
             {% endif %}
@@ -54,9 +44,7 @@
     {% endif %}
     {% if content.sidebar %}
       <div {{ region_attributes.sidebar.addClass(sidebar_classes) }}>
-        {# <div class="text-bg-light p-3"> #}
-          {{ content.sidebar }}
-        {# </div> #}
+        {{ content.sidebar }}
       </div>
     {% else %}
       <div class="{{sidebar_classes|join(' ') }}"></div>
