@@ -56,6 +56,7 @@ mix.copy([
 // Run build process for peripheral assets.
 mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
 mix.sass('scss/peripheral-bootstrap3.scss', 'dist/peripheral').options(defaultSassOptions);
+mix.copy('dist/css/print.css', 'dist/peripheral').options(defaultSassOptions);
 mix.js('js/psul-bootstrap.js', 'dist/peripheral/psul-bootstrap.js');
 mix.minify([
   'dist/peripheral/peripheral.css',
