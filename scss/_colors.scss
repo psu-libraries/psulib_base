@@ -10,7 +10,6 @@ $off-off-white: darken($off-white, 10%); // used in collection panes
 $attn-yellow: #ebc100; // attention grabbing yellow
 $midnight-blue: #0a0f15; // high alert links color
 $valchar-blue: #2b76c7; // used on the background color of buttons on the homepage for Research Help and Tools
-$subtle-gray: #b5b5b5;
 $valchar-grey: #363636; // used on the homepage background for Research Help and Tools
 $valchar-light-grey: #f2f2f2; // used on the homepage background for Expert Help
 
@@ -102,6 +101,11 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $pa-limestone-max-light !default;
 $dark: $pa-slate !default;
+
+// Subtle Colors
+$success-bg-subtle: #f2ffcc !default;
+$danger-bg-subtle: #f8d3de !default;
+$subtle-gray: #b5b5b5;
 
 $headings-color: $nittany-navy !default;
 $body-color: $old-coaly !default;
