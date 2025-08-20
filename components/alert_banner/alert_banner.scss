@@ -5,7 +5,7 @@
   background-color: $pa-sky-max-light;
   color: var(--bs-body-color);
   &__urgent {
-    background-color: var(--bs-danger-bg-subtle);
+    background-color: var(--bs-warning-bg-subtle);
   }
 
   &__nonEmergency {
@@ -13,7 +13,7 @@
   }
 
   &__immediate {
-    background-color: var(--bs-warning-bg-subtle);
+    background-color: var(--bs-danger-bg-subtle);
   }
 
   &__allClear {
