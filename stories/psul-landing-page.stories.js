@@ -44,6 +44,9 @@ export default {
         { title: 'Campus Details', url: '#Campus Details' },
         { title: 'Explore', url: '#Explore' },
         { title: 'Whats New', url: '#Whats New' },
+        { title: 'Guides', url: '#Guides' },
+        { title: 'Whats New', url: '#Whats New' },
+        { title: 'More Guides', url: '#Guides' },
       ]
     })}
 
