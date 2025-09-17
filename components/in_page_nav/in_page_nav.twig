@@ -1,0 +1,61 @@
+{# In Page Nav Component #}
+
+{% set attributes = attributes.addClass(classes) %}
+{% set cta1_attributes = cta_button_first.attributes|default(create_attribute()) %}
+{% set cta2_attributes = cta_button_second.attributes|default(create_attribute()) %}
+
+{% set cta1_classes = [
+  'btn',
+  'btn-primary',
+  'btn-round',
+  'btn-sm',
+] %}
+
+{% set cta2_classes = [
+  'btn',
+  'btn-outline-primary',
+  'btn-round',
+  'btn-sm',
+] %}
+
+
+<section {{ attributes.addClass('in-page-nav', 'sticky-top') }}>
+  <div class="container-fluid dynamic-hero__container ">
+    <div class="in-page-nav__wrapper">
+      <h2 class="in-page-nav__title">Library Guides</h2>
+      <div class="w-100 in-page-nav__links">
+        <div class="in-page-nav__ctas">
+          {% if cta_button_first %}
+            <a {{ cta1_attributes.setAttribute('href', cta_button_first.url).addClass(cta1_classes) }}>{{ cta_button_first.text }}</a>
+          {% endif %}
+          {% if cta_button_second %}
+            <a {{ cta2_attributes.setAttribute('href', cta_button_second.url).addClass(cta2_classes) }}>{{ cta_button_second.text }}</a>
+          {% endif %}
+        </div>
+        <div class="in-page-nav__nav in-page-nav__nav--desktop d-none d-lg-block">
+          <ul class="list-inline">
+          {% for item in items %}
+            <li class="list-inline-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="d-lg-none dropdown in-page-nav__nav in-page-nav__nav--mobile">
+          <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {% include 'psulib_base:icon' with {
+              icon: 'menu',
+              color: 'black',
+            } only %}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end mt-3">
+            {% for item in items %}
+              <li class="">
+                <a href="{{ item.url }}" class="dropdown-item">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
