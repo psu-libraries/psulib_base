@@ -2,6 +2,7 @@ import footer, { Libraries as LibrariesFooter } from '../components/footer/foote
 import header, { Libraries as LibrariesHeader } from '../components/header/header.component.yml'
 import dyanmicHero from '../components/dynamic_hero/dynamic_hero.component.yml';
 import breadcrumbs from '../components/breadcrumbs/breadcrumbs.component.yml';
+import inPageNav from '../components/in_page_nav/in_page_nav.component.yml';
 import './page-preview.css'
 
 // Explicitly importing grandchild components css since this is not properly
@@ -27,6 +28,26 @@ export default {
         text: 'Get Help',
         url: '#'
       },
+    })}
+
+    ${inPageNav.component({
+      title: 'Library Guides',
+      cta_button_first: {
+        text: 'View Guides',
+        url: '#'
+      },
+      cta_button_second: {
+        text: 'Find an Expert',
+        url: '#'
+      },
+      items: [
+        { title: 'Campus Details', url: '#Campus Details' },
+        { title: 'Explore', url: '#Explore' },
+        { title: 'Whats New', url: '#Whats New' },
+        { title: 'Guides', url: '#Guides' },
+        { title: 'Whats New', url: '#Whats New' },
+        { title: 'More Guides', url: '#Guides' },
+      ]
     })}
 
     <div class="container-fluid">

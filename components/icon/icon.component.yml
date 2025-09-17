@@ -21,6 +21,7 @@ props:
         - bookmarks
         - calendar
         - chevronRight
+        - close
         - computer
         - crowdsource
         - diversity_3
@@ -41,6 +42,7 @@ props:
         - linkOut
         - locationPin
         - map
+        - menu
         - menu_book
         - newspaper
         - openBook

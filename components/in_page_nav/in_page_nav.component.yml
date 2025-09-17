@@ -1,0 +1,93 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: In Page Nav
+status: stable
+description: In Page Navigation component.
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title of the hero section
+      examples:
+        - 'Library Guides'
+    cta_button_first:
+      type: 'object'
+      title: Call to Action Button (First)
+      description: Configuration for the first call to action button
+      properties:
+        text:
+          type: 'string'
+          title: Button Text
+          description: Text to display on the button
+        url:
+          type: 'string'
+          title: Button URL
+          description: URL to link to when the button is clicked
+        attributes:
+          title: Button Attributes
+          description: Additional attributes for the button
+      examples:
+        - text: 'View Guides'
+          url: '#'
+    cta_button_second:
+      type: 'object'
+      title: Call to Action Button (Second)
+      description: Configuration for the second call to action button
+      properties:
+        text:
+          type: 'string'
+          title: Button Text
+          description: Text to display on the button
+        url:
+          type: 'string'
+          title: Button URL
+          description: URL to link to when the button is clicked
+        attributes:
+          title: Button Attributes
+          description: Additional attributes for the button
+      examples:
+        - text: 'Find an Expert'
+          url: '#'
+    limit:
+      type: ['int', 'null']
+      title: Link limit
+      description: The maximum number of links to display on desktop.
+      default: 4
+      examples:
+        - 4
+    items:
+      type: 'array'
+      title: Menu Items
+      description: Menu items.
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: 'string'
+            title: Title
+            description: The title of the menu item.
+          url:
+            type: ['string']
+            title: URL
+            description: The URL of the menu item.
+          attributes:
+            title: Item Attributes
+            description: Additional attributes for the menu item.
+      examples:
+        -
+          - title: How to Guides
+            url: '#test'
+            attributes: {}
+          - title: Subject Guides
+            url: '#test'
+            attributes: {}
+          - title: Subject Guides
+            url: '#test'
+            attributes: {}
+          - title: Course Guides
+            url: '#test'
+            attributes: {}
+          - title: More Guides
+            url: '#test'
+            attributes: {}

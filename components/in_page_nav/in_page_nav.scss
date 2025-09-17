@@ -1,0 +1,109 @@
+// Generate styles for pagination.
+@import '../../scss/init';
+
+
+.in-page-nav {
+  background-color: $pa-limestone-light;
+  padding: ($spacer * 1.25) 0;
+  font-family: $font-family-condensed;
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    padding: ($spacer * 1.5) 0;
+  }
+  @include media-breakpoint-down(md) {
+    top: -40px;
+  }
+}
+
+.in-page-nav__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer * .75;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacer * 1.5;
+  }
+}
+
+.in-page-nav__title {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin: 0;
+  font-size: $spacer * 1.125;
+  font-weight: 500;
+
+  @include media-breakpoint-up(md) {
+    font-size: $spacer * 1.25;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $spacer * 1.375;
+  }
+}
+
+.in-page-nav__links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacer * 2.25;
+}
+
+.in-page-nav__nav--desktop ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @include make-link($black, none, $link-color, none);
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: $spacer * 2.25;
+  }
+}
+
+.in-page-nav__ctas {
+  flex-grow: 1;
+  .btn {
+    margin-left: 0;
+  }
+}
+
+.in-page-nav__nav--mobile {
+  .dropdown-toggle {
+    text-decoration: none;
+    color: $black;
+
+    &:hover,
+    &:active {
+      color: $link-color;
+    }
+
+    .psul-icon svg {
+      vertical-align: middle;
+    }
+    .psul-icon--close {
+      display: none;
+    }
+    &.show {
+      .psul-icon--menu {
+        display: none;
+      }
+      .psul-icon--close {
+        display: inline;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    border: 0;
+    box-shadow: $box-shadow-lg;
+    margin-top: $spacer * 1.75 !important;
+    min-width: 250px;
+    max-width: 100%;
+  }
+}
+
+
