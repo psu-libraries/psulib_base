@@ -49,6 +49,13 @@ props:
       examples:
         - text: 'Find an Expert'
           url: '#'
+    limit:
+      type: ['int', 'null']
+      title: Link limit
+      description: The maximum number of links to display on desktop.
+      default: 4
+      examples:
+        - 4
     items:
       type: 'array'
       title: Menu Items
@@ -67,3 +74,20 @@ props:
           attributes:
             title: Item Attributes
             description: Additional attributes for the menu item.
+      examples:
+        -
+          - title: How to Guides
+            url: '#test'
+            attributes: {}
+          - title: Subject Guides
+            url: '#test'
+            attributes: {}
+          - title: Subject Guides
+            url: '#test'
+            attributes: {}
+          - title: Course Guides
+            url: '#test'
+            attributes: {}
+          - title: More Guides
+            url: '#test'
+            attributes: {}
