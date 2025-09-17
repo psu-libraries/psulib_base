@@ -49,6 +49,7 @@ props:
         - person
         - phone
         - psu_flex_double_arrow
+        - psu_inverted_quote
         - schedule
         - school
         - search
