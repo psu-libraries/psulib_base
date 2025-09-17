@@ -62,7 +62,8 @@
   .dropdown-menu {
     border: 0;
     box-shadow: $box-shadow-lg;
-    margin-top: calc(($spacer * 1.75) + 2px) !important;
+    // Important because bootstrap is adding inline styles.
+    margin-top: $spacer * 1.75 !important;
     min-width: 250px;
     max-width: 100%;
   }
@@ -71,5 +72,6 @@
 .in-page-nav__links {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   justify-content: space-between;
 }
