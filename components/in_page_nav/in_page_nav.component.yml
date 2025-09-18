@@ -50,7 +50,7 @@ props:
         - text: 'Find an Expert'
           url: '#'
     limit:
-      type: ['int', 'null']
+      type: ['integer', 'null']
       title: Link limit
       description: The maximum number of links to display on desktop.
       default: 4
