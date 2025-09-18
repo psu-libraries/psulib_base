@@ -1,0 +1,21 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Blockquote
+status: stable
+description: Bootstrap based blockquote component.
+props:
+  type: 'object'
+  properties:
+    body:
+      type: 'string'
+      title: Blockquote Body
+      description: The main content of the blockquote.
+      examples:
+        - <p>This is a blockquote.</p>
+    name:
+      type: 'string'
+      title: Blockquote Name
+      description: The name of the blockquote.
+    citation:
+      type: 'string'
+      title: Blockquote Citation
+      description: The citation for the blockquote.
