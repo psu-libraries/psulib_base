@@ -36,6 +36,12 @@ for (const sourcePath of glob.sync("components/**/src/*.js")) {
   mix.js(sourcePath, destinationPath).sourceMaps(true, 'source-map');
 }
 
+// Add buiding process for component javascript.
+for (const sourcePath of glob.sync("components/**/src/*.jsx")) {
+  const destinationPath = sourcePath.replace(/\/src\//, "\/").replace(/\.jsx$/, ".js");
+  mix.js(sourcePath, destinationPath).react();
+}
+
 // Copy bootstrap-icons to dist directory for use with assets.
 mix.copyDirectory('node_modules/bootstrap-icons/font', 'dist/bootstrap-icons/font');
 mix.copy([
