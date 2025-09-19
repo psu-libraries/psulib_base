@@ -112,8 +112,7 @@
   padding: 6px 5px 6px 7px
 }
 
-// @todo update this so the slider__captions are as tall as the tallest slider.
-.slider__captions {
+.slider--captions {
   flex-direction: row;
   margin-top: 1.25rem;
 
@@ -121,23 +120,17 @@
     margin-top: 1.5rem;
   }
 
-  .slider--caption {
-    top: 0;
-    display: none;
-
-    &.active {
-      width: auto;
-      display: block;
-    }
+  .slick-list {
+    padding: 0 !important;
   }
 }
 
 .slick-dots-container {
   position: relative;
-  margin-top: 1.25rem;
+  margin-top: $spacer * 1.25;
 
   @include media-breakpoint-up(md) {
-    margin-top: 1.5rem;
+    margin-top: $spacer * 1.5;
   }
 }
 

@@ -34,13 +34,13 @@ function NextArrow(props) {
 
 // Define the slider component.
 function PsulSlider({ slides, showCaptions }) {
-  const [activeSlide, setActiveSlide] = useState(0)
+  const [nav, captionNav] = useState();
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: true,
+    slidesToScroll: true,
     centerMode: true,
     variableWidth: true,
     nextArrow: <NextArrow />,
@@ -53,8 +53,20 @@ function PsulSlider({ slides, showCaptions }) {
       }
       console.log('Slider initialized');
     },
-    afterChange: (current) => setActiveSlide(current)
+    asNavFor: nav
   };
+
+  let captionSettings = {
+    dots: false,
+    infinite: true,
+    slidesToScroll: true,
+    slidesToShow: true,
+    centerMode: true,
+    variableWidth: false,
+    arrows: false,
+    fade: true,
+    ref: (slider2) => captionNav(slider2)
+  }
   return (
     <div className="slider-container">
       <Slider {...settings}>
@@ -65,16 +77,15 @@ function PsulSlider({ slides, showCaptions }) {
         ))}
       </Slider>
       {showCaptions ? (
-        <div className="slider__captions container">
+        <div className="slider--captions container">
           <div className="row">
-            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <Slider {...captionSettings}>
               {slides.map((slide, index) => (
-                <div key={index} className={`slider--caption ${activeSlide === index ? 'active' : ''}`}>
+                <div key={index} className="slider--caption col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                   {slide.caption}
                 </div>
               ))}
-
-            </div>
+            </Slider>
           </div>
         </div>
       ) : null}
