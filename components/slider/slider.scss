@@ -4,9 +4,7 @@
 @import 'slick-carousel/slick/slick.scss';
 @import 'slick-carousel/slick/slick-theme.scss';
 
-// @todo use variables
 // @todo make class names consistent.
-
 .slick-slide {
 
   img {
@@ -50,8 +48,7 @@
         width: calc(100% - (var(--slide-media-padding-y) * 2));
         top: 0;
         left: 0;
-        // @todo use color variables.
-        background-image: linear-gradient(360deg, rgba(0, 95, 169, 0.8) 0%, rgba(30, 64, 124, 0.8) 50%, rgba(0, 30, 68, 0.8) 100%);
+        background-image: linear-gradient(360deg, rgba($pa-link, 0.8) 0%, rgba($beaver-blue, 0.8) 50%, rgba($pa-potential, 0.8) 100%);
       }
     }
   }
@@ -66,7 +63,7 @@
   border-width: 2px;
   border-style: solid;
   border-color: $white;
-  box-shadow: rgba(0, 3, 33, 0.063) 0px 4px 8px 0px;
+  box-shadow: rgba($pa-potential, 0.063) 0px 4px 8px 0px;
   width: fit-content;
   background-color: $nittany-navy-light;
 
@@ -114,10 +111,10 @@
 
 .slider--captions {
   flex-direction: row;
-  margin-top: 1.25rem;
+  margin-top: $spacer * 1.25;
 
   @include media-breakpoint-up(md) {
-    margin-top: 1.5rem;
+    margin-top: $spacer * 1.5;
   }
 
   .slick-list {
