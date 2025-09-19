@@ -1,9 +1,5 @@
-<div class="slider" id="slider">
-  <div class="slider__track">
-    <div class="slider__item">
-      <h2 class="slider__title">Not the title</h2>
-    </div>
-  </div>
-</div>
+{% if title %}
+  <h2 class="slider__title">{{ title }}</h2>
+{% endif %}
 
-<psul-slider title="{{ title }}" slides='{{ slides|json_encode|raw }}'></psul-slider>
+<psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>

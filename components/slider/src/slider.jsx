@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import r2wc from '@r2wc/react-to-web-component';
 import Slider from "react-slick";
 
@@ -32,7 +33,8 @@ function NextArrow(props) {
 }
 
 // Define the slider component.
-function PsulSlider({ title, slides }) {
+function PsulSlider({ slides, showCaptions }) {
+  const [activeSlide, setActiveSlide] = useState(0)
   var settings = {
     dots: true,
     infinite: true,
@@ -42,25 +44,48 @@ function PsulSlider({ title, slides }) {
     centerMode: true,
     variableWidth: true,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    onInit: () => {
+      const dots = document.querySelector('.slider-container .slick-dots');
+      const dotsContainer = document.querySelector('.slider-container .slick-dots-container');
+      if (dots && dotsContainer) {
+        dotsContainer.appendChild(dots);
+      }
+      console.log('Slider initialized');
+    },
+    afterChange: (current) => setActiveSlide(current)
   };
-  console.log(slides)
   return (
-    <Slider {...settings}>
-      {slides.map((slide, index) => (
-        <div key={index} class="slide-media">
-          <img src={slide.image} alt={slide.alt} />
+    <div className="slider-container">
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div key={index} className="slide-media">
+            <img src={slide.image} alt={slide.alt} />
+          </div>
+        ))}
+      </Slider>
+      {showCaptions ? (
+        <div className="slider__captions container">
+          <div className="row">
+            <div className="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+              {slides.map((slide, index) => (
+                <div key={index} className={`slider--caption ${activeSlide === index ? 'active' : ''}`}>
+                  {slide.caption}
+                </div>
+              ))}
+
+            </div>
+          </div>
         </div>
-      ))}
-    </Slider>
-
-
+      ) : null}
+      <div className="slick-dots-container" />
+    </div>
   );
 }
 
 const SliderElement = r2wc(PsulSlider, {props: {
-  title: 'string',
   slides: 'json',
+  showCaptions: 'boolean'
 }});
 
 customElements.define('psul-slider', SliderElement);

@@ -4,6 +4,9 @@
 @import 'slick-carousel/slick/slick.scss';
 @import 'slick-carousel/slick/slick-theme.scss';
 
+// @todo use variables
+// @todo make class names consistent.
+
 .slick-slide {
 
   img {
@@ -51,9 +54,7 @@
         background-image: linear-gradient(360deg, rgba(0, 95, 169, 0.8) 0%, rgba(30, 64, 124, 0.8) 50%, rgba(0, 30, 68, 0.8) 100%);
       }
     }
-
   }
-
 }
 
 .slick-arrow {
@@ -109,6 +110,35 @@
   right: 5%;
   z-index: 100;
   padding: 6px 5px 6px 7px
+}
+
+// @todo update this so the slider__captions are as tall as the tallest slider.
+.slider__captions {
+  flex-direction: row;
+  margin-top: 1.25rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 1.5rem;
+  }
+
+  .slider--caption {
+    top: 0;
+    display: none;
+
+    &.active {
+      width: auto;
+      display: block;
+    }
+  }
+}
+
+.slick-dots-container {
+  position: relative;
+  margin-top: 1.25rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 1.5rem;
+  }
 }
 
 .slick-dots {
