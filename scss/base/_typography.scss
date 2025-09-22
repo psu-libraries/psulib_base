@@ -84,4 +84,10 @@ blockquote {
     background-color: $pa-slate-max-light;
     @include dark-text;
   }
+
+  cite,
+  .author {
+    font-style: normal;
+    font-size: $font-size-base;
+  }
 }
