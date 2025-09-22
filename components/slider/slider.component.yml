@@ -1,0 +1,53 @@
+name: Slider
+status: stable
+description: Slider component.
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title of the hero section
+      examples:
+        - 'Library Guides'
+    show_captions:
+      type: 'boolean'
+      title: Show Captions below the Slider
+      examples:
+        - false
+    slides:
+      type: 'array'
+      title: Menu Items
+      description: Menu items.
+      items:
+        type: 'object'
+        properties:
+          image:
+            type: 'string'
+            title: Image URL
+            description: URL of the slide image
+          alt:
+            type: 'string'
+            title: Image Alt Text
+            description: Alt text for the slide image
+          caption:
+            type: 'string'
+            title: Caption
+            description: Description for the slide image
+      examples:
+        -
+          - image: '/images/profile1.jpg'
+            alt: 'Profile 1'
+            caption: 'Description for Profile 1'
+          - image: '/images/profile2.jpg'
+            alt: 'Profile 2'
+            caption: 'Justo in turpis himenaeos scelerisque magna ut primis eget lorem semper. Vestibulum dictum amet ex hendrerit suspendisse eu. Senectus molestie finibus sodales sapien interdum justo parturient mattis duis torquent. Pellentesque etiam massa in auctor feugiat lorem at sollicitudin ipsum phasellus ad. Ante magnis lobortis mus facilisi feugiat vivamus lectus cras non nisl. Et etiam at nam enim quam leo nibh eros eleifend aptent. Eleifend fermentum laoreet proin augue vitae. Metus vel vehicula orci aenean potenti lacinia mus.'
+          - image: '/images/heroBgSample.png'
+            alt: 'Profile 3'
+            caption: 'Description for Profile 3'
+          - image: '/images/profile4.jpg'
+            alt: 'Profile 4'
+            caption: 'Description for Profile 4'
+          - image: '/images/sample.jpg'
+            alt: 'Profile 5'
+            caption: 'Description for Profile 5'

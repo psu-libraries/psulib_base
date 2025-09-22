@@ -1,0 +1,5 @@
+{% if title %}
+  <h2 class="slider__title">{{ title }}</h2>
+{% endif %}
+
+<psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
