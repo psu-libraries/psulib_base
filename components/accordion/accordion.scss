@@ -12,14 +12,19 @@
 
   position: relative;
   z-index: 1;
-  color: $pa-limestone-max-light;
 
   .accordion-item {
     border: 0;
+    margin: 0;
     transition: all 0s ease-in-out;
+    margin-bottom: .5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     summary {
-      margin: .5rem 0;
+      margin: 0;
       padding: 0.75rem 1rem;
       background-color: $pa-limestone-max-light;
       color: $primary;
@@ -29,7 +34,8 @@
       display: flex;
 
       .accordion-header {
-        font-size: 1.1rem;
+        font-size: $font-size-base;
+        line-height: 1.5;
         margin: 0 1rem 0 0;
         font-weight: 500;
       }
@@ -100,8 +106,7 @@
   }
 
   .accordion-body {
-    margin: 1rem 1rem 1.5rem 1rem;
-    color: $body-color;
+    margin: 1.5rem 1rem;
   }
 
 }
