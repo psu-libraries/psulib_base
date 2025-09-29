@@ -1,28 +1,48 @@
 @import '../../scss/init';
 
-@import 'bootstrap/scss/accordion';
+.accordion-component {
+  // Adding the ability to animate the element using the block-size=auto size.
+  // This is not supported by all browsers yes so the accordion.js file is
+  // adding a CSS variable to the details element to set the size.
+  interpolate-size: allow-keywords;
 
-.accordion {
+  // Setting the icon with since we are no longer including the accordion
+  // bootstrap styles.
+  --#{$prefix}accordion-btn-icon-width: #{$accordion-icon-width};
+
   position: relative;
   z-index: 1;
   color: $pa-limestone-max-light;
 
   .accordion-item {
     border: 0;
+    transition: all 0s ease-in-out;
 
-    .accordion-button {
+    summary {
       margin: .5rem 0;
       padding: 0.75rem 1rem;
-      transition: all 0.2s ease-in-out;
       background-color: $pa-limestone-max-light;
       color: $primary;
       border: 0;
       display: flex;
       line-height: $line-height-base;
+      display: flex;
 
       .accordion-header {
         font-size: 1.1rem;
         margin: 0 1rem 0 0;
+        font-weight: 500;
+      }
+
+      &:after {
+        content: '';
+        flex-shrink: 0;
+        background-size: 30px 30px;
+        width: var(--bs-accordion-btn-icon-width);
+        height: var(--bs-accordion-btn-icon-width);
+        background-position: center center;
+        margin-left: auto;
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23005FA9%22%20class%3D%22bi%20bi-plus%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%204a.5.5%200%200%201%20.5.5v3h3a.5.5%200%200%201%200%201h-3v3a.5.5%200%200%201-1%200v-3h-3a.5.5%200%200%201%200-1h3v-3A.5.5%200%200%201%208%204%22%2F%3E%3C%2Fsvg%3E ");
       }
 
       &:first-of-type {
@@ -34,29 +54,54 @@
         border: 0;
       }
 
-      &:not(.collapsed) {
-        background-color: $primary;
-        color: white;
-        border: 0;
-        border-image-width: 0;
-      }
-
       &:after {
         background-size: 30px 30px;
         background-position: center center;
       }
-
-      &:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23ffffff%22%20class%3D%22bi%20bi-dash%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%208a.5.5%200%200%201%20.5-.5h7a.5.5%200%200%201%200%201h-7A.5.5%200%200%201%204%208%22%2F%3E%3C%2Fsvg%3E");
-      }
-
-      &.collapsed::after {
-        background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23001e44%22%20class%3D%22bi%20bi-plus%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%204a.5.5%200%200%201%20.5.5v3h3a.5.5%200%200%201%200%201h-3v3a.5.5%200%200%201-1%200v-3h-3a.5.5%200%200%201%200-1h3v-3A.5.5%200%200%201%208%204%22%2F%3E%3C%2Fsvg%3E ");
-      }
     }
 
-    a.accordion-button {
-      text-decoration: none;
+    // Anmation styles for the details-content showdown dom element.
+    // This is a pseudo element that wraps the accordion-body element.
+    &::details-content {
+      display: block;
+      block-size: 0;
+      transition-property: block-size, content-visibility;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+      // This is needed to prevent a flash of content when the details is
+      // opened.
+      transition-behavior: allow-discrete;
+      overflow: hidden;
+    }
+
+    // Styles for the details open state.
+    &[open] {
+      &::details-content {
+        // block-size: auto;
+        // Fallback if the CSS variable is not set then use auto.
+        block-size: var(--details-size, auto);
+      }
+
+      summary {
+        background-color: $primary;
+        color: $white;
+        border: 0;
+        border-image-width: 0;
+
+        .accordion-header {
+          color: $white;
+        }
+
+        &:after {
+          background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23ffffff%22%20class%3D%22bi%20bi-dash%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4%208a.5.5%200%200%201%20.5-.5h7a.5.5%200%200%201%200%201h-7A.5.5%200%200%201%204%208%22%2F%3E%3C%2Fsvg%3E");
+        }
+      }
     }
   }
+
+  .accordion-body {
+    margin: 1rem 1rem 1.5rem 1rem;
+    color: $body-color;
+  }
+
 }
