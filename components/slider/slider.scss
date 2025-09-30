@@ -184,3 +184,24 @@
     }
   }
 }
+
+.text-slider--blockquote {
+  .blockquote {
+    padding-left: var(--blockquote-padding);
+    padding-right: var(--blockquote-padding);
+
+    @include media-breakpoint-up(md) {
+      &.blockquote--with-image:before {
+        left: calc(var(--blockquote-image-size) - var(--blockquote-padding));
+      }
+
+      &:not(.blockquote--with-image) {
+        padding-left: calc(var(--blockquote-image-size) + var(--blockquote-padding));
+
+        &:before {
+          left: calc(var(--blockquote-image-size) - var(--blockquote-padding));
+        }
+      }
+    }
+  }
+}

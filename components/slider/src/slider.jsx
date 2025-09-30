@@ -93,7 +93,7 @@ function PsulSlider({ slides, showCaptions }) {
   );
 }
 
-function PsulTextSlider({ slides }) {
+function PsulTextSlider({ slides, variant }) {
   var settings = {
     dots: true,
     speed: 500,
@@ -108,7 +108,7 @@ function PsulTextSlider({ slides }) {
   };
 
   return (
-    <div className="slider-container text-slider">
+    <div className={`slider-container text-slider text-slider--${variant}`}>
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="slide-media" dangerouslySetInnerHTML={{ __html: slide.caption }}>
@@ -127,6 +127,7 @@ const SliderElement = r2wc(PsulSlider, {props: {
 
 const TextSliderElement = r2wc(PsulTextSlider, {props: {
   slides: 'json',
+  variant: 'string'
 }});
 
 customElements.define('psul-slider', SliderElement);

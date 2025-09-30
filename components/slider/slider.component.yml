@@ -1,8 +1,6 @@
 name: Slider
 status: stable
 description: Slider component.
-dependencies:
-  - 'psulib_base/blockquote'
 props:
   type: 'object'
   properties:
@@ -74,3 +72,40 @@ thirdPartySettings:
             - caption: '<h2 class="h1">Something Else!</h2><div class="divider divider--orientation-horizontal divider--width-lg divider--color-sky divider--thickness-lg"></div><p>Ultricies urna tempor metus hac dictum consequat nulla ex. Cubilia hac posuere id condimentum ad odio iaculis nulla egestas. Ante blandit etiam inceptos porttitor lectus pretium. Magnis neque etiam sociosqu facilisis ipsum aptent facilisi consectetur. Parturient iaculis quisque gravida efficitur eget lectus consequat integer. Nascetur vivamus condimentum eros felis arcu. Congue ultrices si dictumst rhoncus tortor primis laoreet. Penatibus parturient sapien rutrum cras nam blandit facilisis pellentesque urna ridiculus consectetuer.</p>'
             - caption: '<h2 class="h1">Last Slide</h2><div class="divider divider--orientation-horizontal divider--width-lg divider--color-sky divider--thickness-lg"></div><p>Felis aenean euismod quisque inceptos congue. Nunc aenean dui aenean inceptos. Nisi aenean quisque leo aenean. Eros aenean quisque inceptos congue. Nunc aenean dui aenean inceptos. Nisi aenean quisque leo aenean.</p>'
           variant: text
+      blockquote:
+        props:
+          title: 'Text Slider'
+          slides:
+            - caption: >
+                <blockquote class="blockquote blockquote--with-image">
+                  <div class="blockquote__image"><img src="images/profile1.jpg" alt="Image of Mike Henninger"></div>
+                  <div class="blockquote__content">
+                    <div class="blockquote__body"><p>The Board of Trustees reviews and approves the <a href="https://budget.psu.edu/openbudget/default.aspx" data-tracking-id="BlockQuote-RichText-Link" class="css-imkclt">budget of the University</a> and guides general goals, policies, and procedures from a big-picture perspective.</p></div>
+                    <cite class="blockquote__footer">
+                      <div class="blockquote__author">Mike Henninger</div>
+                      <div class="blockquote__author-about">Web Developer, Penn State University Libraries</div>
+                    </cite>
+                  </div>
+                </blockquote>
+            - caption: >
+                <blockquote class="blockquote blockquote--with-image">
+                  <div class="blockquote__image"><img src="images/profile2.jpg" alt="Image of a person"></div>
+                  <div class="blockquote__content">
+                    <div class="blockquote__body"><p>Mus ex justo neque nam class pellentesque libero tristique luctus in. Ridiculus congue tempor sit dictum ultrices vulputate. Nisi sagittis curabitur ultricies viverra aenean tempor magna potenti nullam.</p></div>
+                    <cite class="blockquote__footer">
+                      <div class="blockquote__author">Davy Jones</div>
+                      <div class="blockquote__author-about">Pirate, Penn State University Libraries</div>
+                    </cite>
+                  </div>
+                </blockquote>
+            - caption: >
+                <blockquote class="blockquote">
+                  <div class="blockquote__content">
+                    <div class="blockquote__body"><p>Mus ex justo neque nam class pellentesque libero tristique luctus in. Ridiculus congue tempor sit dictum ultrices vulputate. Nisi sagittis curabitur ultricies viverra aenean tempor magna potenti nullam.</p></div>
+                    <cite class="blockquote__footer">
+                      <div class="blockquote__author">Davy Jones</div>
+                      <div class="blockquote__author-about">Pirate, Penn State University Libraries</div>
+                    </cite>
+                  </div>
+                </blockquote>
+          variant: blockquote

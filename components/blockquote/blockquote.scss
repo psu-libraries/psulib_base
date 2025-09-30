@@ -15,10 +15,8 @@
   &.blockquote--with-image {
     &:before {
       position: absolute;
-      top: var(--blockquote-image-size);
 
       @include media-breakpoint-up(md) {
-        top: $spacer * 1.25;
         left: calc(var(--blockquote-image-size) + (var(--blockquote-padding) * 2));
       }
 

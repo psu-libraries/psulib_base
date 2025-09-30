@@ -5,5 +5,9 @@
 {% if variant == 'media' %}
   <psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
 {% else %}
-  <psul-text-slider slides='{{ slides|json_encode|raw }}'></psul-text-slider>
+  {% if variant == 'blockquote' %}
+    {{ attach_library('psulib_base/blockquote') }}
+  {% endif %}
+
+  <psul-text-slider variant="{{ variant }}" slides='{{ slides|json_encode|raw }}'></psul-text-slider>
 {% endif %}
