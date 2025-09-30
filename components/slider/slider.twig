@@ -2,4 +2,8 @@
   <h2 class="slider__title">{{ title }}</h2>
 {% endif %}
 
-<psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
+{% if variant == 'media' %}
+  <psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
+{% else %}
+  <psul-text-slider slides='{{ slides|json_encode|raw }}'></psul-text-slider>
+{% endif %}

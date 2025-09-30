@@ -1,6 +1,8 @@
 name: Slider
 status: stable
 description: Slider component.
+dependencies:
+  - 'psulib_base/blockquote'
 props:
   type: 'object'
   properties:
@@ -15,6 +17,15 @@ props:
       title: Show Captions below the Slider
       examples:
         - false
+    variant:
+      type: 'string'
+      title: Variant
+      description: Style variant for the slider.
+      enum:
+        - media
+        - text
+        - blockquote
+      default: media
     slides:
       type: 'array'
       title: Menu Items
@@ -23,22 +34,22 @@ props:
         type: 'object'
         properties:
           image:
-            type: 'string'
+            type: ['string', 'object', 'null']
             title: Image URL
             description: URL of the slide image
           alt:
-            type: 'string'
+            type: ['string', 'null']
             title: Image Alt Text
             description: Alt text for the slide image
           caption:
-            type: 'string'
+            type: ['string', 'object']
             title: Caption
             description: Description for the slide image
       examples:
         -
           - image: '/images/profile1.jpg'
             alt: 'Profile 1'
-            caption: 'Description for Profile 1'
+            caption: '<p>Description for Profile 1</p>'
           - image: '/images/profile2.jpg'
             alt: 'Profile 2'
             caption: 'Justo in turpis himenaeos scelerisque magna ut primis eget lorem semper. Vestibulum dictum amet ex hendrerit suspendisse eu. Senectus molestie finibus sodales sapien interdum justo parturient mattis duis torquent. Pellentesque etiam massa in auctor feugiat lorem at sollicitudin ipsum phasellus ad. Ante magnis lobortis mus facilisi feugiat vivamus lectus cras non nisl. Et etiam at nam enim quam leo nibh eros eleifend aptent. Eleifend fermentum laoreet proin augue vitae. Metus vel vehicula orci aenean potenti lacinia mus.'
@@ -51,3 +62,15 @@ props:
           - image: '/images/sample.jpg'
             alt: 'Profile 5'
             caption: 'Description for Profile 5'
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      text:
+        props:
+          title: 'Text Slider'
+          slides:
+            - caption: '<h2 class="h1">Testing</h2><div class="divider divider--orientation-horizontal divider--width-lg divider--color-sky divider--thickness-lg"></div><p>This is a sample caption for the text slider variant.</p>'
+            - caption: '<h2 class="h1">Something Else!</h2><div class="divider divider--orientation-horizontal divider--width-lg divider--color-sky divider--thickness-lg"></div><p>Ultricies urna tempor metus hac dictum consequat nulla ex. Cubilia hac posuere id condimentum ad odio iaculis nulla egestas. Ante blandit etiam inceptos porttitor lectus pretium. Magnis neque etiam sociosqu facilisis ipsum aptent facilisi consectetur. Parturient iaculis quisque gravida efficitur eget lectus consequat integer. Nascetur vivamus condimentum eros felis arcu. Congue ultrices si dictumst rhoncus tortor primis laoreet. Penatibus parturient sapien rutrum cras nam blandit facilisis pellentesque urna ridiculus consectetuer.</p>'
+            - caption: '<h2 class="h1">Last Slide</h2><div class="divider divider--orientation-horizontal divider--width-lg divider--color-sky divider--thickness-lg"></div><p>Felis aenean euismod quisque inceptos congue. Nunc aenean dui aenean inceptos. Nisi aenean quisque leo aenean. Eros aenean quisque inceptos congue. Nunc aenean dui aenean inceptos. Nisi aenean quisque leo aenean.</p>'
+          variant: text
