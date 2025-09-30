@@ -13,7 +13,7 @@
   position: relative;
   z-index: 1;
 
-  .accordion-item {
+  .accordion-component-item {
     border: 0;
     margin: 0;
     transition: all 0s ease-in-out;
@@ -33,7 +33,7 @@
       line-height: $line-height-base;
       display: flex;
 
-      .accordion-header {
+      .accordion-component-header {
         font-size: $font-size-base;
         line-height: 1.5;
         margin: 0 1rem 0 0;
@@ -94,7 +94,7 @@
         border: 0;
         border-image-width: 0;
 
-        .accordion-header {
+        .accordion-component-header {
           color: $white;
         }
 
@@ -105,7 +105,7 @@
     }
   }
 
-  .accordion-body {
+  .accordion-component-body {
     margin: 1.5rem 1rem;
   }
 

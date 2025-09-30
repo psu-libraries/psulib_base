@@ -54,7 +54,7 @@
 
 {%
   set accordion_item_classes = accordion_item_utility_classes|merge([
-    'accordion-item'
+    'accordion-component-item'
   ])
 %}
 
@@ -81,28 +81,18 @@
     {% for item in items %}
       {% set content = item.content|default('') %}
       {% set open_item = open_item_id == loop.index %}
-      {%
-        set button_classes = [
-          'accordion-button',
-          'text-wrap',
-        ]
-      %}
-
-      {% if not open_item %}
-        {% set button_classes = button_classes|merge(['collapsed']) %}
-      {% endif %}
 
       {% if content %}
         <details {{ accordion_item_attributes.addClass(accordion_item_classes).setAttribute('name', id) }} id="accordion-item-{{ id }}-{{ loop.index }}" {% if open_item %} open {% endif %}>
           {% set item_title_tag = item.title_tag|default(default_item_tag) %}
 
-          <summary class="text-wrap accordion-button">
-            <{{item_title_tag}} class="accordion-header" id="heading-{{ id }}-{{ loop.index }}">
+          <summary class="text-wrap accordion-component-button">
+            <{{item_title_tag}} class="accordion-component-header" id="heading-{{ id }}-{{ loop.index }}">
               {{ item.title }}
             </{{item_title_tag}}>
           </summary>
 
-          <div class="accordion-body">
+          <div class="accordion-component-body">
             {% block content %}
               {{ content }}
             {% endblock %}

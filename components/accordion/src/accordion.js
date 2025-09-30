@@ -19,7 +19,7 @@
         const items = element.querySelectorAll('details');
         items.forEach((item) => {
           item.addEventListener('toggle', function () {
-            const body = item.querySelector('.accordion-body');
+            const body = item.querySelector('.accordion-component-body');
             const bodyHeight = body ? body.scrollHeight : 0;
              // 2.5rem in px (assuming 1rem = 16px).
             const extra = 2.5 * 16;
