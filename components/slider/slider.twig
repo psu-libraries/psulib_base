@@ -2,4 +2,12 @@
   <h2 class="slider__title">{{ title }}</h2>
 {% endif %}
 
-<psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
+{% if variant == 'media' %}
+  <psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
+{% else %}
+  {% if variant == 'blockquote' %}
+    {{ attach_library('psulib_base/blockquote') }}
+  {% endif %}
+
+  <psul-text-slider variant="{{ variant }}" slides='{{ slides|json_encode|raw }}'></psul-text-slider>
+{% endif %}

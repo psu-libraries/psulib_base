@@ -51,7 +51,6 @@ function PsulSlider({ slides, showCaptions }) {
       if (dots && dotsContainer) {
         dotsContainer.appendChild(dots);
       }
-      console.log('Slider initialized');
     },
     asNavFor: nav
   };
@@ -60,7 +59,7 @@ function PsulSlider({ slides, showCaptions }) {
     dots: false,
     infinite: true,
     slidesToScroll: true,
-    slidesToShow: true,
+    slidesToShow: 1,
     centerMode: true,
     variableWidth: false,
     arrows: false,
@@ -68,7 +67,7 @@ function PsulSlider({ slides, showCaptions }) {
     ref: (slider2) => captionNav(slider2)
   }
   return (
-    <div className="slider-container">
+    <div className="slider-container media-slider">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="slide-media">
@@ -81,8 +80,8 @@ function PsulSlider({ slides, showCaptions }) {
           <div className="row">
             <Slider {...captionSettings}>
               {slides.map((slide, index) => (
-                <div key={index} className="slider--caption col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                  {slide.caption}
+                <div key={index} className="slider--caption col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" dangerouslySetInnerHTML={{ __html: slide.caption }}>
+                  {/* {slide.caption} */}
                 </div>
               ))}
             </Slider>
@@ -94,9 +93,42 @@ function PsulSlider({ slides, showCaptions }) {
   );
 }
 
+function PsulTextSlider({ slides, variant }) {
+  var settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: true,
+    centerMode: true,
+    variableWidth: false,
+    fade: true,
+    centerPadding: '0',
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
+  return (
+    <div className={`slider-container text-slider text-slider--${variant}`}>
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div key={index} className="slide-media" dangerouslySetInnerHTML={{ __html: slide.caption }}>
+          </div>
+        ))}
+      </Slider>
+      <div className="slick-dots-container" />
+    </div>
+  );
+}
+
 const SliderElement = r2wc(PsulSlider, {props: {
   slides: 'json',
   showCaptions: 'boolean'
 }});
 
+const TextSliderElement = r2wc(PsulTextSlider, {props: {
+  slides: 'json',
+  variant: 'string'
+}});
+
 customElements.define('psul-slider', SliderElement);
+customElements.define('psul-text-slider', TextSliderElement);
