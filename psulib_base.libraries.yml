@@ -44,6 +44,11 @@ fonts:
       assets/fonts/fonts.css: {}
 
 # Component Styles.
+accordion-bootstrap:
+  css:
+    component:
+      dist/css/accordion-bootstrap.css: {}
+
 alert:
   css:
     component:

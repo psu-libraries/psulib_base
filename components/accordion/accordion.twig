@@ -48,13 +48,13 @@
 
 {%
   set accordion_classes = accordion_utility_classes|merge([
-    'accordion'
+    'accordion-component'
   ])
 %}
 
 {%
   set accordion_item_classes = accordion_item_utility_classes|merge([
-    'accordion-item'
+    'accordion-component-item'
   ])
 %}
 
@@ -81,46 +81,23 @@
     {% for item in items %}
       {% set content = item.content|default('') %}
       {% set open_item = open_item_id == loop.index %}
-      {%
-        set button_classes = [
-          'accordion-button',
-          'text-wrap',
-        ]
-      %}
-
-      {% if not open_item %}
-        {% set button_classes = button_classes|merge(['collapsed']) %}
-      {% endif %}
 
       {% if content %}
-        <div {{ accordion_item_attributes.addClass(accordion_item_classes) }}>
+        <details {{ accordion_item_attributes.addClass(accordion_item_classes).setAttribute('name', id) }} id="accordion-item-{{ id }}-{{ loop.index }}" {% if open_item %} open {% endif %}>
           {% set item_title_tag = item.title_tag|default(default_item_tag) %}
 
-          <{{item_title_tag}} class="accordion-header" id="heading-{{ id }}-{{ loop.index }}">
-            {%
-              set button_attributes = create_attribute()
-                .addClass(button_classes)
-                .setAttribute('data-bs-toggle', 'collapse')
-                .setAttribute('autocomplete', 'off')
-                .setAttribute('data-bs-target', '#collapse-' ~ id ~ '-' ~ loop.index)
-                .setAttribute('aria-controls', 'collapse-' ~ id ~ '-' ~ loop.index)
-                .setAttribute('aria-expanded', open_item ? 'true' : 'false')
-                .setAttribute('id', 'button-' ~ '-' ~ id ~'-' ~ loop.index )
-            %}
-
-            <button {{ button_attributes }} >
+          <summary class="text-wrap accordion-component-button">
+            <{{item_title_tag}} class="accordion-component-header" id="heading-{{ id }}-{{ loop.index }}">
               {{ item.title }}
-            </button>
-          </{{item_title_tag}}>
+            </{{item_title_tag}}>
+          </summary>
 
-          <div id="collapse-{{ id }}-{{ loop.index }}" class="accordion-collapse collapse{{ open_item ? ' show' }}" aria-labelledby="heading-{{ id }}-{{ loop.index }}" role="region" {% if not item.stay_open %} data-bs-parent="#{{ id }}" {% endif %}>
-            <div class="accordion-body">
-              {% block content %}
-                {{ content }}
-              {% endblock %}
-            </div>
+          <div class="accordion-component-body">
+            {% block content %}
+              {{ content }}
+            {% endblock %}
           </div>
-        </div>
+        </details>
       {% endif %}
     {% endfor %}
   </div>
