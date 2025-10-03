@@ -3,9 +3,14 @@
 {% if randomize_cards|default(false) %}
   {% set attrs = {
     'data-randomize-cards': true,
-    'data-randomize-max-rows': randomize_max_rows|default('0'),
     'id': id,
   } %}
+
+  {% if randomize_max_rows|default('0') > '0' %}
+    {% set attrs = attrs|merge({
+      'data-randomize-max-rows': randomize_max_rows|default('0'),
+    }) %}
+  {% endif %}
 {% endif %}
 
 {% set attributes = create_attribute(attrs) %}
@@ -27,13 +32,35 @@
 {# Add styles to limit the number of cards rows that are visible. #}
 {% if randomize_cards and randomize_max_rows|default('0') > '0' %}
   <style>
+  {% if card_columns == 1 %}
     #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
       display: none !important;
     }
+  {% else %}
+    @media (max-width: 575px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * 1 + 1 }}) {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 991px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * 2 + 1 }}) {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
+        display: none !important;
+      }
+    }
+  {% endif %}
+
   </style>
 {% endif %}
 
-<div {{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes).setAttribute('data-columns', card_columns) }}>
+  {# Header: Title and Body #}
   {% if title or body|render is not empty %}
     <div class="card-grid__header row">
       <div class="col-12 col-md-8 offset-md-2">
