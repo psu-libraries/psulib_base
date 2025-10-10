@@ -10,6 +10,12 @@
   // bootstrap styles.
   --#{$prefix}accordion-btn-icon-width: #{$accordion-icon-width};
 
+  --accordion-component-summary-bg: #{$pa-limestone-max-light};
+  --accordion-component-summary-color: #{$primary};
+  --accordion-component-summary-bg-hover: #{$pa-limestone-light};
+  --accordion-component-summary-active-bg: #{$primary};
+  --accordion-component-summary-active-color: #{$pa-limestone-max-light};
+
   position: relative;
   z-index: 1;
 
@@ -26,14 +32,15 @@
     summary {
       margin: 0;
       padding: 0.75rem 1rem;
-      background-color: $pa-limestone-max-light;
-      color: $primary;
+      background-color: var(--accordion-component-summary-bg);
+      color: var(--accordion-component-summary-color);
       border: 0;
       display: flex;
       line-height: $line-height-base;
       display: flex;
 
       .accordion-component-header {
+        color: var(--accordion-component-summary-color);
         font-size: $font-size-base;
         line-height: 1.5;
         margin: 0 1rem 0 0;
@@ -44,6 +51,7 @@
         content: '';
         flex-shrink: 0;
         background-size: 30px 30px;
+        align-self: center;
         width: var(--bs-accordion-btn-icon-width);
         height: var(--bs-accordion-btn-icon-width);
         background-position: center center;
@@ -56,7 +64,7 @@
       }
 
       &:hover {
-        background-color: $pa-limestone-light;
+        background-color: var(--accordion-component-summary-bg-hover);
         border: 0;
       }
 
@@ -89,13 +97,13 @@
       }
 
       summary {
-        background-color: $primary;
-        color: $white;
+        background-color: var(--accordion-component-summary-active-bg);
+        color: var(--accordion-component-summary-active-color);
         border: 0;
         border-image-width: 0;
 
         .accordion-component-header {
-          color: $white;
+          color: var(--accordion-component-summary-active-color);
         }
 
         &:after {
@@ -109,4 +117,23 @@
     margin: 1.5rem 1rem;
   }
 
+}
+
+.full-bleed--navy,
+.text-bg-primary {
+  .accordion-component {
+    --accordion-component-summary-bg: #{$pa-limestone-max-light};
+    --accordion-component-summary-color: #{$primary};
+    --accordion-component-summary-active-bg: #{$beaver-blue};
+  }
+}
+
+.full-bleed--limestone-light,
+.full-bleed--slate-light,
+.text-bg-slate,
+.text-bg-light {
+  .accordion-component {
+    --accordion-component-summary-bg: #{$pa-limestone-light};
+    --accordion-component-summary-bg-hover: #{lighten($pa-limestone, 22.5%)};
+  }
 }
