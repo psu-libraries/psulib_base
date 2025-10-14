@@ -10,3 +10,16 @@
 code {
   overflow-y: auto;
 }
+
+// Overriding some bg styles to ensure that text color readable.
+// These colors are used in layout builder.
+.text-bg-primary,
+.text-bg-dark {
+  @include light-text;
+}
+
+.bg-white,
+.text-bg-slate,
+.text-bg-light {
+  @include dark-text;
+}
