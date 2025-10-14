@@ -19,6 +19,11 @@
   position: relative;
   z-index: 1;
 
+  // Hide caret in summary in older safari browsers.
+  details > summary::-webkit-details-marker {
+    display: none; /* Hides the arrow specifically in WebKit browsers like Safari */
+  }
+
   .accordion-component-item {
     border: 0;
     margin: 0;
