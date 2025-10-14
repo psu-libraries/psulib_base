@@ -93,6 +93,9 @@ function psulib_base_preprocess_layout(&$variables) {
     $variables['attributes']['class'] = [];
   }
   $variables['attributes']['class'] = array_merge($variables['attributes']['class'], $class);
+
+  $id = Html::getUniqueId('layout-section-' . $variables['settings']['label']);
+  $variables['attributes']['id'] = $id;
 }
 
 /**
