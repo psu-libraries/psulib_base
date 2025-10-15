@@ -59,7 +59,7 @@ props:
             attributes:
               title: 'Previous Page Link Attributes'
         current:
-          type: 'string'
+          type: ['string', 'integer']
         pages:
           type: ['array', 'object']
           default: []
