@@ -64,6 +64,11 @@ file:
     component:
       dist/css/file.css: {}
 
+layout:
+  css:
+    component:
+      dist/css/layout.css: {}
+
 layout_builder:
   css:
     component:
