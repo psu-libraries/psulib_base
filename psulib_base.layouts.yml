@@ -65,3 +65,18 @@ psulib_two_col_66_33:
       label: Sidebar
   icon_map:
     - [main, main, sidebar]
+
+psulib_three_col_with_border:
+  label: 'Three column with border'
+  category: 'PSU Libraries'
+  template: layouts/psul-three-column-with-border
+  default_region: center
+  regions:
+    left:
+      label: Left Column
+    center:
+      label: Center Column
+    right:
+      label: Right Column
+  icon_map:
+    - [left, center, right]
