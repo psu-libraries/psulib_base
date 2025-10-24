@@ -187,6 +187,13 @@
     }
   }
 
+  // Campus Card.
+  &.card-type-campus {
+    img {
+      border-bottom: 12px solid var(--#{$prefix}primary);
+    }
+  }
+
   // Call to Action
   &.card--cta {
     $card-body-spacing: $spacer * 1.25;
