@@ -13,6 +13,7 @@ props:
       default: default
       enum:
         - icon
+        - campus
         - cta
         - left
         - nav
