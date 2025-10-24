@@ -77,3 +77,7 @@ props:
       examples:
         - text: 'Find an Expert'
           url: '#'
+slots:
+  body_block:
+    title: Body Block
+    description: Slot aroudn the body content.
