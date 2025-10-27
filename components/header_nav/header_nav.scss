@@ -82,12 +82,12 @@
       cursor: pointer;
       display: block;
       margin-top: -16px;
-      padding-left: 10px;
+      padding-left: 5px;
 
       svg {
         padding: 4px;
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         // Adding a negative right marging to ensure consistent spacing
         // for links with and without dropdown arrows.
         margin-right: -8px;
@@ -95,8 +95,8 @@
 
       @include media-breakpoint-up('lg') {
         svg {
-          width: 24px;
-          height: 24px;
+          width: 22px;
+          height: 22px;
         }
 
       }
