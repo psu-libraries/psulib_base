@@ -93,7 +93,7 @@
   {% if items %}
     {%
       set ul_classes = [
-        menu_level == 0 ? 'navbar-nav justify-content-end flex-wrap main-menu main-menu-nav' : '',
+        menu_level == 0 ? 'navbar-nav flex-wrap main-menu main-menu-nav' : '',
         menu_level > 0 ? 'dropdown-menu' : '',
         'nav-level-' ~ menu_level,
       ]
