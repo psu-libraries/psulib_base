@@ -16,7 +16,7 @@
     position: relative;
 
     .dropdown>.link-container>a {
-      padding-right: 40px;
+      margin-right: 40px;
     }
 
     .dropdown-menu {
@@ -33,6 +33,7 @@
     }
 
     .dropdown-item {
+      width: auto;
       padding-left: 0;
     }
 
