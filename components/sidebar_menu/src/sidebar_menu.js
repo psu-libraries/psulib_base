@@ -5,9 +5,16 @@
       function setupDropdownBehavior(navElement) {
         navElement.querySelectorAll('.navbar-nav .dropdown').forEach(item => {
           const arrow = item.querySelector('.dropdown-arrow');
-          arrow.addEventListener('click', e => {
-            e.preventDefault();
-            toggleDropdown(item);
+            const onActivate = e => {
+              e.preventDefault();
+              toggleDropdown(item);
+            };
+            arrow.addEventListener('click', onActivate);
+            arrow.addEventListener('keydown', e => {
+            const key = e.key || e.keyCode;
+            if (key === 'Enter' || key === ' ' || key === 'Spacebar' || key === 13 || key === 32) {
+              onActivate(e);
+            }
           });
         });
       }
