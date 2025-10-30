@@ -1,0 +1,44 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: "Image + Text Overlap"
+status: stable
+description: A component that displays an image and text in an overlapping manner.
+props:
+  type: 'object'
+  properties:
+    text_position:
+      type: 'string'
+      title: Text Position
+      description: The position of the text relative to the image.
+      default: right
+      enum:
+        - left
+        - right
+    title:
+      type: 'string'
+      title: Title
+    subtitle:
+      type: 'string'
+      title: Subtitle
+    body:
+      type: 'string'
+      title: Body
+    cta_button:
+      type: 'object'
+      title: CTA Button
+      properties:
+        title:
+          type: 'string'
+          title: Button Title
+        url:
+          type: 'string'
+          title: Button URL
+    image_media:
+      type: 'string'
+      title: Image Media
+    image_src:
+      type: 'string'
+      title: Image Source URL
+      examples:
+        - '/images/sample.jpg'
+    attributes:
+      type: 'Drupal\Core\Template\Attribute'

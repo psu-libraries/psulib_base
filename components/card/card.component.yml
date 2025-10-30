@@ -6,8 +6,22 @@ group: Cards
 props:
   type: 'object'
   properties:
-    card_body:
+    card_type:
       type: 'string'
+      title: Card Variant
+      description: The type of card to display.
+      default: default
+      enum:
+        - icon
+        - campus
+        - cta
+        - left
+        - nav
+        - news
+        - search-results
+        - text
+    card_body:
+      type: ['string', 'object']
       title: Card Body
     card_body_tag:
       type: 'string'
@@ -16,8 +30,11 @@ props:
       enum:
         - div
         - section
+    card_body_footer:
+      type: ['string', 'object']
+      title: Card Body Footer
     card_title:
-      type: 'string'
+      type: ['string', 'object']
       title: Card Title
     card_title_tag:
       type: 'string'
@@ -30,6 +47,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h2
     card_subtitle:
       type: 'string'
       title: Card Subtitle
@@ -44,6 +63,8 @@ props:
         - h4
         - h5
         - h6
+      examples:
+        - h3
     card_text_tag:
       type: 'string'
       title: Card Text HTML Tag
@@ -52,21 +73,45 @@ props:
         - p
         - span
         - div
+    card_link:
+      type: 'string'
+      title: Card Link
+      description: The URL to link to when the card is clicked.
+      default: '#'
+    card_link_attributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Card Link Attributes
+    card_link_stretched:
+      type: 'boolean'
+      title: Stretched Link
+      description: Whether the link should stretch to fill the entire card.
+      default: false
     card_link_text:
       type: 'string'
       title: Card Link Text
     card_link_url:
       type: 'string'
       title: Card Link URL
+    card_icon:
+      type: 'string'
+      title: Card Icon
+      default: ''
     card_media:
       type: 'string'
       title: Card Media
+      default: ''
+      examples:
+        - ''
     card_image_src:
       type: 'string'
       title: Card Image Source URL
+      examples:
+        - '/images/sample.jpg'
     card_image_alt:
       type: 'string'
       title: Card Image Alternative Text
+      examples:
+        - 'Sample Image'
     card_image_cap:
       type: 'string'
       title: Image Caption Position
@@ -82,6 +127,8 @@ props:
     card_header:
       type: 'string'
       title: Card Header
+      examples:
+        - ''
     card_footer:
       type: 'string'
       title: Card Footer
@@ -161,3 +208,9 @@ slots:
   slot_card_footer:
     title: Card Footer
     description: Slot for the footer of the card.
+  icon_block:
+    title: Icon Block
+    description: Pass an icon block to render a custom icon.
+  slot_card_body_footer:
+    title: Card Body Footer
+    description: Slot for the footer of the card body.

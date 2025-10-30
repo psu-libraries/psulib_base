@@ -9,6 +9,8 @@ props:
       type: 'string'
       title: Site logo
       description: URL of the site logo
+      examples:
+        - '../../logo.png'
     logo_path:
       type: 'string'
       title: Logo path
@@ -25,10 +27,14 @@ props:
       type: 'boolean'
       title: Hide the site name.
       description: Add the 'hidden' class to the title.
+      examples:
+        - true
     site_slogan:
       type: 'string'
       title: Site Slogan
       description: Site slogan.  (currently unstyled)
+      examples:
+        - ''
     classes:
       type: 'array'
       items:

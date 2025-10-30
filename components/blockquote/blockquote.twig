@@ -1,0 +1,21 @@
+<blockquote class="blockquote {% if image %}blockquote--with-image{% endif %}">
+  {% if image %}
+    <div class="blockquote__image">
+      <img src="{{ image }}" alt="Image of {{ author }}" />
+    </div>
+  {% endif %}
+  <div class="blockquote__content">
+    <div class="blockquote__body">{{ body }}</div>
+    {% if author or citation %}
+      <cite class="blockquote__footer">
+        {% if author %}
+          <div class="blockquote__author">{{ author }}</div>
+        {% endif %}
+
+        {% if author_about %}
+          <div class="blockquote__author-about">{{ author_about }}</div>
+        {% endif %}
+      </cite>
+    {% endif %}
+  </div>
+</blockquote>

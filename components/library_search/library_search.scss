@@ -1,0 +1,98 @@
+@import '../../scss/init';
+
+.library-search {
+  --bs-border-width: 1px;
+  --bs-border-radius: 4px;
+  --bs-border-color: #{$body-color};
+  margin: ($spacer * 1) 0;
+
+  .input,
+  .btn {
+    --bs-btn-font-size: #{$font-size-base};
+    font-size: var(--bs-btn-font-size);
+    margin: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: ($spacer * 3) 0;
+
+    .form-control,
+    .btn {
+      --bs-btn-font-size: #{$font-size-lg};
+      font-size: var(--bs-btn-font-size);
+    }
+  }
+}
+
+.library-search__form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer * 1;
+
+  .library-search__input-wrapper,
+  .form-item-query {
+    flex-grow: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    gap: $spacer * 1.5;
+  }
+
+  // Override Drupal form styles.
+  .form-item,
+  .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+.library-search__links {
+  margin-top: $spacer;
+  font-size: $font-size-sm;
+  @include media-breakpoint-up(xl) {
+    margin-right: 145px;
+  }
+}
+
+.library-search__link {
+  @include make-link($link-color, none, $link-hover-color, underline);
+  &.list-inline-item {
+    display: list-item;
+
+    @include media-breakpoint-up(sm) {
+      display: inline-block;
+    }
+  }
+  &:not(:last-child) {
+    margin-right: $spacer;
+  }
+
+  .psul-icon {
+
+    svg {
+      vertical-align: middle;
+      height: .875rem;
+      width: .875rem;
+    }
+  }
+}
+
+.library-search__jump-menu {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $spacer * 1.5;
+  .btn-lg {
+    --bs-btn-font-size: #{$font-size-sm};
+    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-padding-y: 0.375rem;
+    border-radius: var(--bs-border-radius);
+  }
+  .psul-icon {
+    display: none;
+  }
+}

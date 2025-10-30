@@ -1,5 +1,10 @@
 @import 'colors';
 
+// Setting options.
+$enable-caret: false;
+$enable-dark-mode: false;
+$enable-validation-icons: true;
+
 // Bootstrap variables (overrides).
 $form-text-margin-top: 0 !default;
 $legend-font-size: 1rem !default;
@@ -29,3 +34,24 @@ $link-hover-color-dark: $pa-link-light !default;
 
 // Increasing navbar padding-y to add more space on mobile.
 $navbar-brand-padding-y: .75rem;
+
+// Increased x padding for buttons.
+$btn-padding-x: 1.5rem !default;
+$btn-padding-x-sm: 1.125rem !default;
+$btn-padding-x-lg: 2.5rem !default;
+
+// Box Shadows.
+$box-shadow-sm: 0 4px 8px 0 rgba($pa-potential, .125) !default;
+$box-shadow-sm2: 0 4px 8px 0 rgba($pa-potential, .20) !default;
+$box-shadow: 0 8px 16px 0 rgba($pa-potential, .125) !default;
+$box-shadow2: 0 8px 16px 0 rgba($pa-potential, .20) !default;
+$box-shadow-lg: 0px 12px 24px 0px rgba($pa-potential, .125) !default;
+$box-shadow-xl: 0px 16px 32px 0px rgba($pa-potential, .125) !default;
+
+// Badget Styles.
+$badge-font-weight: 400;
+$badge-padding-y: .5em;
+$badge-padding-x: .75em;
+
+// Blockquote.
+$blockquote-font-size: 1.5rem;

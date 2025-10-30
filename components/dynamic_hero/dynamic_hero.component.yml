@@ -1,0 +1,83 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Dynamic Hero
+status: stable
+description: Dynamic Hero component.
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title of the hero section
+      examples:
+        - 'Library Guides'
+    eyebrow:
+      type: 'string'
+      title: Eyebrow
+      description: Eyebrow text above the title
+      examples:
+        - 'Research'
+    body:
+      type: 'string'
+      title: Body
+      description: Body text below the title
+      examples:
+        - 'Explore our comprehensive library guides to enhance your research. Search guides by subject, course, or type.'
+    background_gradient:
+      type: 'string'
+      title: Background Gradient
+      description: Gradient background for the hero section
+      default: 'light'
+      enum:
+        - 'light'
+        - 'dark'
+    background_image:
+      type: 'string'
+      title: Background Image
+      description: Background image for the hero section
+      default: ''
+      examples:
+        - '/images/heroBgSample.png'
+        - ''
+    cta_button_first:
+      type: 'object'
+      title: Call to Action Button (First)
+      description: Configuration for the first call to action button
+      properties:
+        text:
+          type: 'string'
+          title: Button Text
+          description: Text to display on the button
+        url:
+          type: 'string'
+          title: Button URL
+          description: URL to link to when the button is clicked
+        attributes:
+          title: Button Attributes
+          description: Additional attributes for the button
+      examples:
+        - text: 'View Guides'
+          url: '#'
+    cta_button_second:
+      type: 'object'
+      title: Call to Action Button (Second)
+      description: Configuration for the second call to action button
+      properties:
+        text:
+          type: 'string'
+          title: Button Text
+          description: Text to display on the button
+        url:
+          type: 'string'
+          title: Button URL
+          description: URL to link to when the button is clicked
+        attributes:
+          title: Button Attributes
+          description: Additional attributes for the button
+      examples:
+        - text: 'Find an Expert'
+          url: '#'
+slots:
+  body_block:
+    title: Body Block
+    description: Slot aroudn the body content.

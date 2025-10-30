@@ -1,0 +1,69 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Icon
+status: stable
+description: Icon from the PSU Flex Library.
+props:
+  type: 'object'
+  required:
+    - icon
+  properties:
+    icon:
+      type: 'string'
+      title: Icon
+      description: Name of the icon (see https://psu-flex-storybook.vercel.app/?path=/story/tokens-icons--page)
+      enum:
+        - alarm
+        - assignment
+        - barChart3
+        - bullhorn
+        - book_2
+        - book_ribbon
+        - bookmarks
+        - calendar
+        - chevronRight
+        - close
+        - computer
+        - crowdsource
+        - diversity_3
+        - docs
+        - double_arrow
+        - edit_square
+        - email
+        - fax
+        - full_coverage
+        - globe
+        - globeBook
+        - group
+        - help
+        - info
+        - institution
+        - inventory
+        - library_books
+        - linkOut
+        - locationPin
+        - map
+        - menu
+        - menu_book
+        - newspaper
+        - openBook
+        - person
+        - phone
+        - psu_flex_double_arrow
+        - psu_inverted_quote
+        - schedule
+        - school
+        - search
+      examples:
+        - chevronRight
+    color:
+      type: 'string'
+      title: Color
+      description: Color of the icon
+      default: black
+      enum:
+        - black
+        - link
+        - linkLight
+        - nittanyNavy
+        - white
+      examples: ''

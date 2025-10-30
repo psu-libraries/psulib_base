@@ -23,3 +23,24 @@
   font-family: "bootstrap-icons";
   vertical-align: bottom;
 }
+
+@mixin light-text {
+  color: #fff;
+  --#{$prefix}body-color: #{$white-out};
+  --#{$prefix}heading-color: #{$white-out};
+  --#{$prefix}link-color: #{$pa-link-light};
+  --#{$prefix}link-color-rgb: #{$pa-link-light};
+  --#{$prefix}link-hover-color: #{$white-out};
+  --#{$prefix}link-hover-color-rgb: #{$white-out};
+}
+
+// Resetting text to default.  Can be used to undo light-text.
+@mixin dark-text {
+  color: $body-color;
+  --#{$prefix}body-color: #{$body-color};
+  --#{$prefix}heading-color: #{$body-color};
+  --#{$prefix}link-color: #{$pa-link};
+  --#{$prefix}link-color-rgb: #{$pa-link};
+  --#{$prefix}link-hover-color: #{$pa-link};
+  --#{$prefix}link-hover-color-rgb: #{$pa-link};
+}

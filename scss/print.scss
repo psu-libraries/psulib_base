@@ -1,0 +1,72 @@
+@import 'variables_drupal';
+@import 'variables_bootstrap';
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import 'colors';
+@import 'mixins';
+
+// Hiding unnecessary elements.
+div[data-sitewide-alert],
+.toolbar-administration,
+.gin-secondary-toolbar,
+.region-breadcrumb,
+header .region-nav-additional > *,
+header .header--nav-search,
+.nav-main-menu-container,
+.region-sidebar-first > nav,
+footer .footer--main,
+footer .footer--logo {
+  display: none !important;
+}
+
+// Font Size adjustment.
+body {
+  padding-top: 0 !important;
+  // Downsize the font size to 12px.
+  font-size: 75%;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+// Altering header styles.
+header {
+  background-color: $white-out;
+}
+
+// Adding drop-shadow to the site logo.
+// @todo replace with styles once we have an svg logo.
+.site-logo img {
+  filter: drop-shadow(0 0 2px $old-coaly);
+}
+
+// Color overrides.
+.text-light,
+.text-white {
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
+// Altering footer styles.
+footer {
+  font-size: 100%;
+
+  margin-top: 0;
+  background-color: $white-out;
+  @include make-link($link-color, none, $link-hover-color, underline);
+
+  a.nav-link {
+    color: $link-color;
+  }
+}

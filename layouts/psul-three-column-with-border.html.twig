@@ -1,0 +1,54 @@
+{{ attach_library('psulib_base/layout') }}
+
+{%
+  set left_classes = [
+    'psul-layout-column--left',
+    'layout__region',
+    'col-12',
+    'col-md-6',
+    'col-lg',
+    'border-md-end',
+    'border-1',
+  ]
+%}
+
+{%
+  set center_classes = [
+    'psul-layout-column--center',
+    'layout__region',
+    'col-12',
+    'col-md-6',
+    'col-lg',
+    'border-lg-end',
+    'border-1',
+  ]
+%}
+
+{%
+  set right_classes = [
+    'psul-layout-column--right',
+    'layout__region',
+    'col-12',
+    'col-lg',
+  ]
+%}
+
+{% if content %}
+  <div {{ attributes.addClass('layout psul-three-column') }}>
+    <div class="row g-4 g-md-5">
+
+      <div {{ region_attributes.left.addClass(left_classes) }}>
+        {{ content.left }}
+      </div>
+
+      <div {{ region_attributes.center.addClass(center_classes) }}>
+        {{ content.center }}
+      </div>
+
+      <div {{ region_attributes.right.addClass(right_classes) }}>
+        {{ content.right }}
+      </div>
+    </div>
+  </div>
+
+{% endif %}

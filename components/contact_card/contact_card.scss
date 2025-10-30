@@ -12,28 +12,88 @@
   }
 }
 
+.contact-card--hide-if-empty:empty {
+  display: none;
+}
+
 .contact-card {
   display: flex;
   flex-direction: column;
   gap: $spacer * .75;
   box-shadow: $box-shadow;
   padding: $spacer * 1.25;
+  border: 1px solid transparent;
   background-color: $white;
   @include make-link($link-color, none, $link-hover-color, underline);
   container: contact-card / inline-size;
 
-  i {
+  .psul-icon {
     margin-right: $spacer * .5;
   }
 
-  &--address {
-    font-style: italic;
+  &--image,
+  &--chevron {
+    display: none;
+  }
+
+  &--image .media {
+    margin-bottom: 0;
+  }
+
+  &--wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: $spacer;
+
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      .contact-card--image {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: block;
+        width: 132px;
+      }
+    }
+
+    .content-card--main {
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      .contact-card--chevron {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 25px;
+        align-content: center;
+      }
+    }
+  }
+
+  &--address--job-title {
+    font-style: normal;
+    font-weight: $font-weight-medium;
+  }
+
+  &--header {
+    margin-bottom: $spacer;
   }
 
   &--header--title {
-    font-size: $font-size-base * 1.125;
     margin-bottom: 0;
+    font-size: $font-size-base * 1.125;
     font-weight: bold;
+
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      font-size: $font-size-base * 1.375;
+    }
+  }
+
+  &--header--subtitle {
+    font-size: $font-size-base;
+    font-size: $font-size-base * 1.1;
+    @container contact-card (min-width: #{map-get($grid-breakpoints, "sm")}) {
+      font-size: $font-size-base * 1.125;
+    }
   }
 
   &--body {
@@ -42,10 +102,20 @@
     flex-direction: column;
   }
 
-  &--contacts--email {
-    overflow-x: hidden;
+  &--contacts > div {
+    overflow-x: clip;
     text-overflow: ellipsis;
     text-wrap: nowrap;
+  }
+
+  &--chevron {
+    display: none;
+  }
+
+  &--footer:not(:empty) {
+    border-top: 1px solid $pa-limestone-light;
+    padding-top: $spacer;
+    margin-top: $spacer;
   }
 
   // Adding stacked card variations.
@@ -62,4 +132,36 @@
     }
   }
 
+  &.contact-card__linked-card {
+    transition: $input-transition;
+    --psul-icon-color: #330000;
+
+    &:hover {
+      box-shadow: 0 .5rem 1rem rgba($black, .4);
+      border: 1px solid $nittany-navy;
+
+      .contact-card--chevron .psul-icon--link {
+        --psul-icon-color: #{$nittany-navy};
+      }
+    }
+
+    .contact-card--chevron {
+      display: block;
+
+      .psul-icon--link {
+        --psul-icon-color: #{$link-color};
+      }
+    }
+
+    // Setting the z-index on body links so that these are clickable
+    // when in a bootstrap stretched-link container.
+    .contact-card--body,
+    .contact-card--footer {
+      a {
+        z-index: 2;
+        position: relative;
+        margin-right: $spacer / 2;
+      }
+    }
+  }
 }

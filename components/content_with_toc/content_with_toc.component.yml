@@ -1,0 +1,64 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Content with Table of Contents
+status: stable
+description: Add a content section with a sticky table of contents
+props:
+  type: object
+  properties:
+    toc_position:
+      type: 'string'
+      title: Table of Contents Position
+      description: Indicator of where the TOC should be displayed.
+      enum:
+        - left
+        - right
+        - top
+      default: left
+    default_item_tag:
+      type: 'string'
+      title: Section Title Tag
+      description: HTML tag for the Section Title.
+      enum:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: h2
+    items:
+      title: Items
+      description: Sections with content array with body and optional title.
+      type: 'array'
+      items:
+        type: 'object'
+        properties:
+          title:
+            type: ['string', 'object', 'null']
+            title: Section Title
+          content:
+            type: ['string', 'object', 'null']
+            title: Section
+          id:
+            type: ['string', 'null']
+            title: Section ID
+            description: 'Unique ID for the section. If not provided the title will not be used in the jump menu.'
+      examples:
+        -
+          - title: 'Section 1'
+            content: '<p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p><p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p>'
+            id: 'section-1'
+          - title: 'Section 2'
+            content: '<p>Ac aliquam euismod dictumst eget proin aenean iaculis accumsan. Urna condimentum amet magna leo lorem eros finibus primis quis facilisi mattis. Praesent mollis vel inceptos urna ex pede donec penatibus aliquam parturient suspendisse. Montes nibh aliquet aenean mus lectus sed sollicitudin lacinia cursus at. Penatibus senectus si netus vitae vel. Dignissim sed felis integer sapien non laoreet suscipit magnis himenaeos leo mi. Amet penatibus id vulputate turpis praesent aptent class mattis.</p>'
+            id: 'section-2'
+          - title: 'Section 3'
+            content: '<p>Lorem facilisi efficitur aenean urna senectus vitae consectetuer. Tortor placerat ad interdum senectus quam tincidunt diam nisl phasellus. Felis aliquam at nulla viverra proin. Cursus dignissim finibus class hac orci ullamcorper mollis congue torquent ultrices augue. Libero dictumst cursus odio dis finibus interdum tortor potenti eu. Leo nullam velit semper consectetuer dictum penatibus sodales. Adipiscing euismod porttitor nam volutpat magnis tempor in non ante morbi nec. Ac ipsum morbi posuere rhoncus netus felis.</p>'
+            id: 'section-3'
+    utility_classes:
+      type: 'array'
+      items:
+        type: 'string'
+      title: Utility Classes
+      default: []
+      description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
+    attributes:
+      type: 'Drupal\Core\Template\Attribute'

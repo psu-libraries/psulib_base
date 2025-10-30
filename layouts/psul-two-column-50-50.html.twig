@@ -1,22 +1,26 @@
+{{ attach_library('psulib_base/layout') }}
+
 {%
   set first_classes = [
     'psul-layout-column--first',
+    'layout__region',
     'col-12',
-    content.second ? 'col-lg-6' : 'col-12',
+    content.second ? 'col-lg-6' : '',
   ]
 %}
 
 {%
   set second_classes = [
     'psul-layout-column--second',
+    'layout__region',
     'col-12',
-    content.first ? 'col-lg-6' : 'col-12',
+    content.first ? 'col-lg-6' : '',
   ]
 %}
 
 {% if content %}
-  <div {{ attributes.addClass('psul-two-column') }}>
-    <div class="row gy-3 gy-lg-0 gx-lg-5 mb-3 mb-lg-4">
+  <div {{ attributes.addClass('layout psul-two-column') }}>
+    <div class="row gy-3 gy-lg-0 gx-lg-5">
     {% if content.first %}
       <div {{ region_attributes.first.addClass(first_classes) }}>
         {{ content.first }}

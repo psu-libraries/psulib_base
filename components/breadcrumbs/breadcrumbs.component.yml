@@ -14,11 +14,22 @@ props:
             type: ['string', 'object', 'null']
             title: url
           text:
-            type: ['string', 'object', 'null']
+            type: ['string', 'object']
             title: text
+      examples:
+        -
+          - url: '/'
+            text: 'Home'
+          - url: '/about'
+            text: 'About Us'
+          - text: 'Services'
+            url: ''
     classes:
       type: 'array'
       items:
         type: 'string'
+      examples:
+        - ''
     breadcrumb_attributes:
       type: 'Drupal\Core\Template\Attribute'
+      title: Attributes

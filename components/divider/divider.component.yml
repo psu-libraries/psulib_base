@@ -1,0 +1,47 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Divider
+status: stable
+description: Divider component.
+props:
+  type: 'object'
+  properties:
+    color:
+      type: 'string'
+      title: Color
+      description: Color of the divider
+      default: navy
+      enum:
+        - white
+        - navy
+        - pugh
+        - sky
+    width:
+      type: 'string'
+      title: Width
+      description: Width of the divider
+      default: sm
+      enum:
+        - full
+        - xs
+        - sm
+        - md
+        - lg
+        - xl
+    thickness:
+      type: 'string'
+      title: Thickness
+      description: Thickness of the divider
+      default: md
+      enum:
+        - xs
+        - sm
+        - md
+        - lg
+    orientation:
+      type: 'string'
+      title: Orientation
+      description: Orientation of the divider
+      default: horizontal
+      enum:
+        - horizontal
+        - vertical

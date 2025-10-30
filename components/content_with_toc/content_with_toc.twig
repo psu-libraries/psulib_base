@@ -1,0 +1,46 @@
+{% set toc_classes = utility_classes is iterable ? utility_classes : [utility_classes] %}
+
+{%
+  set toc_classes = toc_classes|merge([
+    'content-with-toc',
+    'row',
+    'my-5'
+  ])
+%}
+
+{% set default_item_tag = default_item_tag|default('h2') %}
+{% set attributes = attributes ?: create_attribute() %}
+{% set position = position|default('left') %}
+{% set id = 'content-toc-spy'|clean_unique_id %}
+
+{% if items %}
+  <div {{attributes.addClass(toc_classes) }}>
+    <div class="content-with-toc--content col-12 col-md-8 col-xl-9" data-bs-spy="scroll" data-bs-target="#{{ id }}" data-bs-root-margin="0px 0px 48px" >
+      {% for item in items %}
+        <div class="content-with-toc--item" {% if item.id %} id="{{ item.id|clean_class }}" {% endif %}>
+          {% if item.title is not empty %}
+            {%
+              include 'psulib_base:heading' with {
+                heading_html_tag: default_item_tag,
+                content: item.title,
+              }
+            %}
+          {% endif %}
+          {{ item.content|render }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="content-with-toc--toc col-12 col-md-4 col-xl-3 {% if position == 'left' %}order-first{% endif %}">
+      <div class="pt-0 pb-5 pt-md-5 toc sticky-md-top">
+        <div id="{{ id }}" class="d-flex flex-row flex-md-column flex-wrap flex-md-nowrap row-gap-2 column-gap-5">
+        {% for item in items %}
+          {% if item.title and item.id %}
+            <a href="#{{ item.id|clean_class }}" class="p-1">{{ item.title }}</a>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

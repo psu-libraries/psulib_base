@@ -18,6 +18,8 @@ props:
       title: Show Right footer region.
       description: 'Show the right footer region.  This contains the footer menu by default.'
       default: 1
+      examples:
+        - true
     show_footer_bottom:
       type: ['boolean', 'integer']
       title: Show Bottom footer region.
@@ -27,33 +29,132 @@ props:
       type: 'string'
       title: Site Logo
       description: URL for footer logo in footer left region.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - '../../logo.png'
     site_logo_url:
       type: 'string'
       title: Site Logo URL
       description: Link url for logo.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - '#'
     site_logo_alt:
       type: 'string'
       title: Site Logo Alt Text
       description: Alt text for logo.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - 'Penn State University Libraries'
     footer_classes:
       type: 'string'
       title: Footer Classes
       description: Additional classes for the footer.
-      # @todo Add examples here.
-      examples: []
+      examples:
+        - 'text-light'
 slots:
   footer_left:
     title: Footer Left
     description: Footer Left region.  This contains the footer logo by default.
+    examples:
+      - '<div class="footer-logo pt-4 ps-2">Convallis dignissim euismod tempor himenaeos</div>'
+
   footer_right:
     title: Footer Right
     description: Footer Right region.  This contains the footer menu by default.
+    type: ['string', 'object']
+    examples:
+      - '<p>Habitant sodales faucibus mi euismod per rhoncus bibendum ultricies platea cursus fermentum. Vivamus himenaeos tempus elementum justo nostra mollis sagittis libero vitae tempor. Etiam ipsum accumsan proin himenaeos tellus diam taciti fames ornare facilisis. Convallis dignissim euismod tempor himenaeos integer venenatis mollis massa dis hac mattis. Praesent sit faucibus elementum elit proin dui malesuada.</p>'
   footer_bottom:
     title: Footer Bottom
     description: Optional full width footer region.
+    type: ['string', 'object']
+    examples:
+      - '<p class="text-center ">Habitant sodales faucibus mi euismod per rhoncus bibendum ultricies platea cursus fermentum</p>'
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      libraries:
+        slots:
+          footer_left: '<div class="footer-logo pt-4 ps-2">
+              <a class="social-media-link-icon--linkedin pe-3" href="https://www.linkedin.com/company/psulibs" aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn">
+                <i class="bi bi-linkedin font-size-xl"></i>
+              </a>
+              <a class="social-media-link-icon--facebook pe-3" href="https://www.facebook.com/psulibs" aria-label="Follow us on Facebook" title="Follow us on Facebook">
+                <i class="bi bi-facebook font-size-xl"></i>
+              </a>
+              <a class="social-media-link-icon--twitter pe-3" href="https://x.com/psulibs" aria-label="Follow us on X" title="Follow us on X">
+                <i class="bi bi-twitter-x font-size-xl"></i>
+              </a>
+              <a class="social-media-link-icon--instagram pe-3" href="https://www.instagram.com/psulibs" aria-label="Follow us on Instagram" title="Follow us on Instagram">
+                <i class="bi bi-instagram font-size-xl"></i>
+              </a>
+            </div>'
+          footer_right: '<nav role="navigation" aria-labelledby="block-psul-theme-footer-menu" id="block-psul-theme-footer"
+                class="settings-tray-editable block block-menu navigation menu--footer"
+                data-drupal-settingstray="editable">
+                <div id="block-psul-theme-footer-menu"
+                  class="visually-hidden block-menu--title block-menu--title--footer">Footer</div>
+                <div class="row row-cols-2 row-cols-lg-4">
+                  <div data-block="footer" class="col mb-4 mb-lg-0">
+                    <h2 class="fs-6 text-uppercase"><span class="nav-link text-white">Services</span></h2>
+                    <ul class="nav flex-column">
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/borrow-renew" class="nav-link" data-drupal-link-system-path="node/6221">Borrow &amp; Renew</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/course-reserves" class="nav-link" data-drupal-link-system-path="node/5308">Course Reserves</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/rooms-spaces" class="nav-link" data-drupal-link-system-path="node/6245">Rooms &amp; Spaces</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/technology-equipment" class="nav-link" data-drupal-link-system-path="node/6249">Technology &amp; Equipment</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/adaptive-technology-services" class="nav-link" data-drupal-link-system-path="node/4972">Adaptive Technology &amp; Services</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/interlibrary-loan-services" class="nav-link" data-drupal-link-system-path="node/279480">Interlibrary Loan</a></li>
+                      <li class="nav-item"><a href="https://libraries.psu.edu/services/teaching-and-learning" class="nav-link" data-drupal-link-system-path="node/4969">Teaching Support for Instructors</a></li>
+                    </ul>
+                    </div>
+                    <div data-block="footer" class="col mb-4 mb-lg-0">
+                      <h2 class="fs-6 text-uppercase"><span class="nav-link text-white">Research</span></h2>
+                      <ul class="nav flex-column">
+                        <li class="nav-item"><a href="https://guides.libraries.psu.edu/starting" class="nav-link">Try These First</a></li>
+                        <li class="nav-item"><a href="https://guides.libraries.psu.edu/CitationStyles" class="nav-link">Citation Guides</a></li>
+                        <li class="nav-item"><a href="https://scholarsphere.psu.edu/" class="nav-link">ScholarSphere</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/collections" class="nav-link" data-drupal-link-system-path="node/23945">Collections</a></li>
+                        <li class="nav-item"><a href="https://etda.libraries.psu.edu/" class="nav-link">Electronic Theses and Dissertations</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/research/research-data-services" class="nav-link" data-drupal-link-system-path="node/5650">Research Data Services</a></li>
+                      </ul>
+                    </div>
+                    <div data-block="footer" class="col mb-4 mb-lg-0">
+                      <h2 class="fs-6 text-uppercase"><span class="nav-link text-white">About</span></h2>
+                      <ul class="nav flex-column">
+                        <li class="nav-item"><a href="https://libraries.psu.edu/hours-and-locations" class="nav-link" data-drupal-link-system-path="hours-and-locations">Hours</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/directory" class="nav-link" data-drupal-link-system-path="directory">Directory</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/libraries" class="nav-link" data-drupal-link-system-path="node/2161">Libraries and Departments</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/jobs" class="nav-link" data-drupal-link-system-path="node/834">Jobs</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/message-dean" class="nav-link" data-drupal-link-system-path="node/980">Message from the Dean</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/diversity-equity-inclusion-accessibility-and-belonging" class="nav-link" data-drupal-link-system-path="node/1057">Diversity</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/about/news-and-events" class="nav-link" data-drupal-link-system-path="node/22343">News and Events</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/your-donation-work" class="nav-link" data-drupal-link-system-path="node/428602">Your Donation at Work</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/calendar" class="nav-link" data-drupal-link-system-path="calendar">Libraries Calendar</a></li>
+                      </ul>
+                    </div>
+                    <div data-block="footer" class="col mb-4 mb-lg-0">
+                      <h2 class="fs-6 text-uppercase"><span class="nav-link text-white">Ask a Librarian</span></h2>
+                      <ul class="nav flex-column">
+                        <li class="nav-item"><a href="https://libraries.psu.edu/ask" class="nav-link" data-drupal-link-system-path="ask">By Chat</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/ask-us-by-phone" class="nav-link" data-drupal-link-system-path="ask-us-by-phone">By Phone</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/hours-and-locations" class="nav-link" data-drupal-link-system-path="hours-and-locations">In Person</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/ask/question" class="nav-link" data-drupal-link-system-path="ask/question">By Email</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/research-consultation-request" class="nav-link" data-drupal-link-system-path="node/23849">Schedule a Research Appt.</a></li>
+                        <li class="nav-item"><a href="https://psu.libanswers.com/search/" class="nav-link">FAQs (or How Do I?...)</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/guides/howto" class="nav-link" data-drupal-link-system-path="guides/howto">Tutorials</a></li>
+                        <li class="nav-item"><a href="https://libraries.psu.edu/services/search-bar-services" class="nav-link" data-drupal-link-system-path="node/115032">The Search Bar</a></li>
+                        <li class="nav-item"><a href="https://psu.libwizard.com/f/thanks" class="nav-link">Thank a Library Worker</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>'
+          footer_bottom: '<div class="psul-copyright text-center font-size-sm text-light ">
+            <ul class="list-inline list">
+              <li class="list-inline-item"><a href="https://universityethics.psu.edu/hotline">Hotline</a></li>
+              <li class="list-inline-item"><a href="https://www.psu.edu/web-privacy-statement">Privacy Statements</a></li>
+              <li class="list-inline-item"><a href="https://policy.psu.edu/policies/ad85">Non Discrimination</a></li>
+              <li class="list-inline-item"><a href="https://www.psu.edu/accessibilitystatement">Accessibility</a></li>
+              <li class="list-inline-item"><a href="https://www.psu.edu/legal-statements">Legal Statements</a></li>
+            </ul>
+            <p class="mb-0">Copyright ©2025 The Pennsylvania State University.<br>
+            All rights reserved. Except where otherwise noted, this work is subject to a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 license.</a> <a href="https://libraries.psu.edu/psu-libraries-copyright-statement">Details and exceptions.</a></p>'

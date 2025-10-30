@@ -6,8 +6,10 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Template\Attribute;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess_page().
@@ -64,6 +66,36 @@ function psulib_base_page_attachments_alter(array &$attachments) {
       TRUE,
     ];
   }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function psulib_base_element_info_alter(array &$types) {
+  if (isset($types['layout_builder'])) {
+    $types['layout_builder']['#attached']['library'][] = 'psulib_base/layout_builder';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function psulib_base_preprocess_layout(&$variables) {
+  if (empty($variables['settings']['label'])) {
+    return;
+  }
+
+  $class = [
+    Html::getClass('layout-section-' . $variables['settings']['label']),
+  ];
+
+  if (!isset($variables['attributes']['class']) || !is_array($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+  $variables['attributes']['class'] = array_merge($variables['attributes']['class'], $class);
+
+  $id = Html::getUniqueId('layout-section-' . $variables['settings']['label']);
+  $variables['attributes']['id'] = $id;
 }
 
 /**
@@ -187,6 +219,23 @@ function psulib_base_preprocess_block(&$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter() for page.
+ *
+ * Add layout builder suggestions for pages that use Layout Builder.
+ */
+function psulib_base_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  if (isset($node) && $node instanceof NodeInterface) {
+    if ($node->hasField('layout_builder__layout') && $node->layout_builder__layout->getValue()) {
+      $suggestions[] = 'page__node__lb_display';
+      $suggestions[] = 'page__node__' . $node->bundle() . '__lb_display';
+    }
+    $suggestions[] = 'page__node__' . $node->bundle();
+  }
+}
+
+/**
  * Implements hook_preprocess_media_library_item__widget().
  *
  * This targets each media item selected in an entity reference field.
@@ -197,7 +246,7 @@ function psulib_base_preprocess_media_library_item__widget(array &$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter().
+ * Implements hook_theme_suggestions_HOOK_alter() for menu.
  */
 function psulib_base_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
   if (isset($variables['attributes']['data-block']['region'])) {
@@ -205,6 +254,28 @@ function psulib_base_theme_suggestions_menu_alter(array &$suggestions, array $va
     $suggestions[] = $variables['theme_hook_original'] . '__' . $region;
     $suggestions[] = 'menu__' . $region;
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for field.
+ *
+ * Adding additional field suggestions.
+ */
+function psulib_base_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__view_mode_' . $variables['element']['#view_mode'];
+  $suggestions[] = 'field__' . $variables['element']['#entity_type'] . '__' . $variables['element']['#field_name'] . '__view_mode_' . $variables['element']['#view_mode'];
+}
+
+/**
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter() for layout_builder.
+ *
+ * Remove default layouts from Layout Builder.
+ */
+function psulib_base_plugin_filter_layout__layout_builder_alter(array &$variables, array $extra) {
+  unset($variables['layout_onecol']);
+  unset($variables['layout_twocol_section']);
+  unset($variables['layout_threecol_section']);
+  unset($variables['layout_fourcol_section']);
 }
 
 /**
@@ -242,4 +313,11 @@ function psulib_base_preprocess_breadcrumb(&$variables) {
 
     $variables['#cache']['contexts'][] = 'url';
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form elements.
+ */
+function psulib_base_preprocess_webform(&$variables) {
+  $variables['#attached']['library'][] = 'psulib_base/webform-validation';
 }

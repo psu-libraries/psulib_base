@@ -1,16 +1,16 @@
 @import '../../scss/init';
 
 // Addin
-@import '~bootstrap/scss/offcanvas';
+@import 'bootstrap/scss/offcanvas';
 
 // Add styles specific to the header.
 header {
-
   background-color: var(--bs-blue);
   color: var(--bs-white);
 
   @include make-link($light, none, $pa-sky-light, underline);
 
+  // General Navbar Styles.
   .navbar {
     // Overriding the navbar padding. Not 100% sure why.
     --bs-navbar-padding-y: 0px;
@@ -47,22 +47,6 @@ header {
       &:hover {
         color: $pa-sky-light;
       }
-
-    }
-
-  }
-
-  // Setting search and menu button positioning.  This is absolute on mobile
-  // so that it option site-title can be full width.
-  .header--nav-search {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    right: $container-padding-x;
-    top: 13.5px;
-
-    @include media-breakpoint-up(md) {
-      position: static;
     }
   }
 
@@ -82,9 +66,18 @@ header {
     }
   }
 
-  // Forcing the main menu to display as a row.
-  .nav-main-menu-container .navbar-nav {
-    flex-direction: row;
+  // Setting search and menu button positioning.  This is absolute on mobile
+  // so that it option site-title can be full width.
+  .header--nav-search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: $container-padding-x;
+    top: 13.5px;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+    }
   }
 
   .region-nav-additional {
@@ -112,178 +105,33 @@ header {
     }
   }
 
-
-  @include media-breakpoint-down(md) {
-    .navbar {
-      padding-bottom: 0;
-    }
-
-    .nav-main-menu-container {
-      padding-left: 0;
-      padding-right: 0;
-      margin-top: var(--bs-navbar-padding-y);
-    }
-  }
-
-  .block-menu.menu--main .navbar-nav {
-    gap: 40px;
-
-    .dropdown-menu {
-      padding: 20px 10px;
-      left: 0;
-      top: 100%;
-      animation: none;
-      border-top: 7px solid $pa-link-light;
-
-      @include media-breakpoint-up('md') {
-        position: absolute;
-      }
-    }
-
-    li {
-      position: relative;
-
-      .link-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      a {
-        padding: 0 0 15px 0;
-        font-size: $font-size-sm;
-        font-weight: 500;
-        font-family: $font-family-condensed;
-
-        &:hover {
-          color: $pa-link-light;
-          text-decoration: none;
-        }
-
-        &.dropdown-item {
-          padding: 3px 10px;
-          border-radius: 4px;
-          border-color: transparent;
-          margin: 5px;
-
-          &:hover {
-            color: $primary-color;
-            background-color: #ccc;
-            border-color: #ccc;
-          }
-        }
-
-        @include media-breakpoint-up('lg') {
-          font-size: $font-size-base;
-        }
-      }
-
-      .dropdown-arrow {
-        cursor: pointer;
-        display: block;
-        margin-top: -16px;
-        padding-left: 10px;
-
-        svg {
-          width: 14px;
-          height: 14px;
-        }
-
-        @include media-breakpoint-up('lg') {
-          svg {
-            width: 16px;
-            height: 16px;
-          }
-
-        }
-      }
-
-      .dropdown-menu {
-        display: none;
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-        width: 300px
-      }
-
-      &.show .dropdown-menu {
-        display: block;
-        max-height: 1200px;
-        opacity: 1;
-      }
-    }
-
-    @include media-breakpoint-up(md) {
-      .dropdown:hover>.dropdown-menu {
-        display: block;
-      }
-    }
-  }
-
   /**
    * Top bar navigation with 'my acct', etc
    */
   ul[data-block="nav_additional"] {
     text-transform: uppercase;
 
-    // @todo make this an actual button variant.
+    // There is a btn-navlink button variant but we cannot use it because the
+    // bootstrap navbar styles are overriding it.
     a.btn.button.btn-primary.btn-nav-additional.nav-link {
-      font-size: 15.75px;
+      font-size: 1rem;
+      border: 2px solid $pa-link-light;
       border-radius: 30px;
-      border-color: $psu-light-blue;
       margin: 7px 10px;
       padding: 0 20px;
       text-transform: none;
       font-family: $font-family-sans-serif;
       font-weight: 400;
+      color: $pa-link-light;
 
       &:hover {
         text-decoration: none;
-        border-color: $navy-blue;
-        background-color: $navy-blue;
-        color: white;
+        border-color: $pa-link-light;
+        background-color: $pa-link-light;
+        color: $nittany-navy;
       }
     }
   }
-
-}
-
-.navbar-nav {
-
-  .nav-link {
-    padding-left: $navbar-nav-link-padding-x;
-    padding-right: $navbar-nav-link-padding-x;
-
-    &.dropdown-toggle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-menu {
-    animation: none;
-  }
-
-  @keyframes slideup {
-    from {
-      transform: translateY(25px);
-    }
-
-    to {
-      transform: translateY(0);
-    }
-  }
-}
-
-/**
- * Header styles
- */
-header {
 
   /* Common styles for dropdown arrow */
   .dropdown-arrow {
@@ -336,12 +184,17 @@ header {
     }
   }
 
-}
+  /* Mobile Navigation dropdown behavior */
+  @include media-breakpoint-down(md) {
+    .navbar {
+      padding-bottom: 0;
+    }
 
-/* Special rule to hide the bs dropdown arrows */
-header a.nav-link.dropdown-toggle::after,
-.offcanvas__main a.nav-link.dropdown-toggle::after {
-  display: none !important;
-  content: "";
-  border: 0;
+    .nav-main-menu-container {
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: var(--bs-navbar-padding-y);
+    }
+  }
+
 }

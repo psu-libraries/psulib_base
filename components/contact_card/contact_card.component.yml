@@ -8,12 +8,19 @@ props:
     title:
       type: 'string'
       title: Title
+      examples:
+        - 'John Doe'
     title_url:
       type: 'string'
       title: URL to make the title a link.
     subtitle:
       type: 'string'
       title: Subtitle
+      examples:
+        - 'Director of Operations'
+    job_title:
+      type: 'string'
+      title: Job Title
     address:
       type: 'string'
       title: Address
@@ -23,6 +30,9 @@ props:
       description: Array of phone numbers
       items:
         type: 'string'
+      examples:
+        - '+1 123-456-7890'
+        - '+1 098-765-4321'
     fax:
       type: 'string'
       title: Fax Number
@@ -32,6 +42,11 @@ props:
     website:
       type: 'string'
       title: Address
+    footer:
+      type: ['string', 'array', 'object']
+      title: Footer
+      examples:
+        - 'This is a footer text.'
     cta_button:
       type: 'object'
       title: CTA Button
@@ -46,9 +61,53 @@ props:
       type: 'boolean'
       title: Stacked Display with contact details in 2 rows.
       default: false
-    attributes:
+    linked_card:
+      type: 'boolean'
+      title: Make the entire card link to the title_url.
+      default: false
+    contact_card_attributes:
       type: 'Drupal\Core\Template\Attribute'
     utility_classes:
       type: 'array'
       items:
         type: 'string'
+    image:
+      type: 'string'
+      title: Image Media
+    image_src:
+      type: 'string'
+      title: Image Source URL
+      default: ''
+    display_image:
+      type: 'boolean'
+      title: Display the Image
+      default: false
+slots:
+  address_block:
+    title: Address
+    type: ['string', 'object', 'null']
+    description: Slot for the address.
+  email_block:
+    title: Email
+    type: ['string', 'object', 'null']
+    description: Slot for the email address.
+  fax_block:
+    title: Fax
+    type: ['string', 'object', 'null']
+    description: Slot for the fax number.
+  footer_block:
+    title: Footer
+    type: ['string', 'object', 'null']
+    description: Slot for the footer.
+  image_block:
+    title: Card Image
+    type: ['string', 'object', 'null']
+    description: Slot for the image on the left of the card.
+  phones_block:
+    title: Phones
+    type: ['string', 'object', 'null']
+    description: Slot for the phone numbers.
+  website_block:
+    title: Website
+    type: ['string', 'object', 'null']
+    description: Slot for the website.

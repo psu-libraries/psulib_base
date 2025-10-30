@@ -44,6 +44,20 @@ props:
       title: Utility Classes
       default: []
       description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
+    heading_link_target:
+      type: ['string', 'null']
+      title: Heading Link Attributes
+      enum:
+        - ''
+        - '_blank'
+        - '_self'
+        - '_parent'
+        - '_top'
+      examples:
+        - '_blank'
+    heading_link_attributes:
+      type: 'Drupal\Core\Template\Attribute'
+      title: Heading Link Attributes
     heading_link_utility_classes:
       type: 'array'
       items:
@@ -55,12 +69,33 @@ props:
       type: ['string', 'boolean']
       title: Title Link
       description: Link URL for the title.
+      examples:
+        - ''
     heading_attributes:
       type: 'Drupal\Core\Template\Attribute'
+      title: Attributes
     content:
       type: 'string'
       title: Content
       description: Content text for the heading.
+    divider:
+      type: ['object', 'boolean']
+      title: Divider
+      description: Add a divider below the heading.
+      properties:
+        color:
+          type: ['string']
+          title: Divider Color
+        thickness:
+          type: ['string']
+          title: Divider Thickness
+        width:
+          type: ['string']
+          title: Divider Width
+      examples:
+        - color: 'navy'
+          thickness: 'md'
+          width: 'md'
 slots:
   heading_content:
     title: Content

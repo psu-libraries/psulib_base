@@ -1,4 +1,4 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 name: Pagination
 status: stable
 description: 'Documentation and examples for displaying pagination to indicate a series of related content exists across multiple pages.'
@@ -13,53 +13,96 @@ props:
         - ''
         - sm
         - lg
-    alignment:
-      type: 'string'
-      title: Alignment
-      description: 'Determines the alignment of the pagination component. Can be one of `"start"` (default alignment), `"end"` (right aligned), `"center"` (center aligned), or `"vertical"` (vertically stacked).'
-      enum:
-        - ''
-        - start
-        - end
-        - center
-        - vertical
     show_first:
       type: 'boolean'
       title: Show first
       description: 'Determines whether the first page link should be displayed.'
+      examples:
+        - true
     show_last:
       type: 'boolean'
       title: Show last
       description: 'Determines whether the last page link should be displayed.'
+      examples:
+        - true
     show_ellipsis:
       type: 'boolean'
       title: Show ellipsis
       description: 'Determines whether the ellipsis should be displayed.'
-pagination_utility_classes:
-  type: 'array'
-  items:
-    type: 'string'
-  description: 'Additional utility classes added to the pagination component.'
-items:
-  type: 'array'
-  items:
-    type: 'object'
-    properties:
-      href:
+    pagination_utility_classes:
+      title: Pagination Utility Classes
+      description: 'Additional utility classes added to the pagination component.'
+      type: 'array'
+      items:
         type: 'string'
-      text:
-        type: 'string'
-      pagination_classes:
-        type: 'array'
-        items:
-          type: 'string'
-      pagination_utility_classes:
-        type: 'array'
-        items:
-          type: 'string'
-      pagination_attributes:
-        type: 'Drupal\Core\Template\Attribute'
-  description: 'The items to be displayed in the pagination component.'
+    pagination_attributes:
+      title: Pagination Attributes
+      type: 'Drupal\Core\Template\Attribute'
+    items:
+      title: Items with pages, first, previous, current, next, last
+      type: ['array', 'null']
+      default: []
+      properties:
+        first:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              title: 'First Page Link Attributes'
+          default: {}
+        previous:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              title: 'Previous Page Link Attributes'
+        current:
+          type: ['string', 'integer']
+        pages:
+          type: ['array', 'object']
+          default: []
+        next:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              title: 'Next Page Link Attributes'
+        last:
+          type: 'object'
+          properties:
+            href:
+              type: 'string'
+            attributes:
+              title: 'Last Page Link Attributes'
+          default: {}
+      examples:
+        -
+          first:
+            href: '/page/1'
+          previous:
+            href: '/page/2'
+            attributes: {}
+          current: '2'
+          pages:
+            - href: '/page/1'
+              text: '1'
+              attributes: {}
+            - href: '/page/2'
+              text: '2'
+              attributes: {}
+            - href: '/page/4'
+              text: '4'
+              attributes: {}
+          next:
+            href: '/page/4'
+            attributes: {}
+          last:
+            href: '/page/10'
+            attributes: {}
+
 slots:
   pagination_next:
     type: 'object'

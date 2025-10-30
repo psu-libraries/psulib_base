@@ -1,0 +1,123 @@
+{% set attrs = {} %}
+{% set id = 'card-grid'|clean_unique_id %}
+{% if randomize_cards|default(false) %}
+  {% set attrs = {
+    'data-randomize-cards': true,
+    'id': id,
+  } %}
+
+  {% if randomize_max_rows|default('0') > '0' %}
+    {% set attrs = attrs|merge({
+      'data-randomize-max-rows': randomize_max_rows|default('0'),
+    }) %}
+  {% endif %}
+{% endif %}
+
+{% set attributes = create_attribute(attrs) %}
+{% set card_columns = card_columns|default('3') %}
+
+{% set classes = [
+  'card-grid',
+  'card-grid--columns-' ~ card_columns,
+  'card-grid--gap-' ~ gap|default('md'),
+  randomize_cards|default(false) ? 'card-grid--randomize-card' : '',
+] %}
+
+{% set card_utility_classes = [
+  'card-grid__card',
+  card_type ? 'card--' ~ card_type,
+  variant_class ? variant_class : '',
+] %}
+
+{# Add styles to limit the number of cards rows that are visible. #}
+{% if randomize_cards and randomize_max_rows|default('0') > '0' %}
+  <style>
+  {% if card_columns == 1 %}
+    #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
+      display: none !important;
+    }
+  {% else %}
+    @media (max-width: 575px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * 1 + 1 }}) {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 991px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * 2 + 1 }}) {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #{{id}} .card-grid__cards .card:nth-child(n+{{ randomize_max_rows * card_columns + 1 }}) {
+        display: none !important;
+      }
+    }
+  {% endif %}
+
+  </style>
+{% endif %}
+
+<div {{ attributes.addClass(classes).setAttribute('data-columns', card_columns) }}>
+  {# Header: Title and Body #}
+  {% if title or body|render is not empty %}
+    <div class="card-grid__header row">
+      <div class="col-12 col-md-8 offset-md-2">
+        {% if title %}
+          {% include 'psulib_base:heading' with {
+            content: title,
+            heading_html_tag: 'h2',
+            heading_utility_classes: ['card-grid__heading'],
+          } only %}
+        {% endif %}
+
+        {% if body|render is not empty %}
+          <div class="card-grid__description">
+            {{ body }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {# Cards #}
+  <div class="card-grid__cards">
+    {% block cards %}
+      {% if cards %}
+        {{ cards }}
+      {% else %}
+        {% for item in items %}
+          {% set item = item|merge({
+            card_utility_classes: card_utility_classes,
+            card_link_stretched: card_link_stretched|default(false),
+            card_title_tag: card_title_tag ?? 'h3',
+          }) %}
+
+          {# Merge default values with the item #}
+          {% include 'psulib_base:card' with item %}
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+  </div>
+
+  {% if cta_button %}
+    <div class="card-grid__cta">
+      {% if cta_button_render|render %}
+        {{ cta_button_render }}
+      {% elseif cta_button %}
+        {%
+          include 'psulib_base:button' with {
+            button_html_tag: 'a',
+            url: cta_button.url,
+            color: 'primary',
+            content: cta_button.title,
+            button_utility_classes: [],
+          }
+        %}
+      {% endif %}
+    </div>
+
+  {% endif %}
+
+</div>

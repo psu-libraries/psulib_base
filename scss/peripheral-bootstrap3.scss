@@ -1,0 +1,136 @@
+@import 'variables_drupal';
+@import 'variables_bootstrap';
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import 'colors';
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/reboot";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+@import "mixins";
+
+// 4. Base styles
+@import 'base/google_fonts';
+@import 'base/layout';
+@import 'base/typography';
+@import 'base/full_bleed';
+@import 'components/general';
+
+@import 'components/nav';
+@import '../components/button/button';
+@import '../components/header/header';
+@import '../components/footer/footer';
+@import '../components/header_mark/header_mark';
+@import '../components/header_nav/header_nav';
+@import '../components/divider/divider';
+
+// Increase the base font of the page to 16px since the default is 14px in
+// bootstrap 3.
+html {
+  font-size: 16px;
+}
+
+main .container-fluid > .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+header {
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  .site-title {
+    color: $pa-link-light;
+  }
+
+  .navbar-brand {
+    float: unset;
+    height: unset;
+  }
+
+  .nav > li > a {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  }
+
+  ul.navbar-nav li a {
+    line-height: 1.5rem;
+
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+.list-inline-item {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Apply primary styles to default buttons */
+.btn.btn-default {
+  --bs-btn-bg: #005fa9;
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #005fa9;
+  --bs-btn-hover-bg: #001e44;
+  --bs-btn-hover-border-color: #001e44;
+  --bs-btn-hover-color: #fff;
+}
+
+footer {
+  .nav > li > a {
+    padding: var(--bs-nav-link-padding-y) 0.5rem var(--bs-nav-link-padding-y) 0;
+
+    &:hover {
+      background-color: unset;
+    }
+  }
+}
+
+// Adding Ask A Librarian button styles.
+.ask {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .ask {
+    display: block;
+    position: fixed;
+    padding: 0;
+    right: -2px;
+    top: 65%;
+    z-index: 10;
+    box-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.57);
+    cursor: pointer;
+  }
+  .ask button {
+    color: #fafafa;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .ask__part1 {
+    font-size: 2rem;
+  }
+}
+
+// Header hours style changes.
+header .psul-hours {
+  font-family: $font-family-condensed;
+  a {
+    color: #fff;
+  }
+}

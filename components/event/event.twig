@@ -1,0 +1,57 @@
+{% set item = {
+  card_title: title,
+  card_utility_classes: ['event-card', 'card--text-left'],
+  card_link_stretched: true,
+  card_title_tag: card_title_tag ?? 'h3',
+  card_type: 'left',
+} %}
+
+{% embed 'psulib_base:card' with item %}
+
+  {% block slot_card_body %}
+    {% if card_title %}
+      {%
+        include 'psulib_base:heading' with {
+          heading_html_tag: card_title_tag,
+          heading_utility_classes: ['event-card__title', 'h4'],
+          content: card_title,
+          title_link: false,
+        }
+      %}
+    {% endif %}
+
+    <div class="event-card__body">
+      {% if date %}
+        <div class="event-card__date event-card__item">
+          {% include 'psulib_base:icon' with { icon: 'calendar' } %}
+          <span class="visually-hidden">Date:</span>
+          <span class="event-card__date-text">{{ date }}</span>
+        </div>
+      {% endif %}
+
+      {% if time %}
+        <div class="event-card__time event-card__item">
+          {% include 'psulib_base:icon' with { icon: 'alarm' } %}
+          <span class="visually-hidden">Time:</span>
+          <span class="event-card__time-text">{{ time }}</span>
+        </div>
+      {% endif %}
+      {% if location %}
+        <div class="event-card__location event-card__item">
+          {% include 'psulib_base:icon' with { icon: 'locationPin' } %}
+          <span class="visually-hidden">Location:</span>
+          <span class="event-card__location-text">{{ location }}</span>
+        </div>
+      {% endif %}
+
+    </div>
+    {% if cta_button is not empty %}
+      <div class="event-card__cta">
+        <a href="{{ cta_button.url }}" class="event-card__cta-button stretched-link">
+          {{ cta_button.title }}
+          {% include 'psulib_base:icon' with { icon: 'chevronRight', color: 'link' } %}
+        </a>
+      </div>
+    {% endif %}
+  {% endblock %}
+{% endembed %}

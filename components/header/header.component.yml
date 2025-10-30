@@ -9,26 +9,156 @@ libraryOverrides:
 slots:
   above_header:
     title: Above Header
-    description:
+    description: Section above above.
   header:
     title: Header
-    description:
+    description: Section above.
   nav_branding:
     title: Navbar Branding
     required: true
-    description:
+    description: Section for logo and site name.
   nav_search:
     title: Navbar search
-    description:
+    description: Section for search functionality in the header. This is typically displayed in the header and allows users to search the site content.
   nav_main:
     title: Navbar Main Menu
-    description:
+    description: Main navigation menu, typically displayed in the header. This is the primary navigation for the site and includes links to important sections such as Services, Research, About, and Ask.
   nav_actions:
     title: Navbar Main Menu actions
     description: Shows to the right of the main menu and is visible on mobile.
   nav_additional:
     title: Navbar Additional Menu
-    description:
+    description: Section for additional navigation items, such as utility links or alerts. This is typically displayed in the header and can include links to important pages like account management or alerts.
   nav_offcanvas:
     title: Navbar Offcanvas Section (mobile)
-    description:
+    description: Section for offcanvas menu on mobile devices. This is used to display the main menu and other navigation items when the screen size is small.
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      libraries:
+        slots:
+          above_header: ''
+          header: ''
+          nav_branding:
+            - type: component
+              component: 'psulib_base:header_mark'
+              props:
+                site_logo: '../../logo.png'
+                logo_path: '<front>'
+                site_name: 'Penn State University Libraries'
+                hide_site_name: true
+          nav_actions: '<div class="block block- psul-hours"><span id="psul-hours--wrapper"><a class="psul-hours--link" href="/monthly-hours/pattee-paterno"><i class="bi bi-clock"></i> Pattee and Paterno: 7:45am - 6:00pm</a></span></div>'
+          nav_additional: '<nav role="navigation" aria-labelledby="block-psul-theme-utility-menu" id="block-psul-theme-utility" class="contextual-region settings-tray-editable block block-menu navigation menu--menu-utility" data-drupal-settingstray="editable">
+              <div class="visually-hidden block-menu--title block-menu--title--menu-utility">Utility</div>
+              <ul data-block="nav_additional" class="nav navbar-nav">
+                <li class="nav-item"><a href="/alerts" class="nav-link" data-drupal-link-system-path="alerts"><i class="bi bi-exclamation-triangle-fill"></i> 3 Alerts</a></li>
+                <li class="nav-item"><a href="https://myaccount.libraries.psu.edu/" class="nav-link">Renew Materials</a></li>
+                <li class="nav-item"><a href="#" class="btn button btn-primary btn-nav-additional nav-link">Give Today</a></li>
+                <li class="nav-item"><a href="#" class="btn button btn-primary btn-nav-additional nav-link">My Account</a></li>
+              </ul>
+            </nav>'
+          nav_search: '<div><a class="text-white btn btn-link dropdown-toggler py-1 px-2" href="#"><i class="bi bi-search"></i><span class="visually-hidden"> Start Search</span></a></div>'
+          nav_main:
+            - type: component
+              component: 'psulib_base:header_nav'
+              props:
+                menu_name: 'main'
+                items:
+                  - title: 'Services'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                    below:
+                      - title: 'Borrowing'
+                        url: '#'
+                      - title: 'Course Reserves'
+                        url: '#'
+                      - title: 'Interlibrary Loan'
+                        url: '#'
+                  - title: 'Research'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                    below:
+                      - title: 'Research Guides'
+                        url: '#'
+                      - title: 'Data Management'
+                        url: '#'
+                  - title: 'About'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                    below:
+                      - title: 'Our Libraries'
+                        url: '#'
+                      - title: 'News & Events'
+                        url: '#'
+                  - title: 'Ask'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: false
+                    is_collapsed: false
+      open_publishing:
+        slots:
+          above_header: ''
+          header: ''
+          nav_branding:
+            - type: component
+              component: 'psulib_base:header_mark'
+              props:
+                site_logo: '../../logo.png'
+                logo_path: '<front>'
+                site_name: 'Open Publishing'
+                hide_site_name: true
+          nav_actions: ''
+          nav_additional: ''
+          nav_search: '<div><a class="text-white btn btn-link dropdown-toggler py-1 px-2" href="#"><i class="bi bi-search"></i><span class="visually-hidden"> Start Search</span></a></div>'
+          nav_main:
+            - type: component
+              component: 'psulib_base:header_nav'
+              props:
+                menu_name: 'main'
+                items:
+                  - title: 'Home'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: false
+                    is_collapsed: false
+                  - title: 'About'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                    below:
+                      - title: 'Open Publishing Policies'
+                        url: '#'
+                      - title: 'Bibliography Policies'
+                        url: '#'
+                  - title: 'Journals'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Bibliographies'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Monographs'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Topical Web Portals'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Publish with Us'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true

@@ -22,6 +22,21 @@ ol.list-2-col {
   }
 }
 
+ul.link-list {
+  display: flex;
+  flex-flow: column;
+  gap: $spacer * 0.25;
+  list-style: none;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+
+  @include make-link($link-color, none, $link-hover-color, underline);
+  a {
+    font-weight: $headings-font-weight;
+  }
+}
+
 a.more-link {
   float: right;
 }
@@ -38,4 +53,56 @@ h1, .h1 {
 
 h2, .h2 {
   margin-bottom: $spacer;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  --blockquote-padding: calc(#{$spacer} * 2);
+  font-size: calc(#{$font-size-base} * 1.125);
+  background-color: $primary;
+  padding: var(--blockquote-padding);
+  @include light-text;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    font-size: calc(#{$font-size-base} * 1.25);
+    padding: var(--blockquote-padding) calc(var(--blockquote-padding) * 4);
+
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: calc(var(--blockquote-padding) * 5);
+    & > * {
+      max-width: 960px;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/icons/psu_inverted_quote.svg);
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      top: 25px;
+      left: calc(var(--blockquote-padding) * 3);
+    }
+  }
+
+  &.blockquote-light {
+    background-color: $pa-slate-max-light;
+    @include dark-text;
+  }
+
+  cite,
+  .author {
+    font-style: normal;
+    font-size: $font-size-base;
+  }
 }

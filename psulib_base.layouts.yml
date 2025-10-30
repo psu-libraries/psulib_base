@@ -1,5 +1,5 @@
 psulib_one_col:
-  label: 'PSUL One column'
+  label: 'One column'
   category: 'PSU Libraries'
   template: layouts/psul-one-column
   default_region: main
@@ -9,8 +9,26 @@ psulib_one_col:
   icon_map:
     - [main]
 
+psulib_two_col:
+  label: 'Two column - 350px sidebar'
+  category: 'PSU Libraries'
+  template: layouts/psul-two-column
+  default_region: main
+  regions:
+    main:
+      label: Main content
+    bottom_left:
+      label: Main Bottom left
+    bottom_right:
+      label: Main Bottom right
+    sidebar:
+      label: Sidebar
+  icon_map:
+    - [sidebar, main, main]
+    - [sidebar, bottom_left, bottom_right]
+
 psulib_two_col_33_66:
-  label: 'PSUL Two column 33/66'
+  label: 'Two column 33/66'
   category: 'PSU Libraries'
   template: layouts/psul-two-column-33-66
   default_region: main
@@ -23,7 +41,7 @@ psulib_two_col_33_66:
     - [sidebar, main, main]
 
 psulib_two_col_50_50:
-  label: 'PSUL Two column 50/50'
+  label: 'Two column 50/50'
   category: 'PSU Libraries'
   template: layouts/psul-two-column-50-50
   default_region: first
@@ -36,7 +54,7 @@ psulib_two_col_50_50:
     - [first, second]
 
 psulib_two_col_66_33:
-  label: 'PSUL Two column 66/33'
+  label: 'Two column 66/33'
   category: 'PSU Libraries'
   template: layouts/psul-two-column-66-33
   default_region: main
@@ -47,3 +65,18 @@ psulib_two_col_66_33:
       label: Sidebar
   icon_map:
     - [main, main, sidebar]
+
+psulib_three_col_with_border:
+  label: 'Three column with border'
+  category: 'PSU Libraries'
+  template: layouts/psul-three-column-with-border
+  default_region: center
+  regions:
+    left:
+      label: Left Column
+    center:
+      label: Center Column
+    right:
+      label: Right Column
+  icon_map:
+    - [left, center, right]

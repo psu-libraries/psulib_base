@@ -4,9 +4,9 @@
 // Override variables here:
 
 // Import bootstrap nav and navbar styles.
-@import "~bootstrap/scss/nav";
-@import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/dropdown";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/dropdown";
 
 // Additional Styles for navs and dropdowns.
 .dropdown-toggle,
@@ -16,4 +16,16 @@
 
 .navbar {
   flex-direction: column;
+}
+
+.nav-link {
+  padding-left: $navbar-nav-link-padding-x;
+  padding-right: $navbar-nav-link-padding-x;
+
+  // Using default outline nav links.
+  // @see https://github.com/twbs/bootstrap/blob/0a56558b5fd34f8e11167202ed7bdca4f6a77d2f/scss/_nav.scss#L41
+  &:focus-visible {
+    outline: revert;
+    box-shadow: none;
+  }
 }

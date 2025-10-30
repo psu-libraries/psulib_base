@@ -1,3 +1,11 @@
+.dialog-off-canvas-main-canvas {
+  min-height: 100vh;
+
+  footer {
+    flex-grow: 1;
+  }
+}
+
 .node-preview-container {
   background-color: $white;
   .node-preview-backlink {
@@ -51,4 +59,65 @@
     flex-grow:0;
     flex-basis: 300px;
   }
+}
+
+.lb-display {
+  .region-content {
+    margin-bottom: 0;
+  }
+
+  // Sections in layout builder have a top and bottom padding of 3rem.
+  .node__content {
+    & > div:not(.full-bleed):not(:first-child) {
+      margin-top: $spacer * 1.5;
+    }
+    & > div:not(.full-bleed):not(:last-child) {
+      margin-bottom: $spacer * 1.5;
+    }
+  }
+}
+
+// Adjusting the margin after blocks.
+.block {
+  .block-layout-builder:not(:last-child) {
+    margin-bottom: $spacer * 2;
+  }
+}
+
+// Adding background colors to sidebar blocks to prevent issue with the
+// layout builder drag and drop functionality.
+.psul-layout-column--sidebar-gray > * {
+  background-color: $light;
+  padding: 0 $spacer;
+
+  &:first-child{
+    padding-top: $spacer;
+  }
+
+  &:last-child {
+    padding-bottom: $spacer;
+  }
+
+  &.js-layout-builder-block {
+    padding: $spacer;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  // Using padding instead to prevent whitespace between blocks.
+  &.block-layout-builder:not(:last-child) {
+    padding-bottom: $spacer * 2;
+    margin-bottom: 0;
+  }
+
+}
+
+.lb-full-bleed-padding-default {
+  padding: ($spacer * 2) 0;
+}
+
+.lb-block-padding-default {
+  padding: $spacer * 1
 }

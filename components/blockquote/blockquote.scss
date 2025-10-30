@@ -1,0 +1,72 @@
+@import '../../scss/init';
+
+// @see ../../scss/base/_typography.scss for base blockquote styles.
+
+.blockquote {
+  --blockquote-image-size: 160px;
+  display: flex;
+  gap: $spacer * 1.25;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+
+  &.blockquote--with-image {
+    &:before {
+      position: absolute;
+
+      @include media-breakpoint-up(md) {
+        left: calc(var(--blockquote-image-size) + (var(--blockquote-padding) * 2));
+      }
+
+      @include media-breakpoint-up(lg) {
+        left: calc(var(--blockquote-image-size) + (var(--blockquote-padding) * 3));
+      }
+    }
+  }
+}
+
+.blockquote__author {
+  margin-top: $spacer * 1.125;
+  margin-bottom: $spacer * 0.25;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+}
+
+.blockquote__author-about {
+  font-size: $font-size-sm;
+  font-style: normal;
+}
+
+.blockquote__image {
+  margin: 0 auto;
+
+  img {
+    min-width: var(--blockquote-image-size);
+    max-width: var(--blockquote-image-size);
+    height: var(--blockquote-image-size);
+    border-radius: 100%;
+    border-width: 4px;
+    border-color: $white;
+    border-style: solid;
+
+    @include media-breakpoint-up(md) {
+      --blockquote-image-size: 140px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 0;
+  }
+
+}
+.img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: $spacer * 0.5;
+}
+
+

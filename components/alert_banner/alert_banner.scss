@@ -2,18 +2,18 @@
 @import '../../scss/init';
 
 .alert-banner {
-  background-color: var(--bs-primary-bg-subtle);
+  background-color: $pa-sky-max-light;
   color: var(--bs-body-color);
   &__urgent {
-    background-color: var(--bs-danger-bg-subtle);
+    background-color: var(--bs-warning-bg-subtle);
   }
 
   &__nonEmergency {
-    background-color: var(--bs-primary-bg-subtle);
+    background-color: $pa-sky-max-light;
   }
 
   &__immediate {
-    background-color: var(--bs-warning-bg-subtle);
+    background-color: var(--bs-danger-bg-subtle);
   }
 
   &__allClear {
@@ -25,16 +25,22 @@
   &--button {
     width: 100%;
     position: relative;
-    display: flex;
     padding-left: 0;
-    text-decoration: none;
+    text-decoration: underline;
 
     &.btn-link {
+      display: flex;
       color: var(--bs-body-color);
       text-transform: uppercase;
+      padding-left: 0;
+      padding-right: 0;
+      font-weight: $font-weight-medium;
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:first-child:active {
         text-decoration: none;
+        color: var(--bs-body-color);
       }
     }
 
@@ -47,6 +53,7 @@
       flex-shrink: 0;
       width: 1.25rem;
       height: 1.25rem;
+      margin-top: 4px;
       margin-left: auto;
       content: "";
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");

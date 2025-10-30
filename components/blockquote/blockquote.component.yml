@@ -1,0 +1,31 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Blockquote
+status: stable
+description: Bootstrap based blockquote component.
+props:
+  type: 'object'
+  properties:
+    body:
+      type: 'string'
+      title: Blockquote Body
+      description: The main content of the blockquote.
+      examples:
+        - <p>The Board of Trustees reviews and approves the <a href="https://budget.psu.edu/openbudget/default.aspx" data-tracking-id="BlockQuote-RichText-Link" class="css-imkclt">budget of the University</a> and guides general goals, policies, and procedures from a big-picture perspective.</p>
+    author:
+      type: 'string'
+      title: Blockquote Name
+      description: The name of the blockquote.
+      examples:
+        - Mike Henninger
+    author_about:
+      type: 'string'
+      title: Blockquote Author Description
+      description: The citation for the blockquote.
+      examples:
+        - Web Developer, Penn State University Libraries
+    image:
+      type: 'string'
+      title: Blockquote Image
+      description: An optional image to display with the blockquote.
+      examples:
+        - images/profile1.jpg

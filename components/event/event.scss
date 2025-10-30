@@ -1,0 +1,30 @@
+@import '../../scss/init';
+
+.event-card__item {
+  .psul-icon {
+    margin-right: 10px;
+
+    svg {
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.event-card__body {
+  flex-grow: 1;
+}
+
+.event-card__cta {
+  text-align: right;
+  margin-top: $spacer;
+  @include make-link($link-color, none, $link-hover-color, underline);
+
+  .psul-icon {
+    height: 12px;
+    width: 12px;
+
+    svg {
+      vertical-align: baseline;
+    }
+  }
+}

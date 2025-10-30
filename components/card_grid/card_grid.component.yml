@@ -1,0 +1,289 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Card Grid
+status: stable
+description: Display a group of cards.
+libraryOverrides:
+  dependencies:
+    - 'core/once'
+    - 'psulib_base/card'
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title above cards
+    body:
+      type: 'string'
+      title: Body
+      description: Body text above cards
+    items:
+      title: Cards
+      description: See card component for required fields.
+      type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
+          - card_title: 'Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+            card_link_url: '#'
+            card_link_text: 'Learn More'
+    card_type:
+      title: Card Variant
+      type: 'string'
+      enum:
+        - cta
+        - default
+        - icon
+        - left
+        - nav
+        - news
+        - search-results
+        - text
+      default: default
+    variant_class:
+      title: Card Variant Class
+      type: 'string'
+      default: ''
+    card_title_tag:
+      title: Card Title HTML Tag
+      type: 'string'
+      default: h3
+    card_link_stretched:
+      type: 'boolean'
+      title: Stretched Link
+      description: If true, the entire card will be a link.
+    card_columns:
+      type: ['string', 'number']
+      title: Card Columns
+      description: Number of columns to display cards in.
+      default: 3
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+    gap:
+      type: 'string'
+      title: Gap
+      description: Gap between cards.
+      default: 'md'
+      enum:
+        - sm
+        - md
+        - lg
+    cta_button:
+      type: 'object'
+      title: CTA Button
+      properties:
+        title:
+          type: 'string'
+          title: Button Title
+        url:
+          type: 'string'
+          title: Button URL
+      examples:
+        title: 'Learn More'
+        url: '#'
+    randomize_cards:
+      type: 'boolean'
+      title: Randomize Cards
+      description: Randomize the order of cards on each page load.
+      default: false
+    randomize_max_rows:
+      type: 'number'
+      title: Randomize Max Rows
+      description: Maximum number of rows to randomize. Set to 0 for no limit.
+      default: 1
+slots:
+  cards:
+    title: Cards
+    description: The cards go here.
+    type: ['string', 'object']
+    examples:
+      - ''
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      icons:
+        props:
+          title: 'Icon Card Grid Example'
+          body: 'This is an example of an icon card grid.'
+          card_link_stretched: true
+          card_type: 'icon'
+          card_columns: 3
+          cards: ''
+          cta_button: ''
+          items:
+            - card_title: 'Card Title 1'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'fax'
+            - card_title: 'Card Title 2'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'person'
+            - card_title: 'Card Title 3'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_icon: 'email'
+      events:
+        props:
+          title: 'Event Card Grid Example'
+          body: 'This is an example of an event grid component.'
+          card_link_stretched: true
+          card_type: 'icon'
+          card_columns: 3
+          cta_button:
+            title: 'View All Events +'
+            url: '#'
+        slots:
+          cards:
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'Penn State Brandywine - Virtual Spend a Summer Evening'
+                date: 'November 29, 2024'
+                time: '5:00 PM ET'
+                location: 'Virtual Event'
+                cta_button: {}
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'Spend a Summer Evening Tour - University Park'
+                date: 'June 29, 2025'
+                time: '5:30 PM ET'
+                location: 'Pattee Library, Foster Auditorium'
+                cta_button:
+                  title: 'Register Now'
+                  url: '#'
+            - type: component
+              component: 'psulib_base:event'
+              props:
+                title: 'University Libraries Discovery Day'
+                date: 'July 2, 2025'
+                time: '8:00 AM ET'
+                location: 'Pattee Library, Foster Auditorium'
+                cta_button:
+                  title: 'Register Now'
+                  url: '#'
+      nav:
+        props:
+          title: 'Nav Card Grid Example'
+          body: 'This is an example of a nav card grid.'
+          card_link_stretched: true
+          card_type: 'nav'
+          card_columns: 3
+          gap: 'sm'
+          variant_class: 'card-type-nav--dark'
+          cta_button: ''
+          items:
+            - card_title: 'Card Title 1'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+            - card_title: 'Card Title 2'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
+            - card_title: 'Card Title 3'
+              card_link: '#'
+              card_body: 'This is the body text for card 1.'
+            - card_title: 'Card Title 4'
+              card_link: '#'
+            - card_title: 'Card Title 5'
+              card_link: '#'
+            - card_title: 'Card Title 6'
+              card_link: '#'
+              card_body_footer: '<span class="badge rounded-pill text-bg-light">Primary</span>'
+      news:
+        props:
+          title: 'News Card Grid Example'
+          body: 'This is an example of a news card grid.'
+          card_link_stretched: true
+          card_type: 'news'
+          card_columns: 4
+          cta_button:
+            title: 'View All News +'
+            url: '#'
+          items:
+            - card_title: 'Library News Item 1'
+              card_body: 'November 29, 2024'
+              card_image_src: '/images/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 2'
+              card_body: 'April 19, 2024'
+              card_image_src: '/images/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 3'
+              card_body: 'June April 5, 2020'
+              card_image_src: '/images/sample.jpg'
+              card_link: '#'
+            - card_title: 'Library News Item 4'
+              card_body: '<div class="cards__card-date">October 9, 2019</div>'
+              card_image_src: '/images/sample.jpg'
+              card_link: '#'
+      randomized:
+        props:
+          title: 'Randomized Card Grid Example'
+          body: 'Randomized the order of the cards.'
+          card_link_stretched: true
+          card_type: 'default'
+          card_columns: 3
+          cta_button:
+            title: 'View All News +'
+            url: '#'
+          randomize_cards: true
+          randomize_max_rows: 1
+          items:
+          - card_title: 'First Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Second Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: '3rd Card'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Fourth Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Number 5'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Sixth Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Seventh Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Eighth Card Title'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'
+          - card_title: 'Last Card'
+            card_body: 'Card body text goes here.'
+            card_image_src: '/images/sample.jpg'
+            card_image_alt: 'Image description'

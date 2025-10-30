@@ -10,3 +10,29 @@
 code {
   overflow-y: auto;
 }
+
+// Overriding some bg styles to ensure that text color readable.
+// These colors are used in layout builder.
+.text-bg-primary,
+.text-bg-dark {
+  @include light-text;
+}
+
+.bg-white,
+.text-bg-slate,
+.text-bg-light {
+  @include dark-text;
+}
+
+// Additional border styles for differnet aspect ratios.
+.border-md-end {
+  @include media-breakpoint-up(md) {
+    border-right: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color);
+  }
+}
+
+.border-lg-end {
+  @include media-breakpoint-up(lg) {
+    border-right: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color);
+  }
+}

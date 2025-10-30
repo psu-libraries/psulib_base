@@ -1,0 +1,45 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Event
+status: stable
+description: Event displayed as a card
+group: 'Cards'
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title above cards
+      examples:
+        - 'University Libraries Discovery Day'
+    date:
+      type: 'string'
+      title: Body
+      description: Body text above cards
+      examples:
+        - 'November 29, 2024'
+    time:
+      type: 'string'
+      title: Time
+      description: Time of the event
+      examples:
+        - '10:00 AM ET'
+    location:
+      type: 'string'
+      title: Location
+      description: Location of the event
+      examples:
+        - 'Pattee Library, Foster Auditorium'
+    cta_button:
+      type: 'object'
+      title: CTA Button
+      properties:
+        title:
+          type: ['string', 'object']
+          title: Button Title
+        url:
+          type: 'string'
+          title: Button URL
+      examples:
+        - title: 'Register Now'
+          url: '#'

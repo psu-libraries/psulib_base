@@ -31,6 +31,29 @@ ddev launch;
 
 SCSS used to generate styles that will be used everywhere are defined in the `./scss` directory.  Styles cannot or should be associated with a single components will live here.  These can be organized in to separate files in the `./scss/base` directory.
 
+To compile the theme you will need install the node dependencies `npm install`.
+
+- `npx mix watch` to compile the scss/js and watch for addition changes (standalone)
+- `ddev theme-watch psulib_base` to compile the scss/js and watch for additional changes. This can only be used within a PSU Libraries Drupal site.
+
+### Storybook
+
+This theme also includes the ability to stand up an instance of Storybook.  This is using the [Storybook SDC Addon](https://storybook.js.org/addons/storybook-addon-sdc) to pull the stories directly from the single directory components. Run `npm run storybook` to stand up a development version of storybook. This will also `npm mix watch` concurrently to update any scss or js changes live.
+
+#### Known issues with twig.js
+
+The implementation of twig.js does not 100% match PHP Twig. There are few issues with the twig.js that need to be worked around.
+
+- `|merge` will only work if you merge a array literal into a array variable.  You also need to ensure that utility class array exists before merging.
+- `trans` is not defined.
+- macros need to be defined before they are used.
+- `attribute.removeClass()` remove the attribute entirely and cannot be used.
+
+#### Links
+- https://storybook.js.org/
+- https://storybook.js.org/addons/storybook-addon-sdc
+- https://github.com/iberdinsky-skilld/sdc-addon
+
 ### Single Directory Components (SDC)
 
 The theme has a number of [Single Directory Components (SDC)](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components) defined in the `./components` directory.  We should use SDC where appropriate.  This allows for easier development and code reusability.
@@ -144,12 +167,17 @@ Update the styles.scss with the following.
 // Sub theme styling.
 ```
 
-Update `webpack.mix.js` file to exclude base theme specific components. This should look like the following.
+Update `webpack.mix.js` file to add alias for bootstrap and exclude base theme specific components. This should look like the following.
 
 ```js
 // webpack.mix.js
 
 let mix = require('laravel-mix');
+const path = require('path');
+
+mix.alias({
+  'bootstrap': path.join(__dirname, 'node_modules/bootstrap')
+});
 
 // Use relative URL so fonts will work.
 mix.sass('scss/style.scss', 'dist/css')
@@ -217,6 +245,28 @@ Once this has run you can use it as documented on https://icons.getbootstrap.com
 <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
 ```
 
+## Material Icons
+Material Icons can be used. These are saved as SVGs in the theme.
+
+### Usage
+- TBD.
+
+### Adding Icons
+- Go to https://fonts.google.com/icons?icon.style=Rounded&selected=Material+Symbols+Rounded:group:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23005FA9&icon.query=group&icon.set=Material+Symbols
+- Find and download the desired icon svg
+- Rename the svg to something simple (the file name is used to find the icon)
+- Add the file to assets/icons
+- Update `components/icon/icon.component.yml` to update
+- Update `stories/icon-usage.stories.js` with details about how the icon shoudl be used withing the libraries site
+
+## Peripheral
+
+The theme can be used to generate assets that can be used on peripheral applications. This requires that the application in question supports bootstrap.
+
+- Run `ddev theme-build`
+- Copy the `dist/peripheral` directory into the `src/psulib_base/dist` directory in the `psu-libraries/assets` project.
+- Copy the `dist/bootstrap-icons` directory into the `src/psulib_base` directory in the `psu-libraries/assets` project.
+- Copy the `assets` directory into the `src/psulib_base` directory in the `psu-libraries/assets` project.
 
 ## Resources
 For more information about creating a subtheme:

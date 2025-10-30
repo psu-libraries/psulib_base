@@ -1,76 +1,151 @@
-{% set attributes = attributes ?: create_attribute() %}
+{% set contact_card_attributes = contact_card_attributes ?: create_attribute() %}
+{% set utility_classes = utility_classes is iterable ? utility_classes : [utility_classes] %}
 
 {%
-  set classes = [
+  set contact_card_classes = [
     'contact-card',
-    stacked ? 'contact-card__stacked',
-  ]|merge(utility_classes ?: [])
+    stacked ? 'contact-card__stacked' : '',
+    linked_card ? 'contact-card__linked-card position-relative': '',
+  ]
 %}
 
-<div {{ attributes.addClass(classes) }}>
-  <div class="contact-card--header">
-    {%
-      include 'psulib_base:heading' with {
-        heading_html_tag: 'h3',
-        title_link: title_url ?? '',
-        content: title,
-        heading_utility_classes: [
-          'contact-card--header--title',
-        ],
-      }
-    %}
-    {% if subtitle %}<span class="contact-card--header--subtitle">{{ subtitle }}</span>{% endif %}
-  </div>
+{% set ext_replacements = {
+  ' ext. ': ';',
+  ' ext ': ';',
+  ' x': ';',
+}%}
 
-  <div class="contact-card--body">
-    {% if address %}<div class="contact-card--address"><em>{{ address }}</em></div>{% endif %}
+<div {{ contact_card_attributes.addClass(contact_card_classes).addClass(utility_classes|default([])) }}>
+  <div class="contact-card--wrapper">
 
-    <div class="contact-card--contacts">
-      {% for phone in phones %}
-        {% if phone %}
-          <div class="contact-card--contacts--phone">
-            <i class="bi bi-telephone-fill"></i>
-            <a href="tel:+{{ phone }}" >{{ phone }}</a>
-          </div>
-        {% endif %}
-      {% endfor %}
+    {% block image_block %}
+      {% if display_image and (image or image_src) %}
+        <div class="contact-card--image">
 
-      {% if email %}
-        <div class="contact-card--contacts--email">
-          <i class="bi bi-envelope-fill"></i>
-          <a href="mailto:{{ email }}" >{{ email }}</a>
+          {% if image %}
+            {{ image }}
+          {% elseif image_src %}
+            {# @todo convert to use psulib_base:image #}
+            <img src="{{ image_src }}" class="img-fluid" />
+          {% endif %}
         </div>
       {% endif %}
+    {% endblock %}
 
-      {% if fax %}
-        <div class="contact-card--contacts--fax">
-          <i class="bi bi-printer-fill"></i>
-          <a href="fax:+{{ fax }}" >{{ fax }}</a>
-        </div>
-      {% endif %}
-
-      {% if website %}
-        <div class="contact-card--contacts--website">
-          <i class="bi bi-box-arrow-up-right"></i>
-          <a href="{{ website }}" >{{ website }}</a>
-        </div>
-      {% endif %}
-    </div>
-
-  </div>
-  {% if cta_button %}
-      {% if cta_button_render|render %}
-        {{ cta_button_render }}
-      {% elseif cta_button %}
+    <div class="content-card--main">
+      <div class="contact-card--header">
         {%
-          include 'psulib_base:button' with {
-            button_html_tag: 'a',
-            url: cta_button.url,
-            color: 'primary',
-            content: cta_button.title,
-            button_utility_classes: [],
+          include 'psulib_base:heading' with {
+            heading_html_tag: 'h3',
+            title_link: title_url ?? '',
+            content: title,
+            heading_utility_classes: [
+              'contact-card--header--title',
+            ],
+            heading_link_utility_classes: [
+              linked_card ? 'stretched-link' : '',
+            ],
           }
         %}
+        {% if subtitle %}
+          <span class="contact-card--header--subtitle">{{ subtitle }}</span>
+        {% endif %}
+      </div>
+
+      <div class="contact-card--body">
+        <div class="contact-card--address contact-card--hide-if-empty">
+          {% apply spaceless %}
+            {% block address_block %}
+              {% if job_title %}
+                <div class="contact-card--address--job-title">{{ job_title }}</div>
+              {% endif %}
+              {% if address %}
+                <em>{{ address }}</em>
+              {% endif %}
+            {% endblock %}
+          {% endapply %}
+        </div>
+
+        <div class="contact-card--contacts">
+          <div class="contact-card--contacts--phone contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block phones_block %}
+                {% for phone in phones %}
+                  {% if phone %}
+                    {% include 'psulib_base:icon' with {icon: 'phone'} %}
+                    <a href="tel:+{{ phone|lower|replace(ext_replacements) }}">{{ phone }}</a>
+                  {% endif %}
+                {% endfor %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+
+          <div class="contact-card--contacts--email contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block email_block %}
+                {% if email %}
+                  {% include 'psulib_base:icon' with {icon: 'email'} %}
+                  <a href="mailto:{{ email }}">{{ email }}</a>
+                {% endif %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+          <div class="contact-card--contacts--fax contact-card--hide-if-empty">
+            {% apply spaceless %}
+              {% block fax_block %}
+                {% if fax %}
+                  {% include 'psulib_base:icon' with {icon: 'fax'} %}
+                  <a href="fax:+{{ fax }}">{{ fax }}</a>
+                {% endif %}
+              {% endblock %}
+            {% endapply %}
+          </div>
+
+          {% block website_block %}
+            {% if website %}
+              <div class="contact-card--contacts--website">
+                {% include 'psulib_base:icon' with {icon: 'linkOut'} %}
+                <a href="{{ website }}">{{ website }}</a>
+              </div>
+            {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+      {% if cta_button %}
+        {% if cta_button_render|render %}
+          {{ cta_button_render }}
+        {% elseif cta_button %}
+          {%
+              include 'psulib_base:button' with {
+                button_html_tag: 'a',
+                url: cta_button.url,
+                color: 'primary',
+                content: cta_button.title,
+                button_utility_classes: [],
+              }
+            %}
+        {% endif %}
       {% endif %}
-  {% endif %}
+
+      {% block footer_block %}
+
+        {% if footer %}
+          <div class="contact-card--footer">
+            {{ footer }}
+          </div>
+        {% endif %}
+      {% endblock %}
+    </div>
+
+
+    {% if linked_card %}
+      <div class="contact-card--chevron">
+        {% include 'psulib_base:icon' with {
+          icon: 'chevronRight',
+          color: 'link',
+        } %}
+      </div>
+    {% endif %}
+  </div>
+
 </div>

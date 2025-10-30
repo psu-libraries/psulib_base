@@ -1,0 +1,34 @@
+@import '../init';
+
+/**
+ * Styles for layout built pages.
+ */
+.layout-builder-content .region-content {
+  // Resetting padding that is applied in .region-content in base/_structure.scss
+  margin-bottom: 0;
+}
+
+
+.layout {
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 2rem;
+    }
+  }
+
+  &:last-child:not(.full-bleed) {
+    margin-bottom: 1.5rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// We are using margin-top as the spacer so we can use the sibling selector
+// to remove the margin between two full-bleed layouts.
+.layout.full-bleed + .layout.full-bleed {
+  margin-top: 0 !important;
+}

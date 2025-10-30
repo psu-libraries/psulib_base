@@ -1,0 +1,60 @@
+@import '../../scss/init';
+
+.divider {
+  --divider-color: #{$nittany-navy};
+  --divider-thickness: 2px;
+  --divider-width: 80px;
+
+  width: var(--divider-width);
+  border-bottom: var(--divider-thickness) solid var(--divider-color);
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  margin-top: $spacer * 0.75;
+  margin-bottom: $spacer * 1.25;
+}
+
+// @todo - Add support for vertical dividers.  This is currently not working.
+.divider--orientation-vertical {
+  height: auto;
+  width: auto;
+  border-bottom-width: 0px;
+}
+
+$colors: (
+  "navy": #{$nittany-navy},
+  "pugh": #{$pugh-blue},
+  "white": #{$white},
+  "sky": #{$pa-sky},
+);
+@each $name, $color in $colors {
+  .divider--color-#{$name} {
+    --divider-color: #{$color};
+  }
+}
+
+$divider-width: (
+  "xs": 16px,
+  "sm": 32px,
+  "md": 48px,
+  "lg": 64px,
+  "xl": 80px,
+  'full': 100%,
+);
+@each $name, $width in $divider-width {
+  .divider--width-#{$name} {
+    --divider-width: #{$width};
+  }
+}
+
+$divider-thickness: (
+  "xs": 1px,
+  "sm": 2px,
+  "md": 3px,
+  "lg": 4px,
+);
+@each $name, $thickness in $divider-thickness {
+  .divider--thickness-#{$name} {
+    --divider-thickness: #{$thickness};
+  }
+}

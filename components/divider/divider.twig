@@ -1,0 +1,11 @@
+{%
+  set classes = [
+    'divider',
+    'divider--orientation-' ~ orientation|default('horizontal'),
+    'divider--width-' ~ width|default('xs'),
+    'divider--color-' ~ color|default('navy'),
+    'divider--thickness-' ~ thickness|default('xs'),
+  ]|join(' ')
+%}
+
+<div class="{{ classes }}"></div>
