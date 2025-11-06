@@ -23,13 +23,6 @@ props:
     card_body:
       type: ['string', 'object']
       title: Card Body
-    card_body_tag:
-      type: 'string'
-      title: Card Body HTML Tag
-      default: div
-      enum:
-        - div
-        - section
     card_body_footer:
       type: ['string', 'object']
       title: Card Body Footer
@@ -132,10 +125,6 @@ props:
     card_footer:
       type: 'string'
       title: Card Footer
-    card_border:
-      type: 'boolean'
-      title: Has Card Border?
-      default: false
     card_utility_classes:
       type: 'array'
       items:

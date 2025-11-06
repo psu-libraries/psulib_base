@@ -16,11 +16,9 @@
   * - card_image_alt: (optional) Card image alt text.
   * - card_image_cap: (optional) Card image caption.
   * - card_image_overlays: (optional) Card image overlays.
-  * - card_body_tag: (optional) Card body tag.
   * - card_title_tag: (optional) Card title tag.
   * - card_subtitle_tag: (optional) Card subtitle tag.
   * - card_text_tag: (optional) Card text tag.
-  * - card_border: (optional) Card border.
   * - card_utility_classes: (optional) Any additional classes to add to the card.
  */
 #}
@@ -54,7 +52,6 @@
   ]
 %}
 
-{% set card_border = card_border ? card_border : false %}
 {% set card_title_tag = card_title_tag|default('h3') %}
 {% set card_text_tag = card_text_tag|default('div') %}
 {% set card_subtitle_tag = card_subtitle_tag|default('div') %}
@@ -69,7 +66,6 @@
     'card--image-' ~ card_image_cap,
     card_image_overlays ? 'card--image-overlays' : '',
     card_link_stretched ? 'card--linked position-relative' : '',
-    card_border ? 'border' : '',
   ])
 %}
 
