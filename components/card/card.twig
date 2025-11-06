@@ -153,9 +153,9 @@
       {% endif %}
 
       {% if card_body %}
-        <{{card_text_tag}} {{ card_text_attributes.addClass('card-text') }}>
+        <div {{ card_text_attributes.addClass('card-text') }}>
           {{ card_body }}
-        </{{card_text_tag}}>
+        </div>
       {% endif %}
 
       {% block slot_card_body_footer %}

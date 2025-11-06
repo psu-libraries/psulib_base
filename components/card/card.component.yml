@@ -58,14 +58,6 @@ props:
         - h6
       examples:
         - h3
-    card_text_tag:
-      type: 'string'
-      title: Card Text HTML Tag
-      default: p
-      enum:
-        - p
-        - span
-        - div
     card_link:
       type: 'string'
       title: Card Link
