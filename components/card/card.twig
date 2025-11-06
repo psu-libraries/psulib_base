@@ -87,7 +87,7 @@
 <div {{ card_attributes.addClass(card_classes) }}>
   {% block slot_card_header %}
     {% if card_header %}
-      <div {{ card_header_attributes.addClass(card_header_utility_classes|default([])).addClass('card-header') }}>
+      <div {{ card_header_attributes.addClass('card-header') }}>
         {{ card_header }}
       </div>
     {% endif %}
@@ -196,7 +196,7 @@
 
   {% block slot_card_footer %}
     {% if card_footer %}
-      <div {{ card_footer_attributes.addClass(card_footer_utility_classes|default([])).addClass('card-footer') }}>
+      <div {{ card_footer_attributes.addClass('card-footer') }}>
         {{ card_footer }}
       </div>
     {% endif %}
