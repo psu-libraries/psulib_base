@@ -31,11 +31,10 @@
   ])
 %}
 
-{% set card_body_utility_classes = card_link_utility_classes|default([]) %}
 {%
-  set card_body_classes = card_body_utility_classes|merge([
+  set card_body_classes = [
     'card-body'
-  ])
+  ]
 %}
 
 {% set card_link_utility_classes = card_link_utility_classes|default([]) %}
@@ -154,7 +153,7 @@
       {% endif %}
 
       {% if card_body %}
-        <{{card_text_tag}} {{ card_text_attributes.addClass(card_text_utility_classes|default([])).addClass('card-text') }}>
+        <{{card_text_tag}} {{ card_text_attributes.addClass('card-text') }}>
           {{ card_body }}
         </{{card_text_tag}}>
       {% endif %}
