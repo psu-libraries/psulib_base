@@ -97,14 +97,6 @@ props:
       title: Card Image Alternative Text
       examples:
         - 'Sample Image'
-    card_image_cap:
-      type: 'string'
-      title: Image Caption Position
-      default: ''
-      enum:
-        - ''
-        - top
-        - bottom
     card_image_overlays:
       type: 'boolean'
       title: Use Image Overlays?
@@ -142,12 +134,6 @@ slots:
   slot_card_header:
     title: Card Header
     description: Slot for the header of the card.
-  slot_card_image_top:
-    title: Card Image Top
-    description: Slot for the top image of the card.
-  slot_card_image_bottom:
-    title: Card Image Bottom
-    description: Slot for the bottom image of the card.
   slot_card_body:
     title: Card Body
     description: Slot for the body of the card.

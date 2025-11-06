@@ -107,21 +107,19 @@
     %}
   {% endif %}
 
-  {% block slot_card_image_top %}
-    {% if card_image_cap == 'top' and not card_image_overlays %}
-      {% if card_media %}
-        {{ card_media }}
-      {% elseif card_image_src %}
-        {%
-          include 'psulib_base:image' with {
-            src: card_image_src,
-            image_utility_classes: card_image_classes,
-            alt: card_image_alt|default(''),
-          }
-        %}
-      {% endif %}
+  {% if not card_image_overlays %}
+    {% if card_media %}
+      {{ card_media }}
+    {% elseif card_image_src %}
+      {%
+        include 'psulib_base:image' with {
+          src: card_image_src,
+          image_utility_classes: card_image_classes,
+          alt: card_image_alt|default(''),
+        }
+      %}
     {% endif %}
-  {% endblock %}
+  {% endif %}
 
   <div {{ card_body_attributes.addClass(card_body_classes) }}>
     {% block slot_card_body %}
@@ -178,21 +176,6 @@
       {% endif %}
     {% endblock %}
   </div>
-
-  {% block slot_card_image_bottom %}
-    {% if card_image_cap == 'bottom' and not card_image_overlays %}
-      {% if card_media %}
-        {{ card_media }}
-      {% elseif card_image_src %}
-        {%
-          include 'psulib_base:image' with {
-            src: card_image_src,
-            image_utility_classes: card_image_classes|merge(['card-img-bottom'])
-          }
-        %}
-      {% endif %}
-    {% endif %}
-  {% endblock %}
 
   {% block slot_card_footer %}
     {% if card_footer %}
