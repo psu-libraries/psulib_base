@@ -36,17 +36,21 @@ header {
 
   .navbar-nav {
 
-    .nav-link,
-    .nav-link.active,
-    .nav-link.show {
+    .nav-link:not(.btn) {
       color: $white-out;
-    }
 
-    .nav-link {
+      &.active,
+      &.show {
+        color: $white-out;
+      }
 
       &:hover {
         color: $pa-sky-light;
       }
+    }
+
+    .nav-link.btn:hover {
+      text-decoration: none;
     }
   }
 
@@ -113,23 +117,9 @@ header {
 
     // There is a btn-navlink button variant but we cannot use it because the
     // bootstrap navbar styles are overriding it.
-    a.btn.button.btn-primary.btn-nav-additional.nav-link {
-      font-size: 1rem;
-      border: 2px solid $pa-link-light;
-      border-radius: 30px;
+    a.btn.btn-nav-additional.nav-link {
       margin: 7px 10px;
-      padding: 0 20px;
-      text-transform: none;
-      font-family: $font-family-sans-serif;
-      font-weight: 400;
-      color: $pa-link-light;
-
-      &:hover {
-        text-decoration: none;
-        border-color: $pa-link-light;
-        background-color: $pa-link-light;
-        color: $nittany-navy;
-      }
+      padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
     }
   }
 

@@ -35,7 +35,9 @@ props:
         - info
         - dark
         - light
-        - link
+        - navlink
+        - report
+        - nav-additional
     target:
       type: 'string'
       title: Target

@@ -135,6 +135,27 @@ $theme-colors: (
   text-transform: uppercase;
 }
 
+.btn-nav-additional {
+  @include button-variant(
+    $nittany-navy,
+    $pa-link-light,
+    $pa-link-light,
+    $pa-link-light,
+    $pa-link-light,
+    $nittany-navy,
+  );
+
+  --#{$prefix}btn-padding-x: 20px;
+  --#{$prefix}btn-padding-y: 0;
+
+  font-size: 1rem;
+  border: 2px solid $pa-link-light;
+  border-radius: 30px;
+  text-transform: none;
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
+
 // Add variant for a full width button. This will take up the entire
 // space of the parent container.
 .btn-wide {
