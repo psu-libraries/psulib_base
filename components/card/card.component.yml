@@ -23,13 +23,6 @@ props:
     card_body:
       type: ['string', 'object']
       title: Card Body
-    card_body_tag:
-      type: 'string'
-      title: Card Body HTML Tag
-      default: div
-      enum:
-        - div
-        - section
     card_body_footer:
       type: ['string', 'object']
       title: Card Body Footer
@@ -65,14 +58,6 @@ props:
         - h6
       examples:
         - h3
-    card_text_tag:
-      type: 'string'
-      title: Card Text HTML Tag
-      default: p
-      enum:
-        - p
-        - span
-        - div
     card_link:
       type: 'string'
       title: Card Link
@@ -112,14 +97,6 @@ props:
       title: Card Image Alternative Text
       examples:
         - 'Sample Image'
-    card_image_cap:
-      type: 'string'
-      title: Image Caption Position
-      default: ''
-      enum:
-        - ''
-        - top
-        - bottom
     card_image_overlays:
       type: 'boolean'
       title: Use Image Overlays?
@@ -132,10 +109,6 @@ props:
     card_footer:
       type: 'string'
       title: Card Footer
-    card_border:
-      type: 'boolean'
-      title: Has Card Border?
-      default: false
     card_utility_classes:
       type: 'array'
       items:
@@ -150,34 +123,6 @@ props:
       title: Title Utility Classes
       description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card title component.
       default: []
-    card_subtitle_utility_classes:
-      type: 'array'
-      items:
-        type: 'string'
-      title: Subtitle Utility Classes
-      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card subtitle component.
-      default: []
-    card_header_utility_classes:
-      type: 'array'
-      items:
-        type: 'string'
-      title: Header Utility Classes
-      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card header component.
-      default: []
-    card_body_utility_classes:
-      type: 'array'
-      items:
-        type: 'string'
-      title: Body Utility Classes
-      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card body component.
-      default: []
-    card_text_utility_classes:
-      type: 'array'
-      items:
-        type: 'string'
-      title: Text Utility Classes
-      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card text component.
-      default: []
     card_link_utility_classes:
       type: 'array'
       items:
@@ -185,23 +130,10 @@ props:
       title: Link Utility Classes
       description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card link component.
       default: []
-    card_footer_utility_classes:
-      type: 'array'
-      items:
-        type: 'string'
-      title: Footer Utility Classes
-      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card footer component.
-      default: []
 slots:
   slot_card_header:
     title: Card Header
     description: Slot for the header of the card.
-  slot_card_image_top:
-    title: Card Image Top
-    description: Slot for the top image of the card.
-  slot_card_image_bottom:
-    title: Card Image Bottom
-    description: Slot for the bottom image of the card.
   slot_card_body:
     title: Card Body
     description: Slot for the body of the card.
