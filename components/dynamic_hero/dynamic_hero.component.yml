@@ -80,4 +80,4 @@ props:
 slots:
   body_block:
     title: Body Block
-    description: Slot aroudn the body content.
+    description: Slot around the body content.

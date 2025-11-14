@@ -1,0 +1,85 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Label with Icon
+status: stable
+description: Label with Icon component.
+props:
+  type: 'object'
+  properties:
+    label:
+      type: 'string'
+      title: Label
+      description: Label text
+      examples:
+        - 'Library Guides'
+    label_heading_level:
+      type: 'string'
+      title: Label Heading Level
+      description: HTML heading level for the label
+      default: 'h3'
+      enum:
+        - 'h2'
+        - 'h3'
+        - 'h4'
+        - 'h5'
+        - 'h6'
+      examples:
+        - h3
+    icon:
+      type: 'string'
+      title: Icon
+      description: Icon to display with the label
+      default: info
+      enum:
+        - alarm
+        - assignment
+        - barChart3
+        - bullhorn
+        - book_2
+        - book_ribbon
+        - bookmarks
+        - calendar
+        - chevronRight
+        - close
+        - computer
+        - crowdsource
+        - diversity_3
+        - docs
+        - double_arrow
+        - edit_square
+        - email
+        - fax
+        - full_coverage
+        - globe
+        - globeBook
+        - group
+        - help
+        - info
+        - institution
+        - inventory
+        - library_books
+        - linkOut
+        - locationPin
+        - map
+        - menu
+        - menu_book
+        - newspaper
+        - openBook
+        - person
+        - phone
+        - psu_flex_double_arrow
+        - psu_inverted_quote
+        - schedule
+        - school
+        - search
+      examples:
+        - help
+    content:
+      type: ['string', 'array', 'object']
+      title: Content
+      description: Additional content to display with the label and icon
+      examples:
+        - '<div>Explore our comprehensive library guides to enhance your research. Search guides by subject, course, or type.</div>'
+  slots:
+    content_block:
+      title: Content Block
+      description: Slot around the additional content.

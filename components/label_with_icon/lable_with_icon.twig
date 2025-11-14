@@ -1,0 +1,19 @@
+{% set label_heading_level = label_heading_level|default('h3') %}
+
+<div class="label-with-icon">
+  <div class="label-with-icon__icon">
+    {% include 'psulib_base:icon' with {
+      icon: icon,
+      color: 'link',
+    } only %}
+  </div>
+  <div class="label-with-icon__content-wrapper">
+    <{{ label_heading_level }} class="label-with-icon__label">{{ label }}</{{ label_heading_level }}>
+
+    <div class="label-with-icon__content">
+      {% block content_block %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  </div>
+</div>
