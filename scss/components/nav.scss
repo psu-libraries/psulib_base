@@ -29,3 +29,17 @@
     box-shadow: none;
   }
 }
+
+.region-nav-main {
+  > [data-big-pipe-placeholder-id] {
+    display: block;
+    @include media-breakpoint-up('md') {
+      height: 39px;
+    }
+
+    @include media-breakpoint-up('lg') {
+      height: 42px;
+    }
+  }
+
+}
