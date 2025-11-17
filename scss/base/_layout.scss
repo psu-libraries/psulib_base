@@ -78,8 +78,8 @@
 }
 
 // Adjusting the margin after blocks.
-.block {
-  .block-layout-builder:not(:last-child) {
+.block-system-main-block .layout {
+  .block:not(:last-child) {
     margin-bottom: $spacer * 2;
   }
 }
