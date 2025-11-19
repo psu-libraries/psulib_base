@@ -9,7 +9,7 @@
   ]
 %}
 
-{% if content %}
+{% if content and not content_is_empty %}
   <div {{ attributes.addClass('layout psul-one-column') }}>
     {% if content.main %}
       <div {{ region_attributes.main.addClass(main_class) }}>

@@ -18,7 +18,7 @@
   ]
 %}
 
-{% if content %}
+{% if content and not content_is_empty %}
   <div {{ attributes.addClass('layout psul-two-column') }}>
     <div class="row gy-3 gy-lg-0 gx-lg-5">
     {% if content.first %}

@@ -29,7 +29,7 @@
   ]
 %}
 
-{% if content %}
+{% if content and not content_is_empty %}
   <div {{ attributes.addClass('layout psul-three-column') }}>
     <div class="row gx-4 gx-md-5">
 
