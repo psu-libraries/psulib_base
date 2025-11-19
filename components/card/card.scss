@@ -189,6 +189,8 @@
 
   // Campus Card.
   &.card-type-campus {
+    --#{$prefix}card-text-align: start;
+
     img {
       border-bottom: 12px solid var(--#{$prefix}primary);
     }
