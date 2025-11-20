@@ -44,3 +44,10 @@
   --#{$prefix}link-hover-color: #{$pa-link};
   --#{$prefix}link-hover-color-rgb: #{to-rgb($pa-link)};
 }
+
+@mixin layout-block-100vw {
+  width: 100vw !important;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}

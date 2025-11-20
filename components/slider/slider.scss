@@ -13,6 +13,11 @@ $slick-font-family: 'serif';
   margin-bottom: 2rem;
 }
 
+// Forcing sliders in layout to be 100vw.
+.layout .slider__container {
+  @include layout-block-100vw;
+}
+
 // @todo make class names consistent.
 .slick-slide {
 
