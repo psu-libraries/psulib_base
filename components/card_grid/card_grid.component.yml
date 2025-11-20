@@ -14,9 +14,11 @@ props:
       title: Title
       description: Title above cards
     body:
-      type: 'string'
+      type: ['string', 'array']
       title: Body
       description: Body text above cards
+      examples:
+        - 'This is the body text for the card grid.'
     items:
       title: Cards
       description: See card component for required fields.

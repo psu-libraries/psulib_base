@@ -10,6 +10,12 @@ props:
       description: Title of the hero section
       examples:
         - 'Library Guides'
+    body:
+      type: ['string', 'array']
+      title: Body
+      description: Body text above cards
+      examples:
+        - 'This is the body text for the slider.'
     show_captions:
       type: 'boolean'
       title: Show Captions below the Slider
