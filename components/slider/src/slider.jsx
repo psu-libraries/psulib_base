@@ -60,10 +60,11 @@ function PsulSlider({ slides, showCaptions }) {
     infinite: true,
     slidesToScroll: true,
     slidesToShow: 1,
-    centerMode: true,
+    centerMode: false,
     variableWidth: false,
     arrows: false,
     fade: true,
+    className: 'slider--media',
     ref: (slider2) => captionNav(slider2)
   }
   return (
@@ -76,16 +77,12 @@ function PsulSlider({ slides, showCaptions }) {
         ))}
       </Slider>
       {showCaptions ? (
-        <div className="slider--captions container">
-          <div className="row">
-            <Slider {...captionSettings}>
-              {slides.map((slide, index) => (
-                <div key={index} className="slider--caption col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" dangerouslySetInnerHTML={{ __html: slide.caption }}>
-                  {/* {slide.caption} */}
-                </div>
-              ))}
-            </Slider>
-          </div>
+        <div className="slider--captions">
+          <Slider {...captionSettings}>
+            {slides.map((slide, index) => (
+              <div key={index} className="slider--caption"dangerouslySetInnerHTML={{ __html: slide.caption }}></div>
+            ))}
+          </Slider>
         </div>
       ) : null}
       <div className="slick-dots-container" />
