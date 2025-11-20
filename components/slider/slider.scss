@@ -1,8 +1,17 @@
 // Generate styles for pagination.
 @import '../../scss/init';
 
+// This will prevent the slick font from being loaded.  The font is not needed
+// since we are using icons for arrows.
+$slick-font-family: 'serif';
+
 @import 'slick-carousel/slick/slick.scss';
 @import 'slick-carousel/slick/slick-theme.scss';
+
+
+.slider_header {
+  margin-bottom: 2rem;
+}
 
 // @todo make class names consistent.
 .slick-slide {
@@ -125,6 +134,7 @@
 .slick-dots-container {
   position: relative;
   margin-top: $spacer * 1.25;
+  margin-bottom: calc(($spacer * 2) + 25px);
 
   @include media-breakpoint-up(md) {
     margin-top: $spacer * 1.5;
