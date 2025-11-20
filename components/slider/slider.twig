@@ -1,29 +1,36 @@
-{% if title or body|render is not empty %}
-  <div class="slider_header row">
-    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      {% if title %}
-        {% include 'psulib_base:heading' with {
-          content: title,
-          heading_html_tag: 'h2',
-          heading_utility_classes: ['slider_heading'],
-        } only %}
+{% if slides %}
+  <div class="slider slider--{{ variant }}">
+    {# Header: Title and Body #}
+    {% if title or body|render is not empty %}
+      <div class="slider_header row">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          {% if title %}
+            {% include 'psulib_base:heading' with {
+              content: title,
+              heading_html_tag: 'h2',
+              heading_utility_classes: ['slider_heading'],
+            } only %}
+          {% endif %}
+
+          {% if body|render is not empty %}
+            <div class="slider__description">
+              {{ body }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="slider__container">
+    {% if variant == 'media' %}
+      <psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
+    {% else %}
+      {% if variant == 'blockquote' %}
+        {{ attach_library('psulib_base/blockquote') }}
       {% endif %}
 
-      {% if body|render is not empty %}
-        <div class="slider__description">
-          {{ body }}
-        </div>
-      {% endif %}
+      <psul-text-slider variant="{{ variant }}" slides='{{ slides|json_encode|raw }}'></psul-text-slider>
+    {% endif  %}
     </div>
   </div>
-{% endif %}
-
-{% if variant == 'media' %}
-  <psul-slider slides='{{ slides|json_encode|raw }}' show-captions="{{ show_captions }}"></psul-slider>
-{% else %}
-  {% if variant == 'blockquote' %}
-    {{ attach_library('psulib_base/blockquote') }}
-  {% endif %}
-
-  <psul-text-slider variant="{{ variant }}" slides='{{ slides|json_encode|raw }}'></psul-text-slider>
 {% endif %}
