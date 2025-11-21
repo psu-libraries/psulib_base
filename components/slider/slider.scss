@@ -8,6 +8,21 @@ $slick-font-family: 'serif';
 @import 'slick-carousel/slick/slick.scss';
 @import 'slick-carousel/slick/slick-theme.scss';
 
+@mixin set-slide-heights {
+  height: 200px;
+
+  @include media-breakpoint-up(md) {
+    height: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 350px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 480px;
+  }
+}
 
 .slider_header {
   margin-bottom: 2rem;
@@ -16,6 +31,10 @@ $slick-font-family: 'serif';
 // Forcing sliders in layout to be 100vw.
 .layout .slider__container {
   @include layout-block-100vw;
+}
+
+.media-slider > .slick-slider > .slick-list {
+  @include set-slide-heights;
 }
 
 // @todo make class names consistent.
@@ -34,19 +53,7 @@ $slick-font-family: 'serif';
     }
 
     > img {
-      height: 200px;
-
-      @include media-breakpoint-up(md) {
-        height: 300px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        height: 350px;
-      }
-
-      @include media-breakpoint-up(xl) {
-        height: 480px;
-      }
+      @include set-slide-heights;
     }
   }
 
@@ -126,9 +133,18 @@ $slick-font-family: 'serif';
 .slider--captions {
   flex-direction: row;
   margin-top: $spacer * 1.25;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+  padding: 0 ($spacer * 2);
 
   @include media-breakpoint-up(md) {
     margin-top: $spacer * 1.5;
+    max-width: 768px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 960px;
   }
 
   .slick-list {
