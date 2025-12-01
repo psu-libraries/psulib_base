@@ -44,26 +44,28 @@
         </div>
         {# @todo add logic to show More if there are more than 4 menu items. #}
         <div class="{% if not more %}d-lg-none{% endif %} dropdown in-page-nav__nav in-page-nav__nav--mobile">
-          <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {% if more %}
-              <span class="in-page-nav__more d-none d-xl-inline">More</span>
-            {% endif %}
-            {% include 'psulib_base:icon' with {
-              icon: 'menu',
-              color: 'black',
-            } only %}
-            {% include 'psulib_base:icon' with {
-              icon: 'close',
-              color: 'black',
-            } only %}
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            {% for item in items %}
-              <li class="">
-                <a href="{{ item.url }}" class="dropdown-item {% if loop.index < limit %}d-lg-none{% endif %}">{{ item.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+          {% if items %}
+            <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% if more %}
+                <span class="in-page-nav__more d-none d-xl-inline">More</span>
+              {% endif %}
+              {% include 'psulib_base:icon' with {
+                icon: 'menu',
+                color: 'black',
+              } only %}
+              {% include 'psulib_base:icon' with {
+                icon: 'close',
+                color: 'black',
+              } only %}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              {% for item in items %}
+                <li class="">
+                  <a href="{{ item.url }}" class="dropdown-item {% if loop.index < limit %}d-lg-none{% endif %}">{{ item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
 
       </div>
