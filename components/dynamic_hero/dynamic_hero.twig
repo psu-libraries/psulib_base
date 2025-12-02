@@ -55,14 +55,16 @@
           <div class="dynamic-hero__body">{{ body }}</div>
         {% endif %}
       {% endblock %}
-      <div class="dynamic-hero__cta">
-        {% if cta_button_first %}
-          <a {{ cta1_attributes.setAttribute('href', cta_button_first.url).addClass(cta1_classes) }}>{{ cta_button_first.text }}</a>
-        {% endif %}
-        {% if cta_button_second %}
-          <a {{ cta2_attributes.setAttribute('href', cta_button_second.url).addClass(cta2_classes) }}>{{ cta_button_second.text }}</a>
-        {% endif %}
-      </div>
+      {% if cta_button_first or cta_button_second %}
+        <div class="dynamic-hero__cta">
+          {% if cta_button_first %}
+            <a {{ cta1_attributes.setAttribute('href', cta_button_first.url).addClass(cta1_classes) }}>{{ cta_button_first.text }}</a>
+          {% endif %}
+          {% if cta_button_second %}
+            <a {{ cta2_attributes.setAttribute('href', cta_button_second.url).addClass(cta2_classes) }}>{{ cta_button_second.text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
