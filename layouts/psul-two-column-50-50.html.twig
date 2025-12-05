@@ -21,12 +21,12 @@
 {% if content and not content_is_empty %}
   <div {{ attributes.addClass('layout psul-two-column') }}>
     <div class="row gy-3 gy-lg-0 gx-lg-5">
-    {% if content.first %}
+    {% if content.first|render|striptags|trim %}
       <div {{ region_attributes.first.addClass(first_classes) }}>
         {{ content.first }}
       </div>
     {% endif %}
-    {% if content.second %}
+    {% if content.second|render|striptags|trim %}
       <div {{ region_attributes.second.addClass(second_classes) }}>
         {{ content.second }}
       </div>
