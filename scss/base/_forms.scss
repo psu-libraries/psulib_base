@@ -252,4 +252,18 @@ form {
       border-color: var(--bs-form-invalid-border-color);
     }
   }
+
+  &.was-validated {
+    .form-radios,
+    .form-checkboxes {
+      .invalid-feedback {
+        display: none;
+      }
+
+      &:has(:invalid) .invalid-feedback {
+        display: block;
+      }
+    }
+  }
+
 }
