@@ -71,13 +71,26 @@
       }
 
       let parent = invalidElement.parentNode;
-      if (invalidElement.type === 'radio' || invalidElement.type === 'checkbox') {
+      if (invalidElement.type === 'radio') {
+        // console.log(invalidElement.type);
         // Find the last radio or checkbox with the same name.
         const groupName = invalidElement.name;
         const groupElements = form.querySelectorAll(`input[name="${groupName}"]`);
         const lastElement = groupElements[groupElements.length - 1];
-        parent = lastElement.parentNode;
+        parent = lastElement.parentNode.parentNode;
       }
+      else if (invalidElement.type === 'checkbox') {
+        const groupName = invalidElement.name;
+        const checkboxNameRegex = /^([\w\-_]*)\[\w*\]$/;
+        const regexed = checkboxNameRegex.exec(groupName);
+
+        if (regexed) {
+          const groupElements = form.querySelectorAll(`input[name^="${regexed[1]}["]`);
+          const lastElement = groupElements[groupElements.length - 1];
+          parent = lastElement.parentNode.parentNode;
+        }
+      }
+
       let feedback = parent.querySelector('.invalid-feedback');
 
       if (!feedback || !feedback.classList.contains('invalid-feedback')) {
