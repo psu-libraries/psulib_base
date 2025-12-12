@@ -89,6 +89,35 @@ header {
   --bs-btn-hover-color: #fff;
 }
 
+a.button.btn-primary.btn-nav-additional.nav-link {
+  --bs-btn-color: #cce9ff;
+  --bs-btn-bg: #001e44;
+  --bs-btn-border-color: #cce9ff;
+  --bs-btn-hover-color: #001e44;
+  --bs-btn-hover-bg: #cce9ff;
+  --bs-btn-hover-border-color: #cce9ff;
+  --bs-btn-focus-shadow-rgb: 204, 233, 255;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: rgb(51, 75, 105.4);
+  --bs-btn-active-border-color: rgb(209.1, 235.2, 255);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #001e44;
+  --bs-btn-disabled-border-color: #cce9ff;
+  --bs-btn-padding-x: 20px;
+  --bs-btn-padding-y: 0;
+  font-size: 1rem;
+  border: 2px solid #cce9ff;
+  border-radius: 30px;
+  text-transform: none;
+  font-family: Roboto, "Franklin Gothic Medium", Tahoma, sans-serif;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--bs-btn-hover-color);
+  }
+}
+
 footer {
   .nav > li > a {
     padding: var(--bs-nav-link-padding-y) 0.5rem var(--bs-nav-link-padding-y) 0;
