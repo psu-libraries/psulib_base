@@ -1,8 +1,8 @@
 
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
-import { join } from 'node:path'
-import { cwd, env } from 'node:process'
+import { join } from 'node:path';
+import { cwd } from 'node:process';
 
 const config = {
   stories: [

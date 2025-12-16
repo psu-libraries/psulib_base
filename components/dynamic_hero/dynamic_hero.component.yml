@@ -56,8 +56,8 @@ props:
           title: Button Attributes
           description: Additional attributes for the button
       examples:
-        - text: 'View Guides'
-          url: '#'
+        text: 'View Guides'
+        url: '#'
     cta_button_second:
       type: 'object'
       title: Call to Action Button (Second)
