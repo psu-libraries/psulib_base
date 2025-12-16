@@ -12,7 +12,7 @@ export default defineConfig({
   base: './',
 
   build: {
-    outDir: 'dist',
+    outDir: './',
     emptyOutDir: false,
     manifest: true,
     rollupOptions: {
@@ -38,18 +38,19 @@ export default defineConfig({
           ])
         ),
 
-        // SDC component SCSS files (compile in place)
+        // Component JS files from src directories
         ...Object.fromEntries(
-          glob.sync('components/**/*.scss').map(file => [
-            'scss-' + file.replace(/\.scss$/, ''), // Add prefix to avoid key conflicts
+          glob.sync('components/**/src/*.js').map(file => [
+            file.replace(/\/src\//, '/').replace(/^components\//, 'components/').replace(/\.js$/, ''), // Add prefix to avoid key conflicts
             path.resolve(__dirname, file)
           ])
         ),
 
-        // Component JS files from src directories
+        // SDC component SCSS files (compile in place).
+        // Prefix keys to avoid conflicts with js files.
         ...Object.fromEntries(
-          glob.sync('components/**/src/*.js').map(file => [
-            'js-' + file.replace(/\/src\//, '/').replace(/^components\//, 'components/').replace(/\.js$/, ''), // Add prefix to avoid key conflicts
+          glob.sync('components/**/*.scss').map(file => [
+            'scss-' + file.replace(/\.scss$/, ''), // Add prefix to avoid key conflicts
             path.resolve(__dirname, file)
           ])
         ),
@@ -58,24 +59,21 @@ export default defineConfig({
         entryFileNames: (chunkInfo) => {
           let name = chunkInfo.name;
 
-          // Strip prefixes added to avoid key conflicts
-          if (name.startsWith('js-')) {
-            name = name.replace(/^js-/, '');
-          }
-          if (name.startsWith('scss-')) {
-            name = name.replace(/^scss-/, '');
+          if (name.startsWith('components/')) {
+            return name + '.js';
           }
 
           // Handle JS files
-          if (name.startsWith('js/') || name.startsWith('components/')) {
-            return name + '.js';
+          if (name.startsWith('js/')) {
+            return path.join('dist', name + '.js');
           }
           if (name.startsWith('peripheral/')) {
+            console.log('name:', name);
             return name.includes('psul-bootstrap') ? 'peripheral/psul-bootstrap.js' : name + '.js';
           }
-          return 'assets/' + name + '-[hash].js';
+          return 'dist/assets/' + name + '-[hash].js';
         },
-        chunkFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'dist/assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           let name = assetInfo.name;
           // Strip prefixes added to avoid key conflicts
@@ -85,10 +83,14 @@ export default defineConfig({
 
           // Handle CSS files - name already includes the full path from input config
           if (name.endsWith('.css')) {
-            return name;
+            if (name.startsWith('components/')) {
+              return name
+            }
+            return path.join('dist', name);
           }
+
           // Other assets
-          return 'assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
+          return 'dist/assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
         }
       }
     },
@@ -115,53 +117,7 @@ export default defineConfig({
     },
     devSourcemap: true
   },
-
   plugins: [
-    // Custom plugin to compile component SCSS and JS in place
-    {
-      name: 'psulib-component-files',
-      buildStart: async () => {
-        // Clean up existing compiled component CSS and JS files before build
-        // to avoid naming conflicts (Vite will add numbers if files exist)
-        const existingCompiledFiles = glob.sync('components/**/*.{css,js,js.map}', {
-          cwd: __dirname,
-          ignore: ['components/**/src/**']
-        });
-        existingCompiledFiles.forEach(file => {
-          const filePath = path.resolve(__dirname, file);
-          if (fs.existsSync(filePath)) {
-            fs.unlinkSync(filePath);
-          }
-        });
-      },
-      closeBundle: async () => {
-        // Move component CSS and JS files from dist/components to components (in place)
-        const componentFilesInDist = glob.sync('dist/components/**/*.{css,js,js.map}', { cwd: __dirname });
-        componentFilesInDist.forEach(file => {
-          const source = path.resolve(__dirname, file);
-          // Remove number suffixes like alert2.js -> alert.js, alert2.js.map -> alert.js.map
-          let dest = file.replace(/^dist\//, '').replace(/(\d+)\.(js(?:\.map)?)$/, '.$2');
-          dest = path.resolve(__dirname, dest);
-
-          if (fs.existsSync(source)) {
-            fs.mkdirSync(path.dirname(dest), { recursive: true });
-            fs.copyFileSync(source, dest);
-            // Remove from dist
-            fs.unlinkSync(source);
-          }
-        });
-
-        // Clean up empty dist/components directory
-        const distComponentsDir = path.resolve(__dirname, 'dist/components');
-        if (fs.existsSync(distComponentsDir)) {
-          try {
-            fs.rmSync(distComponentsDir, { recursive: true, force: true });
-          } catch (e) {
-            // Directory might not be empty or not exist
-          }
-        }
-      }
-    },
     // Custom plugin to handle additional build tasks
     {
       name: 'psulib-build-tasks',
@@ -201,25 +157,24 @@ export default defineConfig({
           }
         });
 
-        // Copy print.css to peripheral
-        const printCssSource = path.resolve(__dirname, 'dist/css/print.css');
-        const printCssDest = path.resolve(__dirname, 'dist/peripheral/print.css');
-        if (fs.existsSync(printCssSource)) {
-          fs.copyFileSync(printCssSource, printCssDest);
-        }
-
-        // Copy logo and favicon to peripheral
-        const logoSource = path.resolve(__dirname, 'logo.png');
-        const logoDest = path.resolve(__dirname, 'dist/peripheral/logo.png');
-        if (fs.existsSync(logoSource)) {
-          fs.copyFileSync(logoSource, logoDest);
-        }
-
-        const faviconSource = path.resolve(__dirname, 'favicon.ico');
-        const faviconDest = path.resolve(__dirname, 'dist/peripheral/favicon.ico');
-        if (fs.existsSync(faviconSource)) {
-          fs.copyFileSync(faviconSource, faviconDest);
-        }
+        const copyToPeripherals = {
+          'dist/css/print.css': 'dist/peripheral/print.css',
+          'dist/css/peripherals.css': 'dist/peripheral/peripherals.css',
+          'dist/css/peripherals-bootstrap3.css': 'dist/peripheral/peripherals-bootstrap3.css',
+          'dist/css/ck5style.css': 'dist/peripheral/css/ck5style.css',
+          'dist/js/psul-bootstrap.js': 'dist/peripheral/psul-bootstrap.js',
+          'logo.png': 'dist/peripheral/logo.png',
+          'favicon.ico': 'dist/peripheral/favicon.ico',
+        };
+        Object.entries(copyToPeripherals).forEach(([sourceRel, destRel]) => {
+          // copyToPeripherals.forEach(([sourceRel, destRel]) => {
+          const source = path.resolve(__dirname, sourceRel);
+          const dest = path.resolve(__dirname, destRel);
+          if (fs.existsSync(source)) {
+            fs.mkdirSync(path.dirname(dest), { recursive: true });
+            fs.copyFileSync(source, dest);
+          }
+        });
 
         // Copy component css and js to peripheral
         const componentFiles = glob.sync('components/*/*.+(css|js)', { cwd: __dirname });
