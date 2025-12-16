@@ -38,33 +38,57 @@ export default defineConfig({
           ])
         ),
 
+        // SDC component SCSS files (compile in place)
+        ...Object.fromEntries(
+          glob.sync('components/**/*.scss').map(file => [
+            'scss-' + file.replace(/\.scss$/, ''), // Add prefix to avoid key conflicts
+            path.resolve(__dirname, file)
+          ])
+        ),
+
         // Component JS files from src directories
         ...Object.fromEntries(
           glob.sync('components/**/src/*.js').map(file => [
-            file.replace(/\/src\//, '/').replace(/^components\//, 'components/').replace(/\.js$/, ''),
+            'js-' + file.replace(/\/src\//, '/').replace(/^components\//, 'components/').replace(/\.js$/, ''), // Add prefix to avoid key conflicts
             path.resolve(__dirname, file)
           ])
         ),
       },
       output: {
         entryFileNames: (chunkInfo) => {
+          let name = chunkInfo.name;
+
+          // Strip prefixes added to avoid key conflicts
+          if (name.startsWith('js-')) {
+            name = name.replace(/^js-/, '');
+          }
+          if (name.startsWith('scss-')) {
+            name = name.replace(/^scss-/, '');
+          }
+
           // Handle JS files
-          if (chunkInfo.name.startsWith('js/') || chunkInfo.name.startsWith('components/')) {
-            return '[name].js';
+          if (name.startsWith('js/') || name.startsWith('components/')) {
+            return name + '.js';
           }
-          if (chunkInfo.name.startsWith('peripheral/')) {
-            return chunkInfo.name.includes('psul-bootstrap') ? 'peripheral/psul-bootstrap.js' : '[name].js';
+          if (name.startsWith('peripheral/')) {
+            return name.includes('psul-bootstrap') ? 'peripheral/psul-bootstrap.js' : name + '.js';
           }
-          return 'assets/[name]-[hash].js';
+          return 'assets/' + name + '-[hash].js';
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          // Handle CSS files - [name] already includes the full path from input config
-          if (assetInfo.name.endsWith('.css')) {
-            return '[name][extname]';
+          let name = assetInfo.name;
+          // Strip prefixes added to avoid key conflicts
+          if (name.startsWith('scss-')) {
+            name = name.replace(/^scss-/, '');
+          }
+
+          // Handle CSS files - name already includes the full path from input config
+          if (name.endsWith('.css')) {
+            return name;
           }
           // Other assets
-          return 'assets/[name]-[hash][extname]';
+          return 'assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
         }
       }
     },
@@ -93,6 +117,51 @@ export default defineConfig({
   },
 
   plugins: [
+    // Custom plugin to compile component SCSS and JS in place
+    {
+      name: 'psulib-component-files',
+      buildStart: async () => {
+        // Clean up existing compiled component CSS and JS files before build
+        // to avoid naming conflicts (Vite will add numbers if files exist)
+        const existingCompiledFiles = glob.sync('components/**/*.{css,js,js.map}', {
+          cwd: __dirname,
+          ignore: ['components/**/src/**']
+        });
+        existingCompiledFiles.forEach(file => {
+          const filePath = path.resolve(__dirname, file);
+          if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+          }
+        });
+      },
+      closeBundle: async () => {
+        // Move component CSS and JS files from dist/components to components (in place)
+        const componentFilesInDist = glob.sync('dist/components/**/*.{css,js,js.map}', { cwd: __dirname });
+        componentFilesInDist.forEach(file => {
+          const source = path.resolve(__dirname, file);
+          // Remove number suffixes like alert2.js -> alert.js, alert2.js.map -> alert.js.map
+          let dest = file.replace(/^dist\//, '').replace(/(\d+)\.(js(?:\.map)?)$/, '.$2');
+          dest = path.resolve(__dirname, dest);
+
+          if (fs.existsSync(source)) {
+            fs.mkdirSync(path.dirname(dest), { recursive: true });
+            fs.copyFileSync(source, dest);
+            // Remove from dist
+            fs.unlinkSync(source);
+          }
+        });
+
+        // Clean up empty dist/components directory
+        const distComponentsDir = path.resolve(__dirname, 'dist/components');
+        if (fs.existsSync(distComponentsDir)) {
+          try {
+            fs.rmSync(distComponentsDir, { recursive: true, force: true });
+          } catch (e) {
+            // Directory might not be empty or not exist
+          }
+        }
+      }
+    },
     // Custom plugin to handle additional build tasks
     {
       name: 'psulib-build-tasks',
