@@ -2,6 +2,13 @@ name: Slider
 status: stable
 description: Slider component.
 group: Blocks
+libraryOverrides:
+  dependencies:
+    - core/once
+  js:
+    slider.js:
+      attributes:
+        type: module
 props:
   type: 'object'
   properties:

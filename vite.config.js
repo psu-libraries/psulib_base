@@ -76,8 +76,12 @@ export default defineConfig({
       },
       output: {
         // Keep shared chunks in dist/assets but we'll copy them to components directory
-        manualChunks: false,
+        manualChunks: (id) => {
+          // Don't create shared chunks - bundle everything together for each component
+          return undefined;
+        },
         inlineDynamicImports: false,
+        format: 'es', // Use ES module format
         entryFileNames: (chunkInfo) => {
           let name = chunkInfo.name;
 
@@ -139,6 +143,9 @@ export default defineConfig({
     devSourcemap: true
   },
   plugins: [
+    react({
+      jsxRuntime: 'automatic'
+    }),
     // Custom plugin to handle additional build tasks.
     // This is mostly move files around after they are built.
     {

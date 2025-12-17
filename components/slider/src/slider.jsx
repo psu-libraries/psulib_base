@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import r2wc from '@r2wc/react-to-web-component';
 import Slider from "react-slick";
 
-function PrevArrow(props) {
+export function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -17,7 +17,7 @@ function PrevArrow(props) {
   );
 }
 
-function NextArrow(props) {
+export function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -33,7 +33,7 @@ function NextArrow(props) {
 }
 
 // Define the slider component.
-function PsulSlider({ slides, showCaptions }) {
+export function PsulSlider({ slides, showCaptions }) {
   const [nav, captionNav] = useState();
   var settings = {
     dots: true,
@@ -90,7 +90,7 @@ function PsulSlider({ slides, showCaptions }) {
   );
 }
 
-function PsulTextSlider({ slides, variant }) {
+export function PsulTextSlider({ slides, variant }) {
   var settings = {
     dots: true,
     speed: 500,
@@ -117,15 +117,23 @@ function PsulTextSlider({ slides, variant }) {
   );
 }
 
-const SliderElement = r2wc(PsulSlider, {props: {
+export const SliderElement = r2wc(PsulSlider, {props: {
   slides: 'json',
   showCaptions: 'boolean'
 }});
 
-const TextSliderElement = r2wc(PsulTextSlider, {props: {
+export const TextSliderElement = r2wc(PsulTextSlider, {props: {
   slides: 'json',
   variant: 'string'
 }});
 
-customElements.define('psul-slider', SliderElement);
-customElements.define('psul-text-slider', TextSliderElement);
+// Only define custom elements if they haven't been registered yet
+if (!customElements.get('psul-slider')) {
+  customElements.define('psul-slider', SliderElement);
+}
+
+if (!customElements.get('psul-text-slider')) {
+  customElements.define('psul-text-slider', TextSliderElement);
+}
+
+export default PsulSlider;
