@@ -9,6 +9,9 @@ const config = {
     '../components/**/*.component.yml',
     '../stories/*.stories.js'
   ],
+  core: {
+    builder: '@storybook/builder-vite',
+  },
   "addons": [
     {
       name: 'storybook-addon-sdc',

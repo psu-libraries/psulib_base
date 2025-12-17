@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { defineConfig } from "vite"
+import react from '@vitejs/plugin-react';
 import { glob } from 'glob';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -10,11 +11,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   root: __dirname,
   base: './',
-
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   build: {
-    outDir: './',
+    outDir: 'dist',
     emptyOutDir: false,
     manifest: true,
+    copyPublicDir: false,
     rollupOptions: {
       input: {
         // Main styles
@@ -46,6 +52,14 @@ export default defineConfig({
           ])
         ),
 
+        // Component JSX files from src directories
+        ...Object.fromEntries(
+          glob.sync('components/**/src/*.jsx').map(file => [
+            file.replace(/\/src\//, '/').replace(/^components\//, 'components/').replace(/\.jsx$/, ''),
+            path.resolve(__dirname, file)
+          ])
+        ),
+
         // SDC component SCSS files (compile in place).
         // Prefix keys to avoid conflicts with js files.
         ...Object.fromEntries(
@@ -56,6 +70,7 @@ export default defineConfig({
         ),
       },
       output: {
+        onlyExplicitManualChunks: true,
         entryFileNames: (chunkInfo) => {
           let name = chunkInfo.name;
 
@@ -68,7 +83,6 @@ export default defineConfig({
             return path.join('dist', name + '.js');
           }
           if (name.startsWith('peripheral/')) {
-            console.log('name:', name);
             return name.includes('psul-bootstrap') ? 'peripheral/psul-bootstrap.js' : name + '.js';
           }
           return 'dist/assets/' + name + '-[hash].js';
@@ -177,13 +191,15 @@ export default defineConfig({
         });
 
         // Copy component css and js to peripheral
-        const componentFiles = glob.sync('components/*/*.+(css|js)', { cwd: __dirname });
+        const componentFiles = glob.sync('dist/components/*/*.+(css|js)', { cwd: __dirname });
         componentFiles.forEach(file => {
           const source = path.resolve(__dirname, file);
-          const dest = path.resolve(__dirname, file.replace(/components\//, 'dist/peripheral/components/'));
+          const dest = path.resolve(__dirname, file.replace(/dist\/components\//, 'dist/peripheral/components/'));
+          const compdest = path.resolve(__dirname, file.replace(/dist\/components\//, 'components/'));
           fs.mkdirSync(path.dirname(dest), { recursive: true });
           if (fs.existsSync(source)) {
             fs.copyFileSync(source, dest);
+            fs.copyFileSync(source, compdest);
           }
         });
 

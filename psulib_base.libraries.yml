@@ -47,52 +47,52 @@ fonts:
 accordion-bootstrap:
   css:
     component:
-      dist/css/accordion-bootstrap.css: {}
+      dist/css/components/accordion-bootstrap.css: {}
 
 alert:
   css:
     component:
-      dist/css/alert.css: {}
+      dist/css/components/alert.css: {}
 
 carousel:
   css:
     component:
-      dist/css/carousel.css: {}
+      dist/css/components/carousel.css: {}
 
 file:
   css:
     component:
-      dist/css/file.css: {}
+      dist/css/components/file.css: {}
 
 layout:
   css:
     component:
-      dist/css/layout.css: {}
+      dist/css/components/layout.css: {}
 
 layout_builder:
   css:
     component:
-      dist/css/layout-builder.css: {}
+      dist/css/components/layout-builder.css: {}
 
 nav:
   css:
     component:
-      dist/css/nav.css: {}
+      dist/css/components/nav.css: {}
 
 placeholders:
   css:
     component:
-      dist/css/placeholders.css: {}
+      dist/css/components/placeholders.css: {}
 
 progress:
   css:
     component:
-      dist/css/progress.css: {}
+      dist/css/components/progress.css: {}
 
 search-results:
   css:
     component:
-      dist/css/search-results.css: {}
+      dist/css/components/search-results.css: {}
 
 webform-validation:
   js:
