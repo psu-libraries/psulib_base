@@ -5,9 +5,7 @@ global-styling:
       dist/css/style.css: {}
       dist/css/print.css: { media: print }
     component:
-      dist/css/general.css: {}
-  js:
-    dist/js/application.js: {}
+      dist/css/components/general.css: {}
   dependencies:
     - psulib_base/fonts
     - core/drupal
@@ -93,6 +91,12 @@ search-results:
   css:
     component:
       dist/css/components/search-results.css: {}
+
+scrollspy-bootstrap:
+  js:
+    dist/js/bootstrap/scrollspy.js: {}
+  dependencies:
+    - psulib_base/bootstrap
 
 webform-validation:
   js:

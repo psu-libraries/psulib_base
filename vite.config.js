@@ -7,20 +7,26 @@ import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isWatch = process.argv.includes('--watch')
 
 export default defineConfig({
   root: __dirname,
   base: './',
-  server: {
-    watch: {
-      usePolling: true,
-    },
-  },
   build: {
+    watch: isWatch ? {
+        include: [
+          'components/**/*.scss',
+          'components/**/src/*.+(js|jsx)',
+          'scss/**/*.scss',
+          'js/**/*.js',
+          'js/**/*.jsx',
+        ],
+      } : undefined,
     outDir: 'dist',
-    emptyOutDir: false,
+    emptyOutDir: true,
     manifest: true,
-    copyPublicDir: false,
+    // copyPublicDir: false,
+    minify: false,
     rollupOptions: {
       input: {
         // Main styles
@@ -29,12 +35,11 @@ export default defineConfig({
         'css/ck5style': path.resolve(__dirname, 'scss/ck5style.scss'),
 
         // Main JS files
-        'js/application': path.resolve(__dirname, 'js/base/application.js'),
         'js/psul-bootstrap': path.resolve(__dirname, 'js/psul-bootstrap.js'),
 
         // Peripheral styles
-        'peripheral/peripheral': path.resolve(__dirname, 'scss/peripheral.scss'),
-        'peripheral/peripheral-bootstrap3': path.resolve(__dirname, 'scss/peripheral-bootstrap3.scss'),
+        'peripheral/peripheral': path.resolve(__dirname, 'scss/peripheral/peripheral.scss'),
+        'peripheral/peripheral-bootstrap3': path.resolve(__dirname, 'scss/peripheral/peripheral-bootstrap3.scss'),
 
         // Component SCSS files
         ...Object.fromEntries(
@@ -70,7 +75,9 @@ export default defineConfig({
         ),
       },
       output: {
-        onlyExplicitManualChunks: true,
+        // Keep shared chunks in dist/assets but we'll copy them to components directory
+        manualChunks: false,
+        inlineDynamicImports: false,
         entryFileNames: (chunkInfo) => {
           let name = chunkInfo.name;
 
@@ -80,14 +87,14 @@ export default defineConfig({
 
           // Handle JS files
           if (name.startsWith('js/')) {
-            return path.join('dist', name + '.js');
+            return name + '.js';
           }
           if (name.startsWith('peripheral/')) {
             return name.includes('psul-bootstrap') ? 'peripheral/psul-bootstrap.js' : name + '.js';
           }
-          return 'dist/assets/' + name + '-[hash].js';
+          return 'assets/' + name + '-[hash].js';
         },
-        chunkFileNames: 'dist/assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           let name = assetInfo.name;
           // Strip prefixes added to avoid key conflicts
@@ -100,11 +107,11 @@ export default defineConfig({
             if (name.startsWith('components/')) {
               return name
             }
-            return path.join('dist', name);
+            return name;
           }
 
           // Other assets
-          return 'dist/assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
+          return 'assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
         }
       }
     },
@@ -132,7 +139,8 @@ export default defineConfig({
     devSourcemap: true
   },
   plugins: [
-    // Custom plugin to handle additional build tasks
+    // Custom plugin to handle additional build tasks.
+    // This is mostly move files around after they are built.
     {
       name: 'psulib-build-tasks',
       closeBundle: async () => {
@@ -191,7 +199,7 @@ export default defineConfig({
         });
 
         // Copy component css and js to peripheral
-        const componentFiles = glob.sync('dist/components/*/*.+(css|js)', { cwd: __dirname });
+        const componentFiles = glob.sync('dist/components/*/*.+(css|js|map)', { cwd: __dirname });
         componentFiles.forEach(file => {
           const source = path.resolve(__dirname, file);
           const dest = path.resolve(__dirname, file.replace(/dist\/components\//, 'dist/peripheral/components/'));
@@ -203,6 +211,15 @@ export default defineConfig({
           }
         });
 
+        // Copy bootstrap dist js files
+        const bootstrapJsSourceDir = path.resolve(__dirname, 'node_modules/bootstrap/js/dist');
+        const bootstrapJsDestDir = path.resolve(__dirname, 'dist/js/bootstrap');
+
+        if (fs.existsSync(bootstrapJsSourceDir)) {
+          fs.mkdirSync(bootstrapJsDestDir, { recursive: true });
+          fs.cpSync(bootstrapJsSourceDir, bootstrapJsDestDir, { recursive: true });
+        }
+
         // Compile component SCSS to CSS in their directories
         const componentScss = glob.sync('components/**/*.scss', { cwd: __dirname });
         // Note: These will be handled by the build process automatically
@@ -210,7 +227,6 @@ export default defineConfig({
       }
     }
   ],
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './js'),
