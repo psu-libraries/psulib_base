@@ -25,7 +25,6 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     manifest: true,
-    // copyPublicDir: false,
     minify: false,
     rollupOptions: {
       input: {
