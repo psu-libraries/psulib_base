@@ -2,6 +2,7 @@
 name: Heading
 status: stable
 description: All HTML headings, `<h1>` through `<h6>`, are available
+group: Atoms
 props:
   type: 'object'
   properties:

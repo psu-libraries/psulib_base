@@ -2,6 +2,7 @@
 name: Divider
 status: stable
 description: Divider component.
+group: Atoms
 props:
   type: 'object'
   properties:

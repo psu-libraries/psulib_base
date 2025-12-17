@@ -2,6 +2,7 @@
 name: Alert Banner
 status: stable
 description: For displaying an alert on the top of the page.
+group: Blocks
 props:
   type: object
   required:

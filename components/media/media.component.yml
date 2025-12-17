@@ -2,6 +2,7 @@
 name: Media
 status: stable
 description: A theme override for a media item display in Drupal. This includes configurations for media type, published status, and view mode.
+group: Atoms
 props:
   type: 'object'
   properties:

@@ -2,6 +2,7 @@
 name: Image
 status: stable
 description: visually versatile image component with configurable attributes such as alignment, responsiveness, thumbnail style, and rounded edges.
+group: Atoms
 props:
   type: 'object'
   properties:

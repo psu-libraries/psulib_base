@@ -2,6 +2,7 @@
 name: "Image + Text Overlap"
 status: stable
 description: A component that displays an image and text in an overlapping manner.
+group: Blocks
 props:
   type: 'object'
   properties:

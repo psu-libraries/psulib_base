@@ -2,6 +2,7 @@
 name: Accordion
 status: stable
 description: 'Accordion component, see Bootstrap Documentation: https://getbootstrap.com/docs/5.3/components/accordion/'
+group: Blocks
 props:
   type: 'object'
   properties:

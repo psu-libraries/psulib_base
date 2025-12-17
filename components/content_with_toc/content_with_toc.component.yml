@@ -2,6 +2,7 @@
 name: Content with Table of Contents
 status: stable
 description: Add a content section with a sticky table of contents
+group: Blocks
 libraryOverrides:
   dependencies:
     - 'psulib_base/alert-scrollspy'
