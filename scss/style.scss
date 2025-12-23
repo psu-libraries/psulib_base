@@ -26,6 +26,13 @@ $theme-colors: (
   "dark": $dark,
   "slate": $pa-slate-max-light);
 
+$table-variants: (
+  "success":    shift-color($success, $table-bg-scale),
+  "warning":    shift-color($warning, $table-bg-scale),
+  "danger":     shift-color($danger, $table-bg-scale),
+  "dark":       $dark,
+);
+
 // 5. Include remainder of required parts
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
