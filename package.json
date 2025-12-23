@@ -37,11 +37,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.27.1",
     "@popperjs/core": "^2.11.8",
-    "@r2wc/react-to-web-component": "^2.1.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "react-dom": "^19.1.1",
-    "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "github:kenwheeler/slick#master"
   }
 }
