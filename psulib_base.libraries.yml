@@ -75,6 +75,11 @@ layout:
     component:
       dist/css/layout.css: {}
 
+local-tasks:
+  css:
+    component:
+      dist/css/local_tasks.css: {}
+
 layout_builder:
   css:
     component:
