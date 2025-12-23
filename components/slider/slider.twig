@@ -24,38 +24,38 @@
     <div class="slider__container">
     {% if variant == 'media' %}
       <!-- Media Slider -->
-      <div class="slider__slides" data-show-captions="{{ show_captions ? 'true' : 'false' }}">
-        {% for slide in slides %}
-          <div class="slide-media">
-            <img src="{{ slide.image }}" alt="{{ slide.alt }}" />
-          </div>
-        {% endfor %}
-      </div>
-
-      {% if show_captions %}
-        <div class="slider--captions">
-          <div class="slider__caption-slides">
-            {% for slide in slides %}
-              <div class="slider--caption">{{ slide.caption|raw }}</div>
-            {% endfor %}
-          </div>
+      <div class="media-slider">
+        <div class="slider__slides" data-show-captions="{{ show_captions ? 'true' : 'false' }}">
+          {% for slide in slides %}
+            <div class="slide-media">
+              <img src="{{ slide.image }}" alt="{{ slide.alt }}" />
+            </div>
+          {% endfor %}
         </div>
-      {% endif %}
 
-      <div class="slick-dots-container"></div>
-    {% else %}
-      {% if variant == 'blockquote' %}
-        {{ attach_library('psulib_base/blockquote') }}
-      {% endif %}
+        {% if show_captions %}
+          <div class="slider--captions">
+            <div class="slider__caption-slides">
+              {% for slide in slides %}
+                <div class="slider--caption">{{ slide.caption|raw }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
 
-      <!-- Text Slider -->
-      <div class="slider__slides">
-        {% for slide in slides %}
-          <div class="slide-media">{{ slide.caption|raw }}</div>
-        {% endfor %}
+        <div class="slick-dots-container"></div>
       </div>
+    {% else %}
+      <!-- Text Slider -->
+      <div class="text-slider text-slider--{{ variant }}">
+        <div class="slider__slides">
+          {% for slide in slides %}
+            <div class="slide-media">{{ slide.caption|raw }}</div>
+          {% endfor %}
+        </div>
 
-      <div class="slick-dots-container"></div>
+        <div class="slick-dots-container"></div>
+      </div>
     {% endif  %}
     </div>
   </div>
