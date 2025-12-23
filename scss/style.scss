@@ -53,6 +53,21 @@ $table-variants: (
 @import "helpers";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+$utilities: map-remove(
+  $utilities,
+  "align-content",
+  "align-self",
+  "border-opacity",
+  "link-underline-opacity",
+  "opacity",
+  "rounded-end",
+  "rounded-bottom",
+  "rounded-start",
+  "rounded-top",
+  "subtle-border-color",
+  "text-opacity",
+  "link-opacity",
+);
 @import "bootstrap/scss/utilities/api";
 
 @import './mixins';
