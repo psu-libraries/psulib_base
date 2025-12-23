@@ -65,6 +65,11 @@ file:
     component:
       dist/css/file.css: {}
 
+floating-labels:
+  css:
+    component:
+      dist/css/floating-labels.css: {}
+
 layout:
   css:
     component:
