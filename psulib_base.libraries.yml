@@ -28,12 +28,9 @@ bootstrap-icons:
       dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
 slick-carousel:
-  css:
-    base:
-      https://cdn.jsdelivr.net/gh/kenwheeler/slick@master/slick/slick.min.css: {}
-      dist/slick/slick-theme.css: {}
   js:
-    https://cdn.jsdelivr.net/gh/kenwheeler/slick@master/slick/slick.min.js: {}
+    https://cdn.jsdelivr.net/gh/kenwheeler/slick@master/slick/slick.min.js:
+      type: external
   dependencies:
     - core/drupal
     - core/once
