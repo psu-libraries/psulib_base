@@ -27,6 +27,15 @@ bootstrap-icons:
     base:
       dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
 
+slick-carousel:
+  js:
+    dist/slick/slick.min.js:
+      minified: true
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery
+
 drupal.nav-tabs:
   js:
     js/nav-tabs.js: {}

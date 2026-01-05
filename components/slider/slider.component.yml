@@ -1,6 +1,9 @@
 name: Slider
 status: stable
 description: Slider component.
+libraryOverrides:
+  dependencies:
+    - 'psulib_base/slick-carousel'
 props:
   type: 'object'
   properties:

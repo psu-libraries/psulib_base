@@ -59,6 +59,8 @@ mix.copy([
   'dist/bootstrap-icons/icons/'
 );
 
+mix.copyDirectory('node_modules/slick-carousel/slick', 'dist/slick');
+
 // Run build process for peripheral assets.
 mix.sass('scss/peripheral.scss', 'dist/peripheral').options(defaultSassOptions);
 mix.sass('scss/peripheral-bootstrap3.scss', 'dist/peripheral').options(defaultSassOptions);
