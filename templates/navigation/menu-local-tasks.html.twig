@@ -11,6 +11,8 @@
  * themed in menu-local-task.html.twig.
  */
 #}
+{{ attach_library('psulib_base/local-tasks') }}
+
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
   <nav class="tabs-wrapper tabs-primary is-collapsible" aria-labelledby="primary-tabs-title" data-drupal-nav-tabs>

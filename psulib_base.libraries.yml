@@ -25,7 +25,8 @@ bootstrap:
 bootstrap-icons:
   css:
     base:
-      dist/bootstrap-icons/font/bootstrap-icons.min.css: {}
+      dist/bootstrap-icons/font/bootstrap-icons.min.css:
+        minified: true
 
 slick-carousel:
   js:
@@ -73,10 +74,20 @@ file:
     component:
       dist/css/file.css: {}
 
+floating-labels:
+  css:
+    component:
+      dist/css/floating-labels.css: {}
+
 layout:
   css:
     component:
       dist/css/layout.css: {}
+
+local-tasks:
+  css:
+    component:
+      dist/css/local_tasks.css: {}
 
 layout_builder:
   css:

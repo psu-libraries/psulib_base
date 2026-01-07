@@ -26,6 +26,13 @@ $theme-colors: (
   "dark": $dark,
   "slate": $pa-slate-max-light);
 
+$table-variants: (
+  "success":    shift-color($success, $table-bg-scale),
+  "warning":    shift-color($warning, $table-bg-scale),
+  "danger":     shift-color($danger, $table-bg-scale),
+  "dark":       $dark,
+);
+
 // 5. Include remainder of required parts
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
@@ -39,14 +46,28 @@ $theme-colors: (
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
 @import "bootstrap/scss/tables";
-@import "bootstrap/scss/forms";
+@import "forms";
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/badge";
-@import "bootstrap/scss/list-group";
 @import "bootstrap/scss/close";
-@import "bootstrap/scss/helpers";
+@import "helpers";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+$utilities: map-remove(
+  $utilities,
+  "align-content",
+  "align-self",
+  "border-opacity",
+  "link-underline-opacity",
+  "opacity",
+  "rounded-end",
+  "rounded-bottom",
+  "rounded-start",
+  "rounded-top",
+  "subtle-border-color",
+  "text-opacity",
+  "link-opacity",
+);
 @import "bootstrap/scss/utilities/api";
 
 @import './mixins';
