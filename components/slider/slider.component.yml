@@ -4,11 +4,7 @@ description: Slider component.
 group: Blocks
 libraryOverrides:
   dependencies:
-    - core/once
-  js:
-    slider.js:
-      attributes:
-        type: module
+    - 'psulib_base/slick-carousel'
 props:
   type: 'object'
   properties:
