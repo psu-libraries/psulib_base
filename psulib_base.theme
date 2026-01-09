@@ -16,11 +16,11 @@ use Drupal\node\NodeInterface;
  */
 function psulib_base_preprocess_page(array &$page) {
   // Create a variable to show column layout.
-  $sidebar_first_content = \Drupal::service('renderer')->render($page['page']['sidebar_first']);
+  $sidebar_first_content = isset($page['page']['sidebar_first']) ? \Drupal::service('renderer')->render($page['page']['sidebar_first']) : '';
   $sidebar_first_real_content = preg_replace('/<!--(.*)-->/Uis', '', trim($sidebar_first_content));
   $page['has_sidebar_first'] = (bool) strlen(trim($sidebar_first_real_content));
 
-  $sidebar_second_content = \Drupal::service('renderer')->render($page['page']['sidebar_second']);
+  $sidebar_second_content = isset($page['page']['sidebar_second']) ? \Drupal::service('renderer')->render($page['page']['sidebar_second']) : '';
   $sidebar_second_real_content = preg_replace('/<!--(.*)-->/Uis', '', trim($sidebar_second_content));
   $page['has_sidebar_second'] = (bool) strlen(trim($sidebar_second_real_content));
 
