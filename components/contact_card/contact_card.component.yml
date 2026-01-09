@@ -2,6 +2,7 @@
 name: Contact Card
 status: stable
 description: Display contact information for organizations and people.
+group: Cards
 props:
   type: 'object'
   properties:

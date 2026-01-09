@@ -2,6 +2,7 @@
 name: Button
 status: stable
 description: Bootstrap based button component.
+group: Atoms
 props:
   type: 'object'
   properties:
@@ -24,7 +25,7 @@ props:
       type: 'string'
       title: Color
       description: Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
-      default: ''
+      default: 'primary'
       enum:
         - ''
         - primary
