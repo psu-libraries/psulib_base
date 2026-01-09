@@ -8,6 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite build --watch",
     "build": "vite build",
+    "build:all": "npm run build:minified && npm run build",
+    "build:minified": "vite build --config vite.config.minified.js",
     "storybook": "concurrently \"vite build --watch\" \"storybook dev -p 6006\"",
     "storybook-only": "storybook dev -p 6006",
     "build-storybook": "vite build && storybook build"

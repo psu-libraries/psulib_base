@@ -116,7 +116,7 @@ export default defineConfig({
           // Other assets
           return 'assets/' + name.replace(/\.css$/, '') + '-[hash]' + path.extname(name);
         }
-      }
+      },
     },
 
     // Source maps for development
