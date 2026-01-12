@@ -51,7 +51,7 @@ const iconUsage = Object.entries({
   search: "Use for search, find, or lookup actions.",
   tiktok: "Use for TikTok links or actions.",
   'twitter-x': "Use for Twitter/X links or actions.",
-  youTube: "Use for YouTube links or actions.",
+  youtube: "Use for YouTube links or actions.",
 }).map(([iconName, description]) => ({
   card_title: iconName,
   card_body: description,
