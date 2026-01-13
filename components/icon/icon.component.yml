@@ -15,10 +15,10 @@ props:
         - alarm
         - assignment
         - barChart3
-        - bullhorn
         - book_2
         - book_ribbon
         - bookmarks
+        - bullhorn
         - calendar
         - chevronRight
         - close
@@ -29,6 +29,7 @@ props:
         - double_arrow
         - edit_square
         - email
+        - facebook
         - fax
         - full_coverage
         - globe
@@ -36,9 +37,11 @@ props:
         - group
         - help
         - info
+        - instagram
         - institution
         - inventory
         - library_books
+        - linkedin
         - linkOut
         - locationPin
         - map
@@ -53,6 +56,9 @@ props:
         - schedule
         - school
         - search
+        - tiktok
+        - twitter-x
+        - youtube
       examples:
         - chevronRight
     color:
