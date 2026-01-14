@@ -2,6 +2,7 @@
 name: In Page Nav
 status: stable
 description: In Page Navigation component.
+group: Navs
 props:
   type: 'object'
   properties:

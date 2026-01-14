@@ -24,7 +24,6 @@
              // 2.5rem in px (assuming 1rem = 16px).
             const extra = 2.5 * 16;
 
-            console.log('Body height: ' + bodyHeight);
             // Set a CSS variable on the item that is the height of the content
             // plus 2.5 rem of margin.
             item.style.setProperty('--details-size', (bodyHeight + extra) + 'px');

@@ -1,11 +1,11 @@
-@import 'variables_drupal';
-@import 'variables_bootstrap';
+@import '../variables_drupal';
+@import '../variables_bootstrap';
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-@import 'colors';
+@import '../colors';
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "bootstrap/scss/variables";
@@ -19,22 +19,22 @@
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "bootstrap/scss/utilities/api";
 
-@import "mixins";
+@import "../mixins";
 
 // 4. Base styles
-@import 'base/google_fonts';
-@import 'base/layout';
-@import 'base/typography';
-@import 'base/full_bleed';
-@import 'components/general';
+@import '../base/google_fonts';
+@import '../base/layout';
+@import '../base/typography';
+@import '../base/full_bleed';
 
-@import 'components/nav';
-@import '../components/button/button';
-@import '../components/header/header';
-@import '../components/footer/footer';
-@import '../components/header_mark/header_mark';
-@import '../components/header_nav/header_nav';
-@import '../components/divider/divider';
+@import '../components/general';
+@import '../components/nav';
+@import '../../components/button/button';
+@import '../../components/header/header';
+@import '../../components/footer/footer';
+@import '../../components/header_mark/header_mark';
+@import '../../components/header_nav/header_nav';
+@import '../../components/divider/divider';
 
 // Increase the base font of the page to 16px since the default is 14px in
 // bootstrap 3.
