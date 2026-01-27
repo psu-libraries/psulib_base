@@ -58,6 +58,7 @@ props:
         - search
         - tiktok
         - twitter-x
+        - warning
         - youtube
       examples:
         - chevronRight
