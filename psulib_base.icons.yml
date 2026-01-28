@@ -12,16 +12,29 @@ material_svg:
       type: "string"
       format: "string"
       enum:
+        - current-color
         - black
         - link
         - linkLight
         - nittanyNavy
         - white
+    size:
+      title: "Size"
+      type: "string"
+      format: "string"
+      enum:
+        - inherit
+        - fixed-24
+        - sm
+        - md
+        - lg
   template: >-
+    {{ attach_library('psulib_base/icons') }}
     {% set classes = [
       'psul-icon',
       'psul-icon--' ~ icon_id,
-      'psul-icon--' ~ color|default('black'),
+      'psul-icon--' ~ color|default('current-color'),
+      'psul-icon--size-' ~ size|default('inherit'),
     ]|join(' ') %}
 
     <span class="{{ classes }}">
@@ -53,11 +66,22 @@ social_icons:
         - linkLight
         - nittanyNavy
         - white
+    size:
+      title: "Size"
+      type: "string"
+      format: "string"
+      enum:
+        - inherit
+        - fixed-24
+        - sm
+        - md
+        - lg
   template: >-
     {% set classes = [
       'psul-icon',
       'psul-icon--' ~ icon_id,
       'psul-icon--' ~ color|default('black'),
+      'psul-icon--size-' ~ size|default('inherit'),
     ]|join(' ') %}
 
     <span class="{{ classes }}">

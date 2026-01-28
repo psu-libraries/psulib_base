@@ -68,9 +68,22 @@ props:
       description: Color of the icon
       default: black
       enum:
+        - current-color
         - black
         - link
         - linkLight
         - nittanyNavy
         - white
+      examples: ''
+    size:
+      type: 'string'
+      title: Size
+      description: Size of the icon
+      default: fixed-24
+      enum:
+        - fixed-24
+        - inherit
+        - sm
+        - md
+        - lg
       examples: ''
