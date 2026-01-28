@@ -16,6 +16,7 @@ import '../dist/bootstrap-icons/font/bootstrap-icons.min.css';
 import '../assets/fonts/fonts.css';
 import '../dist/css/style.css';
 import '../dist/css/nav.css';
+import '../dist/css/icons.css';
 
 // Imports the CSS for common components.
 import '../components/button/button.css';
