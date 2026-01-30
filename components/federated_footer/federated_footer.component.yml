@@ -1,0 +1,30 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'PSU Flex: Federated Footer'
+status: stable
+description: Federated footer component from PSU Flex library.
+props:
+  type: 'object'
+  properties:
+    links:
+      title: Copyright Links
+      description: Links for the Copyright
+      type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - text: 'The Pennsylvania State University'
+            url: '#'
+            target: ''
+          - text: 'Privacy Statements'
+            url: '#'
+            target: ''
+          - text: 'Non Discrimination'
+            url: '#'
+            target: ''
+          - text: 'Accessibility'
+            url: '#'
+            target: ''
+          - text: 'Legal Statements'
+            url: '#'
+            target: ''
