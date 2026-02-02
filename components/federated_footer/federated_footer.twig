@@ -1,0 +1,36 @@
+<div class="psuflex-fed-footer">
+  <div class="container-fluid">
+    <div class="psuflex-fed-footer__grid">
+      <div class="psuflex-fed-footer__links">
+        <ul>
+          {% for link in links %}
+            <li data-key="{{ link.text }}">
+              <a data-tracking-id="BrandFooter-Link" href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ link.text }}</a>
+            </li>
+          {% endfor %}
+{#
+          <li role="option" tabindex="-1" data-collection="react-aria-:R9lfakq:" data-key="The Pennsylvania State University" id="react-aria-:R9lfakqH1:-option-ThePennsylvaniaStateUniversity" data-focus-visible="false" class="theme-cache-6rdsgk">
+            <a data-tracking-id="BrandFooter-Link" class="theme-cache-um0arw" href="/">The Pennsylvania State University</a>
+          </li>
+          <li role="option" tabindex="-1" data-collection="react-aria-:R9lfakq:" data-key="Privacy Statements" id="react-aria-:R9lfakqH1:-option-PrivacyStatements" data-focus-visible="false" class="theme-cache-6rdsgk">
+            <a data-tracking-id="BrandFooter-Link" class="theme-cache-um0arw" href="/web-privacy-statement">Privacy Statements</a>
+          </li>
+          <li role="option" tabindex="-1" data-collection="react-aria-:R9lfakq:" data-key="Non Discrimination" id="react-aria-:R9lfakqH1:-option-NonDiscrimination" data-focus-visible="false" class="theme-cache-6rdsgk">
+            <a href="https://policy.psu.edu/policies/ad91" data-tracking-id="BrandFooter-Link" class="theme-cache-um0arw">Non Discrimination</a>
+          </li>
+          <li role="option" tabindex="-1" data-collection="react-aria-:R9lfakq:" data-key="Accessibility" id="react-aria-:R9lfakqH1:-option-Accessibility" data-focus-visible="false" class="theme-cache-6rdsgk">
+            <a data-tracking-id="BrandFooter-Link" class="theme-cache-um0arw" href="/accessibilitystatement">Accessibility</a>
+          </li>
+          <li role="option" tabindex="-1" data-collection="react-aria-:R9lfakq:" data-key="Legal Statements" id="react-aria-:R9lfakqH1:-option-LegalStatements" data-focus-visible="false" class="theme-cache-6rdsgk">
+            <a data-tracking-id="BrandFooter-Link" class="theme-cache-um0arw" href="/legal-statements">Legal Statements</a>
+          </li> #}
+        </ul>
+      </div>
+      <div class="psuflex-fed-footer__copyright">
+        <a href="https://www.psu.edu/copyright-information" data-tracking-id="BrandFooter-Link" class="theme-cache-198fyz6">The Pennsylvania State University ©
+          <!-- -->
+          2026</a>
+      </div>
+    </div>
+  </div>
+</div>
