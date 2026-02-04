@@ -28,3 +28,25 @@ props:
           - text: 'Legal Statements'
             url: '#'
             target: ''
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      default:
+        links:
+          -
+            - text: 'The Pennsylvania State University'
+              url: '#'
+              target: ''
+            - text: 'Privacy Statements'
+              url: '#'
+              target: ''
+            - text: 'Non Discrimination'
+              url: '#'
+              target: ''
+            - text: 'Accessibility'
+              url: '#'
+              target: ''
+            - text: 'Legal Statements'
+              url: '#'
+              target: ''
