@@ -99,7 +99,7 @@ export default defineConfig({
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          let name = assetInfo.name;
+          let name = assetInfo.names[0];
           // Strip prefixes added to avoid key conflicts
           if (name.startsWith('scss-')) {
             name = name.replace(/^scss-/, '');

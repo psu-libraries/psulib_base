@@ -1,5 +1,6 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
-name: 'PSU Flex: Federated Footer'
+name: 'Federated Footer'
+group: PSU Flex
 status: stable
 description: Federated footer component from PSU Flex library.
 props:
