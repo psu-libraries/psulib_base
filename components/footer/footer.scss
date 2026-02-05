@@ -6,6 +6,13 @@ footer {
   font-family: $font-family-condensed;
   font-size: $font-size-sm;
 
+  &.footer--with-federated {
+    padding-bottom: 0;
+    .psuflex-fed-footer {
+      margin-top: $spacer * 2;
+    }
+  }
+
   @include make-link($pa-link-light, none, $pa-link-light, underline);
   @include make-link($pa-link-light, none, $pa-link-light, underline, '.nav-link');
 

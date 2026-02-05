@@ -4,8 +4,8 @@
   --psul-icon-color: #{$black};
 
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  height: 1em;
+  width: 1em;
 
   svg {
     height: 100%;
@@ -14,6 +14,10 @@
     path {
       fill: var(--psul-icon-color);
     }
+  }
+
+  &--current-color {
+    --psul-icon-color: currentColor;
   }
 
   &--white {
@@ -30,5 +34,30 @@
 
   &--linkLight {
     --psul-icon-color: #{$pa-link-light};
+  }
+
+  &--size-fixed-24 {
+    height: 24px;
+    width: 24px;
+  }
+
+  &--size-inherit {
+    height: 1em;
+    width: 1em;
+  }
+
+  &--size-sm {
+    height: 0.75em;
+    width: 0.75em;
+  }
+
+  &--size-md {
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &--size-lg {
+    height: 2em;
+    width: 2em;
   }
 }

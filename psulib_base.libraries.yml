@@ -10,6 +10,7 @@ global-styling:
     - psulib_base/fonts
     - core/drupal
     - core/once
+    - psulib_base/icons
     - psulib_base/bootstrap
     - psulib_base/bootstrap-icons
     - psulib_base/nav
@@ -45,6 +46,11 @@ drupal.nav-tabs:
     - core/once
     - core/drupal.debounce
     - core/collapse
+
+icons:
+  css:
+    component:
+      dist/css/icons.css: {}
 
 fonts:
   css:

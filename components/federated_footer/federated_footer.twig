@@ -1,0 +1,20 @@
+<div class="psuflex-fed-footer">
+  <div class="container-fluid">
+    <div class="psuflex-fed-footer__grid">
+      <div class="psuflex-fed-footer__links">
+        <ul>
+          {% for link in links %}
+            <li data-key="{{ link.text }}">
+              <a data-tracking-id="BrandFooter-Link" href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ link.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="psuflex-fed-footer__copyright">
+        <a href="https://www.psu.edu/copyright-information" data-tracking-id="BrandFooter-Link" class="theme-cache-198fyz6">The Pennsylvania State University ©
+          <!-- -->
+          2026</a>
+      </div>
+    </div>
+  </div>
+</div>
