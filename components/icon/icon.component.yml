@@ -2,6 +2,7 @@
 name: Icon
 status: stable
 description: Icon from the PSU Flex Library.
+group: Atoms
 props:
   type: 'object'
   required:

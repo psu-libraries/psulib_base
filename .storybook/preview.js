@@ -15,8 +15,8 @@ import '../dist/bootstrap-icons/font/bootstrap-icons.min.css';
 // Imports the CSS for all components combined into a single stylesheet.
 import '../assets/fonts/fonts.css';
 import '../dist/css/style.css';
-import '../dist/css/nav.css';
-import '../dist/css/icons.css';
+import '../dist/css/components/nav.css';
+import '../dist/css/components/icons.css';
 
 // Imports the CSS for common components.
 import '../components/button/button.css';

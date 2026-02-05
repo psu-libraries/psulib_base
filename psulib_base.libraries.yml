@@ -5,9 +5,7 @@ global-styling:
       dist/css/style.css: {}
       dist/css/print.css: { media: print }
     component:
-      dist/css/general.css: {}
-  js:
-    dist/js/application.js: {}
+      dist/css/components/general.css: {}
   dependencies:
     - psulib_base/fonts
     - core/drupal
@@ -63,22 +61,22 @@ fonts:
 accordion-bootstrap:
   css:
     component:
-      dist/css/accordion-bootstrap.css: {}
+      dist/css/components/accordion-bootstrap.css: {}
 
 alert:
   css:
     component:
-      dist/css/alert.css: {}
+      dist/css/components/alert.css: {}
 
 carousel:
   css:
     component:
-      dist/css/carousel.css: {}
+      dist/css/components/carousel.css: {}
 
 file:
   css:
     component:
-      dist/css/file.css: {}
+      dist/css/components/file.css: {}
 
 floating-labels:
   css:
@@ -88,7 +86,7 @@ floating-labels:
 layout:
   css:
     component:
-      dist/css/layout.css: {}
+      dist/css/components/layout.css: {}
 
 local-tasks:
   css:
@@ -98,27 +96,33 @@ local-tasks:
 layout_builder:
   css:
     component:
-      dist/css/layout-builder.css: {}
+      dist/css/components/layout-builder.css: {}
 
 nav:
   css:
     component:
-      dist/css/nav.css: {}
+      dist/css/components/nav.css: {}
 
 placeholders:
   css:
     component:
-      dist/css/placeholders.css: {}
+      dist/css/components/placeholders.css: {}
 
 progress:
   css:
     component:
-      dist/css/progress.css: {}
+      dist/css/components/progress.css: {}
 
 search-results:
   css:
     component:
-      dist/css/search-results.css: {}
+      dist/css/components/search-results.css: {}
+
+scrollspy-bootstrap:
+  js:
+    dist/js/bootstrap/scrollspy.js: {}
+  dependencies:
+    - psulib_base/bootstrap
 
 webform-validation:
   js:

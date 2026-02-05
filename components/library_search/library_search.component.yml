@@ -2,6 +2,7 @@
 name: Library Search
 status: stable
 description: Search Control for the Library search and home pages.
+group: Blocks
 props:
   type: 'object'
   properties:

@@ -1,6 +1,7 @@
 name: Slider
 status: stable
 description: Slider component.
+group: Blocks
 libraryOverrides:
   dependencies:
     - 'psulib_base/slick-carousel'

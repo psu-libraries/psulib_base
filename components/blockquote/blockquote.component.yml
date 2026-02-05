@@ -2,6 +2,7 @@
 name: Blockquote
 status: stable
 description: Bootstrap based blockquote component.
+group: Blocks
 props:
   type: 'object'
   properties:
