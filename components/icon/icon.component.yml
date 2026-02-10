@@ -13,6 +13,7 @@ props:
       description: Name of the icon (see https://psu-flex-storybook.vercel.app/?path=/story/tokens-icons--page)
       enum:
         - alarm
+        - arrow_right_alt
         - assignment
         - barChart3
         - book_2
@@ -56,6 +57,7 @@ props:
         - schedule
         - school
         - search
+        - star
         - tiktok
         - twitter-x
         - warning
