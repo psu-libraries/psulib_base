@@ -1,0 +1,60 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Fact Tiles
+status: stable
+description: Display a group of cards.
+libraryOverrides:
+  dependencies:
+    - 'core/once'
+    - 'psulib_base/card'
+required:
+  - items
+props:
+  type: 'object'
+  properties:
+    title:
+      type: 'string'
+      title: Title
+      description: Title above cards
+    body:
+      type: ['string', 'array']
+      title: Body
+      description: Body text above cards
+      examples:
+        - 'This is the body text for the card grid.'
+    items:
+      title: Tiles
+      description: S
+      type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - stat: '$1.44B'
+            title: 'In annual research expenditures'
+            description: ''
+          - stat: 'Top +6%'
+            title: 'In annual research expenditures'
+            description: 'QS World University Rankings, 2026'
+          - stat: '800K+'
+            title: 'Alumni network that connects you for life.'
+            description: ''
+    cta_button:
+      type: 'object'
+      title: CTA Button
+      properties:
+        title:
+          type: 'string'
+          title: Button Title
+        url:
+          type: 'string'
+          title: Button URL
+      examples:
+        title: 'Learn More'
+        url: '#'
+slots:
+  tiles:
+    title: Tiles
+    description: The tiles go here.
+    type: ['string', 'object']
+    examples:
+      - ''
