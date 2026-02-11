@@ -53,8 +53,8 @@ thirdPartySettings:
               <ul data-block="nav_additional" class="nav navbar-nav">
                 <li class="nav-item"><a href="/alerts" class="nav-link" data-drupal-link-system-path="alerts"><i class="bi bi-exclamation-triangle-fill"></i> 3 Alerts</a></li>
                 <li class="nav-item"><a href="https://myaccount.libraries.psu.edu/" class="nav-link">Renew Materials</a></li>
-                <li class="nav-item"><a href="#" class="btn button btn-primary btn-nav-additional nav-link">Give Today</a></li>
-                <li class="nav-item"><a href="#" class="btn button btn-primary btn-nav-additional nav-link">My Account</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-nav-additional nav-link">Give Today</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-nav-additional nav-link">My Account</a></li>
               </ul>
             </nav>'
           nav_search: '<div><a class="text-white btn btn-link dropdown-toggler py-1 px-2" href="#"><i class="bi bi-search"></i><span class="visually-hidden"> Start Search</span></a></div>'

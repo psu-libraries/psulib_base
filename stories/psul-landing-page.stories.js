@@ -3,6 +3,9 @@ import header, { Libraries as LibrariesHeader } from '../components/header/heade
 import dyanmicHero from '../components/dynamic_hero/dynamic_hero.component.yml';
 import breadcrumbs from '../components/breadcrumbs/breadcrumbs.component.yml';
 import inPageNav from '../components/in_page_nav/in_page_nav.component.yml';
+import factTiles from '../components/fact_tiles/fact_tiles.component.yml';
+import cardGrid, {News as NewsCards} from '../components/card_grid/card_grid.component.yml';
+
 import './page-preview.css'
 
 // Explicitly importing grandchild components css since this is not properly
@@ -78,6 +81,80 @@ export default {
 
 
     ${footer.component({ ...LibrariesFooter.args })}</div>`;
+  },
+  play: async ({ canvasElement }) => {
+    Drupal.attachBehaviors(canvasElement, window.drupalSettings)
+  },
+}
+
+export const ImpactPage = {
+  title: 'PSU Libraries: Impact',
+  render: () => {return `<div class="remove-sb-margin">
+    ${header.component({...LibrariesHeader.args})}
+
+    ${dyanmicHero.component({
+      eyebrow: 'Giving',
+      title: 'Your Donations at Work',
+      body: 'There are a number of ways to support the University Libraries, and your choice to make a gift is much more than a financial transaction; it’s personal.',
+      background_gradient: 'light',
+      cta_button_first: {
+        text: 'Ways to Give >',
+        url: '#'
+      },
+      cta_button_second: {
+        text: 'Endowments',
+        url: '#'
+      },
+    })}
+
+    ${inPageNav.component({
+      title: 'Give Now',
+      cta_button_first: {
+        text: 'Give Today',
+        url: '#'
+      },
+      cta_button_second: {
+        text: 'Impact',
+        url: '#'
+      },
+      items: [
+        { title: 'Stats', url: '#Campus Details' },
+        { title: 'Stories', url: '#Explore' },
+      ]
+    })}
+
+    <div class="container-fluid">
+      <div class="row my-4">
+        <div class="col-12 offset-md-1 col-md-10 offset-lg-2 col-lg-8">
+          <h2>Your Gift Matters</h2>
+          <p>Ipsum eu viverra montes lacinia felis blandit bibendum in. Erat duis tellus laoreet habitasse dolor. Id tortor nostra sem potenti ultrices. Blandit mollis nisi curabitur ultrices lectus pede ullamcorper pharetra magna morbi. Elit consectetur per vulputate litora lacus.</p>
+
+          <p>Your support of these priorities enables us to continue creating a vibrant Community, fostering collaborative learning Commons, and preserving invaluable and diverse Collections for future generations.</p>
+        </div>
+      </div>
+      <div class="pt-4 pb-1 full-bleed full-bleed--navy">
+        ${factTiles.component({
+          title: 'By the Numbers',
+          body: 'Placerat orci habitant malesuada vestibulum letius iaculis feugiat sapien. Fermentum vitae nullam tristique tempor integer semper diam hendrerit aliquam venenatis. A pede eros ultricies ridiculus placerat. Consequat fames letius odio consectetuer nisi rhoncus sodales senectus elementum curabitur amet. Sapien maecenas hendrerit netus aliquam donec quam. Dapibus congue lorem ornare vitae lobortis inceptos maecenas commodo accumsan. Massa mus arcu gravida taciti sem pretium.',
+          items: [
+            {stat: '$1.44B', title: 'In annual research expenditures.'},
+            {stat: 'Top 6%', title: 'Globally in employer reputation and career outcomes.', description: 'QS World University Rankings, 2026'},
+            {stat: '800K+', title: 'Alumni network that connects you for life.'},
+            {stat: '123', title: 'Sesame st'},
+            {stat: '2.4B', title: 'Books in our Collection'},
+            {stat: '2.4B', title: 'Books in our Collection'}
+          ]
+        })}
+
+      </div>
+
+      ${cardGrid.component({
+        title: 'Library News',
+        ...NewsCards.args
+      })}
+
+    </div>
+    ${footer.component({...LibrariesFooter.args})}</div>`;
   },
   play: async ({ canvasElement }) => {
     Drupal.attachBehaviors(canvasElement, window.drupalSettings)
