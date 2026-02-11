@@ -1,7 +1,6 @@
 @import '../../scss/init';
 
 .fact-tiles {
-  background-color: var(--color-primary);
   padding: 2rem;
 
   @include media-breakpoint-up(md) {
@@ -29,6 +28,7 @@
     flex-wrap: wrap;
     column-gap: .625rem;
     row-gap: 2rem;
+    justify-content: center;
 
     > .divider:nth-child(3n) {
       display: none;
