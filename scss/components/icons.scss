@@ -44,6 +44,10 @@
   &--size-inherit {
     height: 1em;
     width: 1em;
+
+    svg {
+      vertical-align: -.125em;
+    }
   }
 
   &--size-sm {

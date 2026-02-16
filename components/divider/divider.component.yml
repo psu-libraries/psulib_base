@@ -46,3 +46,6 @@ props:
       enum:
         - horizontal
         - vertical
+        - vertical-sm
+        - vertical-md
+        - vertical-lg

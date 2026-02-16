@@ -1,5 +1,14 @@
 @import '../../scss/init';
 
+@mixin vertical-divider {
+  height: auto;
+  width: auto;
+  border-bottom-width: 0px;
+  border-right: var(--divider-thickness) solid var(--divider-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .divider {
   --divider-color: #{$nittany-navy};
   --divider-thickness: 2px;
@@ -14,11 +23,16 @@
   margin-bottom: $spacer * 1.25;
 }
 
-// @todo - Add support for vertical dividers.  This is currently not working.
 .divider--orientation-vertical {
-  height: auto;
-  width: auto;
-  border-bottom-width: 0px;
+  @include vertical-divider;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .divider--orientation-vertical-#{$breakpoint} {
+    @include media-breakpoint-up($breakpoint) {
+      @include vertical-divider;
+    }
+  }
 }
 
 $colors: (

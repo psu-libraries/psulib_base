@@ -55,6 +55,10 @@ h2, .h2 {
   margin-bottom: $spacer;
 }
 
+.text-white {
+  --bs-heading-color: $white;
+}
+
 p:last-child {
   margin-bottom: 0;
 }
