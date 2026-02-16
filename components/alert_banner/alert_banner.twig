@@ -14,10 +14,10 @@
 %}
 
 {% set icon_map = {
-  'urgent': 'bi-exclamation-diamond-fill',
-  'nonEmergency': 'bi-exclamation-circle-fill',
-  'immediate': 'bi-exclamation-triangle-fill',
-  'allClear': 'bi-exclamation-circle-fill',
+  'urgent': 'emergency',
+  'nonEmergency': 'error_exclamation',
+  'immediate': 'warning',
+  'allClear': 'error_exclamation',
 }%}
 
 {% set alert_collapse_id = 'alert-banner'|clean_unique_id %}
@@ -32,7 +32,8 @@
         data-bs-target="#{{ alert_collapse_id }}-collapse"
         aria-expanded="false"
         aria-controls="{{ alert_collapse_id }}-collapse">
-          <i class="bi {{ icon_map[severity]|default('bi-exclamation-circle-fill') }}"></i> {{ title -}}
+          {% include "psulib_base:icon" with { icon: icon_map[severity]|default('error_exclamation'), color: "current-color", size: "md" } %}
+          {{ title -}}
       </button>
     </div>
 
