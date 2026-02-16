@@ -226,6 +226,15 @@ export default defineConfig({
           fs.cpSync(bootstrapJsSourceDir, bootstrapJsDestDir, { recursive: true });
         }
 
+        // Copy slick carousel files
+        const slickSourceDir = path.resolve(__dirname, 'node_modules/slick-carousel/slick');
+        const slickDestDir = path.resolve(__dirname, 'dist/slick');
+
+        if (fs.existsSync(slickSourceDir)) {
+          fs.mkdirSync(slickDestDir, { recursive: true });
+          fs.cpSync(slickSourceDir, slickDestDir, { recursive: true });
+        }
+
         // Compile component SCSS to CSS in their directories
         const componentScss = glob.sync('components/**/*.scss', { cwd: __dirname });
         // Note: These will be handled by the build process automatically
