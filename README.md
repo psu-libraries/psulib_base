@@ -4,6 +4,11 @@ This theme is intended to be used for PSU Branded Libraries Drupal sites.  This 
 
 ## Upgrade to Version 3
 
+When upgrading to the 3.x version.  You will need to do the following.
+
+- Make sure you are running node 22 (`nvm install 22`)
+- Install node changes `npm i`
+
 Version 3 replaces Laravel mix with Vite which means the `npx mix` commands will no longer work.  These need to be replaced with `npm build` and `npm dev` commands.
 
 * Update custom themes package.json to add `dev` and `build` commands:
