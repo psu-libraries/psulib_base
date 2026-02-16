@@ -30,6 +30,8 @@ props:
         - double_arrow
         - edit_square
         - email
+        - emergency
+        - error_exclamation
         - facebook
         - fax
         - full_coverage
