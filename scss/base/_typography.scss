@@ -90,12 +90,16 @@ blockquote {
     width: 50px;
     height: 44px;
     background-repeat: no-repeat;
-    background-image: url(../../assets/icons/psu_inverted_quote.svg);
+    background-image: url(../../assets/icons/psu_block_quote.svg);
 
     @include media-breakpoint-up(lg) {
       position: absolute;
       top: 25px;
       left: calc(var(--blockquote-padding) * 3);
+    }
+
+    svg {
+      fill: white;
     }
   }
 
