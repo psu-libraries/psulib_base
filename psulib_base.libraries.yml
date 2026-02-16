@@ -50,7 +50,7 @@ drupal.nav-tabs:
 icons:
   css:
     component:
-      dist/css/icons.css: {}
+      dist/css/components/icons.css: {}
 
 fonts:
   css:
