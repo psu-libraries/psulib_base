@@ -19,7 +19,7 @@ global-styling:
 # including bootstrap javascript and icons.
 bootstrap:
   js:
-    dist/js/psul-bootstrap.js: {}
+    dist/js/psul-bootstrap.js: { attributes: { type: module } }
 
 bootstrap-icons:
   css:
@@ -46,11 +46,6 @@ drupal.nav-tabs:
     - core/once
     - core/drupal.debounce
     - core/collapse
-
-icons:
-  css:
-    component:
-      dist/css/components/icons.css: {}
 
 fonts:
   css:
@@ -81,22 +76,27 @@ file:
 floating-labels:
   css:
     component:
-      dist/css/floating-labels.css: {}
+      dist/css/components/floating-labels.css: {}
+
+icons:
+  css:
+    component:
+      dist/css/components/icons.css: {}
 
 layout:
   css:
     component:
       dist/css/components/layout.css: {}
 
-local-tasks:
-  css:
-    component:
-      dist/css/local_tasks.css: {}
-
 layout_builder:
   css:
     component:
       dist/css/components/layout-builder.css: {}
+
+local-tasks:
+  css:
+    component:
+      dist/css/components/local_tasks.css: {}
 
 nav:
   css:
