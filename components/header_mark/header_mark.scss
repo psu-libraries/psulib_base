@@ -7,6 +7,11 @@
   &.navbar-brand {
     white-space: unset;
     flex-shrink: 1;
+    column-gap: $spacer;
+
+    @include media-breakpoint-up(lg) {
+      column-gap: $spacer * 1.5;
+    }
   }
 
   display: flex;
@@ -53,12 +58,9 @@
 
     @include media-breakpoint-up(md) {
       margin-top: 0;
-      max-width: 350px;
+      max-width: 450px;
     }
 
-    @include media-breakpoint-up(lg) {
-      margin-left: 2rem;
-    }
   }
 
   .site-title {
@@ -82,8 +84,20 @@
     }
   }
 
+  .divider {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
   .site-slogan {
     display: none;
+    color: $white;
+    font-size: 1.125rem;
+    margin-top: .25rem;
+    font-weight: 300;
 
     @include media-breakpoint-up(lg) {
       display: block;

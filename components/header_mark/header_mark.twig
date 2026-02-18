@@ -16,6 +16,7 @@
   </a>
   {% endif %}
   {% if site_name %}
+    {% include 'psulib_base:divider' with { color: "pugh", thickness: "sm", width: "full", orientation: "vertical" } %}
     <div class="header-mark--name-slogan {% if hide_site_name %}visually-hidden{% endif %}">
       <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-title">
         {{ site_name }}
