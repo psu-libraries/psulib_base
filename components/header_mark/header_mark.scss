@@ -11,6 +11,7 @@
 
     @include media-breakpoint-up(lg) {
       column-gap: $spacer * 1.5;
+      padding: 15px 0;
     }
   }
 
@@ -32,11 +33,6 @@
     height: $navbar-brand-image-height;
     margin: 0 100px 0 0;
     width: $navbar-brand-image-width;
-
-    @include media-breakpoint-up(lg) {
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
   }
 
   img {
@@ -48,7 +44,7 @@
     @include media-breakpoint-up(lg) {
       width: $navbar-brand-image-width;
       max-width: $navbar-brand-image-width;
-      margin: $navbar-brand-image-margin;
+      margin: 10px 0rem 10px 0;
       height: $navbar-brand-image-height-lg;
     }
   }
