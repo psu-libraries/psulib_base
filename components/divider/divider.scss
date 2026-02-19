@@ -1,7 +1,7 @@
 @import '../../scss/init';
 
 @mixin vertical-divider {
-  height: auto;
+  height: var(--divider-width);
   width: auto;
   border-bottom-width: 0px;
   border-right: var(--divider-thickness) solid var(--divider-color);

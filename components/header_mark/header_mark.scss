@@ -7,6 +7,12 @@
   &.navbar-brand {
     white-space: unset;
     flex-shrink: 1;
+    column-gap: $spacer;
+
+    @include media-breakpoint-up(lg) {
+      column-gap: $spacer * 1.5;
+      padding: 15px 0;
+    }
   }
 
   display: flex;
@@ -27,11 +33,6 @@
     height: $navbar-brand-image-height;
     margin: 0 100px 0 0;
     width: $navbar-brand-image-width;
-
-    @include media-breakpoint-up(lg) {
-      margin: $navbar-brand-image-margin;
-      height: $navbar-brand-image-height-lg;
-    }
   }
 
   img {
@@ -43,7 +44,7 @@
     @include media-breakpoint-up(lg) {
       width: $navbar-brand-image-width;
       max-width: $navbar-brand-image-width;
-      margin: $navbar-brand-image-margin;
+      margin: 10px 0rem 10px 0;
       height: $navbar-brand-image-height-lg;
     }
   }
@@ -53,12 +54,9 @@
 
     @include media-breakpoint-up(md) {
       margin-top: 0;
-      max-width: 350px;
+      max-width: 450px;
     }
 
-    @include media-breakpoint-up(lg) {
-      margin-left: 2rem;
-    }
   }
 
   .site-title {
@@ -82,8 +80,20 @@
     }
   }
 
+  .divider {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
   .site-slogan {
     display: none;
+    color: $white;
+    font-size: 1.125rem;
+    margin-top: .25rem;
+    font-weight: 300;
 
     @include media-breakpoint-up(lg) {
       display: block;

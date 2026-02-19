@@ -112,7 +112,8 @@ thirdPartySettings:
                 site_logo: '../../logo.png'
                 logo_path: '<front>'
                 site_name: 'Open Publishing'
-                hide_site_name: true
+                hide_site_name: false
+                # site_slogan: 'Penn State University Libraries'
           nav_actions: ''
           nav_additional: ''
           nav_search: '<div><a class="text-white btn btn-link dropdown-toggler py-1 px-2" href="#"><i class="bi bi-search"></i><span class="visually-hidden"> Start Search</span></a></div>'
@@ -158,6 +159,43 @@ thirdPartySettings:
                     is_expanded: true
                     is_collapsed: true
                   - title: 'Publish with Us'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+      with_slogan:
+        slots:
+          above_header: ''
+          header: ''
+          nav_branding:
+            - type: component
+              component: 'psulib_base:header_mark'
+              props:
+                site_logo: '../../logo.png'
+                logo_path: '<front>'
+                site_name: 'Educational Media Reviews Online'
+                hide_site_name: false
+                site_slogan: 'your connection to quality open access reviews'
+          nav_actions: ''
+          nav_additional: ''
+          nav_search: '<div><a class="text-white btn btn-link dropdown-toggler py-1 px-2" href="#"><i class="bi bi-search"></i><span class="visually-hidden"> Start Search</span></a></div>'
+          nav_main:
+            - type: component
+              component: 'psulib_base:header_nav'
+              props:
+                menu_name: 'main'
+                items:
+                  - title: 'About'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Submit Materials'
+                    url: '#'
+                    in_active_trail: false
+                    is_expanded: true
+                    is_collapsed: true
+                  - title: 'Recent Reviews'
                     url: '#'
                     in_active_trail: false
                     is_expanded: true
