@@ -36,6 +36,9 @@ export default defineConfig({
         // Main JS files
         'js/psul-bootstrap': path.resolve(__dirname, 'js/psul-bootstrap.js'),
 
+        // Base JS files
+        'js/application': path.resolve(__dirname, 'js/application.js'),
+
         // Peripheral styles
         'peripheral/peripheral': path.resolve(__dirname, 'scss/peripheral/peripheral.scss'),
         'peripheral/peripheral-bootstrap3': path.resolve(__dirname, 'scss/peripheral/peripheral-bootstrap3.scss'),

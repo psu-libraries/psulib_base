@@ -50,7 +50,7 @@
  *
  **/
 
-(function (Drupal, once) {
+const JumpMenu = (function (Drupal, once) {
   /**
    * Initialize the jump menu.
    *
@@ -105,3 +105,5 @@
     }
   };
 })(Drupal, once);
+
+export default JumpMenu;
