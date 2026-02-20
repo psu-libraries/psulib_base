@@ -107,6 +107,7 @@ set footer_classes = 'text-light'
     show_footer_left: page.footer_left is not empty,
     show_footer_right: page.footer is not empty,
     show_footer_bottom: page.footer_bottom is not empty,
+    show_federated_footer: page.federated_footer is not empty,
     site_logo: site_logo,
     site_logo_alt: 'Home'|t,
     site_logo_url: path('<front>'),
@@ -121,7 +122,7 @@ set footer_classes = 'text-light'
   {% block footer_bottom %}
     {{ page.footer_bottom }}
   {% endblock %}
-  {% block footer_federated %}
-    {{ page.footer_federated }}
+  {% block federated_footer %}
+    {{ page.federated_footer }}
   {% endblock %}
 {% endembed %}
