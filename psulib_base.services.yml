@@ -1,0 +1,4 @@
+services:
+  Drupal\psulib_base\Hook\SettingsFormAlterHook:
+    class: \Drupal\psulib_base\Hook\SettingsFormAlterHook
+    autowire: true
