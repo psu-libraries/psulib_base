@@ -1,0 +1,14 @@
+psulib_base.settings:
+  type: theme_settings
+  label: 'PSU Lib Base Settings'
+  mapping:
+    show_federated_footer:
+      type: boolean
+      label: 'Show Federated Footer'
+      description: 'This setting controls whether the federated footer is displayed.'
+      default_value: FALSE
+    show_federated_brand_bar:
+      type: boolean
+      label: 'Show Federated Brand Bar'
+      description: 'This setting controls whether the federated brand bar is displayed.'
+      default_value: FALSE
