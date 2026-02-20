@@ -2,6 +2,7 @@
 name: Footer
 status: stable
 description: Page footer component.
+group: Page Elements
 props:
   type: 'object'
   properties:

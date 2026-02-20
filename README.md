@@ -2,6 +2,25 @@
 
 This theme is intended to be used for PSU Branded Libraries Drupal sites.  This is based on the [Bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/) framework.
 
+## Upgrade to Version 3
+
+When upgrading to the 3.x version.  You will need to do the following.
+
+- Make sure you are running node 22 (`nvm install 22`)
+- Install node changes `npm i`
+
+Version 3 replaces Laravel mix with Vite which means the `npx mix` commands will no longer work.  These need to be replaced with `npm build` and `npm dev` commands.
+
+* Update custom themes package.json to add `dev` and `build` commands:
+```json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "laravel-mix watch",
+    "build": "laravel-mix --production"
+  },
+```
+* Update `.ddev/commands/web/theme-build` and `.ddev/commands/web/theme-watch` to use `npm run build` and `npm run dev`, respectively.
+
 ## Development
 
 This base theme is easiest to develop using a theme generated using the [drupal-site-template](https://github.com/psu-libraries/drupal-site-template) or using the site template itself.  This will use the psul-web site as an example.

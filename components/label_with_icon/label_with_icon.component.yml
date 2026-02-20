@@ -2,6 +2,7 @@
 name: Label with Icon
 status: stable
 description: Label with Icon component.
+group: Blocks
 props:
   type: 'object'
   properties:

@@ -2,6 +2,7 @@
 name: Card Grid
 status: stable
 description: Display a group of cards.
+group: Cards
 libraryOverrides:
   dependencies:
     - 'core/once'

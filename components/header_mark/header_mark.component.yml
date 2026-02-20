@@ -2,6 +2,7 @@
 name: Header mark
 status: stable
 description: Header mark component for use with Drupal branding block. Contains logo, sitename and slogan.
+group: Atoms
 props:
   type: 'object'
   properties:

@@ -2,6 +2,7 @@
 name: Not Found
 status: stable
 description: Page not found
+group: Page Elements
 props:
   type: 'object'
   properties:

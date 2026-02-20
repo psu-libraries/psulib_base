@@ -2,6 +2,7 @@
 name: Contact Card
 status: stable
 description: Display contact information for organizations and people.
+group: Cards
 props:
   type: 'object'
   properties:
@@ -57,6 +58,9 @@ props:
         url:
           type: 'string'
           title: Button URL
+      examples:
+        title: 'Contact Us'
+        url: '#'
     stacked:
       type: 'boolean'
       title: Stacked Display with contact details in 2 rows.

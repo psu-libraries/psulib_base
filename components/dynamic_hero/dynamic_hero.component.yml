@@ -2,6 +2,7 @@
 name: Dynamic Hero
 status: stable
 description: Dynamic Hero component.
+group: Page Elements
 props:
   type: 'object'
   properties:

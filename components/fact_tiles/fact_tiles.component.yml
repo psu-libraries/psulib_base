@@ -2,6 +2,7 @@
 name: Fact Tiles
 status: stable
 description: Display a group of cards.
+group: Blocks
 libraryOverrides:
   dependencies:
     - 'core/once'

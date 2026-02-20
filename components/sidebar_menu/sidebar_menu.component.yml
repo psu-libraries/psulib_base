@@ -7,6 +7,7 @@ libraryOverrides:
     - 'core/drupal'
     - 'core/once'
     - 'psulib_base/nav'
+group: Navs
 props:
   type: 'object'
   properties:

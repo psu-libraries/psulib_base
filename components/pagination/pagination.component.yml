@@ -2,6 +2,7 @@
 name: Pagination
 status: stable
 description: 'Documentation and examples for displaying pagination to indicate a series of related content exists across multiple pages.'
+group: Page Elements
 props:
   type: 'object'
   properties:

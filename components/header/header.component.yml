@@ -3,6 +3,7 @@ name: Header
 props:
   type: 'object'
   properties: {}
+group: Page Elements
 libraryOverrides:
   dependencies:
     - 'psulib_base/nav'

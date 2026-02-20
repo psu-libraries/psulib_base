@@ -6,11 +6,11 @@ node_modules
 # Compiled assets
 mix-manifest.json
 css/style.css
-js/application.js
 dist/*
 components/*/*.css
 components/*/*.map
 components/*/*.js
+.vite
 
 *storybook.log
 storybook-static

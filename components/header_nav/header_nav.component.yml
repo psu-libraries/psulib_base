@@ -2,6 +2,7 @@
 name: Header Navigation
 status: stable
 description: Header navigation used for the main menu.
+group: Navs
 props:
   type: 'object'
   properties:

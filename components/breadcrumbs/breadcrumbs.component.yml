@@ -2,6 +2,7 @@
 name: Breadcrumb
 status: stable
 description: Breadcrumb component.
+group: Atoms
 props:
   type: 'object'
   properties:

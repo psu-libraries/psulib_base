@@ -5,7 +5,7 @@ global-styling:
       dist/css/style.css: {}
       dist/css/print.css: { media: print }
     component:
-      dist/css/general.css: {}
+      dist/css/components/general.css: {}
   js:
     dist/js/application.js: {}
   dependencies:
@@ -21,7 +21,7 @@ global-styling:
 # including bootstrap javascript and icons.
 bootstrap:
   js:
-    dist/js/psul-bootstrap.js: {}
+    dist/js/psul-bootstrap.js: { attributes: { type: module } }
 
 bootstrap-icons:
   css:
@@ -49,11 +49,6 @@ drupal.nav-tabs:
     - core/drupal.debounce
     - core/collapse
 
-icons:
-  css:
-    component:
-      dist/css/icons.css: {}
-
 fonts:
   css:
     base:
@@ -63,62 +58,73 @@ fonts:
 accordion-bootstrap:
   css:
     component:
-      dist/css/accordion-bootstrap.css: {}
+      dist/css/components/accordion-bootstrap.css: {}
 
 alert:
   css:
     component:
-      dist/css/alert.css: {}
+      dist/css/components/alert.css: {}
 
 carousel:
   css:
     component:
-      dist/css/carousel.css: {}
+      dist/css/components/carousel.css: {}
 
 file:
   css:
     component:
-      dist/css/file.css: {}
+      dist/css/components/file.css: {}
 
 floating-labels:
   css:
     component:
-      dist/css/floating-labels.css: {}
+      dist/css/components/floating-labels.css: {}
+
+icons:
+  css:
+    component:
+      dist/css/components/icons.css: {}
 
 layout:
   css:
     component:
-      dist/css/layout.css: {}
-
-local-tasks:
-  css:
-    component:
-      dist/css/local_tasks.css: {}
+      dist/css/components/layout.css: {}
 
 layout_builder:
   css:
     component:
-      dist/css/layout-builder.css: {}
+      dist/css/components/layout-builder.css: {}
+
+local-tasks:
+  css:
+    component:
+      dist/css/components/local_tasks.css: {}
 
 nav:
   css:
     component:
-      dist/css/nav.css: {}
+      dist/css/components/nav.css: {}
 
 placeholders:
   css:
     component:
-      dist/css/placeholders.css: {}
+      dist/css/components/placeholders.css: {}
 
 progress:
   css:
     component:
-      dist/css/progress.css: {}
+      dist/css/components/progress.css: {}
 
 search-results:
   css:
     component:
-      dist/css/search-results.css: {}
+      dist/css/components/search-results.css: {}
+
+scrollspy-bootstrap:
+  js:
+    dist/js/bootstrap/scrollspy.js: {}
+  dependencies:
+    - psulib_base/bootstrap
 
 webform-validation:
   js:
