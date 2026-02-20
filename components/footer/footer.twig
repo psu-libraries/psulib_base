@@ -1,4 +1,4 @@
-<footer class="mt-auto {{ footer_classes }}{{ federated_footer ? ' footer--with-federated' : '' }}">
+<footer class="mt-auto {{ footer_classes }}{{ show_federated_footer ? ' footer--with-federated' : '' }}">
   <div class="container-fluid">
 
     <div class="row">
@@ -23,5 +23,7 @@
       {% endif %}
     </div>
   </div>
-  {{ federated_footer }}
+  {% block federated_footer %}
+    {{ federated_footer }}
+  {% endblock %}
 </footer>

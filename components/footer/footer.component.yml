@@ -23,6 +23,11 @@ props:
       title: Show Bottom footer region.
       description: 'Show the bottom footer region.  This is an optional full width footer region.'
       default: 1
+    show_federated_footer:
+      type: ['boolean', 'integer']
+      title: Show Federated footer region.
+      description: 'Show the federated footer region.  This contains the PSU federated footer by default.'
+      default: 0
     site_logo:
       type: 'string'
       title: Site Logo
@@ -77,6 +82,8 @@ thirdPartySettings:
   sdcStorybook:
     stories:
       libraries:
+        props:
+          show_federated_footer: 1
         slots:
           footer_left: '<div class="footer-logo pt-4 ps-2">
               <a class="social-media-link-icon--linkedin pe-3" href="https://www.linkedin.com/company/psulibs" aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn">
