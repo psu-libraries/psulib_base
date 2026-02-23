@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\psulib_base\Hook;
 
-use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Hook\Attribute\Hook;
@@ -20,7 +20,7 @@ class SettingsFormAlterHook {
    * Constructs the SettingsFormAlterHook object.
    */
   public function __construct(
-    private readonly ConfigFactoryInterface $configFactory,
+    private readonly ThemeSettingsProvider $themeSettingsProvider,
     private readonly ModuleHandlerInterface $moduleHandler,
   ) {}
 
@@ -45,7 +45,8 @@ class SettingsFormAlterHook {
     $form['psulib_base_settings']['show_federated_footer'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Show Federated Footer'),
-      '#default_value' => $this->configFactory->get('psulib_base.settings')->get('show_federated_footer'),
+      '#config_target' => 'psulib_base.settings:show_federated_footer',
+      '#default_value' => $this->themeSettingsProvider->getSetting('show_federated_footer'),
       '#description' => $this->t('This setting controls whether the federated footer is displayed.'),
       '#disabled' => $show_federated_footer_disabled,
     ];
@@ -53,7 +54,8 @@ class SettingsFormAlterHook {
     $form['psulib_base_settings']['show_federated_brand_bar'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Show Federated Brand Bar'),
-      '#default_value' => $this->configFactory->get('psulib_base.settings')->get('show_federated_brand_bar'),
+      '#config_target' => 'psulib_base.settings:show_federated_brand_bar',
+      '#default_value' => $this->themeSettingsProvider->getSetting('show_federated_brand_bar'),
       '#description' => $this->t('This setting controls whether the federated brand bar is displayed.'),
       '#disabled' => TRUE,
     ];
