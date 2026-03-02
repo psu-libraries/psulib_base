@@ -6,14 +6,6 @@ group: Blocks
 props:
   type: 'object'
   properties:
-    text_position:
-      type: 'string'
-      title: Text Position
-      description: The position of the text relative to the image.
-      default: right
-      enum:
-        - left
-        - right
     title:
       type: 'string'
       title: Title
