@@ -15,7 +15,7 @@
  * @see template_preprocess_details()
  */
 #}
-<details{{ attributes.addClass('card') }}>
+<details{{ attributes.addClass('card') }} role="group" aria-label="{{ title }}">
   {%- if title -%}
     {%
       set summary_classes = [
