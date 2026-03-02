@@ -13,3 +13,36 @@ a {
 table {
   caption-side: unset;
 }
+
+.table-responsive {
+  container-type: scroll-state;
+  position: relative;
+
+  > table ::after {
+    position: relative;
+    --scroll-bg: none;
+
+    @container scroll-state(scrollable: right) {
+      --scroll-bg: linear-gradient(to left, #999, #0000 20px);
+    }
+
+    @container scroll-state(scrollable: left) {
+      --scroll-bg: linear-gradient(to right, #999, #0000 20px);
+    }
+
+    @container scroll-state((scrollable: left) and (scrollable: right)) {
+      --scroll-bg: linear-gradient(to left, #999, #0000 20px), linear-gradient(to right, #999, #0000 20px);
+    }
+
+    content: ' ';
+    position: absolute;
+    height: calc(100% - 1rem);
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--scroll-bg);
+  }
+
+}
