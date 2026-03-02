@@ -36,7 +36,7 @@
     }
 
     @include media-breakpoint-up(xl) {
-      grid-template-columns: repeat(var(--card-grid-columns-lg), 1fr);
+      grid-template-columns: repeat(var(--card-grid-columns-xl), 1fr);
     }
   }
 
