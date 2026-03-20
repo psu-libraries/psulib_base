@@ -4,7 +4,7 @@
       <div class="psuflex-fed-footer__links">
         <ul>
           {% for link in links %}
-            <li data-key="{{ link.text }}">
+            <li data-key="{{ link.label }}">
               <a data-tracking-id="BrandFooter-Link" href="{{ link.url }}" {% if link.target %}target="{{ link.target }}"{% endif %}>{{ link.label }}</a>
             </li>
           {% endfor %}
