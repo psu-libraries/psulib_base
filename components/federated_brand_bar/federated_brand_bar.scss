@@ -1,0 +1,114 @@
+@import '../../scss/init';
+
+.psuflex-fed-brand-bar {
+  background-color: $beaver-blue;
+  color: $white;
+  padding: 1.25rem 0;
+  @include make-link($white-out, none, $white-out, underline);
+
+  &__links {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.25rem;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: $font-family-condensed;
+  }
+
+  &__btn {
+    outline: none;
+    border-radius: 100%;
+    background-color: transparent;
+    color: $white;
+    padding: 0.25rem;
+    border: none;
+    height: fit-content;
+
+    &:hover {
+      background-color: var(--bs-blue);
+      border-radius: 50%;
+    }
+
+    svg {
+      position: relative;
+      top: 2px;
+      align-self: center;
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  &__btn--close:hover {
+    background-color: $white;
+    color: $nittany-navy;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    display: none;
+    font-size: var(--bs-root-font-size);
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  &__menu-header-logo {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__menu {
+    top: 0;
+    right: 0;
+    color: $white;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $nittany-navy;
+    padding-top: 3rem;
+    margin: 0;
+    border: 0;
+    transition: translate 0.2s ease-out, overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+    transition-behavior: allow-discrete;
+    transform: translate 100% 0;
+    @starting-style {
+      translate: 100% 0;
+    }
+
+    &[open] {
+      transform: translate 0 0;
+    }
+
+    &:not([open]) {
+      translate: 100% 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-top: 5rem;
+    }
+  }
+
+  &__menu-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu-header-logo {
+    display: flex;
+    flex-wrap: nowrap;
+    width: calc(51px + 116px + 0.5rem);
+
+    &-shield {
+      width: 51px;
+      height: 64px;
+      margin-right: .5rem;
+      flex-shrink: 0;
+    }
+
+    &-work-mark {
+      width: 116px;
+      height: 18px;
+      margin-top: 0.75rem;
+      flex-shrink: 0;
+    }
+  }
+}

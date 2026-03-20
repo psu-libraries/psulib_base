@@ -1,0 +1,62 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: 'Federated Brand Bar'
+group: PSU Flex
+status: stable
+description: Federated footer component from PSU Flex library.
+libraryOverrides:
+  dependencies:
+    - 'core/once'
+    - 'psulib_base/card'
+props:
+  type: 'object'
+  properties:
+    links:
+      title: Copyright Links
+      description: Links for the Copyright
+      type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - label: 'Visit'
+            url: '#'
+            target: ''
+          - label: 'Apply'
+            url: '#'
+            target: ''
+          - label: 'Report a Concern'
+            url: '#'
+            target: ''
+    helpful_links:
+      title: Helpful Links
+      description: Links for the Helpful Links section
+      type: 'array'
+      items:
+        type: 'object'
+      examples:
+        -
+          - label: 'Contact Us'
+            url: '#'
+            target: ''
+          - label: 'Library Locations'
+            url: '#'
+            target: ''
+          - label: 'Research Help'
+            url: '#'
+            target: ''
+
+thirdPartySettings:
+  sdcStorybook:
+    stories:
+      default:
+        links:
+          -
+            - label: 'Visit'
+              url: '#'
+              target: ''
+            - label: 'Apply'
+              url: '#'
+              target: ''
+            - label: 'Report a Concern'
+              url: '#'
+              target: ''

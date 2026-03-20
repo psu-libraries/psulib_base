@@ -51,6 +51,7 @@ props:
         - map
         - menu
         - menu_book
+        - navSearch
         - newspaper
         - openBook
         - person
